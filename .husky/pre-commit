@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# 运行 ESLint 检查
+# pnpm lint
+
+# 运行 Prettier 格式化
+# pnpm format && git add -A
+git add -A

@@ -1,0 +1,10 @@
+/* 光标闪啊闪 */
+@keyframes blink-caret {
+  from,
+  to {
+    box-shadow: 1px 0 0 0 transparent;
+  }
+  50% {
+    box-shadow: 1px 0 0 0;
+  }
+}

@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const e=require("radix-vue"),I="sidebar:state",E=60*60*24*7,_="12rem",t="18rem",S="3rem",A="b",[D,r]=e.createContext("Sidebar");exports.SIDEBAR_COOKIE_MAX_AGE=E;exports.SIDEBAR_COOKIE_NAME=I;exports.SIDEBAR_KEYBOARD_SHORTCUT=A;exports.SIDEBAR_WIDTH=_;exports.SIDEBAR_WIDTH_ICON=S;exports.SIDEBAR_WIDTH_MOBILE=t;exports.provideSidebarContext=r;exports.useSidebar=D;
+//# sourceMappingURL=utils.js.map

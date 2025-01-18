@@ -1,0 +1,2 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const e=require("vue"),n=require("../../lib/utils.js"),l=e.defineComponent({__name:"SidebarMenuItem",props:{class:{}},setup(t){const r=t;return(s,o)=>(e.openBlock(),e.createElementBlock("li",{"data-sidebar":"menu-item",class:e.normalizeClass(e.unref(n.cn)("group/menu-item relative",r.class))},[e.renderSlot(s.$slots,"default")],2))}});exports.default=l;
+//# sourceMappingURL=SidebarMenuItem.vue.js.map

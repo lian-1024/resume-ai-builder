@@ -1,0 +1,2 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const e=require("vue"),a=require("radix-vue"),n=e.defineComponent({__name:"NavigationMenuItem",props:{value:{},asChild:{type:Boolean},as:{}},setup(t){const o=t;return(r,u)=>(e.openBlock(),e.createBlock(e.unref(a.NavigationMenuItem),e.normalizeProps(e.guardReactiveProps(o)),{default:e.withCtx(()=>[e.renderSlot(r.$slots,"default")]),_:3},16))}});exports.default=n;
+//# sourceMappingURL=NavigationMenuItem.vue.js.map

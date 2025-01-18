@@ -1,0 +1,2 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const e=require("vue"),r=require("../../lib/utils.js"),n=e.defineComponent({__name:"SheetHeader",props:{class:{}},setup(t){const s=t;return(l,o)=>(e.openBlock(),e.createElementBlock("div",{class:e.normalizeClass(e.unref(r.cn)("flex flex-col gap-y-2 text-center sm:text-left",s.class))},[e.renderSlot(l.$slots,"default")],2))}});exports.default=n;
+//# sourceMappingURL=SheetHeader.vue.js.map

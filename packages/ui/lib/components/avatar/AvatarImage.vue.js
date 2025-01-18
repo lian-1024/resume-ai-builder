@@ -1,0 +1,2 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const e=require("vue"),t=require("radix-vue"),a=e.defineComponent({__name:"AvatarImage",props:{src:{},referrerPolicy:{},asChild:{type:Boolean},as:{}},setup(r){const o=r;return(c,l)=>(e.openBlock(),e.createBlock(e.unref(t.AvatarImage),e.mergeProps(o,{class:"h-full w-full object-cover"}),null,16))}});exports.default=a;
+//# sourceMappingURL=AvatarImage.vue.js.map

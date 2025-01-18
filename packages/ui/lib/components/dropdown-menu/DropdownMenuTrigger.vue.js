@@ -1,0 +1,2 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const e=require("vue"),r=require("radix-vue"),u=e.defineComponent({__name:"DropdownMenuTrigger",props:{disabled:{type:Boolean},asChild:{type:Boolean},as:{}},setup(o){const n=o,t=r.useForwardProps(n);return(s,a)=>(e.openBlock(),e.createBlock(e.unref(r.DropdownMenuTrigger),e.mergeProps({class:"outline-none"},e.unref(t)),{default:e.withCtx(()=>[e.renderSlot(s.$slots,"default")]),_:3},16))}});exports.default=u;
+//# sourceMappingURL=DropdownMenuTrigger.vue.js.map

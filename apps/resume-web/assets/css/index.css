@@ -1,0 +1,44 @@
+html,
+body,
+#__nuxt {
+  height: 100%;
+  /* 字体 */
+  /* @apply font-mono font-medium ; */
+}
+
+/* 侧边栏容器 */
+.sidebar {
+  width: 160px;
+  transition: width 0.3s ease;
+  position: relative;
+}
+
+/* 折叠状态下的侧边栏 */
+.sidebar.collapsed {
+  width: 52px;
+}
+
+/* 图标 */
+.icon {
+  transition: transform 0.3s ease;
+}
+
+/* 文本 */
+.menu-label {
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* 折叠状态下隐藏文本 */
+.sidebar.collapsed .menu-label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-20px); /* 文本向左滑动 */
+}
+
+/* 折叠状态下隐藏文本 */
+.sidebar.collapsed .menu-button {
+  width: 32px;
+}

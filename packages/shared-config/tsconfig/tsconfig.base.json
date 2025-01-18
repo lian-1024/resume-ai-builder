@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig", // 指定 TypeScript 配置文件的 JSON Schema
+  "display": "Default", // 显示名称
+  "compilerOptions": { // 编译器选项
+    "target": "ESNext", // 编译目标版本
+    "module": "ESNext", // 模块系统
+  },
+  "exclude": [ // 排除的文件/目录
+    "node_modules", // 排除 node_modules 目录
+    "dist", // 排除构建输出目录
+  ]
+}

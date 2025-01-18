@@ -1,0 +1,2 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const e=require("vue"),r=require("../../_virtual/_plugin-vue_export-helper.js"),u={};function l(t,o){return e.openBlock(),e.createElementBlock("li",null,[e.renderSlot(t.$slots,"default")])}const n=r.default(u,[["render",l]]);exports.default=n;
+//# sourceMappingURL=SidebarMenuSubItem.vue.js.map

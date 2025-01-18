@@ -1,0 +1,2 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const e=require("vue"),t=require("../../lib/utils.js"),n=e.defineComponent({__name:"Card",props:{class:{}},setup(r){const o=r;return(s,l)=>(e.openBlock(),e.createElementBlock("div",{class:e.normalizeClass(e.unref(t.cn)("rounded-xl border bg-card text-card-foreground shadow",o.class))},[e.renderSlot(s.$slots,"default")],2))}});exports.default=n;
+//# sourceMappingURL=Card.vue.js.map

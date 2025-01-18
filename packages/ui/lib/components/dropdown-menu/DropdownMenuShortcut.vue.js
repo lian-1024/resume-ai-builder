@@ -1,0 +1,2 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const e=require("vue"),n=require("../../lib/utils.js"),r=e.defineComponent({__name:"DropdownMenuShortcut",props:{class:{}},setup(t){const s=t;return(o,c)=>(e.openBlock(),e.createElementBlock("span",{class:e.normalizeClass(e.unref(n.cn)("ml-auto text-xs tracking-widest opacity-60",s.class))},[e.renderSlot(o.$slots,"default")],2))}});exports.default=r;
+//# sourceMappingURL=DropdownMenuShortcut.vue.js.map

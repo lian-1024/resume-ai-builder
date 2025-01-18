@@ -1,0 +1,2 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const e=require("vue"),u=require("radix-vue"),n=e.defineComponent({__name:"MenubarGroup",props:{asChild:{type:Boolean},as:{}},setup(r){const o=r;return(t,a)=>(e.openBlock(),e.createBlock(e.unref(u.MenubarGroup),e.normalizeProps(e.guardReactiveProps(o)),{default:e.withCtx(()=>[e.renderSlot(t.$slots,"default")]),_:3},16))}});exports.default=n;
+//# sourceMappingURL=MenubarGroup.vue.js.map

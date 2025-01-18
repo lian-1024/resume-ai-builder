@@ -1,0 +1,2 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const e=require("vue"),s=require("../../lib/utils.js"),a=e.defineComponent({__name:"BreadcrumbPage",props:{class:{}},setup(r){const t=r;return(n,o)=>(e.openBlock(),e.createElementBlock("span",{role:"link","aria-disabled":"true","aria-current":"page",class:e.normalizeClass(e.unref(s.cn)("font-normal text-foreground",t.class))},[e.renderSlot(n.$slots,"default")],2))}});exports.default=a;
+//# sourceMappingURL=BreadcrumbPage.vue.js.map

@@ -1,0 +1,2 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const e=require("vue"),n=require("../../lib/utils.js"),o=e.defineComponent({__name:"SidebarGroupContent",props:{class:{}},setup(t){const s=t;return(r,l)=>(e.openBlock(),e.createElementBlock("div",{"data-sidebar":"group-content",class:e.normalizeClass(e.unref(n.cn)("w-full text-sm",s.class))},[e.renderSlot(r.$slots,"default")],2))}});exports.default=o;
+//# sourceMappingURL=SidebarGroupContent.vue.js.map

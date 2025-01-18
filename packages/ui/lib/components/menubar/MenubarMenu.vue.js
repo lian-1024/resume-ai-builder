@@ -1,0 +1,2 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const e=require("vue"),n=require("radix-vue"),o=e.defineComponent({__name:"MenubarMenu",props:{value:{}},setup(r){const t=r;return(u,a)=>(e.openBlock(),e.createBlock(e.unref(n.MenubarMenu),e.normalizeProps(e.guardReactiveProps(t)),{default:e.withCtx(()=>[e.renderSlot(u.$slots,"default")]),_:3},16))}});exports.default=o;
+//# sourceMappingURL=MenubarMenu.vue.js.map

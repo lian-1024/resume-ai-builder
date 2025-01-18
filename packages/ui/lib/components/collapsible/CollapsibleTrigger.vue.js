@@ -1,0 +1,2 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const e=require("vue"),l=require("radix-vue"),s=e.defineComponent({__name:"CollapsibleTrigger",props:{asChild:{type:Boolean},as:{}},setup(r){const o=r;return(t,a)=>(e.openBlock(),e.createBlock(e.unref(l.CollapsibleTrigger),e.normalizeProps(e.guardReactiveProps(o)),{default:e.withCtx(()=>[e.renderSlot(t.$slots,"default")]),_:3},16))}});exports.default=s;
+//# sourceMappingURL=CollapsibleTrigger.vue.js.map

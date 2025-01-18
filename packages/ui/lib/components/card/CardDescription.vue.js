@@ -1,0 +1,2 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const e=require("vue"),o=require("../../lib/utils.js"),n=e.defineComponent({__name:"CardDescription",props:{class:{}},setup(t){const s=t;return(r,l)=>(e.openBlock(),e.createElementBlock("p",{class:e.normalizeClass(e.unref(o.cn)("text-sm text-muted-foreground",s.class))},[e.renderSlot(r.$slots,"default")],2))}});exports.default=n;
+//# sourceMappingURL=CardDescription.vue.js.map

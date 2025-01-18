@@ -1,0 +1,8 @@
+.nuxt
+node_modules
+*.log
+dist
+.output
+.git
+pnpm-lock.yaml
+.env 

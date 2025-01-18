@@ -1,0 +1,2 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const e=require("vue"),n=require("radix-vue"),u=e.defineComponent({__name:"DropdownMenuGroup",props:{asChild:{type:Boolean},as:{}},setup(o){const r=o;return(t,s)=>(e.openBlock(),e.createBlock(e.unref(n.DropdownMenuGroup),e.normalizeProps(e.guardReactiveProps(r)),{default:e.withCtx(()=>[e.renderSlot(t.$slots,"default")]),_:3},16))}});exports.default=u;
+//# sourceMappingURL=DropdownMenuGroup.vue.js.map

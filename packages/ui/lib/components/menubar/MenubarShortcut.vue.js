@@ -1,0 +1,2 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const e=require("vue"),n=require("../../lib/utils.js"),o=e.defineComponent({__name:"MenubarShortcut",props:{class:{}},setup(t){const s=t;return(r,u)=>(e.openBlock(),e.createElementBlock("span",{class:e.normalizeClass(e.unref(n.cn)("ml-auto text-xs tracking-widest text-muted-foreground",s.class))},[e.renderSlot(r.$slots,"default")],2))}});exports.default=o;
+//# sourceMappingURL=MenubarShortcut.vue.js.map

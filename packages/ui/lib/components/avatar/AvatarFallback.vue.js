@@ -1,0 +1,2 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const e=require("vue"),o=require("radix-vue"),l=e.defineComponent({__name:"AvatarFallback",props:{delayMs:{},asChild:{type:Boolean},as:{}},setup(t){const a=t;return(r,s)=>(e.openBlock(),e.createBlock(e.unref(o.AvatarFallback),e.normalizeProps(e.guardReactiveProps(a)),{default:e.withCtx(()=>[e.renderSlot(r.$slots,"default")]),_:3},16))}});exports.default=l;
+//# sourceMappingURL=AvatarFallback.vue.js.map

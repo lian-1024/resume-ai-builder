@@ -3,5 +3,9 @@
     {
       "mode": "auto"
     }
-  ]
+  ],
+  // "tailwindCSS.experimental.configFile": "./tailwind.config.ts",
+  "editor.quickSuggestions": {
+    "strings": true
+  }
 }

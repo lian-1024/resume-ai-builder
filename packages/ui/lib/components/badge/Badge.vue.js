@@ -1,0 +1,2 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const e=require("vue"),s=require("../../lib/utils.js"),a=require("./index.js"),o=e.defineComponent({__name:"Badge",props:{variant:{},class:{}},setup(n){const t=n;return(r,l)=>(e.openBlock(),e.createElementBlock("div",{class:e.normalizeClass(e.unref(s.cn)(e.unref(a.badgeVariants)({variant:r.variant}),t.class))},[e.renderSlot(r.$slots,"default")],2))}});exports.default=o;
+//# sourceMappingURL=Badge.vue.js.map

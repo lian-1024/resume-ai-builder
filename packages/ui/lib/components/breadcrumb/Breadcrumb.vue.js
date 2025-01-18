@@ -1,0 +1,2 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const e=require("vue"),t=e.defineComponent({__name:"Breadcrumb",props:{class:{}},setup(r){const s=r;return(a,l)=>(e.openBlock(),e.createElementBlock("nav",{"aria-label":"breadcrumb",class:e.normalizeClass(s.class)},[e.renderSlot(a.$slots,"default")],2))}});exports.default=t;
+//# sourceMappingURL=Breadcrumb.vue.js.map

@@ -1,0 +1,2 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const e=require("vue"),s=require("../../lib/utils.js"),l=e.defineComponent({__name:"SidebarFooter",props:{class:{}},setup(t){const o=t;return(r,a)=>(e.openBlock(),e.createElementBlock("div",{"data-sidebar":"footer",class:e.normalizeClass(e.unref(s.cn)("flex flex-col gap-2 p-2",o.class))},[e.renderSlot(r.$slots,"default")],2))}});exports.default=l;
+//# sourceMappingURL=SidebarFooter.vue.js.map

@@ -1,0 +1,2 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const e=require("vue"),o=require("../../lib/utils.js"),l=e.defineComponent({__name:"SheetFooter",props:{class:{}},setup(s){const t=s;return(r,n)=>(e.openBlock(),e.createElementBlock("div",{class:e.normalizeClass(e.unref(o.cn)("flex flex-col-reverse sm:flex-row sm:justify-end sm:gap-x-2",t.class))},[e.renderSlot(r.$slots,"default")],2))}});exports.default=l;
+//# sourceMappingURL=SheetFooter.vue.js.map

@@ -1,0 +1,2 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const e=require("vue"),n=require("../../lib/utils.js"),r=e.defineComponent({__name:"SidebarContent",props:{class:{}},setup(o){const t=o;return(l,s)=>(e.openBlock(),e.createElementBlock("div",{"data-sidebar":"content",class:e.normalizeClass(e.unref(n.cn)("flex min-h-0 flex-1 flex-col gap-2 overflow-auto group-data-[collapsible=icon]:overflow-hidden",t.class))},[e.renderSlot(l.$slots,"default")],2))}});exports.default=r;
+//# sourceMappingURL=SidebarContent.vue.js.map

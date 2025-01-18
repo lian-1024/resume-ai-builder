@@ -1,0 +1,2 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const e=require("vue"),t=require("../../lib/utils.js"),o=e.defineComponent({__name:"SidebarGroup",props:{class:{}},setup(r){const l=r;return(s,n)=>(e.openBlock(),e.createElementBlock("div",{"data-sidebar":"group",class:e.normalizeClass(e.unref(t.cn)("relative flex w-full min-w-0 flex-col p-2",l.class))},[e.renderSlot(s.$slots,"default")],2))}});exports.default=o;
+//# sourceMappingURL=SidebarGroup.vue.js.map

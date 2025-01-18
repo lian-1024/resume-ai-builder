@@ -1,0 +1,2 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const e=require("vue"),o=require("../../lib/utils.js"),l=e.defineComponent({__name:"BreadcrumbList",props:{class:{}},setup(t){const r=t;return(s,n)=>(e.openBlock(),e.createElementBlock("ol",{class:e.normalizeClass(e.unref(o.cn)("flex flex-wrap items-center gap-1.5 break-words text-sm text-muted-foreground sm:gap-2.5",r.class))},[e.renderSlot(s.$slots,"default")],2))}});exports.default=l;
+//# sourceMappingURL=BreadcrumbList.vue.js.map

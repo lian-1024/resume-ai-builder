@@ -1,0 +1,2 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const e=require("vue"),n=require("radix-vue"),s=e.defineComponent({__name:"TooltipTrigger",props:{asChild:{type:Boolean},as:{}},setup(r){const o=r;return(t,u)=>(e.openBlock(),e.createBlock(e.unref(n.TooltipTrigger),e.normalizeProps(e.guardReactiveProps(o)),{default:e.withCtx(()=>[e.renderSlot(t.$slots,"default")]),_:3},16))}});exports.default=s;
+//# sourceMappingURL=TooltipTrigger.vue.js.map
