@@ -12,5 +12,5 @@ export default defineNuxtConfig({
   },
 
   modules: ["@nuxtjs/tailwindcss", "@nuxt/icon"],
-  css: ["~/assets/css/index.css", "@resume/ui/styles.css"],
+  css: ["~/assets/css/index.css", "@lianqq/resume-ui/styles.css"],
 });

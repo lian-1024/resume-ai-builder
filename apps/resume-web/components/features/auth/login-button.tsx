@@ -1,5 +1,5 @@
 import { Icon } from '#components'
-import { Button } from '@resume/ui'
+import { Button } from '@lianqq/resume-ui'
 
 export default defineComponent({
   name: 'LoginButton',

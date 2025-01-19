@@ -13,7 +13,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
-  "prettier": "@resume/config/prettier/nuxt",
+  "prettier": "@lianqq/resume-config/prettier/nuxt",
   "dependencies": {
     "@nuxt/fonts": "^0.10.3",
     "@nuxt/icon": "^1.10.3",
@@ -21,7 +21,7 @@
     "@nuxtjs/color-mode": "^3.5.2",
     "@paralleldrive/cuid2": "^2.2.2",
     "@pinia/nuxt": "^0.9.0",
-    "@resume/ui": "workspace:*",
+    "@lianqq/resume-ui": "workspace:*",
     "@vueuse/core": "^12.4.0",
     "@vueuse/nuxt": "12.4.0",
     "geist": "^1.3.1",
@@ -46,7 +46,7 @@
     "@nuxtjs/google-fonts": "^3.2.0",
     "@nuxtjs/tailwindcss": "^6.12.2",
     "@radix-icons/vue": "^1.0.0",
-    "@resume/config": "workspace:*",
+    "@lianqq/resume-config": "workspace:*",
     "@types/node": "^20.17.14",
     "autoprefixer": "^10.4.20",
     "class-variance-authority": "^0.7.1",

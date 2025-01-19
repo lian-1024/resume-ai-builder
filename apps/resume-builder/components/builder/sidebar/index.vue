@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-  import { SidebarProvider } from '@resume/ui';
+  import { SidebarProvider } from '@lianqq/resume-ui';
 import Editor from './editor/index.vue';
 import Sections from './sections/index.vue';
 

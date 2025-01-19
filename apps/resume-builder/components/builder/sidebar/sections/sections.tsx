@@ -1,5 +1,5 @@
 import { Icon } from "#components";
-import { Button } from "@resume/ui";
+import { Button } from "@lianqq/resume-ui";
 
 const sections = [
   {
@@ -30,7 +30,7 @@ const sections = [
 ];
 
 export default defineComponent({
-  name: "SectionSelect",
+  name: "SectionLabel",
   props: {
     isCollapsed: {
       type: Boolean,

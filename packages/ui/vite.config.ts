@@ -49,7 +49,7 @@ export default defineConfig({
       ],
       output: [
         {
-          format: 'es', // ES Module 格式
+          format: 'esm', // ES Module 格式
           dir: 'es', // 输出目录
           entryFileNames: '[name].js', // 入口文件名
           exports: 'named', // 导出格式

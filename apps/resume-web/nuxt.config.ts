@@ -68,7 +68,7 @@ export default defineNuxtConfig({
     '~/assets/css/tailwind.css',
     '~/assets/css/index.css',
     '~/assets/css/animate.css',
-    "@resume/ui/styles.css"
+    "@lianqq/resume-ui/styles.css"
   ],
 
   // 应用配置

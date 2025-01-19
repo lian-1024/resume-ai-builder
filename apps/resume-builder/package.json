@@ -12,15 +12,17 @@
   "dependencies": {
     "@nuxt/icon": "1.10.3",
     "@nuxtjs/tailwindcss": "6.13.1",
-    "@resume/ui": "workspace:*",
+    "@lianqq/resume-ui": "workspace:*",
     "nuxt": "^3.15.2",
     "vue": "latest",
-    "vue-router": "latest"
+    "vue-router": "latest",
+    "@lianqq/resume-components": "workspace:*",
+    "@lianqq/resume-schema": "workspace:*"
   },
   "devDependencies": {
     "@iconify-json/lucide": "^1.2.22",
     "@iconify/vue": "^4.3.0",
-    "@resume/config": "workspace:*"
+    "@lianqq/resume-config": "workspace:*"
   },
-  "prettier": "@resume/config/prettier"
+  "prettier": "@lianqq/resume-config/prettier"
 }

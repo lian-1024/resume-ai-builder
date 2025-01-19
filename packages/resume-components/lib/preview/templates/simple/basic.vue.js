@@ -1,0 +1,2 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const e=require("vue"),l={class:"flex flex-col"},o=e.defineComponent({__name:"basic",setup(n){const t=e.ref("基础信息");return(c,r)=>(e.openBlock(),e.createElementBlock("div",l,[e.createElementVNode("h1",null,e.toDisplayString(t.value),1)]))}});exports.default=o;
+//# sourceMappingURL=basic.vue.js.map

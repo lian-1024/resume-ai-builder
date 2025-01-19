@@ -4,7 +4,7 @@
     SidebarInset,
     SidebarTrigger,
     ColorModeButton
-  } from '@resume/ui' /* PartiallyEnd: #3632/scriptSetup.vue */
+  } from '@lianqq/resume-ui' /* PartiallyEnd: #3632/scriptSetup.vue */
 </script>
 
 <template>

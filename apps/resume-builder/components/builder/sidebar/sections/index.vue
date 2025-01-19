@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { Avatar, AvatarFallback, AvatarImage } from '@resume/ui';
+  import { Avatar, AvatarFallback, AvatarImage } from '@lianqq/resume-ui';
 
   import { Icon } from '#components';
 import {
@@ -21,7 +21,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarRail
-} from '@resume/ui';
+} from '@lianqq/resume-ui';
 
   // This is sample data.
   const data = {

@@ -1,5 +1,5 @@
 import { Icon, NuxtLink } from '#components'
-import { Button } from '@resume/ui'
+import { Button } from '@lianqq/resume-ui'
 import { defineComponent, onMounted, ref } from 'vue'
 import { ButtonHover } from '~/components/motions/button'
 import ButtonPress from '~/components/motions/button/button-press.vue'

@@ -1,4 +1,4 @@
-import { Button, Card, CardContent, CardFooter } from '@resume/ui'
+import { Button, Card, CardContent, CardFooter } from '@lianqq/resume-ui'
 import { ButtonHover, ButtonPress } from '~/components/motions/button'
 
 const ResumeCard = () => {

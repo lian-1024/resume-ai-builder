@@ -82,7 +82,7 @@ export default {
       },
       boxShadow: {
         triple:
-          '10px 0 15px -3px rgba(255, 5, 124, 1), 0 0 15px -3px rgba(124, 100, 213, 1), -10px 0 15px -3px rgba(76, 195, 255, 1)'
+          '10px 0 15px -3px rgba(255, 5, 124, 1), 0 0 15px -3px rgba(124, 100, 213, 1), -10px 0 15px -3px rgba(76, 195, 255, 1)',
       }
     }
   },

@@ -14,7 +14,7 @@ importers:
       '@commitlint/config-conventional':
         specifier: ^19.6.0
         version: 19.6.0
-      '@resume/config':
+      '@lianqq/resume-config':
         specifier: workspace:*
         version: link:packages/shared-config
       cz-git:
@@ -32,15 +32,21 @@ importers:
 
   apps/resume-builder:
     dependencies:
+      '@lianqq/resume-components':
+        specifier: workspace:*
+        version: link:../../packages/resume-components
+      '@lianqq/resume-schema':
+        specifier: workspace:*
+        version: link:../../packages/resume-schema
+      '@lianqq/resume-ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
       '@nuxt/icon':
         specifier: 1.10.3
         version: 1.10.3(magicast@0.3.5)(rollup@4.30.1)(vite@6.0.7(@types/node@20.17.14)(jiti@2.4.2)(terser@5.37.0)(yaml@2.7.0))(vue@3.5.13(typescript@5.7.3))
       '@nuxtjs/tailwindcss':
         specifier: 6.13.1
         version: 6.13.1(magicast@0.3.5)(rollup@4.30.1)
-      '@resume/ui':
-        specifier: workspace:*
-        version: link:../../packages/ui
       nuxt:
         specifier: ^3.15.2
         version: 3.15.2(@parcel/watcher@2.5.0)(@types/node@20.17.14)(db0@0.2.1)(eslint@9.18.0(jiti@2.4.2))(ioredis@5.4.2)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.30.1)(terser@5.37.0)(typescript@5.7.3)(vite@6.0.7(@types/node@20.17.14)(jiti@2.4.2)(terser@5.37.0)(yaml@2.7.0))(yaml@2.7.0)
@@ -57,12 +63,15 @@ importers:
       '@iconify/vue':
         specifier: ^4.3.0
         version: 4.3.0(vue@3.5.13(typescript@5.7.3))
-      '@resume/config':
+      '@lianqq/resume-config':
         specifier: workspace:*
         version: link:../../packages/shared-config
 
   apps/resume-web:
     dependencies:
+      '@lianqq/resume-ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
       '@nuxt/fonts':
         specifier: ^0.10.3
         version: 0.10.3(db0@0.2.1)(ioredis@5.4.2)(magicast@0.3.5)(rollup@4.30.1)(vite@6.0.7(@types/node@20.17.14)(jiti@2.4.2)(terser@5.37.0)(yaml@2.7.0))
@@ -81,9 +90,6 @@ importers:
       '@pinia/nuxt':
         specifier: ^0.9.0
         version: 0.9.0(magicast@0.3.5)(pinia@2.3.0(typescript@5.7.3)(vue@3.5.13(typescript@5.7.3)))(rollup@4.30.1)
-      '@resume/ui':
-        specifier: workspace:*
-        version: link:../../packages/ui
       '@vueuse/core':
         specifier: ^12.4.0
         version: 12.4.0(typescript@5.7.3)
@@ -136,6 +142,9 @@ importers:
       '@iconify/vue':
         specifier: ^4.3.0
         version: 4.3.0(vue@3.5.13(typescript@5.7.3))
+      '@lianqq/resume-config':
+        specifier: workspace:*
+        version: link:../../packages/shared-config
       '@nuxt/devtools':
         specifier: latest
         version: 2.0.0-beta.3(rollup@4.30.1)(vite@6.0.7(@types/node@20.17.14)(jiti@2.4.2)(terser@5.37.0)(yaml@2.7.0))
@@ -151,9 +160,6 @@ importers:
       '@radix-icons/vue':
         specifier: ^1.0.0
         version: 1.0.0(vue@3.5.13(typescript@5.7.3))
-      '@resume/config':
-        specifier: workspace:*
-        version: link:../../packages/shared-config
       '@types/node':
         specifier: ^20.17.14
         version: 20.17.14
@@ -191,11 +197,67 @@ importers:
         specifier: ^5.7.3
         version: 5.7.3
 
+  packages/resume-components:
+    dependencies:
+      '@lianqq/resume-schema':
+        specifier: workspace:*
+        version: link:../resume-schema
+      '@lianqq/resume-ui':
+        specifier: workspace:*
+        version: link:../ui
+      vue:
+        specifier: ^3.5.13
+        version: 3.5.13(typescript@5.6.3)
+    devDependencies:
+      '@vitejs/plugin-vue':
+        specifier: ^5.2.1
+        version: 5.2.1(vite@6.0.7(@types/node@20.17.14)(jiti@2.4.2)(terser@5.37.0)(yaml@2.7.0))(vue@3.5.13(typescript@5.6.3))
+      '@vue/tsconfig':
+        specifier: ^0.7.0
+        version: 0.7.0(typescript@5.6.3)(vue@3.5.13(typescript@5.6.3))
+      typescript:
+        specifier: ~5.6.2
+        version: 5.6.3
+      vite:
+        specifier: ^6.0.5
+        version: 6.0.7(@types/node@20.17.14)(jiti@2.4.2)(terser@5.37.0)(yaml@2.7.0)
+      vite-plugin-dts:
+        specifier: ^4.5.0
+        version: 4.5.0(@types/node@20.17.14)(rollup@4.30.1)(typescript@5.6.3)(vite@6.0.7(@types/node@20.17.14)(jiti@2.4.2)(terser@5.37.0)(yaml@2.7.0))
+      vue-tsc:
+        specifier: ^2.2.0
+        version: 2.2.0(typescript@5.6.3)
+
   packages/resume-schema:
     dependencies:
+      '@paralleldrive/cuid2':
+        specifier: ^2.2.2
+        version: 2.2.2
+      vue:
+        specifier: ^3.5.13
+        version: 3.5.13(typescript@5.6.3)
       zod:
         specifier: ^3.24.1
         version: 3.24.1
+    devDependencies:
+      '@vitejs/plugin-vue':
+        specifier: ^5.2.1
+        version: 5.2.1(vite@6.0.7(@types/node@20.17.14)(jiti@2.4.2)(terser@5.37.0)(yaml@2.7.0))(vue@3.5.13(typescript@5.6.3))
+      '@vue/tsconfig':
+        specifier: ^0.7.0
+        version: 0.7.0(typescript@5.6.3)(vue@3.5.13(typescript@5.6.3))
+      typescript:
+        specifier: ~5.6.2
+        version: 5.6.3
+      vite:
+        specifier: ^6.0.5
+        version: 6.0.7(@types/node@20.17.14)(jiti@2.4.2)(terser@5.37.0)(yaml@2.7.0)
+      vite-plugin-dts:
+        specifier: ^4.5.0
+        version: 4.5.0(@types/node@20.17.14)(rollup@4.30.1)(typescript@5.6.3)(vite@6.0.7(@types/node@20.17.14)(jiti@2.4.2)(terser@5.37.0)(yaml@2.7.0))
+      vue-tsc:
+        specifier: ^2.2.0
+        version: 2.2.0(typescript@5.6.3)
 
   packages/shared-config:
     devDependencies:
@@ -217,12 +279,12 @@ importers:
 
   packages/ui:
     dependencies:
+      '@lianqq/resume-config':
+        specifier: workspace:*
+        version: link:../shared-config
       '@radix-icons/vue':
         specifier: ^1.0.0
         version: 1.0.0(vue@3.5.13(typescript@5.6.3))
-      '@resume/config':
-        specifier: workspace:*
-        version: link:../shared-config
       '@vueuse/core':
         specifier: ^12.4.0
         version: 12.4.0(typescript@5.6.3)

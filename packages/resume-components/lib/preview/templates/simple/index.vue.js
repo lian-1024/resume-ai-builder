@@ -1,0 +1,2 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const e=require("vue"),c=require("./basic.vue.js"),r={class:"flex flex-col"},s=e.defineComponent({__name:"index",props:{sections:{}},setup(l){const t={basics:c.default};return(n,u)=>(e.openBlock(),e.createElementBlock("div",r,[(e.openBlock(!0),e.createElementBlock(e.Fragment,null,e.renderList(n.sections,o=>(e.openBlock(),e.createBlock(e.resolveDynamicComponent(t[o])))),256))]))}});exports.default=s;
+//# sourceMappingURL=index.vue.js.map

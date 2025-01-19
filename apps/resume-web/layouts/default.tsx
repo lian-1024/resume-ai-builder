@@ -6,7 +6,7 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList
-} from '@resume/ui'
+} from '@lianqq/resume-ui'
 import { defineComponent } from 'vue'
 import LoginButton from '~/components/features/auth/login-button'
 

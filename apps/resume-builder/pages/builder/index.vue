@@ -10,9 +10,7 @@
       <BuilderSidebar />
     </template>
     <template #content>
-     <div class="h-[calc(100vh-64px)] w-full relative overflow-auto flex-1">
-       <iframe src="http://localhost:3003/resume/preview" class="absolute left-0 top-0 bottom-0 right-0 w-screen  h-[calc(100vh-64px)]" />
-     </div>
+       <iframe src="http://localhost:3003/resume/preview" class="bg-zinc-100 dark:bg-zinc-950 relative left-0 top-0 bottom-0 right-0 w-full flex-1" />
     </template>
   </NuxtLayout>
 </template>
