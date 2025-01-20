@@ -1,0 +1,2 @@
+"use strict";const e=require("../../../../node_modules/.pnpm/zod@3.24.1/node_modules/zod/lib/index.js"),t=require("../shared/item.js");require("../shared/id.js");const r=require("../shared/url.js");t.itemSchema.extend({name:e.default.string(),description:e.default.string(),date:e.default.string(),location:e.default.string(),summary:e.default.string(),keywords:e.default.array(e.default.string()).default([]),url:r.urlSchema});
+//# sourceMappingURL=custom-section.js.map

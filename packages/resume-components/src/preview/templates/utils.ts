@@ -6,7 +6,7 @@ import Simple from './simple/index.vue';
 
 export const getTemplate = async (template: Template) => {
   switch (template) {
-    case 'simple':
+    case 'Simple':
       return Simple
   }
 }

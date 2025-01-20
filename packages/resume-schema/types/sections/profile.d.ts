@@ -10,32 +10,32 @@ export declare const profileSchema: z.ZodObject<z.objectUtil.extendShape<{
         label: z.ZodString;
         href: z.ZodUnion<[z.ZodLiteral<"">, z.ZodString]>;
     }, "strip", z.ZodTypeAny, {
-        label: string;
-        href: string;
+        label?: string;
+        href?: string;
     }, {
-        label: string;
-        href: string;
+        label?: string;
+        href?: string;
     }>;
 }>, "strip", z.ZodTypeAny, {
-    id: string;
-    visible: boolean;
-    url: {
-        label: string;
-        href: string;
+    id?: string;
+    visible?: boolean;
+    icon?: string;
+    url?: {
+        label?: string;
+        href?: string;
     };
-    network: string;
-    username: string;
-    icon?: string | undefined;
+    network?: string;
+    username?: string;
 }, {
-    visible: boolean;
-    url: {
-        label: string;
-        href: string;
+    id?: string;
+    visible?: boolean;
+    icon?: string;
+    url?: {
+        label?: string;
+        href?: string;
     };
-    network: string;
-    username: string;
-    id?: string | undefined;
-    icon?: string | undefined;
+    network?: string;
+    username?: string;
 }>;
 export type Profile = z.infer<typeof profileSchema>;
 export declare const defaultProfile: Profile;

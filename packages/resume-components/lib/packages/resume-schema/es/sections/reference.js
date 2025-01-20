@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const e=require("../../../../node_modules/.pnpm/zod@3.24.1/node_modules/zod/lib/index.js"),r=require("../shared/item.js");require("../shared/id.js");const t=require("../shared/url.js"),i=r.itemSchema.extend({name:e.default.string(),description:e.default.string(),summary:e.default.string(),url:t.urlSchema});exports.referenceSchema=i;
+//# sourceMappingURL=reference.js.map

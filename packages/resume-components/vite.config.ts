@@ -2,6 +2,7 @@ import vue from '@vitejs/plugin-vue';
 import path from 'path';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
+import { fileURLToPath } from 'url';
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -15,7 +16,7 @@ export default defineConfig({
       beforeWriteFile: (filePath, content) => ({
         filePath: filePath.replace('/src/', '/'),
         content
-      })
+      }),
     })
   ],
 
@@ -33,10 +34,10 @@ export default defineConfig({
       name: 'resume-components',
     },
     rollupOptions: {
-      external: ['vue'],
+
+      external: ['vue'], // 将 Vue 设置为外部依赖
       output: [
         {
-          inlineDynamicImports: false,
           format: 'esm', // ES Module 格式
           dir: 'es', // 输出目录
           entryFileNames: '[name].js', // 入口文件名
@@ -47,7 +48,6 @@ export default defineConfig({
           preserveModulesRoot: 'src'
         },
         {
-          inlineDynamicImports: false,
           format: "cjs",
           dir: "lib",
           entryFileNames: '[name].js',
@@ -55,7 +55,13 @@ export default defineConfig({
           preserveModules: true,
           preserveModulesRoot: 'src'
         },
+
       ]
+    },
+  },
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
     }
   }
 

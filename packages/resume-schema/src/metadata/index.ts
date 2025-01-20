@@ -6,7 +6,7 @@ export type Template = (typeof templates)[number]
 
 // 定义主题相关配资
 
-export const metadataSchema = z.object({
+export const resumeConfigSchema = z.object({
   template: z.enum(templates).default('simple'), // 简历模版昵称
   page: z.object({
     // 页面设置
@@ -22,10 +22,10 @@ export const metadataSchema = z.object({
 })
 
 // 从模式中推断出的类型
-export type Metadata = z.infer<typeof metadataSchema>
+export type ResumeConfig = z.infer<typeof resumeConfigSchema>
 
 // 默认值
-export const defaultMetadata: Metadata = {
+export const defaultResumeConfig: ResumeConfig = {
   page: {
     format: 'a4',
     margin: 18

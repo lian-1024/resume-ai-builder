@@ -1,1 +1,1 @@
-"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const e=require("../node_modules/.pnpm/zod@3.24.1/node_modules/zod/lib/index.js"),t=require("./id.js"),i=e.default.object({id:t.idSchema,visible:e.default.boolean()}),d={id:"",visible:!0};exports.defaultItem=d;exports.itemSchema=i;
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const e=require("zod"),t=require("./id.js"),i=e.z.object({id:t.idSchema,visible:e.z.boolean()}),o={id:"",visible:!0};exports.defaultItem=o;exports.itemSchema=i;

@@ -1,6 +1,6 @@
-import { z } from 'zod' // 引入 zod 库
+import { z } from 'zod'; // 引入 zod 库
 
-import { defaultUrl, urlSchema } from '../shared' // 引入共享的 URL 模式和默认 URL
+import { defaultUrl, urlSchema } from '../shared'; // 引入共享的 URL 模式和默认 URL
 import { customFieldSchema } from './custom'
 
 // 定义基本信息的模式
@@ -32,6 +32,6 @@ export const defaultBasics: Basics = {
   customFields: [],
   picture: {
     url: '', // 默认图片 URL 为空字符串
-    size: 64 // 默认图片大小为 64
+    // size: 64 // 默认图片大小为 64
   }
 }

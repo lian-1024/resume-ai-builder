@@ -1,4 +1,4 @@
-import e from "../node_modules/.pnpm/zod@3.24.1/node_modules/zod/lib/index.js";
+import { z as e } from "zod";
 import { itemSchema as t, defaultItem as r } from "../shared/item.js";
 import "../shared/id.js";
 import "../shared/url.js";

@@ -1,4 +1,3 @@
-import vue from '@vitejs/plugin-vue'
 import path from 'path'
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
@@ -6,10 +5,9 @@ import dts from 'vite-plugin-dts'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
-    vue(),
     dts({
       // 指定 tsconfig 文件
-      tsconfigPath: 'tsconfig.build.json',
+      tsconfigPath: 'tsconfig.json',
       outDir: 'types',
       // 在写入文件之前，将 src 目录替换为根目录
       beforeWriteFile: (filePath, content) => ({
@@ -27,7 +25,7 @@ export default defineConfig({
       name: 'resume-schema',
     },
     rollupOptions: {
-      external: ['vue'],
+      external:['zod','@paralleldrive/cuid2'],
       output: [
         {
           format: 'esm', // ES Module 格式
@@ -46,17 +44,6 @@ export default defineConfig({
           exports: 'named',
           preserveModules: true,
           preserveModulesRoot: 'src'
-        },
-        {
-          format: 'umd', // 直接使用script标签引入
-          dir: 'dist',
-          entryFileNames: '[name].js',
-          exports: 'named',
-          name: 'ui', // umd 必须指定
-          globals: {
-            // UMD 格式下外部依赖的全局变量名
-            vue: 'Vue',
-          }
         }
       ]
     }

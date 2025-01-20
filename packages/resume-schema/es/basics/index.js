@@ -1,7 +1,7 @@
-import e from "../node_modules/.pnpm/zod@3.24.1/node_modules/zod/lib/index.js";
+import { z as e } from "zod";
 import "../shared/item.js";
 import "../shared/id.js";
-import { urlSchema as i, defaultUrl as r } from "../shared/url.js";
+import { urlSchema as r, defaultUrl as i } from "../shared/url.js";
 import { customFieldSchema as t } from "./custom.js";
 const n = e.object({
   name: e.string(),
@@ -14,7 +14,7 @@ const n = e.object({
   // 电话字段，字符串类型
   location: e.string(),
   // 位置字段，字符串类型
-  url: i,
+  url: r,
   // 网址字段，使用共享的 URL 模式
   customFields: e.array(t),
   picture: e.object({
@@ -34,14 +34,13 @@ const n = e.object({
   // 默认电话为空字符串
   location: "",
   // 默认位置为空字符串
-  url: r,
+  url: i,
   // 默认网址使用共享的默认 URL
   customFields: [],
   picture: {
-    url: "",
+    url: ""
     // 默认图片 URL 为空字符串
-    size: 64
-    // 默认图片大小为 64
+    // size: 64 // 默认图片大小为 64
   }
 };
 export {

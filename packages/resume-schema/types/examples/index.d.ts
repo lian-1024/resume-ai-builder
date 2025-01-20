@@ -1,2 +1,2 @@
 import { ResumeData } from '../index';
-export declare const sampleResume: ResumeData;
+export declare const Simple: ResumeData;

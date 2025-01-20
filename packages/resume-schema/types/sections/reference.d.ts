@@ -10,32 +10,32 @@ export declare const referenceSchema: z.ZodObject<z.objectUtil.extendShape<{
         label: z.ZodString;
         href: z.ZodUnion<[z.ZodLiteral<"">, z.ZodString]>;
     }, "strip", z.ZodTypeAny, {
-        label: string;
-        href: string;
+        label?: string;
+        href?: string;
     }, {
-        label: string;
-        href: string;
+        label?: string;
+        href?: string;
     }>;
 }>, "strip", z.ZodTypeAny, {
-    id: string;
-    visible: boolean;
-    name: string;
-    url: {
-        label: string;
-        href: string;
+    id?: string;
+    visible?: boolean;
+    name?: string;
+    url?: {
+        label?: string;
+        href?: string;
     };
-    summary: string;
-    description: string;
+    summary?: string;
+    description?: string;
 }, {
-    visible: boolean;
-    name: string;
-    url: {
-        label: string;
-        href: string;
+    id?: string;
+    visible?: boolean;
+    name?: string;
+    url?: {
+        label?: string;
+        href?: string;
     };
-    summary: string;
-    description: string;
-    id?: string | undefined;
+    summary?: string;
+    description?: string;
 }>;
 export type Reference = z.infer<typeof referenceSchema>;
 export declare const defaultReference: Reference;

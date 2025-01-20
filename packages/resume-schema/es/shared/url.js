@@ -1,4 +1,4 @@
-import r from "../node_modules/.pnpm/zod@3.24.1/node_modules/zod/lib/index.js";
+import { z as r } from "zod";
 const e = r.object({
   label: r.string(),
   href: r.literal("").or(r.string().url())

@@ -12,36 +12,36 @@ export declare const projectSchema: z.ZodObject<z.objectUtil.extendShape<{
         label: z.ZodString;
         href: z.ZodUnion<[z.ZodLiteral<"">, z.ZodString]>;
     }, "strip", z.ZodTypeAny, {
-        label: string;
-        href: string;
+        label?: string;
+        href?: string;
     }, {
-        label: string;
-        href: string;
+        label?: string;
+        href?: string;
     }>;
 }>, "strip", z.ZodTypeAny, {
-    id: string;
-    visible: boolean;
-    date: string;
-    name: string;
-    url: {
-        label: string;
-        href: string;
+    id?: string;
+    visible?: boolean;
+    date?: string;
+    name?: string;
+    url?: {
+        label?: string;
+        href?: string;
     };
-    summary: string;
-    description: string;
-    keywords: string[];
+    summary?: string;
+    keywords?: string[];
+    description?: string;
 }, {
-    visible: boolean;
-    date: string;
-    name: string;
-    url: {
-        label: string;
-        href: string;
+    id?: string;
+    visible?: boolean;
+    date?: string;
+    name?: string;
+    url?: {
+        label?: string;
+        href?: string;
     };
-    summary: string;
-    description: string;
-    id?: string | undefined;
-    keywords?: string[] | undefined;
+    summary?: string;
+    keywords?: string[];
+    description?: string;
 }>;
 export type Project = z.infer<typeof projectSchema>;
 export declare const defaultProject: Project;

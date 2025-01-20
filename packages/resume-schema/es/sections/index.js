@@ -1,101 +1,94 @@
-import e from "../node_modules/.pnpm/zod@3.24.1/node_modules/zod/lib/index.js";
-import "../shared/item.js";
-import { idSchema as i } from "../shared/id.js";
-import "../shared/url.js";
-import { awardSchema as a } from "./award.js";
-import { defaultAward as H } from "./award.js";
-import { certificationSchema as o } from "./certification.js";
-import { defaultCertification as K } from "./certification.js";
-import { customSectionSchema as m } from "./custom-section.js";
-import { defaultCustomSection as N } from "./custom-section.js";
-import { educationSchema as n } from "./education.js";
-import { defaultEducation as Q } from "./education.js";
-import { experienceSchema as s } from "./experience.js";
-import { defaultExperience as U } from "./experience.js";
-import { interestSchema as l } from "./interest.js";
-import { defaultInterest as X } from "./interest.js";
-import { languageSchema as c } from "./language.js";
-import { defaultLanguage as Z } from "./language.js";
-import { profileSchema as d } from "./profile.js";
-import { defaultProfile as $ } from "./profile.js";
-import { projectSchema as f } from "./project.js";
-import { defaultProject as te } from "./project.js";
-import { publicationSchema as u } from "./publication.js";
-import { defaultPublication as ie } from "./publication.js";
-import { referenceSchema as p } from "./reference.js";
-import { defaultReference as oe } from "./reference.js";
-import { skillSchema as x } from "./skill.js";
-import { defaultSkill as ne } from "./skill.js";
-import { volunteerSchema as S } from "./volunteer.js";
-import { defaultVolunteer as le } from "./volunteer.js";
+import { z as e } from "zod";
+import { awardSchema as i } from "./award.js";
+import { defaultAward as V } from "./award.js";
+import { certificationSchema as a } from "./certification.js";
+import { defaultCertification as q } from "./certification.js";
+import { educationSchema as o } from "./education.js";
+import { defaultEducation as D } from "./education.js";
+import { experienceSchema as m } from "./experience.js";
+import { defaultExperience as G } from "./experience.js";
+import { interestSchema as n } from "./interest.js";
+import { defaultInterest as J } from "./interest.js";
+import { languageSchema as s } from "./language.js";
+import { defaultLanguage as M } from "./language.js";
+import { profileSchema as l } from "./profile.js";
+import { defaultProfile as O } from "./profile.js";
+import { projectSchema as c } from "./project.js";
+import { defaultProject as T } from "./project.js";
+import { publicationSchema as d } from "./publication.js";
+import { defaultPublication as W } from "./publication.js";
+import { referenceSchema as f } from "./reference.js";
+import { defaultReference as Y } from "./reference.js";
+import { skillSchema as u } from "./skill.js";
+import { defaultSkill as _ } from "./skill.js";
+import { volunteerSchema as p } from "./volunteer.js";
+import { defaultVolunteer as ee } from "./volunteer.js";
+import { customSectionSchema as re, defaultCustomSection as ie } from "./custom-section.js";
 const t = e.object({
   name: e.string(),
   columns: e.number().max(5).default(1),
   separateLinks: e.boolean().default(!0),
   visible: e.boolean().default(!0)
-}), g = t.extend({
-  id: i,
-  items: e.array(m)
-}), B = e.object({
+}), C = e.object({
   summary: t.extend({
     id: e.literal("summary"),
     content: e.string().default("")
   }),
   awards: t.extend({
     id: e.literal("awards"),
-    items: e.array(a)
+    items: e.array(i)
   }),
   certifications: t.extend({
     id: e.literal("certifications"),
-    items: e.array(o)
+    items: e.array(a)
   }),
   education: t.extend({
     id: e.literal("education"),
-    items: e.array(n)
+    items: e.array(o)
   }),
   experience: t.extend({
     id: e.literal("experience"),
-    items: e.array(s)
+    items: e.array(m)
   }),
   volunteer: t.extend({
     id: e.literal("volunteer"),
-    items: e.array(S)
+    items: e.array(p)
   }),
   interests: t.extend({
     id: e.literal("interests"),
-    items: e.array(l)
+    items: e.array(n)
   }),
   languages: t.extend({
     id: e.literal("languages"),
-    items: e.array(c)
+    items: e.array(s)
   }),
   profiles: t.extend({
     id: e.literal("profiles"),
-    items: e.array(d)
+    items: e.array(l)
   }),
   projects: t.extend({
     id: e.literal("projects"),
-    items: e.array(f)
+    items: e.array(c)
   }),
   publications: t.extend({
     id: e.literal("publications"),
-    items: e.array(u)
+    items: e.array(d)
   }),
   references: t.extend({
     id: e.literal("references"),
-    items: e.array(p)
+    items: e.array(f)
   }),
   skills: t.extend({
     id: e.literal("skills"),
-    items: e.array(x)
-  }),
-  custom: e.record(e.string(), g)
+    items: e.array(u)
+  })
+  // custom: z.record(z.string(), customSchema)
 }), r = {
   name: "",
   columns: 1,
   separateLinks: !0,
   visible: !0
-}, D = {
+}, A = {
   summary: { ...r, id: "summary", name: "Summary", content: "" },
   awards: { ...r, id: "awards", name: "Awards", items: [] },
   certifications: {
@@ -148,39 +141,38 @@ const t = e.object({
     name: "References",
     items: []
   },
-  skills: { ...r, id: "skills", name: "Skills", items: [] },
-  custom: {}
+  skills: { ...r, id: "skills", name: "Skills", items: [] }
+  // custom: {}
 };
 export {
-  a as awardSchema,
-  o as certificationSchema,
-  g as customSchema,
-  m as customSectionSchema,
-  H as defaultAward,
-  K as defaultCertification,
-  N as defaultCustomSection,
-  Q as defaultEducation,
-  U as defaultExperience,
-  X as defaultInterest,
-  Z as defaultLanguage,
-  $ as defaultProfile,
-  te as defaultProject,
-  ie as defaultPublication,
-  oe as defaultReference,
+  i as awardSchema,
+  a as certificationSchema,
+  re as customSectionSchema,
+  V as defaultAward,
+  q as defaultCertification,
+  ie as defaultCustomSection,
+  D as defaultEducation,
+  G as defaultExperience,
+  J as defaultInterest,
+  M as defaultLanguage,
+  O as defaultProfile,
+  T as defaultProject,
+  W as defaultPublication,
+  Y as defaultReference,
   r as defaultSection,
-  D as defaultSections,
-  ne as defaultSkill,
-  le as defaultVolunteer,
-  n as educationSchema,
-  s as experienceSchema,
-  l as interestSchema,
-  c as languageSchema,
-  d as profileSchema,
-  f as projectSchema,
-  u as publicationSchema,
-  p as referenceSchema,
+  A as defaultSections,
+  _ as defaultSkill,
+  ee as defaultVolunteer,
+  o as educationSchema,
+  m as experienceSchema,
+  n as interestSchema,
+  s as languageSchema,
+  l as profileSchema,
+  c as projectSchema,
+  d as publicationSchema,
+  f as referenceSchema,
   t as sectionSchema,
-  B as sectionsSchema,
-  x as skillSchema,
-  S as volunteerSchema
+  C as sectionsSchema,
+  u as skillSchema,
+  p as volunteerSchema
 };

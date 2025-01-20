@@ -30,7 +30,7 @@ const sections = [
 ];
 
 export default defineComponent({
-  name: "SectionLabel",
+  name: "SidebarSection",
   props: {
     isCollapsed: {
       type: Boolean,

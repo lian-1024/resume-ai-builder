@@ -9,11 +9,11 @@ export declare const basicsSchema: z.ZodObject<{
         label: z.ZodString;
         href: z.ZodUnion<[z.ZodLiteral<"">, z.ZodString]>;
     }, "strip", z.ZodTypeAny, {
-        label: string;
-        href: string;
+        label?: string;
+        href?: string;
     }, {
-        label: string;
-        href: string;
+        label?: string;
+        href?: string;
     }>;
     customFields: z.ZodArray<z.ZodObject<{
         id: z.ZodString;
@@ -21,65 +21,65 @@ export declare const basicsSchema: z.ZodObject<{
         name: z.ZodString;
         value: z.ZodString;
     }, "strip", z.ZodTypeAny, {
-        id: string;
-        value: string;
-        icon: string;
-        name: string;
+        id?: string;
+        value?: string;
+        icon?: string;
+        name?: string;
     }, {
-        id: string;
-        value: string;
-        icon: string;
-        name: string;
+        id?: string;
+        value?: string;
+        icon?: string;
+        name?: string;
     }>, "many">;
     picture: z.ZodObject<{
         url: z.ZodString;
         size: z.ZodDefault<z.ZodNumber>;
     }, "strip", z.ZodTypeAny, {
-        url: string;
-        size: number;
+        url?: string;
+        size?: number;
     }, {
-        url: string;
-        size?: number | undefined;
+        url?: string;
+        size?: number;
     }>;
 }, "strip", z.ZodTypeAny, {
-    name: string;
-    headline: string;
-    email: string;
-    phone: string;
-    location: string;
-    url: {
-        label: string;
-        href: string;
+    name?: string;
+    headline?: string;
+    email?: string;
+    phone?: string;
+    location?: string;
+    url?: {
+        label?: string;
+        href?: string;
     };
-    customFields: {
-        id: string;
-        value: string;
-        icon: string;
-        name: string;
+    customFields?: {
+        id?: string;
+        value?: string;
+        icon?: string;
+        name?: string;
     }[];
-    picture: {
-        url: string;
-        size: number;
+    picture?: {
+        url?: string;
+        size?: number;
     };
 }, {
-    name: string;
-    headline: string;
-    email: string;
-    phone: string;
-    location: string;
-    url: {
-        label: string;
-        href: string;
+    name?: string;
+    headline?: string;
+    email?: string;
+    phone?: string;
+    location?: string;
+    url?: {
+        label?: string;
+        href?: string;
     };
-    customFields: {
-        id: string;
-        value: string;
-        icon: string;
-        name: string;
+    customFields?: {
+        id?: string;
+        value?: string;
+        icon?: string;
+        name?: string;
     }[];
-    picture: {
-        url: string;
-        size?: number | undefined;
+    picture?: {
+        url?: string;
+        size?: number;
     };
 }>;
 export type Basics = z.infer<typeof basicsSchema>;

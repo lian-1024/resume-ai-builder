@@ -1,11 +1,11 @@
 import t from "./simple/index.vue.js";
-const c = async (e) => {
+const m = async (e) => {
   switch (e) {
-    case "simple":
+    case "Simple":
       return t;
   }
 };
 export {
-  c as getTemplate
+  m as getTemplate
 };
 //# sourceMappingURL=utils.js.map

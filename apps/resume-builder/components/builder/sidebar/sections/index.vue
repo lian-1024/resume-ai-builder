@@ -1,7 +1,11 @@
 <script setup lang="ts">
-  import { Avatar, AvatarFallback, AvatarImage } from '@lianqq/resume-ui';
+import { Avatar, AvatarFallback, AvatarImage } from '@lianqq/resume-ui';
 
-  import { Icon } from '#components';
+defineOptions({
+  name: "SidebarSections"
+})
+
+import { Icon } from '#components';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -23,47 +27,47 @@ import {
   SidebarRail
 } from '@lianqq/resume-ui';
 
-  // This is sample data.
-  const data = {
-    user: {
-      name: 'shadcn',
-      email: 'm@example.com',
-      avatar: '/avatars/shadcn.jpg'
-    },
-  }
+// This is sample data.
+const data = {
+  user: {
+    name: 'shadcn',
+    email: 'm@example.com',
+    avatar: '/avatars/shadcn.jpg'
+  },
+}
 
-  const sections = [
-    {
-      label: '基本信息',
-      icon: 'lucide:user-round',
-      id: '#profile'
-    },
-    {
-      label: '教育经历',
-      icon: 'lucide:book-open',
-      id: '#education'
-    },
-    {
-      label: '项目经历',
-      icon: 'lucide:briefcase-business',
-      id: '#project'
-    },
-    {
-      label: '工作经历',
-      icon: 'lucide:briefcase-business',
-      id: '#work'
-    },
-    {
-      label: '技能证书',
-      icon: 'lucide:briefcase-business',
-      id: '#work'
-    },
-    {
-      label: '个人简介',
-      icon: 'lucide:user-round',
-      id: '#profile'
-    }
-  ]
+const sections = [
+  {
+    label: '基本信息',
+    icon: 'lucide:user-round',
+    id: '#profile'
+  },
+  {
+    label: '教育经历',
+    icon: 'lucide:book-open',
+    id: '#education'
+  },
+  {
+    label: '项目经历',
+    icon: 'lucide:briefcase-business',
+    id: '#project'
+  },
+  {
+    label: '工作经历',
+    icon: 'lucide:briefcase-business',
+    id: '#work'
+  },
+  {
+    label: '技能证书',
+    icon: 'lucide:briefcase-business',
+    id: '#work'
+  },
+  {
+    label: '个人简介',
+    icon: 'lucide:user-round',
+    id: '#profile'
+  }
+]
 </script>
 
 <template>
@@ -73,18 +77,11 @@ import {
         <SidebarMenuItem>
           <DropdownMenu>
             <DropdownMenuTrigger as-child>
-              <SidebarMenuButton
-                size="lg"
-                class="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
-              >
+              <SidebarMenuButton size="lg"
+                class="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground">
                 <div
-                  class="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground"
-                >
-                  <Icon
-                    mode="svg"
-                    name="lucide:house"
-                    class="size-4 shrink-0 dark:text-white text-black"
-                  />
+                  class="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
+                  <Icon mode="svg" name="lucide:house" class="size-4 shrink-0 dark:text-white text-black" />
                 </div>
                 <div class="grid flex-1 text-left text-sm leading-tight">
                   <span class="truncate">首页</span>
@@ -93,34 +90,18 @@ import {
               </SidebarMenuButton>
             </DropdownMenuTrigger>
             <!-- 右侧下拉菜单内容 -->
-            <DropdownMenuContent
-              class="w-[--radix-dropdown-menu-trigger-width] min-w-56 rounded-lg bg-black"
-              align="start"
-              side="bottom"
-              :side-offset="4"
-            >
+            <DropdownMenuContent class="w-[--radix-dropdown-menu-trigger-width] min-w-56 rounded-lg bg-black"
+              align="start" side="bottom" :side-offset="4">
               <DropdownMenuItem>
-                <div
-                  class="flex size-6 items-center justify-center rounded-sm border"
-                >
-                  <Icon
-                    mode="svg"
-                    name="lucide:briefcase-business"
-                    class="size-4 shrink-0"
-                  />
+                <div class="flex size-6 items-center justify-center rounded-sm border">
+                  <Icon mode="svg" name="lucide:briefcase-business" class="size-4 shrink-0" />
                 </div>
                 工作台
                 <DropdownMenuShortcut>⌘1</DropdownMenuShortcut>
               </DropdownMenuItem>
               <DropdownMenuItem>
-                <div
-                  class="flex size-6 items-center justify-center rounded-sm border"
-                >
-                  <Icon
-                    mode="svg"
-                    name="lucide:house"
-                    class="size-4 shrink-0"
-                  />
+                <div class="flex size-6 items-center justify-center rounded-sm border">
+                  <Icon mode="svg" name="lucide:house" class="size-4 shrink-0" />
                 </div>
                 首页
                 <DropdownMenuShortcut>⌘2</DropdownMenuShortcut>
@@ -136,15 +117,9 @@ import {
         <SidebarGroupLabel>模块</SidebarGroupLabel>
         <SidebarMenu class="gap-4">
           <!-- every item -->
-          <SidebarMenuItem
-            v-for="item in sections"
-            :key="item.id"
-          >
+          <SidebarMenuItem v-for="item in sections" :key="item.id">
             <SidebarMenuButton :tooltip="item.label">
-              <Icon
-                mode="svg"
-                :name="item.icon"
-              />
+              <Icon mode="svg" :name="item.icon" />
               <!-- <Icon name="" /> -->
               <span>{{ item.label }}</span>
             </SidebarMenuButton>
@@ -157,15 +132,10 @@ import {
         <SidebarMenuItem>
           <DropdownMenu>
             <DropdownMenuTrigger as-child>
-              <SidebarMenuButton
-                size="lg"
-                class="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
-              >
+              <SidebarMenuButton size="lg"
+                class="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground">
                 <Avatar class="h-8 w-8 rounded-lg">
-                  <AvatarImage
-                    :src="data.user.avatar"
-                    :alt="data.user.name"
-                  />
+                  <AvatarImage :src="data.user.avatar" :alt="data.user.name" />
                   <AvatarFallback class="rounded-lg"> CN </AvatarFallback>
                 </Avatar>
                 <div class="grid flex-1 text-left text-sm leading-tight">
@@ -177,21 +147,12 @@ import {
                 <Icon name="lucide:chevron-down" class="ml-auto" />
               </SidebarMenuButton>
             </DropdownMenuTrigger>
-            <DropdownMenuContent
-              class="w-[--radix-dropdown-menu-trigger-width] min-w-56 rounded-lg bg-"
-              side="bottom"
-              align="end"
-              :side-offset="4"
-            >
+            <DropdownMenuContent class="w-[--radix-dropdown-menu-trigger-width] min-w-56 rounded-lg bg-" side="bottom"
+              align="end" :side-offset="4">
               <DropdownMenuLabel class="p-0 font-normal">
-                <div
-                  class="flex items-center gap-2 px-1 py-1.5 text-left text-sm"
-                >
+                <div class="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
                   <Avatar class="h-8 w-8 rounded-lg">
-                    <AvatarImage
-                      src=""
-                      :alt="data.user.name"
-                    />
+                    <AvatarImage src="" :alt="data.user.name" />
                     <AvatarFallback class="rounded-lg"> CN </AvatarFallback>
                   </Avatar>
                   <div class="grid flex-1 text-left text-sm leading-tight">

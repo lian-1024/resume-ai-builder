@@ -1,20 +1,19 @@
 import type { ResumeData } from '../index'
 
-export const sampleResume: ResumeData = {
+export const Simple: ResumeData = {
   basics: {
-    name: '张伟',
+    name: 'lianqq',
     headline: '创新的前端开发者',
     email: 'zhangwei@example.com',
     phone: '(010) 1234-5678',
     location: '北京市, 中国',
     url: {
       label: '',
-      href: 'https://zhangwei.me/'
+      href: 'https://github.com/lian-1024'
     },
     customFields: [],
     picture: {
-      url: 'https://i.imgur.com/HgwyOuJ.jpg',
-      size: 120
+      url: 'https://avatars.githubusercontent.com/u/93166482?s=48&v=4',
     }
   },
   sections: {
@@ -280,11 +279,11 @@ export const sampleResume: ResumeData = {
         }
       ]
     },
-    custom: {}
+    // custom: {}
   },
   // 简历主题数据
-  metadata: {
-    template: 'simple',
+  config: {
+    template: 'Simple',
     page: {
       margin: 14,
       format: 'a4'

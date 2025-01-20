@@ -1,9 +1,7 @@
 import { z } from 'zod'
 
-import { idSchema } from '../shared'
 import { awardSchema } from './award'
 import { certificationSchema } from './certification'
-import { customSectionSchema } from './custom-section'
 import { educationSchema } from './education'
 import { experienceSchema } from './experience'
 import { interestSchema } from './interest'
@@ -24,10 +22,10 @@ export const sectionSchema = z.object({
 })
 
 // 扩展基础模式以包括自定义部分的ID和项目数组
-export const customSchema = sectionSchema.extend({
-  id: idSchema,
-  items: z.array(customSectionSchema)
-})
+// export const customSchema = sectionSchema.extend({
+//   id: idSchema,
+//   items: z.array(customSectionSchema)
+// })
 
 // 定义所有部分的模式，为每种类型指定详细信息
 export const sectionsSchema = z.object({
@@ -83,7 +81,7 @@ export const sectionsSchema = z.object({
     id: z.literal('skills'),
     items: z.array(skillSchema)
   }),
-  custom: z.record(z.string(), customSchema)
+  // custom: z.record(z.string(), customSchema)
 })
 
 // 类型定义，用于部分和部分集合
@@ -94,7 +92,7 @@ export type Sections = z.infer<typeof sectionsSchema>
 export type SectionKey = 'basics' | keyof Sections | `custom.${string}`
 
 // 自定义部分组的类型定义
-export type CustomSectionGroup = z.infer<typeof customSchema>
+// export type CustomSectionGroup = z.infer<typeof customSchema>
 
 // 单个部分的默认值
 export const defaultSection: Section = {
@@ -160,7 +158,7 @@ export const defaultSections: Sections = {
     items: []
   },
   skills: { ...defaultSection, id: 'skills', name: 'Skills', items: [] },
-  custom: {}
+  // custom: {}
 }
 
 // 重新导出所有部分模式以供外部使用
@@ -177,3 +175,4 @@ export * from './publication'
 export * from './reference'
 export * from './skill'
 export * from './volunteer'
+

@@ -1,76 +1,75 @@
-import e from "./node_modules/.pnpm/zod@3.24.1/node_modules/zod/lib/index.js";
-import { basicsSchema as t, defaultBasics as a } from "./basics/index.js";
-import { metadataSchema as o, defaultMetadata as r } from "./metadata/index.js";
+import { z as e } from "zod";
+import { basicsSchema as t, defaultBasics as o } from "./basics/index.js";
+import { resumeConfigSchema as r, defaultResumeConfig as a } from "./config/index.js";
 import { sectionsSchema as m, defaultSections as c } from "./sections/index.js";
-import { customSchema as n, defaultSection as h, sectionSchema as x } from "./sections/index.js";
-import { sampleResume as g } from "./examples/index.js";
-import { defaultItem as P, itemSchema as R } from "./shared/item.js";
-import { idSchema as w } from "./shared/id.js";
-import { defaultUrl as D, urlSchema as E } from "./shared/url.js";
-import { awardSchema as v, defaultAward as z } from "./sections/award.js";
-import { certificationSchema as B, defaultCertification as L } from "./sections/certification.js";
+import { defaultSection as d, sectionSchema as h } from "./sections/index.js";
+import { Simple as g } from "./examples/index.js";
+import { defaultItem as C, itemSchema as j } from "./shared/item.js";
+import { idSchema as R } from "./shared/id.js";
+import { defaultUrl as w, urlSchema as D } from "./shared/url.js";
+import { awardSchema as I, defaultAward as v } from "./sections/award.js";
+import { certificationSchema as A, defaultCertification as B } from "./sections/certification.js";
 import { customSectionSchema as U, defaultCustomSection as V } from "./sections/custom-section.js";
 import { defaultEducation as y, educationSchema as F } from "./sections/education.js";
 import { defaultExperience as H, experienceSchema as J } from "./sections/experience.js";
-import { defaultInterest as N, interestSchema as O } from "./sections/interest.js";
-import { defaultLanguage as T, languageSchema as W } from "./sections/language.js";
-import { defaultProfile as Y, profileSchema as Z } from "./sections/profile.js";
-import { defaultProject as $, projectSchema as ee } from "./sections/project.js";
-import { defaultPublication as ae, publicationSchema as oe } from "./sections/publication.js";
-import { defaultReference as me, referenceSchema as ce } from "./sections/reference.js";
-import { defaultSkill as ie, skillSchema as ue } from "./sections/skill.js";
-import { defaultVolunteer as de, volunteerSchema as pe } from "./sections/volunteer.js";
-const d = e.object({
+import { defaultInterest as M, interestSchema as N } from "./sections/interest.js";
+import { defaultLanguage as Q, languageSchema as T } from "./sections/language.js";
+import { defaultProfile as X, profileSchema as Y } from "./sections/profile.js";
+import { defaultProject as _, projectSchema as $ } from "./sections/project.js";
+import { defaultPublication as te, publicationSchema as oe } from "./sections/publication.js";
+import { defaultReference as ae, referenceSchema as me } from "./sections/reference.js";
+import { defaultSkill as fe, skillSchema as ie } from "./sections/skill.js";
+import { defaultVolunteer as le, volunteerSchema as ne } from "./sections/volunteer.js";
+const n = e.object({
   basics: t,
   sections: m,
-  metadata: o
+  config: r
 }), p = {
-  basics: a,
+  basics: o,
   sections: c,
-  metadata: r
+  config: a
 };
 export {
-  v as awardSchema,
+  g as Simple,
+  I as awardSchema,
   t as basicsSchema,
-  B as certificationSchema,
-  n as customSchema,
+  A as certificationSchema,
   U as customSectionSchema,
-  z as defaultAward,
-  a as defaultBasics,
-  L as defaultCertification,
+  v as defaultAward,
+  o as defaultBasics,
+  B as defaultCertification,
   V as defaultCustomSection,
   y as defaultEducation,
   H as defaultExperience,
-  N as defaultInterest,
-  P as defaultItem,
-  T as defaultLanguage,
-  r as defaultMetadata,
-  Y as defaultProfile,
-  $ as defaultProject,
-  ae as defaultPublication,
-  me as defaultReference,
+  M as defaultInterest,
+  C as defaultItem,
+  Q as defaultLanguage,
+  X as defaultProfile,
+  _ as defaultProject,
+  te as defaultPublication,
+  ae as defaultReference,
+  a as defaultResumeConfig,
   p as defaultResumeData,
-  h as defaultSection,
+  d as defaultSection,
   c as defaultSections,
-  ie as defaultSkill,
-  D as defaultUrl,
-  de as defaultVolunteer,
+  fe as defaultSkill,
+  w as defaultUrl,
+  le as defaultVolunteer,
   F as educationSchema,
   J as experienceSchema,
-  w as idSchema,
-  O as interestSchema,
-  R as itemSchema,
-  W as languageSchema,
-  o as metadataSchema,
-  Z as profileSchema,
-  ee as projectSchema,
+  R as idSchema,
+  N as interestSchema,
+  j as itemSchema,
+  T as languageSchema,
+  Y as profileSchema,
+  $ as projectSchema,
   oe as publicationSchema,
-  ce as referenceSchema,
-  d as resumeDataSchema,
-  g as sampleResume,
-  x as sectionSchema,
+  me as referenceSchema,
+  r as resumeConfigSchema,
+  n as resumeDataSchema,
+  h as sectionSchema,
   m as sectionsSchema,
-  ue as skillSchema,
-  E as urlSchema,
-  pe as volunteerSchema
+  ie as skillSchema,
+  D as urlSchema,
+  ne as volunteerSchema
 };
