@@ -1,5 +1,5 @@
 import { defineComponent as r, ref as l, computed as i, openBlock as p, createElementBlock as a, normalizeStyle as c, createVNode as s, unref as m, normalizeProps as u, guardReactiveProps as y } from "vue";
-import { Icon as d } from "../node_modules/.pnpm/@iconify_vue@4.3.0_vue@3.5.13_typescript@5.6.3_/node_modules/@iconify/vue/dist/iconify.js";
+import { Icon as d } from "@iconify/vue";
 const v = /* @__PURE__ */ r({
   name: "IconPrimary",
   __name: "icon-primary",

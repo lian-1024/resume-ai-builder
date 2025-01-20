@@ -1,8 +1,8 @@
 import vue from '@vitejs/plugin-vue';
 import path from 'path';
+import { fileURLToPath } from 'url';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
-import { fileURLToPath } from 'url';
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -34,8 +34,10 @@ export default defineConfig({
       name: 'resume-components',
     },
     rollupOptions: {
-
-      external: ['vue'], // 将 Vue 设置为外部依赖
+      external: [
+        'vue',// 将 Vue 设置为外部依赖
+        '@iconify/vue',
+      ],
       output: [
         {
           format: 'esm', // ES Module 格式
@@ -45,7 +47,11 @@ export default defineConfig({
           // 保留原始模块结构，而不是将所有模块合并成一个大文件
           preserveModules: true,
           // 将 src 目录设置为模块的根目录，这样输出的文件就会直接从 src 的子目录开始，去掉 src 这一层。
-          preserveModulesRoot: 'src'
+          preserveModulesRoot: 'src',
+          globals: {
+            vue: "Vue",
+            "@iconify/vue": "IconifyVue",
+          }
         },
         {
           format: "cjs",
@@ -53,7 +59,11 @@ export default defineConfig({
           entryFileNames: '[name].js',
           exports: 'named',
           preserveModules: true,
-          preserveModulesRoot: 'src'
+          preserveModulesRoot: 'src',
+          globals: {
+            vue: "Vue",
+            "@iconify/vue": "IconifyVue",
+          }
         },
 
       ]
