@@ -13,6 +13,9 @@ coverage
 .output/
 out/
 build
+lib
+es
+
 
 # misc
 .DS_Store
