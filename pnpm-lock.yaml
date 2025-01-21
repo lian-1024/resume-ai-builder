@@ -215,12 +215,18 @@ importers:
       '@iconify-json/lucide':
         specifier: ^1.2.22
         version: 1.2.24
+      '@lianqq/resume-config':
+        specifier: workspace:*
+        version: link:../shared-config
       '@vitejs/plugin-vue':
         specifier: ^5.2.1
         version: 5.2.1(vite@6.0.7(@types/node@20.17.14)(jiti@2.4.2)(terser@5.37.0)(yaml@2.7.0))(vue@3.5.13(typescript@5.6.3))
       '@vue/tsconfig':
         specifier: ^0.7.0
         version: 0.7.0(typescript@5.6.3)(vue@3.5.13(typescript@5.6.3))
+      tailwindcss:
+        specifier: ^3.4.17
+        version: 3.4.17
       typescript:
         specifier: ~5.6.2
         version: 5.6.3
