@@ -14,6 +14,7 @@ export const Simple: ResumeData = {
     customFields: [],
     picture: {
       url: 'https://avatars.githubusercontent.com/u/93166482?s=48&v=4',
+      size: 100
     }
   },
   sections: {

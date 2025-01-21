@@ -22,15 +22,17 @@
     "build": "vue-tsc -b && vite build"
   },
   "dependencies": {
+    "@iconify/vue": "^4.3.0",
     "@lianqq/resume-schema": "workspace:*",
     "@lianqq/resume-ui": "workspace:*",
-    "@iconify/vue": "^4.3.0",
     "vue": "^3.5.13"
   },
   "devDependencies": {
+    "@lianqq/resume-config": "workspace:*",
     "@iconify-json/lucide": "^1.2.22",
     "@vitejs/plugin-vue": "^5.2.1",
     "@vue/tsconfig": "^0.7.0",
+    "tailwindcss": "^3.4.17",
     "typescript": "~5.6.2",
     "vite": "^6.0.5",
     "vite-plugin-dts": "^4.5.0",
