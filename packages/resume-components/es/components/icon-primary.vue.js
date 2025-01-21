@@ -1,6 +1,7 @@
-import { defineComponent as r, ref as l, computed as i, openBlock as p, createElementBlock as a, normalizeStyle as c, createVNode as s, unref as m, normalizeProps as u, guardReactiveProps as y } from "vue";
-import { Icon as d } from "@iconify/vue";
-const v = /* @__PURE__ */ r({
+import { defineComponent as r, computed as i, openBlock as l, createElementBlock as p, normalizeStyle as c, createVNode as a, unref as s, normalizeProps as m, guardReactiveProps as u } from "vue";
+import { Icon as y } from "@iconify/vue";
+import { useConfig as d } from "../componsables/useConfig.js";
+const g = /* @__PURE__ */ r({
   name: "IconPrimary",
   __name: "icon-primary",
   props: {
@@ -20,18 +21,18 @@ const v = /* @__PURE__ */ r({
     height: {},
     inline: { type: Boolean }
   },
-  setup(e) {
-    const o = e, t = l("#4672f1"), n = i(() => ({
-      color: t.value
+  setup(o) {
+    const e = o, { config: t } = d(), n = i(() => ({
+      color: t.value.primaryColor
     }));
-    return (f, B) => (p(), a("div", {
+    return (f, B) => (l(), p("div", {
       style: c(n.value)
     }, [
-      s(m(d), u(y(o)), null, 16)
+      a(s(y), m(u(e)), null, 16)
     ], 4));
   }
 });
 export {
-  v as default
+  g as default
 };
 //# sourceMappingURL=icon-primary.vue.js.map

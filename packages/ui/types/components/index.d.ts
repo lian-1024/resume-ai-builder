@@ -6,6 +6,7 @@ export * from './card';
 export * from './collapsible';
 export * from './color-mode-button';
 export * from './dropdown-menu';
+export * from './flex';
 export * from './input';
 export * from './menubar';
 export * from './navigation-menu';

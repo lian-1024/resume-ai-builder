@@ -3,7 +3,7 @@ import IconPrimary from '@/components/icon-primary.vue';
 import { Simple } from '@lianqq/resume-schema';
 import { } from '@lianqq/resume-ui';
 import { computed, ref, type CSSProperties } from 'vue';
-
+import LinkPrimary from '@/components/link-primary.vue';
 // 展示模拟数据 后续根据store渲染
 const basics = ref(Simple.basics)
 
@@ -26,15 +26,35 @@ const pictureSize = computed<CSSProperties>(() => ({
       <h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">
         {{ basics?.name }}
       </h3>
-      <div class="flex gap-4 items-center">
-        <small class="text-sm gap-1 font-medium leading-none flex ">
+      <div class="flex gap-4 gap-y-2 items-center flex-wrap">
+        <div class="flex items-center gap-1">
           <IconPrimary icon="lucide:mail" />
-          {{ basics?.email }}
-        </small>
-        <small class="text-sm gap-1 font-medium leading-none flex ">
+          <small class="text-sm font-medium leading-none whitespace-nowrap">
+            {{ basics?.email }}
+          </small>
+        </div>
+
+        <div class="flex items-center gap-1">
           <IconPrimary icon="lucide:phone" />
-          {{ basics?.phone }}
-        </small>
+          <small class="text-sm  font-medium leading-none whitespace-nowrap">
+            {{ basics?.phone }}
+          </small>
+        </div>
+
+        <div class="flex items-center gap-1">
+          <IconPrimary icon="lucide:map-pin" />
+          <small class="text-sm  font-medium leading-none whitespace-nowrap">
+            {{ basics?.location}}
+          </small>
+        </div>
+        <div class="flex items-center gap-1">
+          <IconPrimary icon="lucide:github" />
+          <small  class="text-sm  font-medium leading-none whitespace-nowrap">
+           <LinkPrimary :href="basics?.url?.href || ''">
+            {{ basics?.url?.href}}
+           </LinkPrimary>
+          </small>
+        </div>
       </div>
     </div>
     <div :style="pictureSize" class="h-auto bg-zinc-100">

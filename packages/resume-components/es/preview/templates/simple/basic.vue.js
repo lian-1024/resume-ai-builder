@@ -1,47 +1,68 @@
-import { defineComponent as _, ref as x, computed as c, openBlock as h, createElementBlock as g, normalizeStyle as m, createElementVNode as e, toDisplayString as l, createVNode as r, createTextVNode as p } from "vue";
-import v from "../../../assets/default-picture.jpg.js";
-import d from "../../../components/icon-primary.vue.js";
+import { defineComponent as g, ref as w, computed as u, openBlock as b, createElementBlock as y, normalizeStyle as h, createElementVNode as e, toDisplayString as i, createVNode as o, withCtx as S, createTextVNode as z } from "vue";
+import k from "../../../assets/default-picture.jpg.js";
+import l from "../../../components/icon-primary.vue.js";
 import "../../../packages/resume-schema/es/index.js";
 import "../../../packages/ui/es/node_modules/.pnpm/@iconify_vue@4.3.0_vue@3.5.13_typescript@5.6.3_/node_modules/@iconify/vue/dist/iconify.js";
 import "../../../packages/ui/es/node_modules/.pnpm/@vueuse_shared@12.4.0_typescript@5.6.3/node_modules/@vueuse/shared/index.js";
-import { Simple as b } from "../../../packages/resume-schema/es/examples/index.js";
-const y = { class: "flex flex-col gap-4" }, w = { class: "scroll-m-20 text-2xl font-semibold tracking-tight" }, S = { class: "flex gap-4 items-center" }, z = { class: "text-sm gap-1 font-medium leading-none flex" }, k = { class: "text-sm gap-1 font-medium leading-none flex" }, T = /* @__PURE__ */ _({
+import C from "../../../components/link-primary.vue.js";
+import { Simple as N } from "../../../packages/resume-schema/es/examples/index.js";
+const V = { class: "flex flex-col gap-4" }, $ = { class: "scroll-m-20 text-2xl font-semibold tracking-tight" }, j = { class: "flex gap-4 gap-y-2 items-center flex-wrap" }, B = { class: "flex items-center gap-1" }, E = { class: "text-sm font-medium leading-none whitespace-nowrap" }, D = { class: "flex items-center gap-1" }, T = { class: "text-sm font-medium leading-none whitespace-nowrap" }, q = { class: "flex items-center gap-1" }, A = { class: "text-sm font-medium leading-none whitespace-nowrap" }, F = { class: "flex items-center gap-1" }, G = { class: "text-sm font-medium leading-none whitespace-nowrap" }, R = /* @__PURE__ */ g({
   __name: "basic",
-  setup(N) {
-    const s = x(b.basics), u = c(() => ({
+  setup(H) {
+    const t = w(N.basics), x = u(() => ({
       display: "flex",
       justifyContent: "space-between",
       width: "100%"
-    })), f = c(() => {
-      var o, t;
+    })), v = u(() => {
+      var a, s;
       return {
-        width: `${(t = (o = s.value) == null ? void 0 : o.picture) == null ? void 0 : t.size}px`
+        width: `${(s = (a = t.value) == null ? void 0 : a.picture) == null ? void 0 : s.size}px`
       };
     });
-    return (o, t) => {
-      var i, a, n;
-      return h(), g("div", {
-        style: m(u.value)
+    return (a, s) => {
+      var n, c, m, r, p, d;
+      return b(), y("div", {
+        style: h(x.value)
       }, [
-        e("div", y, [
-          e("h3", w, l((i = s.value) == null ? void 0 : i.name), 1),
-          e("div", S, [
-            e("small", z, [
-              r(d, { icon: "lucide:mail" }),
-              p(" " + l((a = s.value) == null ? void 0 : a.email), 1)
+        e("div", V, [
+          e("h3", $, i((n = t.value) == null ? void 0 : n.name), 1),
+          e("div", j, [
+            e("div", B, [
+              o(l, { icon: "lucide:mail" }),
+              e("small", E, i((c = t.value) == null ? void 0 : c.email), 1)
             ]),
-            e("small", k, [
-              r(d, { icon: "lucide:phone" }),
-              p(" " + l((n = s.value) == null ? void 0 : n.phone), 1)
+            e("div", D, [
+              o(l, { icon: "lucide:phone" }),
+              e("small", T, i((m = t.value) == null ? void 0 : m.phone), 1)
+            ]),
+            e("div", q, [
+              o(l, { icon: "lucide:map-pin" }),
+              e("small", A, i((r = t.value) == null ? void 0 : r.location), 1)
+            ]),
+            e("div", F, [
+              o(l, { icon: "lucide:github" }),
+              e("small", G, [
+                o(C, {
+                  href: ((d = (p = t.value) == null ? void 0 : p.url) == null ? void 0 : d.href) || ""
+                }, {
+                  default: S(() => {
+                    var _, f;
+                    return [
+                      z(i((f = (_ = t.value) == null ? void 0 : _.url) == null ? void 0 : f.href), 1)
+                    ];
+                  }),
+                  _: 1
+                }, 8, ["href"])
+              ])
             ])
           ])
         ]),
         e("div", {
-          style: m(f.value),
+          style: h(v.value),
           class: "h-auto bg-zinc-100"
-        }, t[0] || (t[0] = [
+        }, s[0] || (s[0] = [
           e("img", {
-            src: v,
+            src: k,
             alt: "",
             class: "h-full w-full object-cover"
           }, null, -1)
@@ -51,6 +72,6 @@ const y = { class: "flex flex-col gap-4" }, w = { class: "scroll-m-20 text-2xl f
   }
 });
 export {
-  T as default
+  R as default
 };
 //# sourceMappingURL=basic.vue.js.map

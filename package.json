@@ -17,11 +17,12 @@
   "devDependencies": {
     "@commitlint/cli": "^19.6.1",
     "@commitlint/config-conventional": "^19.6.0",
+    "@lianqq/resume-config": "workspace:*",
     "cz-git": "^1.11.0",
+    "czg": "^1.11.0",
     "husky": "^9.1.7",
     "turbo": "^2.3.3",
-    "typescript": "^5.7.3",
-    "@lianqq/resume-config": "workspace:*"
+    "typescript": "^5.7.3"
   },
   "packageManager": "pnpm@8.15.6",
   "prettier": "@lianqq/resume-config/prettier"

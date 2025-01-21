@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { Icon, type IconProps } from "@iconify/vue";
-import { computed, ref, type CSSProperties } from 'vue';
+import { computed, type CSSProperties } from 'vue';
+import { useConfig } from '@/componsables/useConfig';
 
 defineOptions({
   name: "IconPrimary"
@@ -8,10 +9,10 @@ defineOptions({
 
 const props = defineProps<IconProps>()
 
-const primaryColor = ref<string>("#4672f1")
+const { config } = useConfig()
 
 const styles = computed<CSSProperties>(() => ({
-  color: primaryColor.value
+  color: config.value.primaryColor
 }))
 
 </script>
