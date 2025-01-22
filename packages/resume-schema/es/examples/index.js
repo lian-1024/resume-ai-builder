@@ -4,7 +4,6 @@ const e = {
     headline: "创新的前端开发者",
     email: "zhangwei@example.com",
     phone: "(010) 1234-5678",
-    location: "北京市, 中国",
     url: {
       label: "",
       href: "https://github.com/lian-1024"
@@ -13,6 +12,12 @@ const e = {
     picture: {
       url: "https://avatars.githubusercontent.com/u/93166482?s=48&v=4",
       size: 100
+    },
+    intention: {
+      currentStatus: "在职",
+      positionTitle: "前端开发工程师",
+      salary: "10000-20000元/月",
+      city: "北京"
     }
   },
   sections: {

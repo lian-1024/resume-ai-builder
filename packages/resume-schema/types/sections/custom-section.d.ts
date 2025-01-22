@@ -24,12 +24,12 @@ export declare const customSectionSchema: z.ZodObject<z.objectUtil.extendShape<{
     visible?: boolean;
     date?: string;
     name?: string;
-    location?: string;
     url?: {
         label?: string;
         href?: string;
     };
     summary?: string;
+    location?: string;
     keywords?: string[];
     description?: string;
 }, {
@@ -37,12 +37,12 @@ export declare const customSectionSchema: z.ZodObject<z.objectUtil.extendShape<{
     visible?: boolean;
     date?: string;
     name?: string;
-    location?: string;
     url?: {
         label?: string;
         href?: string;
     };
     summary?: string;
+    location?: string;
     keywords?: string[];
     description?: string;
 }>;

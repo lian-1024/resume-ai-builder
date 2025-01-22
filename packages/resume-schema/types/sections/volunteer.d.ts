@@ -22,25 +22,25 @@ export declare const volunteerSchema: z.ZodObject<z.objectUtil.extendShape<{
     id?: string;
     visible?: boolean;
     date?: string;
-    location?: string;
     url?: {
         label?: string;
         href?: string;
     };
     summary?: string;
     position?: string;
+    location?: string;
     organization?: string;
 }, {
     id?: string;
     visible?: boolean;
     date?: string;
-    location?: string;
     url?: {
         label?: string;
         href?: string;
     };
     summary?: string;
     position?: string;
+    location?: string;
     organization?: string;
 }>;
 export type Volunteer = z.infer<typeof volunteerSchema>;

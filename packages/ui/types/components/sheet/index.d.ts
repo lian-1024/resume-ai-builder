@@ -8,6 +8,6 @@ export { default as SheetHeader } from './SheetHeader.vue';
 export { default as SheetTitle } from './SheetTitle.vue';
 export { default as SheetTrigger } from './SheetTrigger.vue';
 export declare const sheetVariants: (props?: ({
-    side?: "top" | "right" | "bottom" | "left" | null | undefined;
+    side?: "left" | "right" | "top" | "bottom" | null | undefined;
 } & import('class-variance-authority/types').ClassProp) | undefined) => string;
 export type SheetVariants = VariantProps<typeof sheetVariants>;

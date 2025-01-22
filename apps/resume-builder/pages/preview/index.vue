@@ -7,7 +7,7 @@ import { Suspense } from 'vue';
 const pageSize = 'a4'
 
 // 渲染的section
-const sections = ref<SectionKey[]>(['basics'])
+const sections = ref<SectionKey[]>(['basics','skills'])
 
 // 异步加载模板组件
 const ResumeTemplate = defineAsyncComponent(async () => {

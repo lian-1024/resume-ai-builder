@@ -14,7 +14,7 @@ declare function __VLS_template(): {
 };
 type __VLS_TemplateResult = ReturnType<typeof __VLS_template>;
 declare const __VLS_component: import('vue').DefineComponent<__VLS_Props, {}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {}, string, import('vue').PublicProps, Readonly<__VLS_Props> & Readonly<{}>, {
-    size: "sm" | "lg" | "default" | null;
+    size: "default" | "sm" | "lg" | null;
     as: import('radix-vue').AsTag | Component;
     variant: "default" | "outline" | null;
 }, {}, {}, {}, string, import('vue').ComponentProvideOptions, false, {}, any>;

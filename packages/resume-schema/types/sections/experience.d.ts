@@ -22,7 +22,6 @@ export declare const experienceSchema: z.ZodObject<z.objectUtil.extendShape<{
     id?: string;
     visible?: boolean;
     date?: string;
-    location?: string;
     url?: {
         label?: string;
         href?: string;
@@ -30,11 +29,11 @@ export declare const experienceSchema: z.ZodObject<z.objectUtil.extendShape<{
     summary?: string;
     company?: string;
     position?: string;
+    location?: string;
 }, {
     id?: string;
     visible?: boolean;
     date?: string;
-    location?: string;
     url?: {
         label?: string;
         href?: string;
@@ -42,6 +41,7 @@ export declare const experienceSchema: z.ZodObject<z.objectUtil.extendShape<{
     summary?: string;
     company?: string;
     position?: string;
+    location?: string;
 }>;
 export type Experience = z.infer<typeof experienceSchema>;
 export declare const defaultExperience: Experience;

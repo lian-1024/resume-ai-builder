@@ -1,25 +1,28 @@
 <script lang="ts" setup>
 import type { SectionKey } from '@lianqq/resume-schema';
 import type { Component } from 'vue';
-import Basic from './basic.vue';
+import Basics from './basic.vue';
+import Wrapper from '@/preview/templates/wrapper.vue';
 
+import Skills from './skill.vue';
 defineProps<{
   sections: SectionKey[]
 }>()
 
 // 获取根据组件key渲染对应的组件
 const getSectionMap: Partial<Record<SectionKey, Component>> = {
-  'basics': Basic
+  'basics': Basics,
+  'skills': Skills
 }
 
 </script>
 
 <template>
-  <div class="flex flex-col">
+  <Wrapper>
     <template v-for="section in sections">
       <component :is="getSectionMap[section]" />
     </template>
-  </div>
+  </Wrapper>
 </template>
 
 <style lang="less" scoped>

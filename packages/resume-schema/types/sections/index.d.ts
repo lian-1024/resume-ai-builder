@@ -334,7 +334,6 @@ export declare const sectionsSchema: z.ZodObject<{
             id?: string;
             visible?: boolean;
             date?: string;
-            location?: string;
             url?: {
                 label?: string;
                 href?: string;
@@ -342,11 +341,11 @@ export declare const sectionsSchema: z.ZodObject<{
             summary?: string;
             company?: string;
             position?: string;
+            location?: string;
         }, {
             id?: string;
             visible?: boolean;
             date?: string;
-            location?: string;
             url?: {
                 label?: string;
                 href?: string;
@@ -354,6 +353,7 @@ export declare const sectionsSchema: z.ZodObject<{
             summary?: string;
             company?: string;
             position?: string;
+            location?: string;
         }>, "many">;
     }>, "strip", z.ZodTypeAny, {
         id?: "experience";
@@ -365,7 +365,6 @@ export declare const sectionsSchema: z.ZodObject<{
             id?: string;
             visible?: boolean;
             date?: string;
-            location?: string;
             url?: {
                 label?: string;
                 href?: string;
@@ -373,6 +372,7 @@ export declare const sectionsSchema: z.ZodObject<{
             summary?: string;
             company?: string;
             position?: string;
+            location?: string;
         }[];
     }, {
         id?: "experience";
@@ -384,7 +384,6 @@ export declare const sectionsSchema: z.ZodObject<{
             id?: string;
             visible?: boolean;
             date?: string;
-            location?: string;
             url?: {
                 label?: string;
                 href?: string;
@@ -392,6 +391,7 @@ export declare const sectionsSchema: z.ZodObject<{
             summary?: string;
             company?: string;
             position?: string;
+            location?: string;
         }[];
     }>;
     volunteer: z.ZodObject<z.objectUtil.extendShape<{
@@ -424,25 +424,25 @@ export declare const sectionsSchema: z.ZodObject<{
             id?: string;
             visible?: boolean;
             date?: string;
-            location?: string;
             url?: {
                 label?: string;
                 href?: string;
             };
             summary?: string;
             position?: string;
+            location?: string;
             organization?: string;
         }, {
             id?: string;
             visible?: boolean;
             date?: string;
-            location?: string;
             url?: {
                 label?: string;
                 href?: string;
             };
             summary?: string;
             position?: string;
+            location?: string;
             organization?: string;
         }>, "many">;
     }>, "strip", z.ZodTypeAny, {
@@ -455,13 +455,13 @@ export declare const sectionsSchema: z.ZodObject<{
             id?: string;
             visible?: boolean;
             date?: string;
-            location?: string;
             url?: {
                 label?: string;
                 href?: string;
             };
             summary?: string;
             position?: string;
+            location?: string;
             organization?: string;
         }[];
     }, {
@@ -474,13 +474,13 @@ export declare const sectionsSchema: z.ZodObject<{
             id?: string;
             visible?: boolean;
             date?: string;
-            location?: string;
             url?: {
                 label?: string;
                 href?: string;
             };
             summary?: string;
             position?: string;
+            location?: string;
             organization?: string;
         }[];
     }>;
@@ -1059,7 +1059,6 @@ export declare const sectionsSchema: z.ZodObject<{
             id?: string;
             visible?: boolean;
             date?: string;
-            location?: string;
             url?: {
                 label?: string;
                 href?: string;
@@ -1067,6 +1066,7 @@ export declare const sectionsSchema: z.ZodObject<{
             summary?: string;
             company?: string;
             position?: string;
+            location?: string;
         }[];
     };
     volunteer?: {
@@ -1079,13 +1079,13 @@ export declare const sectionsSchema: z.ZodObject<{
             id?: string;
             visible?: boolean;
             date?: string;
-            location?: string;
             url?: {
                 label?: string;
                 href?: string;
             };
             summary?: string;
             position?: string;
+            location?: string;
             organization?: string;
         }[];
     };
@@ -1284,7 +1284,6 @@ export declare const sectionsSchema: z.ZodObject<{
             id?: string;
             visible?: boolean;
             date?: string;
-            location?: string;
             url?: {
                 label?: string;
                 href?: string;
@@ -1292,6 +1291,7 @@ export declare const sectionsSchema: z.ZodObject<{
             summary?: string;
             company?: string;
             position?: string;
+            location?: string;
         }[];
     };
     volunteer?: {
@@ -1304,13 +1304,13 @@ export declare const sectionsSchema: z.ZodObject<{
             id?: string;
             visible?: boolean;
             date?: string;
-            location?: string;
             url?: {
                 label?: string;
                 href?: string;
             };
             summary?: string;
             position?: string;
+            location?: string;
             organization?: string;
         }[];
     };

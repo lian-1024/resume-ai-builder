@@ -1,7 +1,7 @@
-import { MenubarContentProps } from 'radix-vue';
-import { HTMLAttributes } from 'vue';
-type __VLS_Props = MenubarContentProps & {
-    class?: HTMLAttributes['class'];
+type __VLS_Props = {
+    icon?: string;
+    text?: string;
+    href?: string;
 };
 declare function __VLS_template(): {
     attrs: Partial<{}>;
@@ -9,14 +9,13 @@ declare function __VLS_template(): {
         default?(_: {}): any;
     };
     refs: {};
-    rootEl: any;
+    rootEl: HTMLDivElement;
 };
 type __VLS_TemplateResult = ReturnType<typeof __VLS_template>;
 declare const __VLS_component: import('vue').DefineComponent<__VLS_Props, {}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {}, string, import('vue').PublicProps, Readonly<__VLS_Props> & Readonly<{}>, {
-    align: import('node_modules/radix-vue/dist/Popper').Align;
-    sideOffset: number;
-    alignOffset: number;
-}, {}, {}, {}, string, import('vue').ComponentProvideOptions, false, {}, any>;
+    text: string;
+    icon: string;
+}, {}, {}, {}, string, import('vue').ComponentProvideOptions, false, {}, HTMLDivElement>;
 declare const _default: __VLS_WithTemplateSlots<typeof __VLS_component, __VLS_TemplateResult["slots"]>;
 export default _default;
 type __VLS_WithTemplateSlots<T, S> = T & {

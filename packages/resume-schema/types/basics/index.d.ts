@@ -4,7 +4,6 @@ export declare const basicsSchema: z.ZodObject<{
     headline: z.ZodString;
     email: z.ZodUnion<[z.ZodLiteral<"">, z.ZodString]>;
     phone: z.ZodString;
-    location: z.ZodString;
     url: z.ZodObject<{
         label: z.ZodString;
         href: z.ZodUnion<[z.ZodLiteral<"">, z.ZodString]>;
@@ -41,12 +40,27 @@ export declare const basicsSchema: z.ZodObject<{
         url?: string;
         size?: number;
     }>;
+    intention: z.ZodObject<{
+        currentStatus: z.ZodString;
+        positionTitle: z.ZodString;
+        salary: z.ZodString;
+        city: z.ZodString;
+    }, "strip", z.ZodTypeAny, {
+        currentStatus?: string;
+        positionTitle?: string;
+        salary?: string;
+        city?: string;
+    }, {
+        currentStatus?: string;
+        positionTitle?: string;
+        salary?: string;
+        city?: string;
+    }>;
 }, "strip", z.ZodTypeAny, {
     name?: string;
     headline?: string;
     email?: string;
     phone?: string;
-    location?: string;
     url?: {
         label?: string;
         href?: string;
@@ -60,13 +74,18 @@ export declare const basicsSchema: z.ZodObject<{
     picture?: {
         url?: string;
         size?: number;
+    };
+    intention?: {
+        currentStatus?: string;
+        positionTitle?: string;
+        salary?: string;
+        city?: string;
     };
 }, {
     name?: string;
     headline?: string;
     email?: string;
     phone?: string;
-    location?: string;
     url?: {
         label?: string;
         href?: string;
@@ -80,6 +99,12 @@ export declare const basicsSchema: z.ZodObject<{
     picture?: {
         url?: string;
         size?: number;
+    };
+    intention?: {
+        currentStatus?: string;
+        positionTitle?: string;
+        salary?: string;
+        city?: string;
     };
 }>;
 export type Basics = z.infer<typeof basicsSchema>;
