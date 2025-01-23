@@ -17,23 +17,23 @@ export declare const referenceSchema: z.ZodObject<z.objectUtil.extendShape<{
         href?: string;
     }>;
 }>, "strip", z.ZodTypeAny, {
-    id?: string;
-    visible?: boolean;
     name?: string;
     url?: {
         label?: string;
         href?: string;
     };
+    id?: string;
+    visible?: boolean;
     summary?: string;
     description?: string;
 }, {
-    id?: string;
-    visible?: boolean;
     name?: string;
     url?: {
         label?: string;
         href?: string;
     };
+    id?: string;
+    visible?: boolean;
     summary?: string;
     description?: string;
 }>;

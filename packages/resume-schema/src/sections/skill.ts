@@ -7,7 +7,6 @@ export const skillSchema = itemSchema.extend({
   name: z.string(),
   description: z.string(),
   level: z.union([z.number().min(0).max(5).default(1), z.string()]),
-  keywords: z.array(z.string()).default([])
 })
 
 // Type
@@ -19,5 +18,4 @@ export const defaultSkill: Skill = {
   name: '',
   description: '',
   level: 1,
-  keywords: []
 }

@@ -17,23 +17,23 @@ export declare const profileSchema: z.ZodObject<z.objectUtil.extendShape<{
         href?: string;
     }>;
 }>, "strip", z.ZodTypeAny, {
-    id?: string;
-    visible?: boolean;
-    icon?: string;
     url?: {
         label?: string;
         href?: string;
     };
+    id?: string;
+    icon?: string;
+    visible?: boolean;
     network?: string;
     username?: string;
 }, {
-    id?: string;
-    visible?: boolean;
-    icon?: string;
     url?: {
         label?: string;
         href?: string;
     };
+    id?: string;
+    icon?: string;
+    visible?: boolean;
     network?: string;
     username?: string;
 }>;

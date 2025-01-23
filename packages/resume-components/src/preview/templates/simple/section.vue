@@ -25,7 +25,7 @@ const titleBgStyles = computed<CSSProperties>(() => ({
 
 const titleWrapperStyles = computed<CSSProperties>(() => ({
   borderLeftColor: config.value.primaryColor,
-  borderLeftWidth: "4px",
+  borderLeftWidth: "6px",
   borderLeftStyle: "solid",
 }))
 
@@ -33,7 +33,7 @@ const titleWrapperStyles = computed<CSSProperties>(() => ({
 
 <template>
   <div class="flex flex-col gap-2 w-full" >
-    <div class="flex flex-col gap-2 relative p-2" :style="titleWrapperStyles">
+    <div class="flex flex-col gap-2 relative px-2 py-1" :style="titleWrapperStyles">
 
       <h1 class="text-2xl font-bold pb-2" :style="titleStyles">{{ title }}</h1>
       <div class="absolute top-0 left-0 w-full h-full" :style="titleBgStyles"></div>

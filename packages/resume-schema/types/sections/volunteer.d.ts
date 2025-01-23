@@ -19,25 +19,25 @@ export declare const volunteerSchema: z.ZodObject<z.objectUtil.extendShape<{
         href?: string;
     }>;
 }>, "strip", z.ZodTypeAny, {
-    id?: string;
-    visible?: boolean;
     date?: string;
     url?: {
         label?: string;
         href?: string;
     };
+    id?: string;
+    visible?: boolean;
     summary?: string;
     position?: string;
     location?: string;
     organization?: string;
 }, {
-    id?: string;
-    visible?: boolean;
     date?: string;
     url?: {
         label?: string;
         href?: string;
     };
+    id?: string;
+    visible?: boolean;
     summary?: string;
     position?: string;
     location?: string;

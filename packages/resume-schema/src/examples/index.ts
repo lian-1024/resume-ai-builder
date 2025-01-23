@@ -253,7 +253,7 @@ export const Simple: ResumeData = {
       ]
     },
     skills: {
-      name: '技能',
+      name: '专业技能',
       columns: 1,
       separateLinks: true,
       visible: true,
@@ -262,27 +262,10 @@ export const Simple: ResumeData = {
         {
           id: 'hn0keriukh6c0ojktl9gsgjm',
           visible: true,
-          name: '网络技术',
-          description: '高级',
+          name: '前端技术',
+          description: '- 精通HTML5、CSS3、JavaScript、TypeScript、Vue.js、React.js、Node.js、Webpack、Git、Jenkins、Docker、JIRA\n\n- 熟悉Vue3、React18、Vite、Webpack、Git、Jenkins、Docker、JIRA\n\n- 了解Vue2、React17、Webpack、Git、Jenkins、Docker、JIRA\n\n- 具备Vue2、React17、Webpack、Git、Jenkins、Docker、JIRA',
           level: 0,
-          keywords: ['HTML5', 'JavaScript', 'PHP', 'Python']
         },
-        {
-          id: 'r8c3y47vykausqrgmzwg5pur',
-          visible: true,
-          name: '网络框架',
-          description: '中级',
-          level: 0,
-          keywords: ['React.js', 'Angular', 'Vue.js', 'Laravel', 'Django']
-        },
-        {
-          id: 'b5l75aseexqv17quvqgh73fe',
-          visible: true,
-          name: '工具',
-          description: '中级',
-          level: 0,
-          keywords: ['Webpack', 'Git', 'Jenkins', 'Docker', 'JIRA']
-        }
       ]
     },
     // custom: {}

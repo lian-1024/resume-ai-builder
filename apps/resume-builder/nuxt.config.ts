@@ -1,3 +1,4 @@
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
@@ -12,5 +13,5 @@ export default defineNuxtConfig({
   },
 
   modules: ["@nuxtjs/tailwindcss", "@nuxt/icon"],
-  css: ["~/assets/css/index.css", "@lianqq/resume-ui/styles.css"],
+  css: ["~/assets/css/index.css", "@lianqq/resume-ui/styles.css","@lianqq/resume-components/styles.css"],
 });

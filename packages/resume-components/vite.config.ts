@@ -28,15 +28,18 @@ export default defineConfig({
     lib: {
       // 指定多入口文件
       entry: {
+        '':path.resolve(__dirname,'src/index.ts'),
         builder: path.resolve(__dirname, 'src/builder/index.ts'),
         preview: path.resolve(__dirname, 'src/preview/index.ts'),
       },
       name: 'resume-components',
+      cssFileName:"styles"
     },
     rollupOptions: {
       external: [
         'vue',// 将 Vue 设置为外部依赖
         '@iconify/vue',
+        'md-editor-v3'
       ],
       output: [
         {

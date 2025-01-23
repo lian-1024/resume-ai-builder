@@ -2,7 +2,6 @@
 import { getTemplate } from '@lianqq/resume-components/preview';
 import type { SectionKey } from '@lianqq/resume-schema';
 import { Suspense } from 'vue';
-
 // 页面大小
 const pageSize = 'a4'
 

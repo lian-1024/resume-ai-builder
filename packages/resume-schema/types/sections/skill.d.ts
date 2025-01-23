@@ -6,19 +6,16 @@ export declare const skillSchema: z.ZodObject<z.objectUtil.extendShape<{
     name: z.ZodString;
     description: z.ZodString;
     level: z.ZodUnion<[z.ZodDefault<z.ZodNumber>, z.ZodString]>;
-    keywords: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
 }>, "strip", z.ZodTypeAny, {
+    name?: string;
     id?: string;
     visible?: boolean;
-    name?: string;
-    keywords?: string[];
     description?: string;
     level?: string | number;
 }, {
+    name?: string;
     id?: string;
     visible?: boolean;
-    name?: string;
-    keywords?: string[];
     description?: string;
     level?: string | number;
 }>;

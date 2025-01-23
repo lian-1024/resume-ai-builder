@@ -16,6 +16,10 @@
       "types": "./types/builder/index.d.ts",
       "import": "./es/builder.js",
       "require": "./lib/builder.js"
+    },
+    "./styles.css": {
+      "import": "./es/styles.css",
+      "require": "./lib/styles.css"
     }
   },
   "scripts": {
@@ -25,7 +29,9 @@
     "@iconify/vue": "^4.3.0",
     "@lianqq/resume-schema": "workspace:*",
     "@lianqq/resume-ui": "workspace:*",
-    "vue": "^3.5.13"
+    "md-editor-v3": "^5.2.1",
+    "vue": "^3.5.13",
+    "vue-draggable-plus": "^0.6.0"
   },
   "devDependencies": {
     "@iconify-json/lucide": "^1.2.22",

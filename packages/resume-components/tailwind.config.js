@@ -1,8 +1,8 @@
-import sharedConfig from '@lianqq/resume-config/tailwind'
+import sharedConfig from '@lianqq/resume-config/tailwind/vue'
 
 /** @type {import('tailwindcss').Config} */
 export default {
-  presets: [sharedConfig],
+  // presets: [sharedConfig],
   content: [
     "./src/**/*.{vue,js,ts,jsx,tsx}",  // 包含 src 目录下所有的 Vue、JS、TS 等文件
     "./index.html"
@@ -11,5 +11,6 @@ export default {
     extend: {},
   },
   plugins: [],
+ 
 }
 

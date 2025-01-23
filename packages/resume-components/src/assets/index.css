@@ -1,4 +1,10 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
+
+
+
+.md-editor-preview-wrapper {
+    padding: 0 !important;
+}
 

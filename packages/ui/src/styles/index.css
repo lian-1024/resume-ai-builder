@@ -3,6 +3,8 @@
 @tailwind utilities;
 
 
+
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -64,6 +66,11 @@
     --input:217.2 32.6% 17.5%;
     --ring:224.3 76.3% 48%;
   }
+
+  /* ul li {
+    @apply list-disc ml-4
+
+  } */
 }
 
 

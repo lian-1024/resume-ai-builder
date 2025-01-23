@@ -13,5 +13,8 @@
     height: 210mm; /* A5 高度 */
   }
 
+  ul li {
+    @apply list-disc 
+  }
 
 }

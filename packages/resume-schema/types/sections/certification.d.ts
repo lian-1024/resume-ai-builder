@@ -18,25 +18,25 @@ export declare const certificationSchema: z.ZodObject<z.objectUtil.extendShape<{
         href?: string;
     }>;
 }>, "strip", z.ZodTypeAny, {
-    id?: string;
-    visible?: boolean;
-    date?: string;
     name?: string;
+    date?: string;
     url?: {
         label?: string;
         href?: string;
     };
+    id?: string;
+    visible?: boolean;
     summary?: string;
     issuer?: string;
 }, {
-    id?: string;
-    visible?: boolean;
-    date?: string;
     name?: string;
+    date?: string;
     url?: {
         label?: string;
         href?: string;
     };
+    id?: string;
+    visible?: boolean;
     summary?: string;
     issuer?: string;
 }>;

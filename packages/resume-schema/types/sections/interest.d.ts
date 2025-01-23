@@ -6,14 +6,14 @@ export declare const interestSchema: z.ZodObject<z.objectUtil.extendShape<{
     name: z.ZodString;
     keywords: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
 }>, "strip", z.ZodTypeAny, {
+    name?: string;
     id?: string;
     visible?: boolean;
-    name?: string;
     keywords?: string[];
 }, {
+    name?: string;
     id?: string;
     visible?: boolean;
-    name?: string;
     keywords?: string[];
 }>;
 export type Interest = z.infer<typeof interestSchema>;

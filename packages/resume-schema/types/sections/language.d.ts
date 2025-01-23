@@ -7,15 +7,15 @@ export declare const languageSchema: z.ZodObject<z.objectUtil.extendShape<{
     description: z.ZodString;
     level: z.ZodUnion<[z.ZodDefault<z.ZodNumber>, z.ZodString]>;
 }>, "strip", z.ZodTypeAny, {
+    name?: string;
     id?: string;
     visible?: boolean;
-    name?: string;
     description?: string;
     level?: string | number;
 }, {
+    name?: string;
     id?: string;
     visible?: boolean;
-    name?: string;
     description?: string;
     level?: string | number;
 }>;
