@@ -9,12 +9,13 @@ import {
 
 // Schema
 export const educationSchema = itemSchema.extend({
-  institution: z.string(),
-  studyType: z.string(),
-  area: z.string(),
-  score: z.string(),
-  date: z.string(),
-  summary: z.string(),
+  school: z.string(), // 学校
+  major: z.string(), // 专业
+  degree: z.string(), // 学历
+  startDate: z.string(), // 开始时间
+  endDate: z.string(), // 结束时间
+  studyType: z.string(), // 学历类型
+  summary: z.string(), // 在校经历
   url: urlSchema
 })
 
@@ -25,11 +26,12 @@ export type Education = z.infer<typeof educationSchema>
 export const defaultEducation: Education = {
   ...defaultItem,
   id: '',
-  institution: '',
+  school: '',
+  major: '',
+  degree: '',
+  startDate: '',
+  endDate: '',
   studyType: '',
-  area: '',
-  score: '',
-  date: '',
   summary: '',
   url: defaultUrl
 }

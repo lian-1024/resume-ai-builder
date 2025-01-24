@@ -3,8 +3,12 @@ import type { SectionKey } from '@lianqq/resume-schema';
 import type { Component } from 'vue';
 import Basics from './basic.vue';
 import Wrapper from '@/preview/templates/wrapper.vue';
-
 import Skills from './skill.vue';
+import Education from './education.vue';
+defineOptions({
+  name: "Simple"
+})
+
 defineProps<{
   sections: SectionKey[]
 }>()
@@ -12,7 +16,8 @@ defineProps<{
 // 获取根据组件key渲染对应的组件
 const getSectionMap: Partial<Record<SectionKey, Component>> = {
   'basics': Basics,
-  'skills': Skills
+  'skills': Skills,
+  "education": Education
 }
 
 </script>

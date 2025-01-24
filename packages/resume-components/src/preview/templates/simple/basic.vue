@@ -6,6 +6,10 @@ import BasicsInfoItem from '@/components/basics/info-item.vue';
 // 展示模拟数据 后续根据store渲染
 const basics = ref(Simple.basics)
 
+defineOptions({
+  name: "SimpleBasic"
+})
+
 const wrapperStyles = computed<CSSProperties>(() => ({
   display: 'flex',
   justifyContent: 'space-between',

@@ -1,6 +1,6 @@
 import { defineComponent as r, computed as i, openBlock as l, createElementBlock as p, normalizeStyle as c, createVNode as a, unref as s, normalizeProps as m, guardReactiveProps as u } from "vue";
 import { Icon as y } from "@iconify/vue";
-import { useConfig as d } from "../componsables/useConfig.js";
+import { useConfig as d } from "../composables/use-config.js";
 const g = /* @__PURE__ */ r({
   name: "IconPrimary",
   __name: "icon-primary",

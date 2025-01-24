@@ -1,27 +1,36 @@
 import { z as t } from "zod";
 import { itemSchema as r, defaultItem as e } from "../shared/item.js";
 import "../shared/id.js";
-import { urlSchema as i, defaultUrl as a } from "../shared/url.js";
-const u = r.extend({
-  institution: t.string(),
+import { urlSchema as a, defaultUrl as m } from "../shared/url.js";
+const d = r.extend({
+  school: t.string(),
+  // 学校
+  major: t.string(),
+  // 专业
+  degree: t.string(),
+  // 学历
+  startDate: t.string(),
+  // 开始时间
+  endDate: t.string(),
+  // 结束时间
   studyType: t.string(),
-  area: t.string(),
-  score: t.string(),
-  date: t.string(),
+  // 学历类型
   summary: t.string(),
-  url: i
-}), d = {
+  // 在校经历
+  url: a
+}), u = {
   ...e,
   id: "",
-  institution: "",
+  school: "",
+  major: "",
+  degree: "",
+  startDate: "",
+  endDate: "",
   studyType: "",
-  area: "",
-  score: "",
-  date: "",
   summary: "",
-  url: a
+  url: m
 };
 export {
-  d as defaultEducation,
-  u as educationSchema
+  u as defaultEducation,
+  d as educationSchema
 };

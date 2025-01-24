@@ -3,11 +3,12 @@ export declare const educationSchema: z.ZodObject<z.objectUtil.extendShape<{
     id: z.ZodDefault<z.ZodString>;
     visible: z.ZodBoolean;
 }, {
-    institution: z.ZodString;
+    school: z.ZodString;
+    major: z.ZodString;
+    degree: z.ZodString;
+    startDate: z.ZodString;
+    endDate: z.ZodString;
     studyType: z.ZodString;
-    area: z.ZodString;
-    score: z.ZodString;
-    date: z.ZodString;
     summary: z.ZodString;
     url: z.ZodObject<{
         label: z.ZodString;
@@ -20,31 +21,33 @@ export declare const educationSchema: z.ZodObject<z.objectUtil.extendShape<{
         href?: string;
     }>;
 }>, "strip", z.ZodTypeAny, {
-    date?: string;
     url?: {
         label?: string;
         href?: string;
     };
     id?: string;
     visible?: boolean;
-    summary?: string;
-    institution?: string;
+    school?: string;
+    major?: string;
+    degree?: string;
+    startDate?: string;
+    endDate?: string;
     studyType?: string;
-    area?: string;
-    score?: string;
+    summary?: string;
 }, {
-    date?: string;
     url?: {
         label?: string;
         href?: string;
     };
     id?: string;
     visible?: boolean;
-    summary?: string;
-    institution?: string;
+    school?: string;
+    major?: string;
+    degree?: string;
+    startDate?: string;
+    endDate?: string;
     studyType?: string;
-    area?: string;
-    score?: string;
+    summary?: string;
 }>;
 export type Education = z.infer<typeof educationSchema>;
 export declare const defaultEducation: Education;

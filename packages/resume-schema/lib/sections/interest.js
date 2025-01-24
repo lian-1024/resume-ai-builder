@@ -1,1 +1,0 @@
-"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const e=require("zod"),t=require("../shared/item.js");require("../shared/id.js");require("../shared/url.js");const r=t.itemSchema.extend({name:e.z.string(),keywords:e.z.array(e.z.string()).default([])}),n={...t.defaultItem,name:"",keywords:[]};exports.defaultInterest=n;exports.interestSchema=r;

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useConfig } from '@/componsables/useConfig';
+import { useConfig } from '@/composables/use-config';
 import { computed, type CSSProperties } from 'vue';
 
 const { config } = useConfig()

@@ -1,12 +1,13 @@
 <script lang="ts" setup>
 import { getTemplate } from '@lianqq/resume-components/preview';
 import type { SectionKey } from '@lianqq/resume-schema';
+import {ColorModeButton} from '@lianqq/resume-ui'
 import { Suspense } from 'vue';
 // 页面大小
 const pageSize = 'a4'
 
 // 渲染的section
-const sections = ref<SectionKey[]>(['basics','skills'])
+const sections = ref<SectionKey[]>(['basics','skills','education'])
 
 // 异步加载模板组件
 const ResumeTemplate = defineAsyncComponent(async () => {

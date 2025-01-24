@@ -1,26 +1,29 @@
-import { defineComponent as s, openBlock as e, createBlock as t, withCtx as c, createElementBlock as i, Fragment as m, renderList as a, resolveDynamicComponent as p } from "vue";
+import { defineComponent as m, openBlock as e, createBlock as n, withCtx as i, createElementBlock as s, Fragment as c, renderList as a, resolveDynamicComponent as p } from "vue";
 import _ from "./basic.vue.js";
 import l from "../wrapper.vue.js";
 import f from "./skill.vue.js";
-const $ = /* @__PURE__ */ s({
+import u from "./education.vue.js";
+const h = /* @__PURE__ */ m({
+  name: "Simple",
   __name: "index",
   props: {
     sections: {}
   },
-  setup(u) {
-    const n = {
+  setup(d) {
+    const t = {
       basics: _,
-      skills: f
+      skills: f,
+      education: u
     };
-    return (o, d) => (e(), t(l, null, {
-      default: c(() => [
-        (e(!0), i(m, null, a(o.sections, (r) => (e(), t(p(n[r])))), 256))
+    return (o, k) => (e(), n(l, null, {
+      default: i(() => [
+        (e(!0), s(c, null, a(o.sections, (r) => (e(), n(p(t[r])))), 256))
       ]),
       _: 1
     }));
   }
 });
 export {
-  $ as default
+  h as default
 };
 //# sourceMappingURL=index.vue.js.map

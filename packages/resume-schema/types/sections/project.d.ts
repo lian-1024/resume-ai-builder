@@ -28,8 +28,8 @@ export declare const projectSchema: z.ZodObject<z.objectUtil.extendShape<{
     id?: string;
     visible?: boolean;
     summary?: string;
-    keywords?: string[];
     description?: string;
+    keywords?: string[];
 }, {
     name?: string;
     date?: string;
@@ -40,8 +40,8 @@ export declare const projectSchema: z.ZodObject<z.objectUtil.extendShape<{
     id?: string;
     visible?: boolean;
     summary?: string;
-    keywords?: string[];
     description?: string;
+    keywords?: string[];
 }>;
 export type Project = z.infer<typeof projectSchema>;
 export declare const defaultProject: Project;

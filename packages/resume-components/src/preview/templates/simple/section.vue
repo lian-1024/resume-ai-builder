@@ -1,21 +1,18 @@
 <script lang="ts" setup>
-import { useConfig } from '@/componsables/useConfig';
+import { useConfig } from '@/composables/use-config';
 import { type CSSProperties, computed } from 'vue';
+import { TypographyTitle } from '@/components/typography/index';
 
 defineProps<{
   title: string
 }>()
 
 defineOptions({
-  name: "Section"
+  name: "SimpleSection"
 })
 
 const { config } = useConfig()
 
-const titleStyles = computed<CSSProperties>(() => ({
-  color: config.value.primaryColor,
-
-}))
 
 const titleBgStyles = computed<CSSProperties>(() => ({
   backgroundColor: config.value.primaryColor,
@@ -35,7 +32,7 @@ const titleWrapperStyles = computed<CSSProperties>(() => ({
   <div class="flex flex-col gap-2 w-full" >
     <div class="flex flex-col gap-2 relative px-2 py-1" :style="titleWrapperStyles">
 
-      <h1 class="text-2xl font-bold pb-2" :style="titleStyles">{{ title }}</h1>
+      <TypographyTitle :title="title" />
       <div class="absolute top-0 left-0 w-full h-full" :style="titleBgStyles"></div>
     </div>
     <slot />

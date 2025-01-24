@@ -4,8 +4,9 @@ import Section from './section.vue';
 import { Simple } from '@lianqq/resume-schema';
 import 'md-editor-v3/lib/style.css'
 import { MDPreview } from '@/components/md-editor';
+import { TypographySubTitle } from '@/components/typography/index';
 defineOptions({
-    name: "Skills"
+    name: "SimpleSkills"
 })
 
 const skills = ref(Simple.sections?.skills)
@@ -15,10 +16,8 @@ const skills = ref(Simple.sections?.skills)
 <template>
     <Section :title="skills?.name || '专业技能'" class="flex flex-col gap-2">
         <div class="flex flex-col gap-2" v-for="skill in skills?.items" :key="skill.id">
-            <h4 class="scroll-m-20 text-xl font-semibold tracking-tight">
-                {{ skill.name }}
-            </h4>
-            <MDPreview v-model="skill.description" class="p-0"/>
+            <TypographySubTitle :title="skill.name" />
+            <MDPreview v-model="skill.summary" class="p-0"/>
         </div>
     </Section>
 </template>

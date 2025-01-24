@@ -1,15 +1,16 @@
-import { defineComponent as w, ref as S, computed as g, openBlock as k, createElementBlock as z, normalizeStyle as h, createElementVNode as o, toDisplayString as C, createVNode as e, unref as s, withCtx as r } from "vue";
-import j from "../../../assets/default-picture.jpg.js";
+import { defineComponent as w, ref as S, computed as g, openBlock as k, createElementBlock as z, normalizeStyle as h, createElementVNode as o, toDisplayString as B, createVNode as e, unref as s, withCtx as r } from "vue";
+import C from "../../../assets/default-picture.jpg.js";
 import "../../../packages/resume-schema/es/index.js";
 import "../../../packages/ui/es/node_modules/.pnpm/@iconify_vue@4.3.0_vue@3.5.13_typescript@5.6.3_/node_modules/@iconify/vue/dist/iconify.js";
 import u from "../../../packages/ui/es/components/flex/index.vue.js";
 import "../../../packages/ui/es/node_modules/.pnpm/@vueuse_shared@12.4.0_typescript@5.6.3/node_modules/@vueuse/shared/index.js";
 import n from "../../../components/basics/info-item.vue.js";
-import { Simple as B } from "../../../packages/resume-schema/es/examples/index.js";
+import { Simple as j } from "../../../packages/resume-schema/es/examples/index.js";
 const E = { class: "flex flex-col gap-4" }, N = { class: "scroll-m-20 text-2xl font-semibold tracking-tight" }, V = { class: "flex flex-col gap-y-2 flex-wrap" }, J = /* @__PURE__ */ w({
+  name: "SimpleBasic",
   __name: "basic",
   setup($) {
-    const t = S(B.basics), y = g(() => ({
+    const t = S(j.basics), y = g(() => ({
       display: "flex",
       justifyContent: "space-between",
       width: "100%"
@@ -25,7 +26,7 @@ const E = { class: "flex flex-col gap-4" }, N = { class: "scroll-m-20 text-2xl f
         style: h(y.value)
       }, [
         o("div", E, [
-          o("h3", N, C((p = t.value) == null ? void 0 : p.name), 1),
+          o("h3", N, B((p = t.value) == null ? void 0 : p.name), 1),
           o("div", V, [
             e(s(u), {
               align: "center",
@@ -96,7 +97,7 @@ const E = { class: "flex flex-col gap-4" }, N = { class: "scroll-m-20 text-2xl f
           class: "h-auto bg-zinc-100"
         }, a[0] || (a[0] = [
           o("img", {
-            src: j,
+            src: C,
             alt: "",
             class: "h-full w-full object-cover"
           }, null, -1)

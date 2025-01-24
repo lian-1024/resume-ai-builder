@@ -1,18 +1,18 @@
-import { z as e } from "zod";
-import { itemSchema as t, defaultItem as i } from "../shared/item.js";
+import { z as m } from "zod";
+import { itemSchema as e, defaultItem as t } from "../shared/item.js";
 import "../shared/id.js";
 import "../shared/url.js";
-const l = t.extend({
-  name: e.string(),
-  description: e.string(),
-  level: e.union([e.number().min(0).max(5).default(1), e.string()])
-}), a = {
-  ...i,
+const a = e.extend({
+  name: m.string(),
+  summary: m.string(),
+  level: m.union([m.number().min(0).max(5).default(1), m.string()])
+}), o = {
+  ...t,
   name: "",
-  description: "",
+  summary: "",
   level: 1
 };
 export {
-  a as defaultSkill,
-  l as skillSchema
+  o as defaultSkill,
+  a as skillSchema
 };
