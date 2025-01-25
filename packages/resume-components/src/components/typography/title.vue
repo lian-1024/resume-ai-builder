@@ -22,7 +22,7 @@ const titleStyles = computed<CSSProperties>(() => ({
 </script>
 
 <template>
-    <h1 class="text-2xl font-bold pb-2" :style="titleStyles">
+    <h1 class="text-2xl font-bold leading-10 " :style="titleStyles">
         <slot>
             {{ title }}
         </slot>

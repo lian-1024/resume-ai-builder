@@ -20,15 +20,15 @@ export declare const basicsSchema: z.ZodObject<{
         name: z.ZodString;
         value: z.ZodString;
     }, "strip", z.ZodTypeAny, {
-        name?: string;
-        value?: string;
         id?: string;
+        value?: string;
         icon?: string;
+        name?: string;
     }, {
-        name?: string;
-        value?: string;
         id?: string;
+        value?: string;
         icon?: string;
+        name?: string;
     }>, "many">;
     picture: z.ZodObject<{
         url: z.ZodString;
@@ -66,10 +66,10 @@ export declare const basicsSchema: z.ZodObject<{
         href?: string;
     };
     customFields?: {
-        name?: string;
-        value?: string;
         id?: string;
+        value?: string;
         icon?: string;
+        name?: string;
     }[];
     picture?: {
         url?: string;
@@ -91,10 +91,10 @@ export declare const basicsSchema: z.ZodObject<{
         href?: string;
     };
     customFields?: {
-        name?: string;
-        value?: string;
         id?: string;
+        value?: string;
         icon?: string;
+        name?: string;
     }[];
     picture?: {
         url?: string;

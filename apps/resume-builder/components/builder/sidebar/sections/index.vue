@@ -43,30 +43,21 @@ const sections = [
     id: '#profile'
   },
   {
+    label: '专业技能',
+    icon: 'lucide:wrench',
+    id: '#work'
+  },
+  {
     label: '教育经历',
     icon: 'lucide:book-open',
     id: '#education'
   },
   {
     label: '项目经历',
-    icon: 'lucide:briefcase-business',
+    icon: 'lucide:folder-open-dot',
     id: '#project'
-  },
-  {
-    label: '工作经历',
-    icon: 'lucide:briefcase-business',
-    id: '#work'
-  },
-  {
-    label: '技能证书',
-    icon: 'lucide:briefcase-business',
-    id: '#work'
-  },
-  {
-    label: '个人简介',
-    icon: 'lucide:user-round',
-    id: '#profile'
   }
+ 
 ]
 </script>
 

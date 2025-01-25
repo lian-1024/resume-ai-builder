@@ -58,26 +58,16 @@ const e = {
           id: "yw843emozcth8s1ubi1ubvlf",
           visible: !0,
           name: "电子商务平台",
-          description: "项目负责人",
-          date: "",
-          summary: "<p>领导全栈电子商务平台的开发，提高了销售转化率25%。</p>",
-          keywords: [],
+          startDate: "2024-10-10",
+          endDate: "2025-02-02",
+          role: "前端开发工程师",
+          city: "广州",
+          summary: `1.领导全栈电子商务平台的开发，提高了销售转化率25%。
+
+ 2.ababa`,
           url: {
-            label: "",
-            href: ""
-          }
-        },
-        {
-          id: "ncxgdjjky54gh59iz2t1xi1v",
-          visible: !0,
-          name: "交互式仪表板",
-          description: "前端开发者",
-          date: "",
-          summary: "<p>为SaaS应用创建了一个交云端分析仪表板，增强了客户的数据可视化。</p>",
-          keywords: [],
-          url: {
-            label: "",
-            href: ""
+            label: "线上地址",
+            href: "https://github.com/lian-1024"
           }
         }
       ]

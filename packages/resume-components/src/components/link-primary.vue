@@ -5,7 +5,8 @@ import { computed, type CSSProperties } from 'vue';
 const { config } = useConfig()
 
  defineProps<{
-  href: string
+  text?:string
+  href?: string
 }>()
 
 const styles = computed<CSSProperties>(() => ({
@@ -15,6 +16,8 @@ const styles = computed<CSSProperties>(() => ({
 
 <template>
   <a :href="href" :style="styles" target="_blank">
-    <slot />
+    <slot >
+      {{ text }}
+    </slot>
   </a>
 </template>

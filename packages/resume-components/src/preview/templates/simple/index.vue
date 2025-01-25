@@ -5,6 +5,7 @@ import Basics from './basic.vue';
 import Wrapper from '@/preview/templates/wrapper.vue';
 import Skills from './skill.vue';
 import Education from './education.vue';
+import Project from './project.vue';
 defineOptions({
   name: "Simple"
 })
@@ -17,7 +18,8 @@ defineProps<{
 const getSectionMap: Partial<Record<SectionKey, Component>> = {
   'basics': Basics,
   'skills': Skills,
-  "education": Education
+  "education": Education,
+  "projects": Project
 }
 
 </script>

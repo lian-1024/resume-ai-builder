@@ -4,10 +4,11 @@ export declare const projectSchema: z.ZodObject<z.objectUtil.extendShape<{
     visible: z.ZodBoolean;
 }, {
     name: z.ZodString;
-    description: z.ZodString;
-    date: z.ZodString;
+    startDate: z.ZodString;
+    endDate: z.ZodString;
+    role: z.ZodString;
+    city: z.ZodString;
     summary: z.ZodString;
-    keywords: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
     url: z.ZodObject<{
         label: z.ZodString;
         href: z.ZodUnion<[z.ZodLiteral<"">, z.ZodString]>;
@@ -19,29 +20,31 @@ export declare const projectSchema: z.ZodObject<z.objectUtil.extendShape<{
         href?: string;
     }>;
 }>, "strip", z.ZodTypeAny, {
+    id?: string;
+    visible?: boolean;
     name?: string;
-    date?: string;
     url?: {
         label?: string;
         href?: string;
     };
-    id?: string;
-    visible?: boolean;
+    city?: string;
+    startDate?: string;
+    endDate?: string;
     summary?: string;
-    description?: string;
-    keywords?: string[];
+    role?: string;
 }, {
+    id?: string;
+    visible?: boolean;
     name?: string;
-    date?: string;
     url?: {
         label?: string;
         href?: string;
     };
-    id?: string;
-    visible?: boolean;
+    city?: string;
+    startDate?: string;
+    endDate?: string;
     summary?: string;
-    description?: string;
-    keywords?: string[];
+    role?: string;
 }>;
 export type Project = z.infer<typeof projectSchema>;
 export declare const defaultProject: Project;
