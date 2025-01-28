@@ -1,84 +1,108 @@
-# Turborepo VueJS/NuxtJS starter
+# Resume AI Builder
 
-This is an official starter Turborepo.
+## 项目介绍
 
-## Using this example
+一个基于 AI 的智能简历构建器，帮助用户快速创建专业的简历。项目采用现代化的技术栈和 monorepo 架构，提供简洁优雅的用户界面和丰富的简历模板。
 
-Run the following command:
+## 技术栈
 
-```sh
-npx create-turbo@latest -e with-vue-nuxt
-```
+- **前端框架**: Vue 3 + TypeScript
+- **构建工具**: Vite
+- **包管理**: pnpm
+- **Monorepo 工具**: Turborepo
+- **UI 框架**: Tailwind CSS
+- **开发工具**: ESLint, Prettier, Husky
 
-## What's inside?
-
-This Turborepo includes the following packages/apps:
-
-### Apps and Packages
-
-- `docs`: a [Nuxt](https://nuxt.com/) app
-- `web`: another [Vue3](https://vuejs.org/) app
-- `ui`: a stub Vue component library shared by both `web` and `docs` applications
-- `eslint-config-custom`: `eslint` configurations (includes `@nuxtjs/eslint-config-typescript` and `@vue/eslint-config-typescript`)
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
+## 项目结构
 
 ```
-cd my-turborepo
+├── apps/                    # 应用程序
+│   ├── resume-builder/      # 简历构建器主应用
+│   └── resume-web/         # Web 端应用
+├── packages/               # 共享包
+│   ├── resume-components/  # 简历相关组件
+│   ├── resume-schema/      # 简历数据模型
+│   ├── shared-config/      # 共享配置
+│   └── ui/                 # UI 组件库
+```
+
+## 快速开始
+
+### 环境要求
+
+- Node.js >= 16
+- pnpm >= 8
+
+### 安装依赖
+
+```bash
+pnpm install
+```
+
+### 开发
+
+```bash
+# 启动所有应用
+pnpm dev
+
+# 启动特定应用
+pnpm dev --filter resume-web
+```
+
+### 构建
+
+```bash
 pnpm build
 ```
 
-### Develop
+## 主要功能
 
-To develop all apps and packages, run the following command:
+- 多种专业简历模板
+- 实时预览编辑
+- AI 辅助内容生成
+- 响应式设计
+- 支持导出多种格式
 
-```
-cd my-turborepo
-pnpm dev
-```
+## 项目结构说明
 
-### Remote Caching
+### apps/resume-builder
 
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
+简历构建器的核心应用，提供简历编辑和预览功能。
 
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+### apps/resume-web
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
+Web 端应用，提供用户界面和模板选择功能。
 
-```
-cd my-turborepo
-npx turbo login
-```
+### packages/resume-components
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+可复用的简历相关组件，包括各种简历模板组件。
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
+### packages/resume-schema
 
-```
-npx turbo link
-```
+定义简历数据的结构和类型。
 
-## Useful Links
+### packages/shared-config
 
-Learn more about the power of Turborepo:
+共享的项目配置，包括 ESLint、Prettier、TypeScript 等配置。
 
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+### packages/ui
+
+基础 UI 组件库。
+
+## 开发指南
+
+1. 遵循项目的代码规范和提交规范
+2. 新功能开发请先创建 feature 分支
+3. 提交代码前确保通过所有测试和 lint 检查
+
+## 贡献指南
+
+欢迎贡献代码和提出建议！请确保在提交 PR 前：
+
+1. 代码符合项目规范
+2. 添加必要的测试
+3. 更新相关文档
+
+## 许可证
+
+MIT License

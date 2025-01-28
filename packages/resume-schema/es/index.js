@@ -1,4 +1,4 @@
-import { z as e } from "zod";
+import e from "./node_modules/.pnpm/zod@3.24.1/node_modules/zod/lib/index.js";
 import { basicsSchema as o, defaultBasics as t } from "./basics/index.js";
 import { resumeConfigSchema as m, defaultResumeConfig as a } from "./config/index.js";
 import { sectionsSchema as r, defaultSections as c } from "./sections/index.js";

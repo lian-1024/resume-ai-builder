@@ -1,4 +1,4 @@
-import { z as e } from "zod";
+import e from "../node_modules/.pnpm/zod@3.24.1/node_modules/zod/lib/index.js";
 const t = ["Simple"], a = e.object({
   template: e.enum(t).default("Simple"),
   // 简历模版昵称

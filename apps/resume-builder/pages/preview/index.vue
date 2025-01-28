@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { getTemplate } from '@lianqq/resume-components/preview';
+import { getTemplate } from '@/components/templates';
 import type { SectionKey } from '@lianqq/resume-schema';
 import {ColorModeButton} from '@lianqq/resume-ui'
 import { Suspense } from 'vue';

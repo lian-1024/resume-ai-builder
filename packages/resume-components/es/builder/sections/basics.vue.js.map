@@ -1,1 +1,0 @@
-{"version":3,"file":"basics.vue.js","sources":["../../../src/builder/sections/basics.vue"],"sourcesContent":["<script lang=\"ts\" setup>\n\n</script>\n\n<template>\n    <section>basic-section</section>\n</template>\n\n<style lang=\"less\" scoped>\n</style>"],"names":["_sfc_render","_ctx","_cache"],"mappings":";;;AAKI,SAAAA,EAAAC,GAAAC,GAAA;;;;"}

@@ -1,4 +1,4 @@
-import { z as e } from "zod";
+import e from "../node_modules/.pnpm/zod@3.24.1/node_modules/zod/lib/index.js";
 import { educationSchema as i } from "./education.js";
 import { defaultEducation as p } from "./education.js";
 import { projectSchema as a } from "./project.js";

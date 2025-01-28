@@ -25,7 +25,6 @@ export default defineConfig({
       name: 'resume-schema',
     },
     rollupOptions: {
-      external:['zod','@paralleldrive/cuid2'],
       output: [
         {
           format: 'esm', // ES Module 格式
