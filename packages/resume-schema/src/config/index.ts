@@ -1,13 +1,13 @@
 import { z } from 'zod'
 
-const templates = ['Simple'] as const
+const templates = ['simple'] as const
 
-export type Template = (typeof templates)[number]
+export type TemplateKey = (typeof templates)[number]
 
 // 定义主题相关配资
 
 export const resumeConfigSchema = z.object({
-  template: z.enum(templates).default('Simple'), // 简历模版昵称
+  template: z.enum(templates).default('simple'), // 简历模版昵称
   page: z.object({
     // 页面设置
     margin: z.number().default(18), // 页边距
@@ -35,5 +35,5 @@ export const defaultResumeConfig: ResumeConfig = {
     primary: '#3b82f6',
     background: '#ffffff'
   },
-  template: 'Simple'
+  template: 'simple'
 }

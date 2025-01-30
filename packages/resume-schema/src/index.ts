@@ -22,7 +22,7 @@ export const defaultResumeData: ResumeData = {
 
 export * from './basics'
 export * from './config'
-export * from './examples'
+export * from './example'
 export * from './sections'
 export * from './shared'
 

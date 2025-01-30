@@ -14,7 +14,6 @@ withDefaults(
     }
 )
 
-
 defineOptions({
     name: "BasicsInfoItem"
 })
@@ -25,7 +24,7 @@ defineOptions({
         <slot>
             <IconPrimary :icon="icon" />
             <template v-if="!href">
-                <small class="text-sm font-medium leading-none whitespace-nowrap">
+                <small class="text-sm font-medium leading-none whitespace-nowrap min-w-10">
                     {{ text }}
                 </small>
             </template>

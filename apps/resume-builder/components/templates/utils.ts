@@ -1,11 +1,11 @@
 
-import type { Template } from '@lianqq/resume-schema';
+import type { TemplateKey } from '@lianqq/resume-schema';
 
 import Simple from './simple/index.vue';
 
-export const getTemplate = async (template: Template) => {
+export const getTemplate = async (template: TemplateKey) => {
   switch (template) {
-    case 'Simple':
+    case 'simple':
       return Simple
   }
 }

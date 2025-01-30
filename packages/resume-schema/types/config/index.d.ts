@@ -1,8 +1,8 @@
 import { z } from 'zod';
-declare const templates: readonly ["Simple"];
-export type Template = (typeof templates)[number];
+declare const templates: readonly ["simple"];
+export type TemplateKey = (typeof templates)[number];
 export declare const resumeConfigSchema: z.ZodObject<{
-    template: z.ZodDefault<z.ZodEnum<["Simple"]>>;
+    template: z.ZodDefault<z.ZodEnum<["simple"]>>;
     page: z.ZodObject<{
         margin: z.ZodDefault<z.ZodNumber>;
         format: z.ZodDefault<z.ZodEnum<["a4", "letter"]>>;
@@ -27,7 +27,7 @@ export declare const resumeConfigSchema: z.ZodObject<{
         primary?: string;
     }>;
 }, "strip", z.ZodTypeAny, {
-    template?: "Simple";
+    template?: "simple";
     page?: {
         margin?: number;
         format?: "a4" | "letter";
@@ -38,7 +38,7 @@ export declare const resumeConfigSchema: z.ZodObject<{
         primary?: string;
     };
 }, {
-    template?: "Simple";
+    template?: "simple";
     page?: {
         margin?: number;
         format?: "a4" | "letter";

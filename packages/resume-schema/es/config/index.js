@@ -1,6 +1,6 @@
 import e from "../node_modules/.pnpm/zod@3.24.1/node_modules/zod/lib/index.js";
-const t = ["Simple"], a = e.object({
-  template: e.enum(t).default("Simple"),
+const t = ["simple"], a = e.object({
+  template: e.enum(t).default("simple"),
   // 简历模版昵称
   page: e.object({
     // 页面设置
@@ -28,7 +28,7 @@ const t = ["Simple"], a = e.object({
     primary: "#3b82f6",
     background: "#ffffff"
   },
-  template: "Simple"
+  template: "simple"
 };
 export {
   m as defaultResumeConfig,

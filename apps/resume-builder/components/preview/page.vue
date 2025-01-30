@@ -2,6 +2,10 @@
 import type { CSSProperties } from 'vue';
 import { MM_TO_PX, pageSizeMap, type PageSize } from './page-size';
 
+import { useResumeStore } from '@/stores/resume';
+
+const resumeStore = useResumeStore()
+
 defineOptions({
   name: 'PreviewPage'
 })
@@ -21,10 +25,19 @@ const style = computed<CSSProperties>(() => {
   }
 })
 
+
+onMounted(() => {
+  resumeStore.initResumeData()
+})
+
+
+const isLoading = computed(() => !resumeStore.resume.basics)
 </script>
 
 <template>
   <div :style="style" class="shadow-lg transform scale-[0.9]   overflow-auto">
+    <template v-if="!isLoading">
     <slot />
+    </template>
   </div>
 </template>

@@ -11,7 +11,7 @@ const sections = ref<SectionKey[]>(['basics','skills','education','projects'])
 
 // 异步加载模板组件
 const ResumeTemplate = defineAsyncComponent(async () => {
-  const template = await getTemplate('Simple')
+  const template = await getTemplate('simple')
   return template
 })
 </script>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import Section from './section.vue';
-import { Simple } from '@lianqq/resume-schema';
+import { Example } from '@lianqq/resume-schema';
 import 'md-editor-v3/lib/style.css'
 import { TypographySubTitle, TypographySubText } from '@/components/common/typography/index';
 import { MDPreview } from '@/components/common/md-editor';
@@ -10,7 +10,8 @@ defineOptions({
     name: "SimpleEducation"
 })
 
-const education = ref(Simple.sections?.education)
+const resumeStore = useResumeStore()
+const education = computed(() => resumeStore.resume?.sections?.education)
 
 </script>
 

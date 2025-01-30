@@ -2,7 +2,7 @@ import { defineComponent as p, computed as f, openBlock as m, createBlock as g, 
 import { cn as b } from "../../lib/utils.js";
 import { useForwardPropsEmits as _, DialogPortal as w, DialogOverlay as B, DialogContent as C, DialogClose as D } from "radix-vue";
 import { sheetVariants as O } from "./index.js";
-import P from "../../node_modules/.pnpm/@radix-icons_vue@1.0.0_vue@3.5.13/node_modules/@radix-icons/vue/esm/Cross2Icon.js";
+import P from "../../node_modules/.pnpm/@radix-icons_vue@1.0.0_vue@3.5.13_typescript@5.6.3_/node_modules/@radix-icons/vue/esm/Cross2Icon.js";
 const S = /* @__PURE__ */ p({
   inheritAttrs: !1,
   __name: "SheetContent",

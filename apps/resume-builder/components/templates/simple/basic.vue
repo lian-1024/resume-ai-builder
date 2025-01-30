@@ -1,14 +1,13 @@
 <script lang="ts" setup>
-import { Simple } from '@lianqq/resume-schema';
 import { Flex } from '@lianqq/resume-ui';
-import { computed, ref, type CSSProperties } from 'vue';
+import { computed, type CSSProperties } from 'vue';
 import BasicsInfoItem from '@/components/templates/simple/components/info-item.vue';
-// 展示模拟数据 后续根据store渲染
-const basics = ref(Simple.basics)
-
 defineOptions({
   name: "SimpleBasic"
 })
+
+const resumeStore  = useResumeStore()
+const basics = computed(() => resumeStore.resume?.basics)
 
 const wrapperStyles = computed<CSSProperties>(() => ({
   display: 'flex',
@@ -16,14 +15,7 @@ const wrapperStyles = computed<CSSProperties>(() => ({
   width: '100%'
 }))
 
-
-
-const pictureSize = computed<CSSProperties>(() => ({
-  width: `${basics.value?.picture?.size}px`,
-}))
-
-
-
+console.log("basics", basics.value);
 </script>
 
 <template>
@@ -48,8 +40,8 @@ const pictureSize = computed<CSSProperties>(() => ({
         </Flex>
       </div>
     </div>
-    <div :style="pictureSize" class="h-auto bg-zinc-100">
-      <img src="@/assets/default-picture.jpg" alt="" class="h-full w-full object-cover">
+    <div v-if="basics?.picture?.size" :style="{ width: `${basics?.picture?.size}px` }" class="h-auto bg-zinc-100">
+      <img src="@/assets/default-picture.jpg"  alt="" class="h-full w-full object-cover">
     </div>
   </div>
 </template>

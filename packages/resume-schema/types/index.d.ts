@@ -476,7 +476,7 @@ export declare const resumeDataSchema: z.ZodObject<{
         };
     }>;
     config: z.ZodObject<{
-        template: z.ZodDefault<z.ZodEnum<["Simple"]>>;
+        template: z.ZodDefault<z.ZodEnum<["simple"]>>;
         page: z.ZodObject<{
             margin: z.ZodDefault<z.ZodNumber>;
             format: z.ZodDefault<z.ZodEnum<["a4", "letter"]>>;
@@ -501,7 +501,7 @@ export declare const resumeDataSchema: z.ZodObject<{
             primary?: string;
         }>;
     }, "strip", z.ZodTypeAny, {
-        template?: "Simple";
+        template?: "simple";
         page?: {
             margin?: number;
             format?: "a4" | "letter";
@@ -512,7 +512,7 @@ export declare const resumeDataSchema: z.ZodObject<{
             primary?: string;
         };
     }, {
-        template?: "Simple";
+        template?: "simple";
         page?: {
             margin?: number;
             format?: "a4" | "letter";
@@ -610,7 +610,7 @@ export declare const resumeDataSchema: z.ZodObject<{
         };
     };
     config?: {
-        template?: "Simple";
+        template?: "simple";
         page?: {
             margin?: number;
             format?: "a4" | "letter";
@@ -708,7 +708,7 @@ export declare const resumeDataSchema: z.ZodObject<{
         };
     };
     config?: {
-        template?: "Simple";
+        template?: "simple";
         page?: {
             margin?: number;
             format?: "a4" | "letter";
@@ -724,6 +724,6 @@ export type ResumeData = z.infer<typeof resumeDataSchema>;
 export declare const defaultResumeData: ResumeData;
 export * from './basics';
 export * from './config';
-export * from './examples';
+export * from './example';
 export * from './sections';
 export * from './shared';
