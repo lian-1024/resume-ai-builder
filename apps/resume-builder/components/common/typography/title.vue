@@ -14,15 +14,10 @@ defineProps<{
 }>()
 
 
-const titleStyles = computed<CSSProperties>(() => ({
-    color: config.value.primaryColor,
-
-}))
-
 </script>
 
 <template>
-    <h1 class="text-2xl font-bold leading-10 " :style="titleStyles">
+    <h1 class="text-2xl font-bold leading-10 ">
         <slot>
             {{ title }}
         </slot>

@@ -4,7 +4,9 @@
     SidebarInset,
     SidebarTrigger,
     ColorModeButton
-  } from '@lianqq/resume-ui' /* PartiallyEnd: #3632/scriptSetup.vue */
+  } from '@lianqq/resume-ui' 
+
+  import {EditorSectionBasics} from './sections';
 </script>
 
 <template>
@@ -20,8 +22,10 @@
         />
         <ColorModeButton/>
       </div>
-    </header>
-    <div class="flex flex-1 flex-col gap-4 p-4 pt-0">main</div>
+    </header> 
+    <div class="flex flex-1 flex-col gap-4 px-4 my-4 pt-0">
+      <EditorSectionBasics/>
+    </div>
   </SidebarInset>
 </template>
 
