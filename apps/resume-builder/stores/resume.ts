@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { type ResumeData, Example, type TemplateKey } from '@lianqq/resume-schema'
+import { type ResumeData, Example, type TemplateKey, defaultResumeData, type SectionKey } from '@lianqq/resume-schema'
 import _set from 'lodash-es/set'
 
 export const useResumeStore = defineStore('resume', () => {
@@ -9,8 +9,8 @@ export const useResumeStore = defineStore('resume', () => {
    * 初始化简历数据
    * @param template 
    */
-  const initResumeData = () => {
-    resume.value = Example
+  const initResumeData = (resumeData:ResumeData = Example) => {
+    resume.value =resumeData
   }
 
   /**
@@ -21,13 +21,30 @@ export const useResumeStore = defineStore('resume', () => {
   const setResumeValue = (path: string, value: any) => {
   }
 
-  
+  /**
+   * 设置简历数据
+   * @param resumeData 
+   */
+  const setResume = (resumeData:ResumeData) => {
+    resume.value = resumeData
+  }
+
+  /**
+   * 获取简历数据
+   * @returns 
+   */
+  const getResume = (section?:SectionKey) => {
+
+    return resume.value
+  }
 
 
   
   return {
     resume,
     initResumeData,
-    setResumeValue
+    setResumeValue,
+    setResume,
+    getResume
   }
 })

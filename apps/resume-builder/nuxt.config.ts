@@ -11,7 +11,13 @@ export default defineNuxtConfig({
     baseURL: "/resume",
   },
 
-  modules: ["@nuxtjs/tailwindcss", "@nuxt/icon", "@pinia/nuxt"],
+  modules: [
+    "@nuxtjs/tailwindcss",
+    "@nuxt/icon",
+    "@pinia/nuxt",
+    '@vueuse/nuxt',
+    "pinia-plugin-persistedstate"
+  ],
   css: ["~/assets/css/index.css", "@lianqq/resume-ui/styles.css"],
   imports: {
     dirs: ['stores']

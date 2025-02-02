@@ -15,7 +15,6 @@ const wrapperStyles = computed<CSSProperties>(() => ({
   width: '100%'
 }))
 
-console.log("basics", basics.value);
 </script>
 
 <template>
@@ -41,7 +40,7 @@ console.log("basics", basics.value);
       </div>
     </div>
     <div v-if="basics?.picture?.size" :style="{ width: `${basics?.picture?.size}px` }" class="h-auto bg-zinc-100">
-      <img src="@/assets/default-picture.jpg"  alt="" class="h-full w-full object-cover">
+      <img :src="basics?.picture?.url"  alt="" class="h-full w-full object-cover">
     </div>
   </div>
 </template>

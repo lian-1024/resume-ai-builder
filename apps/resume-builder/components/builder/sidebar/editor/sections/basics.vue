@@ -1,6 +1,12 @@
 <script lang="ts" setup>
 import EditorSectionWrapper from './components/wrapper.vue'
 import { Avatar, AvatarImage, AvatarFallback, Input ,Select, SelectTrigger,SelectValue, SelectContent, SelectGroup, SelectItem} from '@lianqq/resume-ui';
+
+
+const resumeStore = useResumeStore()
+
+const { resume } = storeToRefs(resumeStore)
+
 </script>
 
 <template>
@@ -8,17 +14,17 @@ import { Avatar, AvatarImage, AvatarFallback, Input ,Select, SelectTrigger,Selec
     <template #content>
       <div class="flex flex-col gap-6">
         <div class="flex items-center gap-4">
-          <Avatar size="base">
-            <AvatarImage src="https://github.com/radix-vue.png" alt="@radix-vue" />
-            <AvatarFallback>CN</AvatarFallback>
+          <Avatar size="base">  
+            <AvatarImage :src="resume?.basics?.picture?.url || ''" alt="头像" />
+            <AvatarFallback>{{ resume?.basics?.name?.slice(0, 2) }}</AvatarFallback>
           </Avatar>
           <div class="flex flex-col gap-2 flex-1">
             <span class="text-sm dark:text-zinc-300 text-zinc-500 ">头像</span>
-            <Input placeholder="请输入图片链接" />
+            <Input placeholder="请输入图片链接" :value="resume?.basics?.picture?.url" />
           </div>
           <div class="flex flex-col gap-2">
             <span class="text-sm dark:text-zinc-300 text-zinc-500 ">姓名</span>
-            <Input placeholder="请输入姓名" />
+            <Input placeholder="请输入姓名" :value="resume?.basics?.name" />
           </div>
         </div>
         <div class="flex flex-col gap-6">
@@ -36,18 +42,7 @@ import { Avatar, AvatarImage, AvatarFallback, Input ,Select, SelectTrigger,Selec
         <div class="grid grid-cols-3 gap-6">
             <div class="flex flex-col gap-2">
               <span class="text-sm dark:text-zinc-300 text-zinc-500 ">状态</span>
-              <Select>
-                <SelectTrigger>
-                  <SelectValue placeholder="请选择状态" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectGroup>
-                    <SelectItem value="1">在职</SelectItem>
-                    <SelectItem value="2">离职</SelectItem>
-                    <SelectItem value="3">在读</SelectItem>
-                  </SelectGroup>
-                </SelectContent>
-              </Select>
+           <Input placeholder="请输入您的状态" />
             </div>
             <div class="flex flex-col gap-2">
               <span class="text-sm dark:text-zinc-300 text-zinc-500 ">意向职位</span>
