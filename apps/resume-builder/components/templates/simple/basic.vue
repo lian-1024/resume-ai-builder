@@ -2,18 +2,20 @@
 import { Flex } from '@lianqq/resume-ui';
 import { computed, type CSSProperties } from 'vue';
 import BasicsInfoItem from '@/components/templates/simple/components/info-item.vue';
+import { defaultBasics } from '@lianqq/resume-schema';
 defineOptions({
   name: "SimpleBasic"
 })
 
 const resumeStore  = useResumeStore()
-const basics = computed(() => resumeStore.resume?.basics)
+const basics = computed(() => resumeStore.resume?.basics || defaultBasics)
 
 const wrapperStyles = computed<CSSProperties>(() => ({
   display: 'flex',
   justifyContent: 'space-between',
   width: '100%'
 }))
+
 
 </script>
 
@@ -25,22 +27,22 @@ const wrapperStyles = computed<CSSProperties>(() => ({
       </h3>
       <div class="flex flex-col gap-y-2 flex-wrap">
         <Flex  align="center" class="gap-4">
-          <BasicsInfoItem icon="lucide:mail" :text="basics?.email" />
-          <BasicsInfoItem icon="lucide:phone" :text="basics?.phone" />
+          <BasicsInfoItem icon="lucide:mail" :text="basics.email" />
+          <BasicsInfoItem icon="lucide:phone" :text="basics.phone" />
         </Flex>
         <Flex align="center" class="gap-4">
-          <BasicsInfoItem icon="lucide:tag" :text="basics?.intention?.currentStatus" />
-          <BasicsInfoItem icon="lucide:briefcase" :text="basics?.intention?.positionTitle" />
-          <BasicsInfoItem icon="lucide:credit-card" :text="basics?.intention?.salary" />
-          <BasicsInfoItem icon="lucide:map-pin" :text="basics?.intention?.city" />
+          <BasicsInfoItem icon="lucide:tag" :text="basics.intention?.currentStatus" />
+          <BasicsInfoItem icon="lucide:briefcase" :text="basics.intention?.positionTitle" />
+          <BasicsInfoItem icon="lucide:credit-card" :text="basics.intention?.salary" />
+          <BasicsInfoItem icon="lucide:map-pin" :text="basics.intention?.city" />
         </Flex>
         <Flex align="center" class="gap-4">
-          <BasicsInfoItem :href="basics?.url?.href" icon="lucide:link" text="github"/>
+          <BasicsInfoItem :href="basics.url?.href" icon="lucide:link" text="github"/>
         </Flex>
       </div>
     </div>
-    <div v-if="basics?.picture?.size" :style="{ width: `${basics?.picture?.size}px` }" class="h-auto bg-zinc-100">
-      <img :src="basics?.picture?.url"  alt="" class="h-full w-full object-cover">
+    <div v-if="basics.picture?.size" :style="{ width: `${basics?.picture?.size}px` }" class="h-auto bg-zinc-100">
+      <img :src="basics.picture?.url"  alt="" class="h-full w-full object-cover">
     </div>
   </div>
 </template>
