@@ -1,4 +1,4 @@
-import { defineComponent as a, openBlock as r, createBlock as n, unref as p, normalizeProps as s, guardReactiveProps as i, withCtx as l, renderSlot as u } from "vue";
+import { defineComponent as a, createBlock as r, openBlock as n, unref as p, normalizeProps as s, guardReactiveProps as i, withCtx as l, renderSlot as u } from "vue";
 import { NavigationMenuItem as m } from "radix-vue";
 const _ = /* @__PURE__ */ a({
   __name: "NavigationMenuItem",
@@ -9,7 +9,7 @@ const _ = /* @__PURE__ */ a({
   },
   setup(e) {
     const o = e;
-    return (t, c) => (r(), n(p(m), s(i(o)), {
+    return (t, c) => (n(), r(p(m), s(i(o)), {
       default: l(() => [
         u(t.$slots, "default")
       ]),

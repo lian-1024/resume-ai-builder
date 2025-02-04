@@ -1,4 +1,4 @@
-import { defineComponent as p, computed as l, openBlock as c, createBlock as d, unref as o, mergeProps as m, withCtx as u, renderSlot as f } from "vue";
+import { defineComponent as p, computed as l, createBlock as c, openBlock as d, unref as o, mergeProps as m, withCtx as u, renderSlot as f } from "vue";
 import { cn as i } from "../../lib/utils.js";
 import { useForwardProps as _, DropdownMenuLabel as w } from "radix-vue";
 const g = /* @__PURE__ */ p({
@@ -14,7 +14,7 @@ const g = /* @__PURE__ */ p({
       const { class: e, ...t } = s;
       return t;
     }), a = _(n);
-    return (e, t) => (c(), d(o(w), m(o(a), {
+    return (e, t) => (d(), c(o(w), m(o(a), {
       class: o(i)("px-2 py-1.5 text-sm font-semibold", e.inset && "pl-8", s.class)
     }), {
       default: u(() => [

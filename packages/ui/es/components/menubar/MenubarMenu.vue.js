@@ -1,4 +1,4 @@
-import { defineComponent as t, openBlock as n, createBlock as a, unref as u, normalizeProps as p, guardReactiveProps as s, withCtx as c, renderSlot as l } from "vue";
+import { defineComponent as t, createBlock as n, openBlock as a, unref as u, normalizeProps as p, guardReactiveProps as s, withCtx as c, renderSlot as l } from "vue";
 import { MenubarMenu as f } from "radix-vue";
 const _ = /* @__PURE__ */ t({
   __name: "MenubarMenu",
@@ -7,7 +7,7 @@ const _ = /* @__PURE__ */ t({
   },
   setup(e) {
     const r = e;
-    return (o, m) => (n(), a(u(f), p(s(r)), {
+    return (o, m) => (a(), n(u(f), p(s(r)), {
       default: c(() => [
         l(o.$slots, "default")
       ]),

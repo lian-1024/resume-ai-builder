@@ -6,7 +6,7 @@
     ColorModeButton
   } from '@lianqq/resume-ui' 
 
-  import {EditorSectionBasics} from './sections';
+  import {EditorSectionBasics, EditorSectionSkill} from './sections';
 </script>
 
 <template>
@@ -23,8 +23,9 @@
         <ColorModeButton/>
       </div>
     </header> 
-    <div class="flex flex-1 flex-col gap-4 px-4 my-4 pt-0">
+    <div class="flex flex-1 flex-col gap-8 px-4 my-4 pt-0">
       <EditorSectionBasics/>
+      <EditorSectionSkill/>
     </div>
   </SidebarInset>
 </template>

@@ -1,4 +1,4 @@
-import { defineComponent as n, openBlock as a, createBlock as t, unref as s, normalizeClass as i, withCtx as c, renderSlot as l } from "vue";
+import { defineComponent as n, createBlock as a, openBlock as t, unref as s, normalizeClass as i, withCtx as c, renderSlot as l } from "vue";
 import f from "../input/Input.vue.js";
 import { cn as p } from "../../lib/utils.js";
 const b = /* @__PURE__ */ n({
@@ -8,7 +8,7 @@ const b = /* @__PURE__ */ n({
   },
   setup(e) {
     const r = e;
-    return (o, u) => (a(), t(s(f), {
+    return (o, u) => (t(), a(s(f), {
       "data-sidebar": "input",
       class: i(s(p)(
         "h-8 w-full bg-background shadow-none focus-visible:ring-2 focus-visible:ring-sidebar-ring",

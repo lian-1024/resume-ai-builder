@@ -1,4 +1,4 @@
-import { defineComponent as c, computed as m, openBlock as p, createBlock as u, unref as e, mergeProps as f, withCtx as i, renderSlot as _ } from "vue";
+import { defineComponent as c, computed as m, createBlock as p, openBlock as u, unref as e, mergeProps as f, withCtx as i, renderSlot as _ } from "vue";
 import { cn as b } from "../../lib/utils.js";
 import { useForwardPropsEmits as g, MenubarRoot as h } from "radix-vue";
 const B = /* @__PURE__ */ c({
@@ -16,7 +16,7 @@ const B = /* @__PURE__ */ c({
       const { class: t, ...r } = o;
       return r;
     }), l = g(n, d);
-    return (t, r) => (p(), u(e(h), f(e(l), {
+    return (t, r) => (u(), p(e(h), f(e(l), {
       class: e(b)(
         "flex h-9 items-center space-x-1 rounded-md border bg-background p-1 shadow-sm",
         o.class

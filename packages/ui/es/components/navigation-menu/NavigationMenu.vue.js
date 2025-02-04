@@ -1,4 +1,4 @@
-import { defineComponent as c, computed as d, openBlock as m, createBlock as p, unref as e, mergeProps as u, withCtx as f, renderSlot as g, createVNode as _ } from "vue";
+import { defineComponent as c, computed as d, createBlock as m, openBlock as p, unref as e, mergeProps as u, withCtx as f, renderSlot as g, createVNode as _ } from "vue";
 import { cn as x } from "../../lib/utils.js";
 import { useForwardPropsEmits as y, NavigationMenuRoot as B } from "radix-vue";
 import k from "./NavigationMenuViewport.vue.js";
@@ -23,7 +23,7 @@ const h = /* @__PURE__ */ c({
       const { class: o, ...a } = t;
       return a;
     }), i = y(n, l);
-    return (o, a) => (m(), p(e(B), u(e(i), {
+    return (o, a) => (p(), m(e(B), u(e(i), {
       class: e(x)("relative z-10 flex max-w-max flex-1 items-center justify-center", t.class)
     }), {
       default: f(() => [

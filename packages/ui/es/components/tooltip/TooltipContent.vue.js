@@ -1,4 +1,4 @@
-import { defineComponent as p, computed as c, openBlock as f, createBlock as m, unref as e, withCtx as s, createVNode as u, mergeProps as g, renderSlot as h } from "vue";
+import { defineComponent as p, computed as c, createBlock as f, openBlock as m, unref as e, withCtx as s, createVNode as u, mergeProps as g, renderSlot as h } from "vue";
 import { cn as y } from "../../lib/utils.js";
 import { useForwardPropsEmits as w, TooltipPortal as B, TooltipContent as _ } from "radix-vue";
 const b = /* @__PURE__ */ p({
@@ -27,7 +27,7 @@ const b = /* @__PURE__ */ p({
       const { class: t, ...a } = o;
       return a;
     }), l = w(r, n);
-    return (t, a) => (f(), m(e(B), null, {
+    return (t, a) => (m(), f(e(B), null, {
       default: s(() => [
         u(e(_), g({ ...e(l), ...t.$attrs }, {
           class: e(y)("z-50 overflow-hidden rounded-md bg-primary px-3 py-1.5 text-xs text-primary-foreground animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2", o.class)

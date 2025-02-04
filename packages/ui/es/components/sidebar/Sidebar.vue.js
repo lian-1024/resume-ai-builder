@@ -1,4 +1,4 @@
-import { defineComponent as h, openBlock as t, createElementBlock as n, mergeProps as r, unref as e, renderSlot as l, createBlock as g, withCtx as p, createVNode as v, normalizeStyle as m, createElementVNode as i, normalizeClass as w } from "vue";
+import { defineComponent as h, createElementBlock as n, createBlock as g, openBlock as t, mergeProps as r, unref as e, renderSlot as l, withCtx as p, createVNode as v, normalizeStyle as m, createElementVNode as i, normalizeClass as w } from "vue";
 import "../sheet/index.js";
 import { cn as s } from "../../lib/utils.js";
 import { useSidebar as _, SIDEBAR_WIDTH_MOBILE as $ } from "./utils.js";

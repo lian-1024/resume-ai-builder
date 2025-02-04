@@ -1,4 +1,4 @@
-import { defineComponent as r, openBlock as s, createElementBlock as l, normalizeClass as n, unref as a, renderSlot as c } from "vue";
+import { defineComponent as r, createElementBlock as s, openBlock as l, normalizeClass as n, unref as a, renderSlot as c } from "vue";
 import { cn as p } from "../../lib/utils.js";
 const i = /* @__PURE__ */ r({
   __name: "SheetHeader",
@@ -7,7 +7,7 @@ const i = /* @__PURE__ */ r({
   },
   setup(e) {
     const t = e;
-    return (o, f) => (s(), l("div", {
+    return (o, f) => (l(), s("div", {
       class: n(
         a(p)("flex flex-col gap-y-2 text-center sm:text-left", t.class)
       )

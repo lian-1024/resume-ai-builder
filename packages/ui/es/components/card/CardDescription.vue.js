@@ -1,4 +1,4 @@
-import { defineComponent as r, openBlock as s, createElementBlock as n, normalizeClass as a, unref as c, renderSlot as l } from "vue";
+import { defineComponent as r, createElementBlock as s, openBlock as n, normalizeClass as a, unref as c, renderSlot as l } from "vue";
 import { cn as p } from "../../lib/utils.js";
 const d = /* @__PURE__ */ r({
   __name: "CardDescription",
@@ -7,7 +7,7 @@ const d = /* @__PURE__ */ r({
   },
   setup(e) {
     const t = e;
-    return (o, m) => (s(), n("p", {
+    return (o, m) => (n(), s("p", {
       class: a(c(p)("text-sm text-muted-foreground", t.class))
     }, [
       l(o.$slots, "default")

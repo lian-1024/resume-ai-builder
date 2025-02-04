@@ -1,4 +1,4 @@
-import { defineComponent as l, openBlock as s, createElementBlock as a, normalizeClass as t, unref as n, renderSlot as c } from "vue";
+import { defineComponent as l, createElementBlock as s, openBlock as a, normalizeClass as t, unref as n, renderSlot as c } from "vue";
 import { cn as p } from "../../lib/utils.js";
 const u = /* @__PURE__ */ l({
   __name: "SidebarGroup",
@@ -7,7 +7,7 @@ const u = /* @__PURE__ */ l({
   },
   setup(e) {
     const r = e;
-    return (o, f) => (s(), a("div", {
+    return (o, f) => (a(), s("div", {
       "data-sidebar": "group",
       class: t(n(p)("relative flex w-full min-w-0 flex-col p-2", r.class))
     }, [

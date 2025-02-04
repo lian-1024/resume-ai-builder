@@ -1,4 +1,4 @@
-import { defineComponent as s, openBlock as o, createElementBlock as l, normalizeClass as n, renderSlot as t } from "vue";
+import { defineComponent as s, createElementBlock as o, openBlock as l, normalizeClass as n, renderSlot as t } from "vue";
 const p = /* @__PURE__ */ s({
   __name: "Breadcrumb",
   props: {
@@ -6,7 +6,7 @@ const p = /* @__PURE__ */ s({
   },
   setup(e) {
     const a = e;
-    return (r, c) => (o(), l("nav", {
+    return (r, c) => (l(), o("nav", {
       "aria-label": "breadcrumb",
       class: n(a.class)
     }, [

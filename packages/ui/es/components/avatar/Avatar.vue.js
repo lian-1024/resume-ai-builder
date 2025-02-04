@@ -1,4 +1,4 @@
-import { defineComponent as t, openBlock as o, createBlock as l, unref as e, normalizeClass as n, withCtx as p, renderSlot as c } from "vue";
+import { defineComponent as t, createBlock as o, openBlock as l, unref as e, normalizeClass as n, withCtx as p, renderSlot as c } from "vue";
 import { cn as i } from "../../lib/utils.js";
 import { AvatarRoot as m } from "radix-vue";
 import { avatarVariant as f } from "./index.js";
@@ -11,7 +11,7 @@ const v = /* @__PURE__ */ t({
   },
   setup(s) {
     const r = s;
-    return (a, u) => (o(), l(e(m), {
+    return (a, u) => (l(), o(e(m), {
       class: n(e(i)(e(f)({ size: a.size, shape: a.shape }), r.class))
     }, {
       default: p(() => [

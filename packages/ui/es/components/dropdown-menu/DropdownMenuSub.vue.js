@@ -1,4 +1,4 @@
-import { defineComponent as p, openBlock as s, createBlock as a, unref as e, normalizeProps as u, guardReactiveProps as d, withCtx as m, renderSlot as i } from "vue";
+import { defineComponent as p, createBlock as s, openBlock as a, unref as e, normalizeProps as u, guardReactiveProps as d, withCtx as m, renderSlot as i } from "vue";
 import { useForwardPropsEmits as c, DropdownMenuSub as l } from "radix-vue";
 const S = /* @__PURE__ */ p({
   __name: "DropdownMenuSub",
@@ -9,7 +9,7 @@ const S = /* @__PURE__ */ p({
   emits: ["update:open"],
   setup(o, { emit: t }) {
     const r = c(o, t);
-    return (n, w) => (s(), a(e(l), u(d(e(r))), {
+    return (n, w) => (a(), s(e(l), u(d(e(r))), {
       default: m(() => [
         i(n.$slots, "default")
       ]),

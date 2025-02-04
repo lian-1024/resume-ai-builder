@@ -1,4 +1,4 @@
-import { defineComponent as t, openBlock as s, createBlock as p, unref as e, mergeProps as a, withCtx as d, renderSlot as l } from "vue";
+import { defineComponent as t, createBlock as s, openBlock as p, unref as e, mergeProps as a, withCtx as d, renderSlot as l } from "vue";
 import { useForwardProps as u, DropdownMenuTrigger as c } from "radix-vue";
 const g = /* @__PURE__ */ t({
   __name: "DropdownMenuTrigger",
@@ -9,7 +9,7 @@ const g = /* @__PURE__ */ t({
   },
   setup(o) {
     const r = u(o);
-    return (n, f) => (s(), p(e(c), a({ class: "outline-none" }, e(r)), {
+    return (n, f) => (p(), s(e(c), a({ class: "outline-none" }, e(r)), {
       default: d(() => [
         l(n.$slots, "default")
       ]),

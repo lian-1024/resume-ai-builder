@@ -1,4 +1,4 @@
-import { defineComponent as i, openBlock as d, createElementBlock as f, normalizeClass as n, unref as a, renderSlot as c } from "vue";
+import { defineComponent as i, createElementBlock as d, openBlock as f, unref as a, normalizeClass as n, renderSlot as c } from "vue";
 import { cn as p } from "../../lib/utils.js";
 import { useSidebar as b } from "./utils.js";
 const _ = /* @__PURE__ */ i({
@@ -8,7 +8,7 @@ const _ = /* @__PURE__ */ i({
   },
   setup(r) {
     const s = r, { toggleSidebar: e } = b();
-    return (l, t) => (d(), f("button", {
+    return (l, t) => (f(), d("button", {
       "data-sidebar": "rail",
       "aria-label": "Toggle Sidebar",
       tabindex: -1,

@@ -1,4 +1,4 @@
-import { defineComponent as p, openBlock as s, createBlock as a, unref as e, normalizeProps as u, guardReactiveProps as m, withCtx as i, renderSlot as c } from "vue";
+import { defineComponent as p, createBlock as s, openBlock as a, unref as e, normalizeProps as u, guardReactiveProps as m, withCtx as i, renderSlot as c } from "vue";
 import { useForwardPropsEmits as d, MenubarSub as l } from "radix-vue";
 const P = /* @__PURE__ */ p({
   __name: "MenubarSub",
@@ -9,7 +9,7 @@ const P = /* @__PURE__ */ p({
   emits: ["update:open"],
   setup(o, { emit: t }) {
     const r = d(o, t);
-    return (n, b) => (s(), a(e(l), u(m(e(r))), {
+    return (n, b) => (a(), s(e(l), u(m(e(r))), {
       default: i(() => [
         c(n.$slots, "default")
       ]),

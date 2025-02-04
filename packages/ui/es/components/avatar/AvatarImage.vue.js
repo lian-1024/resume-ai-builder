@@ -1,4 +1,4 @@
-import { defineComponent as o, openBlock as a, createBlock as t, unref as c, mergeProps as l } from "vue";
+import { defineComponent as o, createBlock as a, openBlock as t, unref as c, mergeProps as l } from "vue";
 import { AvatarImage as n } from "radix-vue";
 const u = /* @__PURE__ */ o({
   __name: "AvatarImage",
@@ -10,7 +10,7 @@ const u = /* @__PURE__ */ o({
   },
   setup(e) {
     const r = e;
-    return (s, p) => (a(), t(c(n), l(r, { class: "h-full w-full object-cover" }), null, 16));
+    return (s, p) => (t(), a(c(n), l(r, { class: "h-full w-full object-cover" }), null, 16));
   }
 });
 export {

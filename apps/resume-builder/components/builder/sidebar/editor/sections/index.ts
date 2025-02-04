@@ -1,2 +1,3 @@
 
 export  {default as EditorSectionBasics} from "./basics.vue"
+export {default as EditorSectionSkill} from './skill.vue'

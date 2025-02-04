@@ -1,4 +1,4 @@
-import { defineComponent as r, openBlock as n, createBlock as s, unref as t, normalizeClass as i, withCtx as u, renderSlot as d } from "vue";
+import { defineComponent as r, createBlock as n, openBlock as s, unref as t, normalizeClass as i, withCtx as u, renderSlot as d } from "vue";
 import { cn as c } from "../../lib/utils.js";
 import { Primitive as p } from "radix-vue";
 const h = /* @__PURE__ */ r({
@@ -11,7 +11,7 @@ const h = /* @__PURE__ */ r({
   },
   setup(o) {
     const a = o;
-    return (e, l) => (n(), s(t(p), {
+    return (e, l) => (s(), n(t(p), {
       "data-sidebar": "menu-action",
       class: i(t(c)(
         "absolute right-1 top-1.5 flex aspect-square w-5 items-center justify-center rounded-md p-0 text-sidebar-foreground outline-none ring-sidebar-ring transition-transform hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 peer-hover/menu-button:text-sidebar-accent-foreground [&>svg]:size-4 [&>svg]:shrink-0",

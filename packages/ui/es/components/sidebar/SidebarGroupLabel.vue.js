@@ -1,4 +1,4 @@
-import { defineComponent as r, openBlock as i, createBlock as n, unref as a, normalizeClass as t, withCtx as l, renderSlot as d } from "vue";
+import { defineComponent as r, createBlock as i, openBlock as n, unref as a, normalizeClass as t, withCtx as l, renderSlot as d } from "vue";
 import { cn as p } from "../../lib/utils.js";
 import { Primitive as c } from "radix-vue";
 const b = /* @__PURE__ */ r({
@@ -10,7 +10,7 @@ const b = /* @__PURE__ */ r({
   },
   setup(s) {
     const o = s;
-    return (e, m) => (i(), n(a(c), {
+    return (e, m) => (n(), i(a(c), {
       "data-sidebar": "group-label",
       as: e.as,
       "as-child": e.asChild,

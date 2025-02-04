@@ -1,4 +1,4 @@
-import { defineComponent as o, openBlock as n, createElementBlock as t, normalizeClass as s, unref as l, renderSlot as c } from "vue";
+import { defineComponent as o, createElementBlock as n, openBlock as t, normalizeClass as s, unref as l, renderSlot as c } from "vue";
 import { cn as p } from "../../lib/utils.js";
 const i = /* @__PURE__ */ o({
   __name: "BreadcrumbPage",
@@ -7,7 +7,7 @@ const i = /* @__PURE__ */ o({
   },
   setup(e) {
     const r = e;
-    return (a, m) => (n(), t("span", {
+    return (a, m) => (t(), n("span", {
       role: "link",
       "aria-disabled": "true",
       "aria-current": "page",

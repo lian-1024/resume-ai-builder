@@ -1,4 +1,4 @@
-import { defineComponent as t, openBlock as a, createBlock as n, unref as l, normalizeProps as i, guardReactiveProps as p, withCtx as s, renderSlot as d } from "vue";
+import { defineComponent as t, createBlock as a, openBlock as n, unref as l, normalizeProps as i, guardReactiveProps as p, withCtx as s, renderSlot as d } from "vue";
 import { TooltipProvider as u } from "radix-vue";
 const y = /* @__PURE__ */ t({
   __name: "TooltipProvider",
@@ -12,7 +12,7 @@ const y = /* @__PURE__ */ t({
   },
   setup(e) {
     const o = e;
-    return (r, c) => (a(), n(l(u), i(p(o)), {
+    return (r, c) => (n(), a(l(u), i(p(o)), {
       default: s(() => [
         d(r.$slots, "default")
       ]),

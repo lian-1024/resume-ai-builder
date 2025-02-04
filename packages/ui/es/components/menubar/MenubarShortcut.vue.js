@@ -1,4 +1,4 @@
-import { defineComponent as r, openBlock as s, createElementBlock as n, normalizeClass as a, unref as c, renderSlot as l } from "vue";
+import { defineComponent as r, createElementBlock as s, openBlock as n, normalizeClass as a, unref as c, renderSlot as l } from "vue";
 import { cn as m } from "../../lib/utils.js";
 const d = /* @__PURE__ */ r({
   __name: "MenubarShortcut",
@@ -7,7 +7,7 @@ const d = /* @__PURE__ */ r({
   },
   setup(e) {
     const t = e;
-    return (o, p) => (s(), n("span", {
+    return (o, p) => (n(), s("span", {
       class: a(c(m)("ml-auto text-xs tracking-widest text-muted-foreground", t.class))
     }, [
       l(o.$slots, "default")

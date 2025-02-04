@@ -1,4 +1,4 @@
-import { defineComponent as t, openBlock as a, createBlock as n, unref as p, normalizeProps as s, guardReactiveProps as i, withCtx as l, renderSlot as c } from "vue";
+import { defineComponent as t, createBlock as a, openBlock as n, unref as p, normalizeProps as s, guardReactiveProps as i, withCtx as l, renderSlot as c } from "vue";
 import { DialogTrigger as f } from "radix-vue";
 const g = /* @__PURE__ */ t({
   __name: "SheetTrigger",
@@ -8,7 +8,7 @@ const g = /* @__PURE__ */ t({
   },
   setup(e) {
     const r = e;
-    return (o, m) => (a(), n(p(f), s(i(r)), {
+    return (o, m) => (n(), a(p(f), s(i(r)), {
       default: l(() => [
         c(o.$slots, "default")
       ]),

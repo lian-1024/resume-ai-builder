@@ -1,4 +1,4 @@
-import { defineComponent as i, computed as l, openBlock as p, createBlock as f, unref as e, withCtx as d, createVNode as c, mergeProps as u, renderSlot as m } from "vue";
+import { defineComponent as i, computed as l, createBlock as p, openBlock as f, unref as e, withCtx as d, createVNode as c, mergeProps as u, renderSlot as m } from "vue";
 import { cn as g } from "../../lib/utils.js";
 import { useForwardProps as h, MenubarPortal as y, MenubarContent as B } from "radix-vue";
 const w = /* @__PURE__ */ i({
@@ -27,7 +27,7 @@ const w = /* @__PURE__ */ i({
       const { class: t, ...a } = o;
       return a;
     }), r = h(s);
-    return (t, a) => (p(), f(e(y), null, {
+    return (t, a) => (f(), p(e(y), null, {
       default: d(() => [
         c(e(B), u(e(r), {
           class: e(g)(

@@ -1,4 +1,4 @@
-import { defineComponent as o, openBlock as s, createElementBlock as t, normalizeClass as l, unref as n, renderSlot as c } from "vue";
+import { defineComponent as o, createElementBlock as s, openBlock as t, normalizeClass as l, unref as n, renderSlot as c } from "vue";
 import { cn as p } from "../../lib/utils.js";
 const i = /* @__PURE__ */ o({
   __name: "SidebarHeader",
@@ -7,7 +7,7 @@ const i = /* @__PURE__ */ o({
   },
   setup(e) {
     const r = e;
-    return (a, d) => (s(), t("div", {
+    return (a, d) => (t(), s("div", {
       "data-sidebar": "header",
       class: l(n(p)("flex flex-col gap-2 p-2", r.class))
     }, [

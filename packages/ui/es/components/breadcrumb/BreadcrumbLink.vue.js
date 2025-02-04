@@ -1,4 +1,4 @@
-import { defineComponent as r, openBlock as t, createBlock as l, unref as a, normalizeClass as n, withCtx as i, renderSlot as c } from "vue";
+import { defineComponent as r, createBlock as t, openBlock as l, unref as a, normalizeClass as n, withCtx as i, renderSlot as c } from "vue";
 import { cn as d } from "../../lib/utils.js";
 import { Primitive as m } from "radix-vue";
 const C = /* @__PURE__ */ r({
@@ -10,7 +10,7 @@ const C = /* @__PURE__ */ r({
   },
   setup(e) {
     const o = e;
-    return (s, p) => (t(), l(a(m), {
+    return (s, p) => (l(), t(a(m), {
       as: s.as,
       "as-child": s.asChild,
       class: n(a(d)("transition-colors hover:text-foreground", o.class))

@@ -1,4 +1,4 @@
-import { defineComponent as i, openBlock as r, createBlock as n, unref as a, normalizeClass as d, withCtx as o, renderSlot as c } from "vue";
+import { defineComponent as i, createBlock as r, openBlock as n, unref as a, normalizeClass as d, withCtx as o, renderSlot as c } from "vue";
 import { cn as l } from "../../lib/utils.js";
 import { Primitive as u } from "radix-vue";
 const v = /* @__PURE__ */ i({
@@ -12,7 +12,7 @@ const v = /* @__PURE__ */ i({
   },
   setup(t) {
     const s = t;
-    return (e, b) => (r(), n(a(u), {
+    return (e, b) => (n(), r(a(u), {
       "data-sidebar": "menu-sub-button",
       as: e.as,
       "as-child": e.asChild,

@@ -1,4 +1,4 @@
-import { defineComponent as i, openBlock as r, createBlock as o, unref as e, mergeProps as n, withCtx as d, renderSlot as l } from "vue";
+import { defineComponent as i, createBlock as r, openBlock as o, unref as e, mergeProps as n, withCtx as d, renderSlot as l } from "vue";
 import { cn as u } from "../../lib/utils.js";
 import { Primitive as f } from "radix-vue";
 import { sidebarMenuButtonVariants as p } from "./index.js";
@@ -14,7 +14,7 @@ const B = /* @__PURE__ */ i({
   },
   setup(t) {
     const s = t;
-    return (a, m) => (r(), o(e(f), n({
+    return (a, m) => (o(), r(e(f), n({
       "data-sidebar": "menu-button",
       "data-size": a.size,
       "data-active": a.isActive,

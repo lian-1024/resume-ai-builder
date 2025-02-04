@@ -1,4 +1,4 @@
-import { defineComponent as n, openBlock as o, createElementBlock as s, normalizeClass as a, unref as l, renderSlot as m } from "vue";
+import { defineComponent as n, createElementBlock as o, openBlock as s, normalizeClass as a, unref as l, renderSlot as m } from "vue";
 import { cn as c } from "../../lib/utils.js";
 const d = /* @__PURE__ */ n({
   __name: "SidebarMenuItem",
@@ -7,7 +7,7 @@ const d = /* @__PURE__ */ n({
   },
   setup(e) {
     const r = e;
-    return (t, i) => (o(), s("li", {
+    return (t, i) => (s(), o("li", {
       "data-sidebar": "menu-item",
       class: a(l(c)("group/menu-item relative", r.class))
     }, [

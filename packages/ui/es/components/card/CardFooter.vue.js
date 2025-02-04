@@ -1,4 +1,4 @@
-import { defineComponent as t, openBlock as s, createElementBlock as n, normalizeClass as a, unref as c, renderSlot as l } from "vue";
+import { defineComponent as t, createElementBlock as s, openBlock as n, normalizeClass as a, unref as c, renderSlot as l } from "vue";
 import { cn as p } from "../../lib/utils.js";
 const d = /* @__PURE__ */ t({
   __name: "CardFooter",
@@ -7,7 +7,7 @@ const d = /* @__PURE__ */ t({
   },
   setup(e) {
     const o = e;
-    return (r, m) => (s(), n("div", {
+    return (r, m) => (n(), s("div", {
       class: a(c(p)("flex items-center p-6 pt-0", o.class))
     }, [
       l(r.$slots, "default")

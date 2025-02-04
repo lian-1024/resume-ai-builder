@@ -15,3 +15,4 @@ export * from './sheet';
 export * from './sidebar';
 export * from './tooltip';
 export * from './select'
+export * from './textarea'

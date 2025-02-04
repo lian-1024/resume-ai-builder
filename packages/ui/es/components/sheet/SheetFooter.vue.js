@@ -1,4 +1,4 @@
-import { defineComponent as r, openBlock as t, createElementBlock as l, normalizeClass as n, unref as a, renderSlot as c } from "vue";
+import { defineComponent as r, createElementBlock as t, openBlock as l, normalizeClass as n, unref as a, renderSlot as c } from "vue";
 import { cn as m } from "../../lib/utils.js";
 const u = /* @__PURE__ */ r({
   __name: "SheetFooter",
@@ -7,7 +7,7 @@ const u = /* @__PURE__ */ r({
   },
   setup(e) {
     const s = e;
-    return (o, f) => (t(), l("div", {
+    return (o, f) => (l(), t("div", {
       class: n(
         a(m)(
           "flex flex-col-reverse sm:flex-row sm:justify-end sm:gap-x-2",

@@ -1,4 +1,4 @@
-import { defineComponent as o, openBlock as r, createElementBlock as a, normalizeClass as s, unref as u, renderSlot as d } from "vue";
+import { defineComponent as o, createElementBlock as r, openBlock as a, normalizeClass as s, unref as u, renderSlot as d } from "vue";
 import { cn as i } from "../../lib/utils.js";
 const l = /* @__PURE__ */ o({
   __name: "SidebarMenuBadge",
@@ -7,7 +7,7 @@ const l = /* @__PURE__ */ o({
   },
   setup(e) {
     const t = e;
-    return (n, c) => (r(), a("div", {
+    return (n, c) => (a(), r("div", {
       "data-sidebar": "menu-badge",
       class: s(u(i)(
         "absolute right-1 flex h-5 min-w-5 items-center justify-center rounded-md px-1 text-xs font-medium tabular-nums text-sidebar-foreground select-none pointer-events-none",

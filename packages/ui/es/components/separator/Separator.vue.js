@@ -1,4 +1,4 @@
-import { defineComponent as p, computed as c, openBlock as r, createBlock as i, unref as t, mergeProps as m, withCtx as u, createElementBlock as d, normalizeClass as f, toDisplayString as x, createCommentVNode as b } from "vue";
+import { defineComponent as p, computed as c, createBlock as i, openBlock as r, unref as t, mergeProps as m, withCtx as u, createElementBlock as d, createCommentVNode as f, normalizeClass as x, toDisplayString as b } from "vue";
 import { cn as o } from "../../lib/utils.js";
 import { Separator as g } from "radix-vue";
 const k = /* @__PURE__ */ p({
@@ -26,13 +26,13 @@ const k = /* @__PURE__ */ p({
       default: u(() => [
         e.label ? (r(), d("span", {
           key: 0,
-          class: f(
+          class: x(
             t(o)(
               "text-xs text-muted-foreground bg-background absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center items-center",
               e.orientation === "vertical" ? "w-[1px] px-1 py-2" : "h-[1px] py-1 px-2"
             )
           )
-        }, x(e.label), 3)) : b("", !0)
+        }, b(e.label), 3)) : f("", !0)
       ]),
       _: 1
     }, 16, ["class"]));

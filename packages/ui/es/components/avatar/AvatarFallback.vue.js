@@ -1,4 +1,4 @@
-import { defineComponent as r, openBlock as t, createBlock as l, unref as n, normalizeProps as s, guardReactiveProps as p, withCtx as c, renderSlot as d } from "vue";
+import { defineComponent as r, createBlock as t, openBlock as l, unref as n, normalizeProps as s, guardReactiveProps as p, withCtx as c, renderSlot as d } from "vue";
 import { AvatarFallback as f } from "radix-vue";
 const _ = /* @__PURE__ */ r({
   __name: "AvatarFallback",
@@ -9,7 +9,7 @@ const _ = /* @__PURE__ */ r({
   },
   setup(e) {
     const a = e;
-    return (o, i) => (t(), l(n(f), s(p(a)), {
+    return (o, i) => (l(), t(n(f), s(p(a)), {
       default: c(() => [
         d(o.$slots, "default")
       ]),

@@ -1,4 +1,4 @@
-import { defineComponent as s, openBlock as n, createElementBlock as t, normalizeClass as a, unref as c, renderSlot as d } from "vue";
+import { defineComponent as s, createElementBlock as n, openBlock as t, normalizeClass as a, unref as c, renderSlot as d } from "vue";
 import { cn as l } from "../../lib/utils.js";
 const u = /* @__PURE__ */ s({
   __name: "Card",
@@ -7,7 +7,7 @@ const u = /* @__PURE__ */ s({
   },
   setup(e) {
     const r = e;
-    return (o, p) => (n(), t("div", {
+    return (o, p) => (t(), n("div", {
       class: a(
         c(l)(
           "rounded-xl border bg-card text-card-foreground shadow",

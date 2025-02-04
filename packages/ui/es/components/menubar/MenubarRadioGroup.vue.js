@@ -1,4 +1,4 @@
-import { defineComponent as s, openBlock as p, createBlock as n, unref as e, normalizeProps as u, guardReactiveProps as d, withCtx as i, renderSlot as m } from "vue";
+import { defineComponent as s, createBlock as p, openBlock as n, unref as e, normalizeProps as u, guardReactiveProps as d, withCtx as i, renderSlot as m } from "vue";
 import { useForwardPropsEmits as l, MenubarRadioGroup as c } from "radix-vue";
 const C = /* @__PURE__ */ s({
   __name: "MenubarRadioGroup",
@@ -10,7 +10,7 @@ const C = /* @__PURE__ */ s({
   emits: ["update:modelValue"],
   setup(o, { emit: r }) {
     const t = l(o, r);
-    return (a, h) => (p(), n(e(c), u(d(e(t))), {
+    return (a, h) => (n(), p(e(c), u(d(e(t))), {
       default: i(() => [
         m(a.$slots, "default")
       ]),

@@ -1,4 +1,4 @@
-import { defineComponent as c, computed as l, openBlock as p, createBlock as i, unref as e, mergeProps as d, withCtx as u, renderSlot as f } from "vue";
+import { defineComponent as c, computed as l, createBlock as p, openBlock as i, unref as e, mergeProps as d, withCtx as u, renderSlot as f } from "vue";
 import { cn as m } from "../../lib/utils.js";
 import { useForwardProps as g, NavigationMenuList as _ } from "radix-vue";
 const w = /* @__PURE__ */ c({
@@ -13,7 +13,7 @@ const w = /* @__PURE__ */ c({
       const { class: o, ...s } = t;
       return s;
     }), a = g(n);
-    return (o, s) => (p(), i(e(_), d(e(a), {
+    return (o, s) => (i(), p(e(_), d(e(a), {
       class: e(m)(
         "group flex flex-1 list-none items-center justify-center gap-x-1",
         t.class

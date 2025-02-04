@@ -1,8 +1,8 @@
-import { defineComponent as p, computed as f, openBlock as m, createBlock as g, unref as e, withCtx as s, createVNode as o, mergeProps as y, renderSlot as h } from "vue";
+import { defineComponent as p, computed as f, createBlock as m, openBlock as g, unref as e, withCtx as s, createVNode as o, mergeProps as y, renderSlot as h } from "vue";
 import { cn as b } from "../../lib/utils.js";
 import { useForwardPropsEmits as _, DialogPortal as w, DialogOverlay as B, DialogContent as C, DialogClose as D } from "radix-vue";
 import { sheetVariants as O } from "./index.js";
-import P from "../../node_modules/.pnpm/@radix-icons_vue@1.0.0_vue@3.5.13_typescript@5.6.3_/node_modules/@radix-icons/vue/esm/Cross2Icon.js";
+import P from "../../node_modules/.pnpm/@radix-icons_vue@1.0.0_vue@3.5.13/node_modules/@radix-icons/vue/esm/Cross2Icon.js";
 const S = /* @__PURE__ */ p({
   inheritAttrs: !1,
   __name: "SheetContent",
@@ -21,7 +21,7 @@ const S = /* @__PURE__ */ p({
       const { class: t, side: c, ...u } = a;
       return u;
     }), l = _(d, i);
-    return (t, c) => (m(), g(e(w), null, {
+    return (t, c) => (g(), m(e(w), null, {
       default: s(() => [
         o(e(B), { class: "fixed inset-0 z-50 bg-black/80 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" }),
         o(e(C), y({

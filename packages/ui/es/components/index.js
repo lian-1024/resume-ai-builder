@@ -3,7 +3,7 @@ import { badgeVariants as a } from "./badge/index.js";
 import { default as u } from "./breadcrumb/Breadcrumb.vue.js";
 import { default as p } from "./breadcrumb/BreadcrumbEllipsis.vue.js";
 import { default as m } from "./breadcrumb/BreadcrumbItem.vue.js";
-import { default as n } from "./breadcrumb/BreadcrumbLink.vue.js";
+import { default as x } from "./breadcrumb/BreadcrumbLink.vue.js";
 import { default as i } from "./breadcrumb/BreadcrumbList.vue.js";
 import { default as S } from "./breadcrumb/BreadcrumbPage.vue.js";
 import { default as g } from "./breadcrumb/BreadcrumbSeparator.vue.js";
@@ -30,7 +30,7 @@ import { default as ae } from "./dropdown-menu/DropdownMenuSeparator.vue.js";
 import { default as ue } from "./dropdown-menu/DropdownMenuShortcut.vue.js";
 import { default as pe } from "./dropdown-menu/DropdownMenuSub.vue.js";
 import { default as me } from "./dropdown-menu/DropdownMenuSubContent.vue.js";
-import { default as ne } from "./dropdown-menu/DropdownMenuSubTrigger.vue.js";
+import { default as xe } from "./dropdown-menu/DropdownMenuSubTrigger.vue.js";
 import { default as ie } from "./dropdown-menu/DropdownMenuTrigger.vue.js";
 import { DropdownMenuPortal as Se } from "radix-vue";
 import { default as ge } from "./flex/index.vue.js";
@@ -57,7 +57,7 @@ import { sidebarMenuButtonVariants as ar } from "./sidebar/index.js";
 import { default as ur } from "./tooltip/Tooltip.vue.js";
 import { default as pr } from "./tooltip/TooltipContent.vue.js";
 import { default as mr } from "./tooltip/TooltipProvider.vue.js";
-import { default as nr } from "./tooltip/TooltipTrigger.vue.js";
+import { default as xr } from "./tooltip/TooltipTrigger.vue.js";
 import { default as ir } from "./select/Select.vue.js";
 import { default as Sr } from "./select/SelectContent.vue.js";
 import { default as gr } from "./select/SelectGroup.vue.js";
@@ -69,64 +69,65 @@ import { default as Gr } from "./select/SelectScrollUpButton.vue.js";
 import { default as Nr } from "./select/SelectSeparator.vue.js";
 import { default as kr } from "./select/SelectTrigger.vue.js";
 import { default as Ar } from "./select/SelectValue.vue.js";
-import { default as Pr } from "./avatar/Avatar.vue.js";
-import { default as Or } from "./avatar/AvatarFallback.vue.js";
-import { default as yr } from "./avatar/AvatarImage.vue.js";
-import { default as _r } from "./badge/Badge.vue.js";
-import { default as qr } from "./button/Button.vue.js";
-import { default as Jr } from "./color-mode-button/color-mode-button.vue.js";
-import { default as Qr } from "./navigation-menu/NavigationMenu.vue.js";
-import { default as Xr } from "./navigation-menu/NavigationMenuContent.vue.js";
-import { default as Zr } from "./navigation-menu/NavigationMenuItem.vue.js";
-import { default as eo } from "./navigation-menu/NavigationMenuLink.vue.js";
-import { default as oo } from "./navigation-menu/NavigationMenuList.vue.js";
-import { default as ao } from "./navigation-menu/NavigationMenuTrigger.vue.js";
-import { default as uo } from "./navigation-menu/NavigationMenuViewport.vue.js";
-import { default as lo } from "./sheet/Sheet.vue.js";
-import { default as so } from "./sheet/SheetClose.vue.js";
-import { default as xo } from "./sheet/SheetContent.vue.js";
-import { default as bo } from "./sheet/SheetDescription.vue.js";
-import { default as Mo } from "./sheet/SheetFooter.vue.js";
-import { default as co } from "./sheet/SheetHeader.vue.js";
-import { default as Do } from "./sheet/SheetTitle.vue.js";
-import { default as wo } from "./sheet/SheetTrigger.vue.js";
-import { default as Io } from "./sidebar/Sidebar.vue.js";
-import { default as ho } from "./sidebar/SidebarContent.vue.js";
-import { default as Lo } from "./sidebar/SidebarFooter.vue.js";
-import { default as Vo } from "./sidebar/SidebarGroup.vue.js";
-import { default as Ro } from "./sidebar/SidebarGroupAction.vue.js";
-import { default as Fo } from "./sidebar/SidebarGroupContent.vue.js";
-import { default as Ho } from "./sidebar/SidebarGroupLabel.vue.js";
-import { default as Eo } from "./sidebar/SidebarHeader.vue.js";
-import { default as Uo } from "./sidebar/SidebarInput.vue.js";
-import { default as jo } from "./sidebar/SidebarInset.vue.js";
-import { default as zo } from "./sidebar/SidebarMenu.vue.js";
-import { default as Ko } from "./sidebar/SidebarMenuAction.vue.js";
-import { default as Wo } from "./sidebar/SidebarMenuBadge.vue.js";
-import { default as Yo } from "./sidebar/SidebarMenuButton.vue.js";
-import { default as $o } from "./sidebar/SidebarMenuItem.vue.js";
-import { default as rt } from "./sidebar/SidebarMenuSkeleton.vue.js";
-import { default as tt } from "./sidebar/SidebarMenuSub.vue.js";
-import { default as ft } from "./sidebar/SidebarMenuSubButton.vue.js";
-import { default as dt } from "./sidebar/SidebarMenuSubItem.vue.js";
-import { default as lt } from "./sidebar/SidebarProvider.vue.js";
-import { default as st } from "./sidebar/SidebarRail.vue.js";
-import { default as xt } from "./sidebar/SidebarSeparator.vue.js";
-import { default as bt } from "./sidebar/SidebarTrigger.vue.js";
-import { useSidebar as Mt } from "./sidebar/utils.js";
+import { default as Pr } from "./textarea/Textarea.vue.js";
+import { default as Or } from "./avatar/Avatar.vue.js";
+import { default as yr } from "./avatar/AvatarFallback.vue.js";
+import { default as _r } from "./avatar/AvatarImage.vue.js";
+import { default as qr } from "./badge/Badge.vue.js";
+import { default as Jr } from "./button/Button.vue.js";
+import { default as Qr } from "./color-mode-button/color-mode-button.vue.js";
+import { default as Xr } from "./navigation-menu/NavigationMenu.vue.js";
+import { default as Zr } from "./navigation-menu/NavigationMenuContent.vue.js";
+import { default as eo } from "./navigation-menu/NavigationMenuItem.vue.js";
+import { default as oo } from "./navigation-menu/NavigationMenuLink.vue.js";
+import { default as ao } from "./navigation-menu/NavigationMenuList.vue.js";
+import { default as uo } from "./navigation-menu/NavigationMenuTrigger.vue.js";
+import { default as lo } from "./navigation-menu/NavigationMenuViewport.vue.js";
+import { default as so } from "./sheet/Sheet.vue.js";
+import { default as no } from "./sheet/SheetClose.vue.js";
+import { default as bo } from "./sheet/SheetContent.vue.js";
+import { default as Mo } from "./sheet/SheetDescription.vue.js";
+import { default as co } from "./sheet/SheetFooter.vue.js";
+import { default as Do } from "./sheet/SheetHeader.vue.js";
+import { default as wo } from "./sheet/SheetTitle.vue.js";
+import { default as Io } from "./sheet/SheetTrigger.vue.js";
+import { default as ho } from "./sidebar/Sidebar.vue.js";
+import { default as Lo } from "./sidebar/SidebarContent.vue.js";
+import { default as Vo } from "./sidebar/SidebarFooter.vue.js";
+import { default as Ro } from "./sidebar/SidebarGroup.vue.js";
+import { default as Fo } from "./sidebar/SidebarGroupAction.vue.js";
+import { default as Ho } from "./sidebar/SidebarGroupContent.vue.js";
+import { default as Eo } from "./sidebar/SidebarGroupLabel.vue.js";
+import { default as Uo } from "./sidebar/SidebarHeader.vue.js";
+import { default as jo } from "./sidebar/SidebarInput.vue.js";
+import { default as zo } from "./sidebar/SidebarInset.vue.js";
+import { default as Ko } from "./sidebar/SidebarMenu.vue.js";
+import { default as Wo } from "./sidebar/SidebarMenuAction.vue.js";
+import { default as Yo } from "./sidebar/SidebarMenuBadge.vue.js";
+import { default as $o } from "./sidebar/SidebarMenuButton.vue.js";
+import { default as rt } from "./sidebar/SidebarMenuItem.vue.js";
+import { default as tt } from "./sidebar/SidebarMenuSkeleton.vue.js";
+import { default as ft } from "./sidebar/SidebarMenuSub.vue.js";
+import { default as dt } from "./sidebar/SidebarMenuSubButton.vue.js";
+import { default as lt } from "./sidebar/SidebarMenuSubItem.vue.js";
+import { default as st } from "./sidebar/SidebarProvider.vue.js";
+import { default as nt } from "./sidebar/SidebarRail.vue.js";
+import { default as bt } from "./sidebar/SidebarSeparator.vue.js";
+import { default as Mt } from "./sidebar/SidebarTrigger.vue.js";
+import { useSidebar as ct } from "./sidebar/utils.js";
 export {
-  Pr as Avatar,
-  Or as AvatarFallback,
-  yr as AvatarImage,
-  _r as Badge,
+  Or as Avatar,
+  yr as AvatarFallback,
+  _r as AvatarImage,
+  qr as Badge,
   u as Breadcrumb,
   p as BreadcrumbEllipsis,
   m as BreadcrumbItem,
-  n as BreadcrumbLink,
+  x as BreadcrumbLink,
   i as BreadcrumbList,
   S as BreadcrumbPage,
   g as BreadcrumbSeparator,
-  qr as Button,
+  Jr as Button,
   y as COLOR_MODE,
   T as Card,
   B as CardContent,
@@ -137,7 +138,7 @@ export {
   A as Collapsible,
   P as CollapsibleContent,
   O as CollapsibleTrigger,
-  Jr as ColorModeButton,
+  Qr as ColorModeButton,
   _ as DropdownMenu,
   q as DropdownMenuCheckboxItem,
   J as DropdownMenuContent,
@@ -151,7 +152,7 @@ export {
   ue as DropdownMenuShortcut,
   pe as DropdownMenuSub,
   me as DropdownMenuSubContent,
-  ne as DropdownMenuSubTrigger,
+  xe as DropdownMenuSubTrigger,
   ie as DropdownMenuTrigger,
   ge as Flex,
   Ce as Input,
@@ -170,13 +171,13 @@ export {
   Je as MenubarSubContent,
   Qe as MenubarSubTrigger,
   Xe as MenubarTrigger,
-  Qr as NavigationMenu,
-  Xr as NavigationMenuContent,
-  Zr as NavigationMenuItem,
-  eo as NavigationMenuLink,
-  oo as NavigationMenuList,
-  ao as NavigationMenuTrigger,
-  uo as NavigationMenuViewport,
+  Xr as NavigationMenu,
+  Zr as NavigationMenuContent,
+  eo as NavigationMenuItem,
+  oo as NavigationMenuLink,
+  ao as NavigationMenuList,
+  uo as NavigationMenuTrigger,
+  lo as NavigationMenuViewport,
   ir as Select,
   Sr as SelectContent,
   gr as SelectGroup,
@@ -189,47 +190,48 @@ export {
   kr as SelectTrigger,
   Ar as SelectValue,
   er as Separator,
-  lo as Sheet,
-  so as SheetClose,
-  xo as SheetContent,
-  bo as SheetDescription,
-  Mo as SheetFooter,
-  co as SheetHeader,
-  Do as SheetTitle,
-  wo as SheetTrigger,
-  Io as Sidebar,
-  ho as SidebarContent,
-  Lo as SidebarFooter,
-  Vo as SidebarGroup,
-  Ro as SidebarGroupAction,
-  Fo as SidebarGroupContent,
-  Ho as SidebarGroupLabel,
-  Eo as SidebarHeader,
-  Uo as SidebarInput,
-  jo as SidebarInset,
-  zo as SidebarMenu,
-  Ko as SidebarMenuAction,
-  Wo as SidebarMenuBadge,
-  Yo as SidebarMenuButton,
-  $o as SidebarMenuItem,
-  rt as SidebarMenuSkeleton,
-  tt as SidebarMenuSub,
-  ft as SidebarMenuSubButton,
-  dt as SidebarMenuSubItem,
-  lt as SidebarProvider,
-  st as SidebarRail,
-  xt as SidebarSeparator,
-  bt as SidebarTrigger,
+  so as Sheet,
+  no as SheetClose,
+  bo as SheetContent,
+  Mo as SheetDescription,
+  co as SheetFooter,
+  Do as SheetHeader,
+  wo as SheetTitle,
+  Io as SheetTrigger,
+  ho as Sidebar,
+  Lo as SidebarContent,
+  Vo as SidebarFooter,
+  Ro as SidebarGroup,
+  Fo as SidebarGroupAction,
+  Ho as SidebarGroupContent,
+  Eo as SidebarGroupLabel,
+  Uo as SidebarHeader,
+  jo as SidebarInput,
+  zo as SidebarInset,
+  Ko as SidebarMenu,
+  Wo as SidebarMenuAction,
+  Yo as SidebarMenuBadge,
+  $o as SidebarMenuButton,
+  rt as SidebarMenuItem,
+  tt as SidebarMenuSkeleton,
+  ft as SidebarMenuSub,
+  dt as SidebarMenuSubButton,
+  lt as SidebarMenuSubItem,
+  st as SidebarProvider,
+  nt as SidebarRail,
+  bt as SidebarSeparator,
+  Mt as SidebarTrigger,
+  Pr as Textarea,
   ur as Tooltip,
   pr as TooltipContent,
   mr as TooltipProvider,
-  nr as TooltipTrigger,
+  xr as TooltipTrigger,
   o as avatarVariant,
   a as badgeVariants,
   C as buttonVariants,
   Ze as navigationMenuTriggerStyle,
   or as sheetVariants,
   ar as sidebarMenuButtonVariants,
-  Mt as useSidebar
+  ct as useSidebar
 };
 //# sourceMappingURL=index.js.map

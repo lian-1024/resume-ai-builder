@@ -1,4 +1,4 @@
-import { defineComponent as a, openBlock as i, createBlock as n, unref as e, normalizeClass as c, withCtx as l, createVNode as m, createElementVNode as p } from "vue";
+import { defineComponent as a, createBlock as i, openBlock as n, unref as e, normalizeClass as c, withCtx as l, createVNode as m, createElementVNode as p } from "vue";
 import "../button/index.js";
 import { cn as f } from "../../lib/utils.js";
 import { PanelLeft as d } from "lucide-vue-next";
@@ -11,7 +11,7 @@ const w = /* @__PURE__ */ a({
   },
   setup(o) {
     const t = o, { toggleSidebar: s } = g();
-    return (_, r) => (i(), n(e(u), {
+    return (_, r) => (n(), i(e(u), {
       "data-sidebar": "trigger",
       variant: "ghost",
       size: "icon",

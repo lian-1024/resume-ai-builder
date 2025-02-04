@@ -1,4 +1,4 @@
-import { defineComponent as u, openBlock as d, createBlock as f, unref as o, withCtx as r, createVNode as e, createElementVNode as p, createTextVNode as i } from "vue";
+import { defineComponent as u, createBlock as d, openBlock as f, unref as o, withCtx as r, createVNode as e, createElementVNode as p, createTextVNode as i } from "vue";
 import "../button/index.js";
 import c from "../dropdown-menu/DropdownMenu.vue.js";
 import "clsx";
@@ -7,7 +7,7 @@ import "radix-vue";
 import _ from "../dropdown-menu/DropdownMenuContent.vue.js";
 import m from "../dropdown-menu/DropdownMenuItem.vue.js";
 import k from "../dropdown-menu/DropdownMenuTrigger.vue.js";
-import { Icon as l } from "../../node_modules/.pnpm/@iconify_vue@4.3.0_vue@3.5.13_typescript@5.6.3_/node_modules/@iconify/vue/dist/iconify.js";
+import { Icon as l } from "../../node_modules/.pnpm/@iconify_vue@4.3.0_vue@3.5.13/node_modules/@iconify/vue/dist/iconify.js";
 import { useColorMode as C } from "../../node_modules/.pnpm/@vueuse_core@12.5.0_typescript@5.6.3/node_modules/@vueuse/core/index.js";
 import { COLOR_MODE as a } from "./index.js";
 import $ from "../button/Button.vue.js";
@@ -16,7 +16,7 @@ const T = /* @__PURE__ */ u({
   __name: "color-mode-button",
   setup(v) {
     const n = C();
-    return (w, t) => (d(), f(o(c), null, {
+    return (w, t) => (f(), d(o(c), null, {
       default: r(() => [
         e(o(k), { "as-child": "" }, {
           default: r(() => [

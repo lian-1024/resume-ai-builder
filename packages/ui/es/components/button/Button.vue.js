@@ -1,4 +1,4 @@
-import { defineComponent as o, openBlock as r, createBlock as i, unref as s, normalizeClass as n, withCtx as l, renderSlot as m } from "vue";
+import { defineComponent as o, createBlock as r, openBlock as i, unref as s, normalizeClass as n, withCtx as l, renderSlot as m } from "vue";
 import { cn as p } from "../../lib/utils.js";
 import { Primitive as c } from "radix-vue";
 import { buttonVariants as f } from "./index.js";
@@ -13,7 +13,7 @@ const z = /* @__PURE__ */ o({
   },
   setup(t) {
     const e = t;
-    return (a, u) => (r(), i(s(c), {
+    return (a, u) => (i(), r(s(c), {
       as: a.as,
       "as-child": a.asChild,
       class: n(s(p)(s(f)({ variant: a.variant, size: a.size }), e.class))
