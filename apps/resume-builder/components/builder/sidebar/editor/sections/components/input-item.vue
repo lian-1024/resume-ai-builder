@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { Input } from '@lianqq/resume-ui';
-
+import Item from './item.vue'
 defineProps<{
     title: string;
     placeholder: string;
@@ -14,10 +14,9 @@ const value = defineModel<string>();
 </script>
 
 <template>
-    <div class="flex flex-col gap-2">
-        <span class="text-sm dark:text-zinc-300 text-zinc-500">{{ title }}</span>
+    <Item :title="title" :placeholder="placeholder">  
         <Input :placeholder="placeholder" v-model="value" />
-    </div>
+    </Item>
 </template>
 
 <style lang="less" scoped></style>

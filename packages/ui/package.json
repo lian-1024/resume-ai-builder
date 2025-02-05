@@ -26,6 +26,7 @@
     "build": "vue-tsc -b && vite build"
   },
   "dependencies": {
+    "@internationalized/date": "^3.7.0",
     "@lianqq/resume-config": "workspace:*",
     "@radix-icons/vue": "^1.0.0",
     "@vueuse/core": "^12.5.0",
