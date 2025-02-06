@@ -32,26 +32,25 @@ const changeValueHandle = (value:string) => {
     <template #content>
       <div class="flex flex-col gap-6">
         <div class="flex items-center gap-4">
-          <Avatar size="base">  
+         
+        </div>
+    
+        <div class="grid grid-cols-3 gap-6">
+          <div class="flex items-center gap-4 col-span-2">
+            <Avatar size="base">  
             <AvatarImage :src="avatarUrl" alt="头像" />
             <AvatarFallback>{{ avatarInitials }}</AvatarFallback>
           </Avatar>
-          <InputItem title="头像" placeholder="请输入图片链接" :model-value="avatarUrl" @update:model-value="changeValueHandle"/>
-          <InputItem title="姓名" placeholder="请输入姓名" :model-value="name" @update:model-value="changeValueHandle"/>
-        </div>
-        <div class="flex flex-col gap-6">
-          <div class="flex gap-4">
-            <InputItem title="邮箱" placeholder="请输入您的邮箱" :model-value="email" @update:model-value="changeValueHandle"/>
-            <InputItem title="手机号" placeholder="请输入您的手机号" :model-value="phone" @update:model-value="changeValueHandle"/>
+          <InputItem class="flex-1" title="头像" placeholder="请输入图片链接" :model-value="avatarUrl" @update:model-value="changeValueHandle"/>
           </div>
-        </div>
-        <div class="grid grid-cols-3 gap-6">
+          <InputItem title="姓名" placeholder="请输入姓名" :model-value="name" @update:model-value="changeValueHandle"/>
+          <InputItem title="邮箱" placeholder="请输入您的邮箱" :model-value="email" @update:model-value="changeValueHandle"/>
+          <InputItem title="手机号" placeholder="请输入您的手机号" :model-value="phone" @update:model-value="changeValueHandle"/>
           <InputItem title="状态" placeholder="请输入您的状态" :model-value="currentStatus" @update:model-value="changeValueHandle"/>
           <InputItem title="意向职位" placeholder="请输入您的意向职位" :model-value="positionTitle" @update:model-value="changeValueHandle"/>
           <InputItem title="意向城市" placeholder="请输入您的意向城市" :model-value="city" @update:model-value="changeValueHandle"/>
           <InputItem title="期望薪资" placeholder="请输入您的期望薪资" :model-value="salary" @update:model-value="changeValueHandle"/>
-          <InputItem title="Github" placeholder="请输入您的Github链接" :model-value="githubLink" @update:model-value="changeValueHandle"/>
-          <div class="flex-1"></div>
+          <InputItem title="Github" class="col-start-1 -col-end-1 w-full" placeholder="请输入您的Github链接" :model-value="githubLink" @update:model-value="changeValueHandle"/>
         </div>
       </div>
     </template>

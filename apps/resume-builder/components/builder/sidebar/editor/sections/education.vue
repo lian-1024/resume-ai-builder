@@ -4,7 +4,8 @@ import InputItem from './components/input-item.vue'
 import { storeToRefs } from 'pinia'
 import { useResumeStore } from '~/stores/resume'
 import Item from './components/item.vue'
-import { DatePicker } from '@lianqq/resume-ui'
+import { DatePicker,Textarea } from '@lianqq/resume-ui'
+
 const resumeStore = useResumeStore()
 const { resume } = storeToRefs(resumeStore)
 const education = computed(() => resume.value.sections?.education || {})
