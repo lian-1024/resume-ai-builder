@@ -24,7 +24,7 @@ const changeValueHandle = (value: string) => {
                         <InputItem title="项目名称" placeholder="请输入您的项目名称" :model-value="item.name"
                             @update:model-value="changeValueHandle" />
                             <Item title="项目时间" placeholder="请输入您的项目时间" class="col-start-2 -col-end-1">
-                            <DatePicker/>
+                            <DatePicker class="w-full" />
                             </Item>
                         <InputItem title="担任角色" placeholder="请输入您的担任角色" :model-value="item.role"
                             @update:model-value="changeValueHandle" />

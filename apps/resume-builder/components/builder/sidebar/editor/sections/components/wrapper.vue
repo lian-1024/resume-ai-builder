@@ -2,7 +2,6 @@
 import EditorSectionHeader from './header.vue'
 const props = defineProps<{
     title: string,
-    icon: string,
 }>()
 
 defineOptions({
