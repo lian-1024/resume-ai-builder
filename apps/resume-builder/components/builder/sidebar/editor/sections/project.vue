@@ -26,6 +26,10 @@ const changeValueHandle = (value: string) => {
                             <Item title="项目时间" placeholder="请输入您的项目时间" class="col-start-2 -col-end-1">
                             <DatePicker/>
                             </Item>
+                        <InputItem title="担任角色" placeholder="请输入您的担任角色" :model-value="item.role"
+                            @update:model-value="changeValueHandle" />
+                            <InputItem class="col-start-2 -col-end-1" title="项目链接" placeholder="请输入您的项目链接" :model-value="item.url?.href"
+                            @update:model-value="changeValueHandle" />
                     </div>
                     <div class="flex flex-col gap-2 flex-1 ">
                         <span class="text-sm dark:text-zinc-300 text-zinc-500">项目详情</span>
