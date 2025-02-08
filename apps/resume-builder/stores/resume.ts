@@ -1,9 +1,12 @@
 import { defineStore } from 'pinia'
 import { type ResumeData, Example, type TemplateKey, defaultResumeData, type SectionKey } from '@lianqq/resume-schema'
 import _set from 'lodash-es/set'
+import { useIframeResume, IframeMessageTypeMap } from '@/composables/use-iframe'
+
 
 export const useResumeStore = defineStore('resume', () => {
   const resume = ref<ResumeData>({})
+  const { updateResumeData } = useIframeResume()
 
   /**
    * 初始化简历数据
@@ -19,6 +22,16 @@ export const useResumeStore = defineStore('resume', () => {
    * @param value 
    */
   const setResumeValue = (path: string, value: any) => {
+_set(resume.value,path,value)
+  
+  }
+
+  const sendResumeValue = (path:string,value:any) => {
+    const params = {
+      path,
+      value
+    }
+    updateResumeData(IframeMessageTypeMap.UPDATE_RESUME,params)
   }
 
   /**
@@ -44,6 +57,7 @@ export const useResumeStore = defineStore('resume', () => {
     resume,
     initResumeData,
     setResumeValue,
+    sendResumeValue,
     setResume,
     getResume
   }

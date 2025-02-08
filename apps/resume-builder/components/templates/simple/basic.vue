@@ -3,18 +3,20 @@ import { Flex } from '@lianqq/resume-ui';
 import { computed, type CSSProperties } from 'vue';
 import BasicsInfoItem from '@/components/templates/simple/components/info-item.vue';
 import { defaultBasics } from '@lianqq/resume-schema';
+import { resumeKey, type ResumeProviderProps } from '@/components/preview/provider';
 defineOptions({
   name: "SimpleBasic"
 })
 
-const resumeStore  = useResumeStore()
-const basics = computed(() => resumeStore.resume?.basics || defaultBasics)
+const {resumeData,setResumeValue} = inject<ResumeProviderProps>(resumeKey)!
+const basics = computed(() => resumeData.value?.basics || defaultBasics)
 
 const wrapperStyles = computed<CSSProperties>(() => ({
   display: 'flex',
   justifyContent: 'space-between',
   width: '100%'
 }))
+
 
 
 </script>

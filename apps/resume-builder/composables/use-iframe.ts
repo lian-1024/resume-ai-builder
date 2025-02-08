@@ -5,11 +5,12 @@ export const IframeMessageTypeMap = {
     READY: 'READY'
 } as const
 
+const iframe = ref<HTMLIFrameElement | null>(null)
+
+
 export type IframeMessageType = (typeof IframeMessageTypeMap)[keyof typeof IframeMessageTypeMap]
 export const useIframeResume = () => {
-    const iframe = ref<HTMLIFrameElement | null>(null)
 
-    const resumeStore = useResumeStore()
 
     /**
      * 初始化iframe
@@ -20,7 +21,7 @@ export const useIframeResume = () => {
             if (!iframeElement) {
                 reject("iframe 不存在")
             }
-            iframe.value = iframeElement
+        iframe.value = iframeElement            
             resolve(iframeElement)
         })
 
@@ -43,6 +44,8 @@ export const useIframeResume = () => {
      */
     const updateResumeData = (type: IframeMessageType, data: any) => {
         return new Promise((resolve, reject) => {
+            console.log("updateResumeData",iframe.value);
+            
             if (!iframe.value) return reject("iframe 不存在")
             // 使用 JSON 序列化和反序列化来确保数据可以被克隆
             const cloneData = JSON.parse(JSON.stringify(data))
@@ -53,6 +56,7 @@ export const useIframeResume = () => {
 
 
     return {
+        iframe,
         initIframe,
         updateResumeData
     }

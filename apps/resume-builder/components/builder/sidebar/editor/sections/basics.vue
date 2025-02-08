@@ -20,10 +20,8 @@ const positionTitle = computed(() => basicsData.value.intention?.positionTitle ?
 const city = computed(() => basicsData.value.intention?.city ?? '')
 const salary = computed(() => basicsData.value.intention?.salary ?? '')
 const githubLink = computed(() => basicsData.value.url?.href ?? '')
-const statusValue = ref('')
-const changeValueHandle = (value:string) => {
-  console.log(value)
-  statusValue.value = value
+const changeValueHandle = (value:string,path?:string) => {
+resumeStore.setResumeValue(path ?? 'basics.picture.url',value)
 }
 </script>
 
@@ -41,7 +39,7 @@ const changeValueHandle = (value:string) => {
             <AvatarImage :src="avatarUrl" alt="头像" />
             <AvatarFallback>{{ avatarInitials }}</AvatarFallback>
           </Avatar>
-          <InputItem class="flex-1" title="头像" placeholder="请输入图片链接" :model-value="avatarUrl" @update:model-value="changeValueHandle"/>
+          <InputItem class="flex-1" title="头像" placeholder="请输入图片链接" :model-value="avatarUrl" @update:model-value="(value)=>changeValueHandle(value,'basics.picture.url')"/>
           </div>
           <InputItem title="姓名" placeholder="请输入姓名" :model-value="name" @update:model-value="changeValueHandle"/>
           <InputItem title="邮箱" placeholder="请输入您的邮箱" :model-value="email" @update:model-value="changeValueHandle"/>
