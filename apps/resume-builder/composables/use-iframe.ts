@@ -44,7 +44,6 @@ export const useIframeResume = () => {
      */
     const updateResumeData = (type: IframeMessageType, data: any) => {
         return new Promise((resolve, reject) => {
-            console.log("updateResumeData",iframe.value);
             
             if (!iframe.value) return reject("iframe 不存在")
             // 使用 JSON 序列化和反序列化来确保数据可以被克隆

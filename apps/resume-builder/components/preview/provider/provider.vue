@@ -16,7 +16,11 @@ const messageHandler = (e:MessageEvent) => {
       resumeData.value = e.data.data
       break
     case IframeMessageTypeMap.UPDATE_RESUME:
-      console.log("update resume data",e.data)
+      console.log("update resume data",e.data.data)
+      const {path,value} = e.data.data
+      if(path) {
+        setResumeValue(path,value)
+      }
       break
   }
 }
