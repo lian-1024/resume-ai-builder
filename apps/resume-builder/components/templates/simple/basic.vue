@@ -8,8 +8,8 @@ defineOptions({
   name: "SimpleBasic"
 })
 
-const {resumeData,setResumeValue} = inject<ResumeProviderProps>(resumeKey)!
-const basics = computed(() => resumeData.value?.basics || defaultBasics)
+const {resumeData} = inject<ResumeProviderProps>(resumeKey) || {}
+const basics = computed(() => resumeData?.value?.basics || defaultBasics)
 
 const wrapperStyles = computed<CSSProperties>(() => ({
   display: 'flex',

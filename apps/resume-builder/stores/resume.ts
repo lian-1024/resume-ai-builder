@@ -22,17 +22,18 @@ export const useResumeStore = defineStore('resume', () => {
    * @param value 
    */
   const setResumeValue = (path: string, value: any) => {
+
+    
+
 _set(resume.value,path,value)
+updateResumeData(IframeMessageTypeMap.UPDATE_RESUME,{
+  path,
+  value
+})
   
   }
 
-  const sendResumeValue = (path:string,value:any) => {
-    const params = {
-      path,
-      value
-    }
-    updateResumeData(IframeMessageTypeMap.UPDATE_RESUME,params)
-  }
+
 
   /**
    * 设置简历数据
@@ -57,7 +58,6 @@ _set(resume.value,path,value)
     resume,
     initResumeData,
     setResumeValue,
-    sendResumeValue,
     setResume,
     getResume
   }

@@ -1,16 +1,15 @@
 <script setup lang="ts">
-import { ref } from 'vue';
 import Section from './section.vue';
-import { Example } from '@lianqq/resume-schema';
 import 'md-editor-v3/lib/style.css'
 import { MDPreview } from '@/components/common/md-editor';
 import { TypographySubTitle } from '@/components/common/typography/index';
+import { resumeKey, type ResumeProviderProps } from '@/components/preview/provider';
 defineOptions({
     name: "SimpleSkills"
 })
 
-const resumeStore = useResumeStore()
-const skills = computed(() => resumeStore.resume?.sections?.skills)
+const {resumeData} = inject<ResumeProviderProps>(resumeKey) || {}
+const skills = computed(() => resumeData?.value?.sections?.skills)
 
 </script>
 

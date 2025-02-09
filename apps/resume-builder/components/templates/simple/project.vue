@@ -1,17 +1,17 @@
 <script lang="ts" setup>
 import Section from '@/components/templates/simple/section.vue';
-import { Example } from '@lianqq/resume-schema';
 import 'md-editor-v3/lib/style.css'
 import { TypographySubTitle, TypographySubText } from '@/components/common/typography/index';
 import { MDPreview } from '@/components/common/md-editor';
 import LinkPrimary from '@/components/templates/components/link-primary.vue';
 import { onMounted } from 'vue'
+import { resumeKey, type ResumeProviderProps } from '@/components/preview/provider';
 
 defineOptions({
   name:"SimpleProjects"
 })
-const resumeStore = useResumeStore()
-const projects = computed(() => resumeStore.resume?.sections?.projects)
+const {resumeData} = inject<ResumeProviderProps>(resumeKey) || {}
+const projects = computed(() => resumeData?.value?.sections?.projects)
 const isClient = ref(false)
 
 onMounted(() => {

@@ -5,13 +5,14 @@ import { Example } from '@lianqq/resume-schema';
 import 'md-editor-v3/lib/style.css'
 import { TypographySubTitle, TypographySubText } from '@/components/common/typography/index';
 import { MDPreview } from '@/components/common/md-editor';
-
+import { resumeKey, type ResumeProviderProps } from '@/components/preview/provider';
 defineOptions({
     name: "SimpleEducation"
 })
 
-const resumeStore = useResumeStore()
-const education = computed(() => resumeStore.resume?.sections?.education)
+const {resumeData} = inject<ResumeProviderProps>(resumeKey) || {}
+
+const education = computed(() => resumeData?.value?.sections?.education)
 
 </script>
 
