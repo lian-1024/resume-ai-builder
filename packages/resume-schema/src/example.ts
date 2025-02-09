@@ -7,7 +7,7 @@ export const Example: ResumeData = {
       email: 'zhangwei@example.com',
       phone: '(010) 1234-5678',
       url: {
-        label: '',
+        label: 'github',
         href: 'https://github.com/lian-1024'
       },
       customFields: [],
@@ -41,8 +41,8 @@ export const Example: ResumeData = {
             studyType:"全日制",
             summary: '主修课程： abababaab \n\n 获得奖项: ababa',
             url: {
-              label: '',
-              href: ''
+              label: 'github',
+              href: 'https://github.com'
             }
           }
         ]

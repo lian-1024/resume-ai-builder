@@ -20,7 +20,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <Section :title="projects?.name || '项目经验'">
+  <Section v-if="projects" :title="projects.name || '项目经验'">
     <div class="flex flex-col" v-for="project in projects?.items" :key="project.id">
       <div class="flex justify-between">
         <TypographySubTitle>

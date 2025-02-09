@@ -20,27 +20,27 @@ export declare const projectSchema: z.ZodObject<z.objectUtil.extendShape<{
         href?: string;
     }>;
 }>, "strip", z.ZodTypeAny, {
-    id?: string;
-    visible?: boolean;
     name?: string;
     url?: {
         label?: string;
         href?: string;
     };
+    id?: string;
     city?: string;
+    visible?: boolean;
     startDate?: string;
     endDate?: string;
     summary?: string;
     role?: string;
 }, {
-    id?: string;
-    visible?: boolean;
     name?: string;
     url?: {
         label?: string;
         href?: string;
     };
+    id?: string;
     city?: string;
+    visible?: boolean;
     startDate?: string;
     endDate?: string;
     summary?: string;

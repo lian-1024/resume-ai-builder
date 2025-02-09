@@ -17,8 +17,8 @@ const education = computed(() => resumeData?.value?.sections?.education)
 </script>
 
 <template>
-    <Section :title="education?.name || '教育经历'" class="flex flex-col gap-2">
-        <div v-for="item in education?.items" :key="item.id" class="flex flex-col ">
+    <Section v-if="education" :title="education.name || '教育经历'" class="flex flex-col gap-2">
+        <div v-for="item in education.items" :key="item.id" class="flex flex-col ">
             <div class="flex gap-2 items-center ">
                 <TypographySubTitle :title="item.school"/>
                 <TypographySubText :text="item.degree" />

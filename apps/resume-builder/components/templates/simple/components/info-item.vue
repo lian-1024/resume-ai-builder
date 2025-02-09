@@ -20,7 +20,7 @@ defineOptions({
 </script>
 
 <template>
-    <div class="flex items-center gap-1">
+    <div class="flex items-center gap-1" v-if="text">
         <slot>
             <IconPrimary :icon="icon" />
             <template v-if="!href">
