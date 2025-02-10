@@ -9,36 +9,47 @@ import { DatePicker,Textarea } from '@lianqq/resume-ui'
 const resumeStore = useResumeStore()
 const { resume } = storeToRefs(resumeStore)
 const education = computed(() => resume.value.sections?.education || {})
-const changeValueHandle = (value: string) => {
-    console.log(value)
+const changeValueHandle = (path:string,value: any) => {
+    console.log(path,value)
+
+    resumeStore.setResumeValue(path,value)
 }
 defineOptions({
     name: 'EditorSectionEducation'
 })
+const PathMap = {
+    school:(index:number) =>  `sections.education.items[${index}].school`,
+    major:(index:number) =>  `sections.education.items[${index}].major`,
+    degree:(index:number) =>  `sections.education.items[${index}].degree`,
+    studyType:(index:number) =>  `sections.education.items[${index}].studyType`,
+    startDate:(index:number) =>  `sections.education.items[${index}].startDate`,
+    endDate:(index:number) =>  `sections.education.items[${index}].endDate`,
+    summary:(index:number) =>  `sections.education.items[${index}].summary`,
+}
 </script>
 
 <template>
     <EditorSectionWrapper title="教育经历">
         <template #content>
-            <div class="flex flex-col gap-8" v-for="item in education.items" :key="item.id">
+            <div class="flex flex-col gap-8" v-for="(item,index) in education.items" :key="item.id">
                 <div class="flex flex-col gap-6">
                     <div class="grid grid-cols-3 grid-rows-2 gap-6">
                         <InputItem title="学校" placeholder="请输入您的学校" :model-value="item.school"
-                            @update:model-value="changeValueHandle" />
+                            @update:model-value="(value) => changeValueHandle(PathMap.school(index),value)" />
                         <InputItem title="专业" placeholder="请输入您的专业" :model-value="item.major"
-                            @update:model-value="changeValueHandle" />
+                            @update:model-value="(value) => changeValueHandle(PathMap.major(index),value)" />
                         <InputItem title="学历" placeholder="请输入您的学历" :model-value="item.degree"
-                            @update:model-value="changeValueHandle" />
+                            @update:model-value="(value) => changeValueHandle(PathMap.degree(index),value)" />
                         <Item title="在读时间" placeholder="请输入您的在读时间">
                             <DatePicker class="w-full" />
                         </Item>
                         <InputItem class="col-start-3 -col-end-1" title="学历类型" placeholder="请输入您的学历类型" :model-value="item.studyType"
-                            @update:model-value="changeValueHandle" />
+                            @update:model-value="(value) => changeValueHandle(PathMap.studyType(index),value)" />
 
                     </div>
                     <div class="flex flex-col gap-2 flex-1 ">
                         <span class="text-sm dark:text-zinc-300 text-zinc-500">在校经历</span>
-                        <Textarea placeholder="请输入您的在校经历" :value="item.summary" />
+                        <Textarea placeholder="请输入您的在校经历" :value="item.summary" @update:model-value="(value) => changeValueHandle(PathMap.summary(index),value)" />
                     </div>
                 </div>
             </div>
