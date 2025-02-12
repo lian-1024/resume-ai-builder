@@ -29,10 +29,6 @@ resumeStore.setResumeValue(path ,value)
   <EditorSectionWrapper title="基本信息" icon="lucide:user-round">
     <template #content>
       <div class="flex flex-col gap-6">
-        <div class="flex items-center gap-4">
-         
-        </div>
-    
         <div class="grid grid-cols-3 gap-6">
           <div class="flex items-center gap-4 col-span-2">
             <Avatar size="base">  
