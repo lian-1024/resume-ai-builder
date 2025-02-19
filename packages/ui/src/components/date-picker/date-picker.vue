@@ -1,5 +1,5 @@
 <script setup lang="ts">
-
+import { Icon } from '@iconify/vue'
 import {
   Popover,
   PopoverContent,
@@ -102,7 +102,7 @@ watch(secondMonthPlaceholder, (_secondMonthPlaceholder) => {
           )
         "
       >
-        <Icon name="lucide:calendar"  class="mr-2 h-4 w-4"/>
+        <Icon icon="lucide:calendar"  class="mr-2 h-4 w-4"/>
         <template v-if="value.start">
           <template v-if="value.end">
             {{
@@ -147,7 +147,7 @@ watch(secondMonthPlaceholder, (_secondMonthPlaceholder) => {
                 "
                 @click="updateMonth('first', -1)"
               >
-                <Icon name="lucide:chevron-left" class="h-4 w-4" />
+                <Icon icon="lucide:chevron-left" class="h-4 w-4" />
               </button>
               <div
                 :class="cn('text-sm font-medium')"
@@ -167,7 +167,7 @@ watch(secondMonthPlaceholder, (_secondMonthPlaceholder) => {
                 "
                 @click="updateMonth('first', 1)"
               >
-                <Icon name="lucide:chevron-right" class="h-4 w-4" />
+                <Icon icon="lucide:chevron-right" class="h-4 w-4" />
               </button>
             </div>
             <RangeCalendarGrid>
@@ -215,7 +215,7 @@ watch(secondMonthPlaceholder, (_secondMonthPlaceholder) => {
                 "
                 @click="updateMonth('second', -1)"
               >
-                <Icon name="lucide:chevron-left" class="h-4 w-4" />
+                <Icon icon="lucide:chevron-left" class="h-4 w-4" />
               </button>
               <div
                 :class="cn('text-sm font-medium')"
@@ -236,7 +236,7 @@ watch(secondMonthPlaceholder, (_secondMonthPlaceholder) => {
                 "
                 @click="updateMonth('second', 1)"
               >
-                <Icon name="lucide:chevron-right" class="h-4 w-4" />
+                  <Icon icon="lucide:chevron-right" class="h-4 w-4" />
               </button>
             </div>
             <RangeCalendarGrid>

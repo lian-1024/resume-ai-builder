@@ -30,7 +30,7 @@ defineOptions({
         <Icon icon="lucide:moon" class="w-4 h-4" />
         Dark
       </DropdownMenuItem>
-      <DropdownMenuItem @click="mode = COLOR_MODE.System">
+      <DropdownMenuItem @click="mode = COLOR_MODE.Auto">
         <Icon icon="lucide:laptop-minimal" class="w-4 h-4" />
         System
       </DropdownMenuItem>

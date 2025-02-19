@@ -137,11 +137,11 @@ import { default as tt } from "./sidebar/SidebarMenuItem.vue.js";
 import { default as dt } from "./sidebar/SidebarMenuSkeleton.vue.js";
 import { default as lt } from "./sidebar/SidebarMenuSub.vue.js";
 import { default as nt } from "./sidebar/SidebarMenuSubButton.vue.js";
-import { default as st } from "./sidebar/SidebarMenuSubItem.vue.js";
-import { default as it } from "./sidebar/SidebarProvider.vue.js";
-import { default as St } from "./sidebar/SidebarRail.vue.js";
-import { default as gt } from "./sidebar/SidebarSeparator.vue.js";
-import { default as ct } from "./sidebar/SidebarTrigger.vue.js";
+import { default as st } from "./sidebar/SidebarProvider.vue.js";
+import { default as it } from "./sidebar/SidebarRail.vue.js";
+import { default as St } from "./sidebar/SidebarSeparator.vue.js";
+import { default as gt } from "./sidebar/SidebarTrigger.vue.js";
+import { default as ct } from "./sidebar/SidebarMenuSubItem.vue.js";
 import { useSidebar as Tt } from "./sidebar/utils.js";
 export {
   Ua as Avatar,
@@ -273,11 +273,11 @@ export {
   dt as SidebarMenuSkeleton,
   lt as SidebarMenuSub,
   nt as SidebarMenuSubButton,
-  st as SidebarMenuSubItem,
-  it as SidebarProvider,
-  St as SidebarRail,
-  gt as SidebarSeparator,
-  ct as SidebarTrigger,
+  ct as SidebarMenuSubItem,
+  st as SidebarProvider,
+  it as SidebarRail,
+  St as SidebarSeparator,
+  gt as SidebarTrigger,
   Fr as Textarea,
   ur as Tooltip,
   pr as TooltipContent,
