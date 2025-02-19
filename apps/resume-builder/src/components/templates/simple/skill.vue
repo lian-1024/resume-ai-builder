@@ -16,7 +16,7 @@ const skills = computed(() => resumeData?.value?.sections?.skills)
     <Section v-if="skills" :title="skills.name || '专业技能'" class="flex flex-col gap-2">
         <div class="flex flex-col gap-2" v-for="skill in skills?.items" :key="skill.id">
             <TypographySubTitle :title="skill.name" />
-            <p class="p-0">{{skill.summary}}</p>
+            <p class="p-0" v-html="skill.summary"/>
         </div>
     </Section>
 </template>

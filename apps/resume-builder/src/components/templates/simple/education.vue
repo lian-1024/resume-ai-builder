@@ -23,7 +23,7 @@ const education = computed(() => resumeData?.value?.sections?.education)
                 <TypographySubText :text="`${item.startDate} - ${item.endDate}`" align="right" class="ml-auto"/>
             </div>
             <TypographySubText :text="item.studyType" />
-            <p class="my-2">{{item.summary}}</p>
+            <p class="my-2" v-html="item.summary"/>
         </div>
     </Section>
 </template>

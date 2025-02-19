@@ -34,7 +34,7 @@ onMounted(() => {
         <TypographySubText>{{ project.role }}</TypographySubText>
         <LinkPrimary :href="project.url?.href">{{ project.url?.label }}</LinkPrimary>
       </div>
-        <p class="my-2">{{project.summary}}</p>
+        <p class="my-2" v-html="project.summary"/>
     </div>
   </Section>
 </template>

@@ -4,9 +4,9 @@ import InputItem from './components/input-item.vue'
 import { storeToRefs } from 'pinia'
 import { useResumeStore } from '@/stores/modules/resume'
 import Item from './components/item.vue'
-import { DatePicker, Textarea } from '@lianqq/resume-ui'
-import { computed, shallowRef, defineAsyncComponent, ref } from 'vue'
-import '@wangeditor/editor/dist/css/style.css' // 引入 cs
+import { DatePicker } from '@lianqq/resume-ui'
+import { computed} from 'vue'
+import RichTextEditor from '@/components/common/rich-text/index.vue'
 const resumeStore = useResumeStore()
 const { resume } = storeToRefs(resumeStore)
 const education = computed(() => resume.value.sections?.education || {})
@@ -28,23 +28,7 @@ const PathMap = {
     endDate: (index: number) => `sections.education.items[${index}].endDate`,
     summary: (index: number) => `sections.education.items[${index}].summary`,
 }
-const editorRef = shallowRef()
 
-const Editor = defineAsyncComponent(() =>
-// @ts-ignore
-import('@wangeditor/editor-for-vue').then(module => module.Editor)
-)
-const Toolbar = defineAsyncComponent(() =>
-// @ts-ignore
-import('@wangeditor/editor-for-vue').then(module => module.Toolbar)
-)
-
- // 内容 HTML
- const valueHtml = ref('<p>hello</p>')
-
-
-const toolbarConfig = {}
-const editorConfig = { placeholder: '请输入内容...' }
 </script>
 
 <template>
@@ -70,8 +54,7 @@ const editorConfig = { placeholder: '请输入内容...' }
                     <div class="flex flex-col gap-2 flex-1 ">
                         <span class="text-sm dark:text-zinc-300 text-zinc-500">在校经历</span>
                            <div class="h-96">
-                            <Toolbar :editor="editorRef" :default-config="toolbarConfig" mode="default" />
-                            <Editor  :default-config="editorConfig" v-model="valueHtml" />
+                            <RichTextEditor :model-value="item.summary!" @update:model-value="(value) => changeValueHandle(PathMap.summary(index), value)" />
                            </div>
                     </div>
                 </div>

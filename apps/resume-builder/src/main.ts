@@ -2,6 +2,7 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 // 将tailwind.css 放在ui之前，否者ui的样式会覆盖tailwind.css的样式
+import '@/assets/styles/index.css'
 import '@/assets/styles/tailwind.css'
 import '@lianqq/resume-ui/styles.css'
 

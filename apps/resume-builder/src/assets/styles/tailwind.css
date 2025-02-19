@@ -14,7 +14,11 @@
   }
 
   ul li {
-    @apply list-disc 
+    @apply list-disc list-inside;
+  }
+
+  ol li {
+    @apply list-decimal list-inside;
   }
 
 }
