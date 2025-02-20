@@ -10,21 +10,9 @@ export declare const educationSchema: z.ZodObject<z.objectUtil.extendShape<{
     endDate: z.ZodString;
     studyType: z.ZodString;
     summary: z.ZodString;
-    url: z.ZodObject<{
-        label: z.ZodString;
-        href: z.ZodUnion<[z.ZodLiteral<"">, z.ZodString]>;
-    }, "strip", z.ZodTypeAny, {
-        label?: string;
-        href?: string;
-    }, {
-        label?: string;
-        href?: string;
-    }>;
+    url: z.ZodUnion<[z.ZodLiteral<"">, z.ZodString]>;
 }>, "strip", z.ZodTypeAny, {
-    url?: {
-        label?: string;
-        href?: string;
-    };
+    url?: string;
     id?: string;
     visible?: boolean;
     school?: string;
@@ -35,10 +23,7 @@ export declare const educationSchema: z.ZodObject<z.objectUtil.extendShape<{
     studyType?: string;
     summary?: string;
 }, {
-    url?: {
-        label?: string;
-        href?: string;
-    };
+    url?: string;
     id?: string;
     visible?: boolean;
     school?: string;

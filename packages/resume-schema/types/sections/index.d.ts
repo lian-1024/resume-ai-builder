@@ -34,21 +34,9 @@ export declare const sectionsSchema: z.ZodObject<{
             endDate: z.ZodString;
             studyType: z.ZodString;
             summary: z.ZodString;
-            url: z.ZodObject<{
-                label: z.ZodString;
-                href: z.ZodUnion<[z.ZodLiteral<"">, z.ZodString]>;
-            }, "strip", z.ZodTypeAny, {
-                label?: string;
-                href?: string;
-            }, {
-                label?: string;
-                href?: string;
-            }>;
+            url: z.ZodUnion<[z.ZodLiteral<"">, z.ZodString]>;
         }>, "strip", z.ZodTypeAny, {
-            url?: {
-                label?: string;
-                href?: string;
-            };
+            url?: string;
             id?: string;
             visible?: boolean;
             school?: string;
@@ -59,10 +47,7 @@ export declare const sectionsSchema: z.ZodObject<{
             studyType?: string;
             summary?: string;
         }, {
-            url?: {
-                label?: string;
-                href?: string;
-            };
+            url?: string;
             id?: string;
             visible?: boolean;
             school?: string;
@@ -80,10 +65,7 @@ export declare const sectionsSchema: z.ZodObject<{
         separateLinks?: boolean;
         visible?: boolean;
         items?: {
-            url?: {
-                label?: string;
-                href?: string;
-            };
+            url?: string;
             id?: string;
             visible?: boolean;
             school?: string;
@@ -101,10 +83,7 @@ export declare const sectionsSchema: z.ZodObject<{
         separateLinks?: boolean;
         visible?: boolean;
         items?: {
-            url?: {
-                label?: string;
-                href?: string;
-            };
+            url?: string;
             id?: string;
             visible?: boolean;
             school?: string;
@@ -133,22 +112,10 @@ export declare const sectionsSchema: z.ZodObject<{
             role: z.ZodString;
             city: z.ZodString;
             summary: z.ZodString;
-            url: z.ZodObject<{
-                label: z.ZodString;
-                href: z.ZodUnion<[z.ZodLiteral<"">, z.ZodString]>;
-            }, "strip", z.ZodTypeAny, {
-                label?: string;
-                href?: string;
-            }, {
-                label?: string;
-                href?: string;
-            }>;
+            url: z.ZodUnion<[z.ZodLiteral<"">, z.ZodString]>;
         }>, "strip", z.ZodTypeAny, {
             name?: string;
-            url?: {
-                label?: string;
-                href?: string;
-            };
+            url?: string;
             id?: string;
             city?: string;
             visible?: boolean;
@@ -158,10 +125,7 @@ export declare const sectionsSchema: z.ZodObject<{
             role?: string;
         }, {
             name?: string;
-            url?: {
-                label?: string;
-                href?: string;
-            };
+            url?: string;
             id?: string;
             city?: string;
             visible?: boolean;
@@ -178,10 +142,7 @@ export declare const sectionsSchema: z.ZodObject<{
         visible?: boolean;
         items?: {
             name?: string;
-            url?: {
-                label?: string;
-                href?: string;
-            };
+            url?: string;
             id?: string;
             city?: string;
             visible?: boolean;
@@ -198,10 +159,7 @@ export declare const sectionsSchema: z.ZodObject<{
         visible?: boolean;
         items?: {
             name?: string;
-            url?: {
-                label?: string;
-                href?: string;
-            };
+            url?: string;
             id?: string;
             city?: string;
             visible?: boolean;
@@ -273,10 +231,7 @@ export declare const sectionsSchema: z.ZodObject<{
         separateLinks?: boolean;
         visible?: boolean;
         items?: {
-            url?: {
-                label?: string;
-                href?: string;
-            };
+            url?: string;
             id?: string;
             visible?: boolean;
             school?: string;
@@ -296,10 +251,7 @@ export declare const sectionsSchema: z.ZodObject<{
         visible?: boolean;
         items?: {
             name?: string;
-            url?: {
-                label?: string;
-                href?: string;
-            };
+            url?: string;
             id?: string;
             city?: string;
             visible?: boolean;
@@ -331,10 +283,7 @@ export declare const sectionsSchema: z.ZodObject<{
         separateLinks?: boolean;
         visible?: boolean;
         items?: {
-            url?: {
-                label?: string;
-                href?: string;
-            };
+            url?: string;
             id?: string;
             visible?: boolean;
             school?: string;
@@ -354,10 +303,7 @@ export declare const sectionsSchema: z.ZodObject<{
         visible?: boolean;
         items?: {
             name?: string;
-            url?: {
-                label?: string;
-                href?: string;
-            };
+            url?: string;
             id?: string;
             city?: string;
             visible?: boolean;

@@ -21,8 +21,9 @@ const currentStatus = computed(() => basicsData.value.intention?.currentStatus ?
 const positionTitle = computed(() => basicsData.value.intention?.positionTitle ?? '')
 const city = computed(() => basicsData.value.intention?.city ?? '')
 const salary = computed(() => basicsData.value.intention?.salary ?? '')
-const githubLink = computed(() => basicsData.value.url?.href ?? '')
-const changeValueHandle = (path:string,value:string) => {
+const githubLink = computed(() => basicsData.value.url )
+const changeValueHandle = (path:string,value?:string) => {
+  if(!value) return
 resumeStore.setResumeValue(path ,value)
 }
 </script>
@@ -37,7 +38,7 @@ resumeStore.setResumeValue(path ,value)
             <AvatarImage :src="avatarUrl" alt="头像" />
             <AvatarFallback>{{ avatarInitials }}</AvatarFallback>
           </Avatar>
-          <InputItem class="flex-1" title="头像" placeholder="请输入图片链接" :model-value="avatarUrl" @update:model-value="(value)=>changeValueHandle(value,'basics.picture.url')"/>
+          <InputItem class="flex-1" title="头像" placeholder="请输入图片链接" :model-value="avatarUrl" @update:model-value="(value)=>changeValueHandle('basics.picture.url',value)"/>
           </div>
           <InputItem title="姓名" placeholder="请输入姓名" :model-value="name" @update:model-value="(value) => changeValueHandle('basics.name',value)"/>
           <InputItem title="邮箱" placeholder="请输入您的邮箱" :model-value="email" @update:model-value="(value) => changeValueHandle('basics.email',value)"/>
@@ -46,7 +47,7 @@ resumeStore.setResumeValue(path ,value)
           <InputItem title="意向职位" placeholder="请输入您的意向职位" :model-value="positionTitle" @update:model-value="(value) => changeValueHandle('basics.intention.positionTitle',value)"/>
           <InputItem title="意向城市" placeholder="请输入您的意向城市" :model-value="city" @update:model-value="(value) => changeValueHandle('basics.intention.city',value)"/>
           <InputItem title="期望薪资" placeholder="请输入您的期望薪资" :model-value="salary" @update:model-value="(value) => changeValueHandle('basics.intention.salary',value)"/>
-          <InputItem title="Github" class="col-start-1 -col-end-1 w-full" placeholder="请输入您的Github链接" :model-value="githubLink" @update:model-value="(value) => changeValueHandle('basics.url.href',value)"/>
+          <InputItem title="Github" class="col-start-1 -col-end-1 w-full" placeholder="请输入您的Github链接" :model-value="githubLink" @update:model-value="(value) => changeValueHandle('basics.url',value)"/>
         </div>
       </div>
     </template>

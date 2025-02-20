@@ -1,4 +1,4 @@
-import i from "../node_modules/.pnpm/zod@3.24.1/node_modules/zod/lib/index.js";
+import i from "../node_modules/.pnpm/zod@3.24.2/node_modules/zod/lib/index.js";
 const n = i.object({
   // 自定义字段的唯一标识符
   id: i.string().cuid2(),

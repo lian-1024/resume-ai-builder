@@ -1,9 +1,6 @@
-import t from "../node_modules/.pnpm/zod@3.24.1/node_modules/zod/lib/index.js";
-import "../shared/item.js";
-import "../shared/id.js";
-import { urlSchema as i, defaultUrl as r } from "../shared/url.js";
-import { customFieldSchema as e } from "./custom.js";
-const m = t.object({
+import t from "../node_modules/.pnpm/zod@3.24.2/node_modules/zod/lib/index.js";
+import { customFieldSchema as i } from "./custom.js";
+const n = t.object({
   name: t.string(),
   // 姓名字段，字符串类型
   headline: t.string(),
@@ -12,9 +9,8 @@ const m = t.object({
   // 电子邮件字段，可以为空字符串或有效的电子邮件地址
   phone: t.string(),
   // 电话字段，字符串类型
-  url: i,
-  // 网址字段，使用共享的 URL 模式
-  customFields: t.array(e),
+  url: t.literal("").or(t.string().url()),
+  customFields: t.array(i),
   picture: t.object({
     url: t.string(),
     // 图片的 URL，字符串类型
@@ -32,7 +28,7 @@ const m = t.object({
     city: t.string()
     // 城市
   })
-}), c = {
+}), s = {
   name: "",
   // 默认姓名为空字符串
   headline: "",
@@ -41,7 +37,7 @@ const m = t.object({
   // 默认电子邮件为空字符串
   phone: "",
   // 默认电话为空字符串
-  url: r,
+  url: "",
   // 默认网址使用共享的默认 URL
   customFields: [],
   picture: {
@@ -58,6 +54,6 @@ const m = t.object({
   }
 };
 export {
-  m as basicsSchema,
-  c as defaultBasics
+  n as basicsSchema,
+  s as defaultBasics
 };

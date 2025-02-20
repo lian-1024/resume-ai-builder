@@ -9,22 +9,10 @@ export declare const projectSchema: z.ZodObject<z.objectUtil.extendShape<{
     role: z.ZodString;
     city: z.ZodString;
     summary: z.ZodString;
-    url: z.ZodObject<{
-        label: z.ZodString;
-        href: z.ZodUnion<[z.ZodLiteral<"">, z.ZodString]>;
-    }, "strip", z.ZodTypeAny, {
-        label?: string;
-        href?: string;
-    }, {
-        label?: string;
-        href?: string;
-    }>;
+    url: z.ZodUnion<[z.ZodLiteral<"">, z.ZodString]>;
 }>, "strip", z.ZodTypeAny, {
     name?: string;
-    url?: {
-        label?: string;
-        href?: string;
-    };
+    url?: string;
     id?: string;
     city?: string;
     visible?: boolean;
@@ -34,10 +22,7 @@ export declare const projectSchema: z.ZodObject<z.objectUtil.extendShape<{
     role?: string;
 }, {
     name?: string;
-    url?: {
-        label?: string;
-        href?: string;
-    };
+    url?: string;
     id?: string;
     city?: string;
     visible?: boolean;

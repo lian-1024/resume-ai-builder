@@ -1,7 +1,7 @@
 import { z } from 'zod'
 
 // 导入共享的 schema 定义和默认值
-import { defaultItem, defaultUrl, itemSchema, urlSchema } from '../shared'
+import { defaultItem,  itemSchema } from '../shared'
 
 // 项目经历的数据验证 Schema
 export const projectSchema = itemSchema.extend({
@@ -13,7 +13,7 @@ export const projectSchema = itemSchema.extend({
   city:z.string(), // 所在城市
   summary: z.string(), // 项目详情
   // 项目相关链接（如 GitHub 仓库、在线演示地址等）
-  url: urlSchema
+  url: z.literal('').or(z.string().url())
 })
 
 // 从 Schema 中推导出 TypeScript 类型定义
@@ -28,5 +28,5 @@ export const defaultProject: Project = {
   role:"",
   city:"",
   summary: '',
-  url: defaultUrl
+  url: ''
 }

@@ -53,10 +53,8 @@ const PathMap = {
                     </div>
                     <div class="flex flex-col gap-2 flex-1 ">
                         <span class="text-sm dark:text-zinc-300 text-zinc-500">在校经历</span>
-                        <div class="h-96">
-                            <RichTextEditor placeholder="请输入您的在校经历" :model-value="item.summary!"
+                            <RichTextEditor  placeholder="请输入您的在校经历" :model-value="item.summary!"
                                 @update:model-value="(value) => changeValueHandle(PathMap.summary(index), value)" />
-                        </div>
                     </div>
                 </div>
             </div>

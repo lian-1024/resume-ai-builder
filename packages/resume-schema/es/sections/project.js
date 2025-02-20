@@ -1,8 +1,7 @@
-import t from "../node_modules/.pnpm/zod@3.24.1/node_modules/zod/lib/index.js";
+import t from "../node_modules/.pnpm/zod@3.24.2/node_modules/zod/lib/index.js";
 import { itemSchema as r, defaultItem as e } from "../shared/item.js";
 import "../shared/id.js";
-import { urlSchema as m, defaultUrl as a } from "../shared/url.js";
-const c = r.extend({
+const n = r.extend({
   // 项目名称
   name: t.string(),
   startDate: t.string(),
@@ -16,8 +15,8 @@ const c = r.extend({
   summary: t.string(),
   // 项目详情
   // 项目相关链接（如 GitHub 仓库、在线演示地址等）
-  url: m
-}), l = {
+  url: t.literal("").or(t.string().url())
+}), o = {
   ...e,
   name: "",
   startDate: "",
@@ -25,9 +24,9 @@ const c = r.extend({
   role: "",
   city: "",
   summary: "",
-  url: a
+  url: ""
 };
 export {
-  l as defaultProject,
-  c as projectSchema
+  o as defaultProject,
+  n as projectSchema
 };

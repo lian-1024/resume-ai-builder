@@ -20,19 +20,17 @@ onMounted(() => {
 <template>
   <Section v-if="projects" :title="projects.name || '项目经验'">
     <div class="flex flex-col" v-for="project in projects?.items" :key="project.id">
-      <div class="flex justify-between">
+      <div class="flex justify-between items-center gap-4">
         <TypographySubTitle>
           {{ project.name }}
         </TypographySubTitle>
+        <TypographySubText class="flex-1">{{ project.role }}</TypographySubText>
+
         <TypographySubText>
           {{ project.startDate }}
           ~
           {{ project.endDate }}
         </TypographySubText>
-      </div>
-      <div class="flex justify-between">
-        <TypographySubText>{{ project.role }}</TypographySubText>
-        <LinkPrimary :href="project.url?.href">{{ project.url?.label }}</LinkPrimary>
       </div>
         <p class="my-2" v-html="project.summary"/>
     </div>

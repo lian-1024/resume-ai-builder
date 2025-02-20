@@ -1,6 +1,5 @@
 import { z } from 'zod'; // 引入 zod 库
 
-import { defaultUrl, urlSchema } from '../shared'; // 引入共享的 URL 模式和默认 URL
 import { customFieldSchema } from './custom'
 
 // 定义基本信息的模式
@@ -9,7 +8,7 @@ export const basicsSchema = z.object({
   headline: z.string(), // 标题字段，字符串类型
   email: z.literal('').or(z.string().email()), // 电子邮件字段，可以为空字符串或有效的电子邮件地址
   phone: z.string(), // 电话字段，字符串类型
-  url: urlSchema, // 网址字段，使用共享的 URL 模式
+  url: z.literal('').or(z.string().url()),
   customFields: z.array(customFieldSchema),
   picture: z.object({
     url: z.string(), // 图片的 URL，字符串类型
@@ -32,7 +31,7 @@ export const defaultBasics: Basics = {
   headline: '', // 默认标题为空字符串
   email: '', // 默认电子邮件为空字符串
   phone: '', // 默认电话为空字符串
-  url: defaultUrl, // 默认网址使用共享的默认 URL
+  url: '', // 默认网址使用共享的默认 URL
   customFields: [],
   picture: {
     url: '', // 默认图片 URL 为空字符串

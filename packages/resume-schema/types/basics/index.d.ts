@@ -4,16 +4,7 @@ export declare const basicsSchema: z.ZodObject<{
     headline: z.ZodString;
     email: z.ZodUnion<[z.ZodLiteral<"">, z.ZodString]>;
     phone: z.ZodString;
-    url: z.ZodObject<{
-        label: z.ZodString;
-        href: z.ZodUnion<[z.ZodLiteral<"">, z.ZodString]>;
-    }, "strip", z.ZodTypeAny, {
-        label?: string;
-        href?: string;
-    }, {
-        label?: string;
-        href?: string;
-    }>;
+    url: z.ZodUnion<[z.ZodLiteral<"">, z.ZodString]>;
     customFields: z.ZodArray<z.ZodObject<{
         id: z.ZodString;
         icon: z.ZodString;
@@ -61,10 +52,7 @@ export declare const basicsSchema: z.ZodObject<{
     headline?: string;
     email?: string;
     phone?: string;
-    url?: {
-        label?: string;
-        href?: string;
-    };
+    url?: string;
     customFields?: {
         name?: string;
         value?: string;
@@ -86,10 +74,7 @@ export declare const basicsSchema: z.ZodObject<{
     headline?: string;
     email?: string;
     phone?: string;
-    url?: {
-        label?: string;
-        href?: string;
-    };
+    url?: string;
     customFields?: {
         name?: string;
         value?: string;

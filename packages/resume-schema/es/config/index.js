@@ -1,4 +1,4 @@
-import e from "../node_modules/.pnpm/zod@3.24.1/node_modules/zod/lib/index.js";
+import e from "../node_modules/.pnpm/zod@3.24.2/node_modules/zod/lib/index.js";
 const t = ["simple"], a = e.object({
   template: e.enum(t).default("simple"),
   // 简历模版昵称

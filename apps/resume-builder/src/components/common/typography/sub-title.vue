@@ -9,7 +9,7 @@ defineProps<{
 </script>
 
 <template>
-    <h4 class="scroll-m-20 text-xl font-semibold tracking-tight">
+    <h4 class="scroll-m-20 text-lg font-semibold tracking-tight">
         <slot>
             {{ title }}
         </slot>

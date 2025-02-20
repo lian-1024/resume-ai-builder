@@ -1,4 +1,4 @@
-import { defineComponent as a, createBlock as i, openBlock as n, unref as e, normalizeClass as c, withCtx as l, createVNode as m, createElementVNode as p } from "vue";
+import { defineComponent as a, createBlock as i, openBlock as n, unref as r, normalizeClass as c, withCtx as l, createVNode as m, createElementVNode as p } from "vue";
 import "../button/index.js";
 import { cn as d } from "../../lib/utils.js";
 import { useSidebar as f } from "./utils.js";
@@ -11,16 +11,16 @@ const w = /* @__PURE__ */ a({
   },
   setup(o) {
     const t = o, { toggleSidebar: s } = f();
-    return (_, r) => (n(), i(e(u), {
+    return (_, e) => (n(), i(r(u), {
       "data-sidebar": "trigger",
       variant: "ghost",
       size: "icon",
-      class: c(e(d)("h-7 w-7", t.class)),
-      onClick: e(s)
+      class: c(r(d)("h-7 w-7", t.class)),
+      onClick: r(s)
     }, {
       default: l(() => [
-        m(e(g), { icon: "lucide:panel-right" }),
-        r[0] || (r[0] = p("span", { class: "sr-only" }, "Toggle Sidebar", -1))
+        m(r(g), { icon: "lucide:panel-right" }),
+        e[0] || (e[0] = p("span", { class: "sr-only" }, "切换侧边栏状态", -1))
       ]),
       _: 1
     }, 8, ["class", "onClick"]));
