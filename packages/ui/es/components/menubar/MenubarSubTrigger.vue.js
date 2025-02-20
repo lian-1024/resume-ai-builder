@@ -1,7 +1,7 @@
 import { defineComponent as c, computed as l, createBlock as d, openBlock as p, unref as e, mergeProps as u, withCtx as f, renderSlot as m, createVNode as i } from "vue";
 import { cn as g } from "../../lib/utils.js";
 import { useForwardProps as b, MenubarSubTrigger as x } from "radix-vue";
-import _ from "../../node_modules/.pnpm/@radix-icons_vue@1.0.0_vue@3.5.13_typescript@5.6.3_/node_modules/@radix-icons/vue/esm/ChevronRightIcon.js";
+import _ from "../../node_modules/.pnpm/@radix-icons_vue@1.0.0_vue@3.5.13/node_modules/@radix-icons/vue/esm/ChevronRightIcon.js";
 const P = /* @__PURE__ */ c({
   __name: "MenubarSubTrigger",
   props: {

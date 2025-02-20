@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Section from './section.vue';
-import { TypographySubTitle, TypographySubText } from '@/components/common/typography/index';
+import { TypographySubTitle, TypographySubText } from '@/components/ui/typography/index';
 import { resumeKey, type ResumeProviderProps } from '@/components/preview/provider';
 import { inject ,computed} from 'vue';
 defineOptions({

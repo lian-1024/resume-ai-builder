@@ -15,7 +15,8 @@ const basics = computed(() => resumeData?.value?.basics || defaultBasics)
 const wrapperStyles = computed<CSSProperties>(() => ({
   display: 'flex',
   justifyContent: 'space-between',
-  width: '100%'
+  width: '100%',
+  minHeight:'120px'
 }))
 
 

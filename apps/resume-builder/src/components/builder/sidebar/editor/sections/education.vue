@@ -6,10 +6,11 @@ import { useResumeStore } from '@/stores/modules/resume'
 import Item from './components/item.vue'
 import { DatePicker } from '@lianqq/resume-ui'
 import { computed } from 'vue'
-import RichTextEditor from '@/components/common/rich-text/index.vue'
+import RichTextEditor from '@/components/feature/rich-text/index.vue'
 const resumeStore = useResumeStore()
 const { resume } = storeToRefs(resumeStore)
 const education = computed(() => resume.value.sections?.education || {})
+import AddEducationModal from '@/components/feature/add-section-modal/add-education.vue'
 // @ts-ignore
 const changeValueHandle = (path: string, value: any) => {
     console.log(path, value)
@@ -58,6 +59,8 @@ const PathMap = {
                     </div>
                 </div>
             </div>
+            <AddEducationModal/>
+
         </template>
     </EditorSectionWrapper>
 </template>

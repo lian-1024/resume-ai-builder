@@ -27,7 +27,8 @@ const style = computed<CSSProperties>(() => {
 </script>
 
 <template>
-  <div :style="style" class="shadow-lg transform scale-[0.9]  bg-white overflow-auto">
+  <div :style="{...style,boxShadow: '0 0 10px 0 rgba(0, 0, 0, 0.1)'}" class="transform scale-[0.9]  bg-white overflow-auto"
+  >
     <slot />
   </div>
 </template>

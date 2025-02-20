@@ -5,7 +5,7 @@ import { DatePicker, Textarea } from '@lianqq/resume-ui'
 import Item from './components/item.vue'
 import {useResumeStore} from '@/stores'
 import {storeToRefs} from 'pinia'
-import RichTextEditor from '@/components/common/rich-text/index.vue'
+import RichTextEditor from '@/components/feature/rich-text/index.vue'
 import {computed} from 'vue'
 const resumeStore = useResumeStore()
 const { resume } = storeToRefs(resumeStore)
@@ -40,7 +40,7 @@ const PathMap = {
                             <InputItem title="担任角色" placeholder="请输入您的担任角色" :model-value="item.role"
                                 @update:model-value="(value) => changeValueHandle(PathMap.role(index), value)" />
                             <InputItem class="col-start-2 -col-end-1" title="项目链接" placeholder="请输入您的项目链接"
-                                :model-value="item.url?.href"
+                                :model-value="item.url"
                                 @update:model-value="(value) => changeValueHandle(PathMap.url(index), value)" />
                         </div>
                         <div class="flex flex-col gap-2 flex-1 ">

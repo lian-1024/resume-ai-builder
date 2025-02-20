@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { useConfig } from '@/composables/use-config';
 import { type CSSProperties, computed } from 'vue';
-import { TypographyTitle } from '@/components/common/typography/index';
+import { TypographyTitle } from '@/components/ui/typography/index';
 
 defineProps<{
   title: string

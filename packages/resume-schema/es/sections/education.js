@@ -1,8 +1,8 @@
 import t from "../node_modules/.pnpm/zod@3.24.2/node_modules/zod/lib/index.js";
-import { itemSchema as r, defaultItem as e } from "../shared/item.js";
+import { itemSchema as e, defaultItem as r } from "../shared/item.js";
 import "../shared/id.js";
-const i = r.extend({
-  school: t.string(),
+const o = e.extend({
+  school: t.string({ message: "请输入学校名称" }),
   // 学校
   major: t.string(),
   // 专业
@@ -14,11 +14,10 @@ const i = r.extend({
   // 结束时间
   studyType: t.string(),
   // 学历类型
-  summary: t.string(),
+  summary: t.string()
   // 在校经历
-  url: t.literal("").or(t.string().url())
-}), m = {
-  ...e,
+}), i = {
+  ...r,
   id: "",
   school: "",
   major: "",
@@ -26,10 +25,9 @@ const i = r.extend({
   startDate: "",
   endDate: "",
   studyType: "",
-  summary: "",
-  url: ""
+  summary: ""
 };
 export {
-  m as defaultEducation,
-  i as educationSchema
+  i as defaultEducation,
+  o as educationSchema
 };

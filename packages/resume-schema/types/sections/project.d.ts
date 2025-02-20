@@ -11,9 +11,9 @@ export declare const projectSchema: z.ZodObject<z.objectUtil.extendShape<{
     summary: z.ZodString;
     url: z.ZodUnion<[z.ZodLiteral<"">, z.ZodString]>;
 }>, "strip", z.ZodTypeAny, {
+    id?: string;
     name?: string;
     url?: string;
-    id?: string;
     city?: string;
     visible?: boolean;
     startDate?: string;
@@ -21,9 +21,9 @@ export declare const projectSchema: z.ZodObject<z.objectUtil.extendShape<{
     summary?: string;
     role?: string;
 }, {
+    id?: string;
     name?: string;
     url?: string;
-    id?: string;
     city?: string;
     visible?: boolean;
     startDate?: string;

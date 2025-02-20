@@ -4,7 +4,7 @@ import { Textarea} from '@lianqq/resume-ui'
 import InputItem from './components/input-item.vue'
 import {useResumeStore} from '@/stores'
 import {storeToRefs} from 'pinia'
-import RichTextEditor from '@/components/common/rich-text/index.vue'
+import RichTextEditor from '@/components/feature/rich-text/index.vue'
 import {computed} from 'vue'
 defineOptions({
   name: "EditorSectionSkill"

@@ -10,9 +10,7 @@ export declare const educationSchema: z.ZodObject<z.objectUtil.extendShape<{
     endDate: z.ZodString;
     studyType: z.ZodString;
     summary: z.ZodString;
-    url: z.ZodUnion<[z.ZodLiteral<"">, z.ZodString]>;
 }>, "strip", z.ZodTypeAny, {
-    url?: string;
     id?: string;
     visible?: boolean;
     school?: string;
@@ -23,7 +21,6 @@ export declare const educationSchema: z.ZodObject<z.objectUtil.extendShape<{
     studyType?: string;
     summary?: string;
 }, {
-    url?: string;
     id?: string;
     visible?: boolean;
     school?: string;

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import Section from '@/components/templates/simple/section.vue';
-import { TypographySubTitle, TypographySubText } from '@/components/common/typography/index';
+import { TypographySubTitle, TypographySubText } from '@/components/ui/typography/index';
 import LinkPrimary from '@/components/templates/components/link-primary.vue';
 import { onMounted ,inject,computed,ref} from 'vue'
 import { resumeKey, type ResumeProviderProps } from '@/components/preview/provider';
