@@ -5,6 +5,7 @@ import { DatePicker, Textarea } from '@lianqq/resume-ui'
 import Item from './components/item.vue'
 import {useResumeStore} from '@/stores'
 import {storeToRefs} from 'pinia'
+import RichTextEditor from '@/components/common/rich-text/index.vue'
 import {computed} from 'vue'
 const resumeStore = useResumeStore()
 const { resume } = storeToRefs(resumeStore)
@@ -44,7 +45,8 @@ const PathMap = {
                         </div>
                         <div class="flex flex-col gap-2 flex-1 ">
                             <span class="text-sm dark:text-zinc-300 text-zinc-500">项目详情</span>
-                            <Textarea placeholder="请输入您的项目详情" :default-value="item.summary"
+                            
+                            <RichTextEditor placeholder="请输入您的项目详情" :model-value="item.summary"
                                 @update:model-value="(value) => changeValueHandle(PathMap.summary(index), value)" />
                         </div>
                 </div>

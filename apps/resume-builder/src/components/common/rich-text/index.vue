@@ -4,6 +4,9 @@ import { Editor, Toolbar } from '@wangeditor/editor-for-vue'
 import { ref, shallowRef, onMounted, onBeforeUnmount } from 'vue'
 import type { IDomEditor, IToolbarConfig } from '@wangeditor/editor'
 
+const props = defineProps<{
+  placeholder:string
+}>()
 
 const value = defineModel<string>({
   default: ''
@@ -35,7 +38,7 @@ const toolbarConfig = {
 }
 
 // 编辑器配置
-const editorConfig = { placeholder: '请输入内容...' }
+const editorConfig = { placeholder: props.placeholder }
 
 // 组件销毁时，也及时销毁编辑器
 onBeforeUnmount(() => {
@@ -58,7 +61,7 @@ const handleChange = (editor: IDomEditor) => {
 <template>
   <div class="rich-text-editor">
     <Toolbar style="border-bottom: 1px solid #ccc" :editor="editorRef" :defaultConfig="toolbarConfig" :mode="mode" />
-    <Editor v-model="value" :defaultConfig="editorConfig" :mode="mode" @onCreated="handleCreated" @onChange="handleChange" />
+    <Editor class="max-h-40" v-model="value" :defaultConfig="editorConfig" :mode="mode" @onCreated="handleCreated" @onChange="handleChange" />
   </div>
 </template>
 

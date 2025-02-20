@@ -4,6 +4,7 @@ import { Textarea} from '@lianqq/resume-ui'
 import InputItem from './components/input-item.vue'
 import {useResumeStore} from '@/stores'
 import {storeToRefs} from 'pinia'
+import RichTextEditor from '@/components/common/rich-text/index.vue'
 import {computed} from 'vue'
 defineOptions({
   name: "EditorSectionSkill"
@@ -33,7 +34,8 @@ const PathMap = {
       <InputItem class="w-1/3 min-w-32" title="技能名称" placeholder="请输入您的技能名称" :model-value="item.name" @update:model-value="(value) => changeValueHandle(PathMap.name(index),value)"/>
       <div class="flex flex-col gap-2 flex-1">
         <span class="text-sm dark:text-zinc-300 text-zinc-500">技能描述</span>
-        <Textarea placeholder="请输入您的技能描述"   :default-value="item.summary" @update:model-value="(value) => changeValueHandle(PathMap.summary(index),value)"/>
+        <RichTextEditor placeholder="请输入您的在校经历" :model-value="item.summary!"
+        @update:model-value="(value) => changeValueHandle(PathMap.summary(index), value)" />
       </div>
      </div>
     </template>
