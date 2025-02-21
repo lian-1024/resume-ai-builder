@@ -21,8 +21,7 @@ import {
 
 import { toTypedSchema } from '@vee-validate/zod'
 import { h } from 'vue'
-import * as z from 'zod'
-
+import {Icon} from '@iconify/vue'
 const props =defineProps<{
   title?:string
   description?:string,
@@ -44,8 +43,11 @@ function onSubmit(values: any) {
     <Dialog>
       <DialogTrigger as-child>
         <slot name="trigger">
-          <Button variant="outline">
-            Trigger
+          <Button variant="outline" class="w-full py-12 bg-transparent hover:bg-black border-dashed border-zinc-700 hover:border-zinc-500">
+            <Icon icon="lucide:plus"/>
+            <span>
+添加
+            </span>
           </Button>
         </slot>
       </DialogTrigger>

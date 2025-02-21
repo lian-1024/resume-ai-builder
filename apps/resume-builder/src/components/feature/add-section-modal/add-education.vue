@@ -15,6 +15,8 @@ const onSubmit = () => {
 }
 const handleSubmit = (event: Event, onSubmit: Function) => {
     event.preventDefault()
+    console.log(event);
+    
     onSubmit()
 }
 </script>
