@@ -3,3 +3,14 @@ html,body,#__nuxt{
   width: 100%;
 }
 
+.w-e-scroll {
+  @apply dark:bg-zinc-950 bg-white;
+}
+
+.w-e-bar {
+  @apply dark:bg-zinc-950 bg-white;
+}
+
+.w-e-bar-divider {
+  @apply dark:bg-zinc-800 bg-zinc-300;
+}

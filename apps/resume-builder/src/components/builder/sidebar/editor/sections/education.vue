@@ -31,9 +31,12 @@ const PathMap = {
     summary: (index: number) => `sections.education.items[${index}].summary`,
 }
 
+/**
+ * 添加education
+ * @param values 
+ */
 const handleAddEducation = (values: any) => {
-    console.log(values);
-    const index = resume.value.sections?.education?.items?.length
+    const index = resume.value.sections?.education?.items?.length || 0
     resumeStore.setResumeValue(`sections.education.items[${index}]`, values)
 }
 
@@ -57,7 +60,7 @@ const modalConfig = {
 <template>
     <EditorSectionWrapper title="教育经历">
         <template #content>
-            <div class="flex flex-col gap-8" v-for="(item, index) in education.items" :key="item.id">
+            <div class="flex flex-col gap-8 mb-5" v-for="(item, index) in education.items" :key="item.id">
                 <div class="flex flex-col gap-6">
                     <div class="grid grid-cols-3 grid-rows-2 gap-6">
                         <InputItem title="学校" placeholder="请输入您的学校" :model-value="item.school"

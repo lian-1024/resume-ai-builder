@@ -7,6 +7,7 @@ import {useResumeStore} from '@/stores'
 import {storeToRefs} from 'pinia'
 import RichTextEditor from '@/components/feature/rich-text/index.vue'
 import {computed} from 'vue'
+import { AddSectionButton } from '@/components/feature/add-section-modal'
 const resumeStore = useResumeStore()
 const { resume } = storeToRefs(resumeStore)
 
@@ -23,6 +24,31 @@ const PathMap = {
     role: (index: number) => `sections.projects.items[${index}].role`,
     url: (index: number) => `sections.projects.items[${index}].url`,
     summary: (index: number) => `sections.projects.items[${index}].summary`,
+}
+
+/**
+ * 添加education
+ * @param values 
+ */
+ const handleAddEducation = (values: any) => {
+    const index = resume.value.sections?.projects?.items?.length || 0
+    resumeStore.setResumeValue(`sections.projects.items[${index}]`, values)
+}
+
+const modalConfig = {
+    fields: [
+        {
+            name: "name",
+            label: "项目名称",
+            placeholder: "请输入项目名称",
+            type: "text",
+        }
+    ],
+    modal: {
+        title: "添加项目经历"
+    },
+    submitText: "添加",
+    onSubmit: handleAddEducation
 }
 </script>
 
@@ -50,6 +76,7 @@ const PathMap = {
                                 @update:model-value="(value) => changeValueHandle(PathMap.summary(index), value)" />
                         </div>
                 </div>
+                <AddSectionButton v-bind="modalConfig" />
             </div>
         </template>
     </EditorSectionWrapper>

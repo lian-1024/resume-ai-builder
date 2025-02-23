@@ -59,9 +59,9 @@ const handleChange = (editor: IDomEditor) => {
 </script>
 
 <template>
-  <div class="rich-text-editor">
+  <div class="rich-text-editor border dark:border-zinc-800 border-zinc-200">
     <Toolbar style="border-bottom: 1px solid #ccc" :editor="editorRef" :defaultConfig="toolbarConfig" :mode="mode" />
-    <Editor class="max-h-96 min-h-52" v-model="value" :defaultConfig="editorConfig" :mode="mode" @onCreated="handleCreated" @onChange="handleChange" />
+    <Editor class="max-h-96 min-h-52 dark:bg-zinc-950 bg-white" v-model="value" :defaultConfig="editorConfig" :mode="mode" @onCreated="handleCreated" @onChange="handleChange" />
   </div>
 </template>
 
