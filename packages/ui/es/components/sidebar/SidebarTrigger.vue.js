@@ -2,7 +2,7 @@ import { defineComponent as a, createBlock as i, openBlock as n, unref as r, nor
 import "../button/index.js";
 import { cn as d } from "../../lib/utils.js";
 import { useSidebar as f } from "./utils.js";
-import { Icon as g } from "../../node_modules/.pnpm/@iconify_vue@4.3.0_vue@3.5.13/node_modules/@iconify/vue/dist/iconify.js";
+import { Icon as g } from "../../node_modules/.pnpm/@iconify_vue@4.3.0_vue@3.5.13_typescript@5.6.3_/node_modules/@iconify/vue/dist/iconify.js";
 import u from "../button/Button.vue.js";
 const w = /* @__PURE__ */ a({
   __name: "SidebarTrigger",

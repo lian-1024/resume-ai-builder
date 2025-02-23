@@ -19,34 +19,49 @@ import {
   toast
 } from '@lianqq/resume-ui'
 
-import { toTypedSchema } from '@vee-validate/zod'
+import { toTypedSchema, } from '@vee-validate/zod'
 import { h } from 'vue'
-import {Icon} from '@iconify/vue'
-const props =defineProps<{
-  title?:string
-  description?:string,
-  submitText?:string,
-  formSchema?:ReturnType<typeof toTypedSchema>
+import { Icon } from '@iconify/vue'
+import {z} from 'zod'
+
+
+const props = withDefaults(defineProps<{
+  title?: string
+  description?: string,
+  submitText?: string,
+  formSchema?: z.AnyZodObject
+}>(),{
+  title:"",
+  description:"",
+  submitText:"提交",
+  formSchema: () => z.object({})
+})
+
+const open = defineModel('open',{
+  default:false
+})
+
+const schema = toTypedSchema(props.formSchema)
+
+const emit = defineEmits<{
+  (e: 'submit', values: any): void
 }>()
 
-
 function onSubmit(values: any) {
-  toast({
-    title: 'You submitted the following values:',
-    description: h('pre', { class: 'mt-2 w-[340px] rounded-md bg-slate-950 p-4' }, h('code', { class: 'text-white' }, JSON.stringify(values, null, 2))),
-  })
+  emit('submit', values)
 }
 </script>
 
 <template>
-  <Form v-slot="{ handleSubmit }" as="" keep-values :validation-schema="formSchema">
-    <Dialog>
+  <Form v-slot="slotProps" as="" keep-values :validation-schema="schema">
+    <Dialog v-model:open="open">
       <DialogTrigger as-child>
         <slot name="trigger">
-          <Button variant="outline" class="w-full py-12 bg-transparent hover:bg-black border-dashed border-zinc-700 hover:border-zinc-500">
-            <Icon icon="lucide:plus"/>
-            <span>
-添加
+          <Button variant="outline"
+            class="w-full py-12 bg-transparent dark:hover:bg-black hover:bg-zinc-50 border-dashed dark:border-zinc-700 dark:hover:border-zinc-500 hover:border-zinc-100 border-zinc-300">
+            <Icon icon="lucide:plus" class="dark:text-white text-zinc-700"/>
+            <span class="dark:text-white text-zinc-700">
+              添加
             </span>
           </Button>
         </slot>
@@ -54,15 +69,15 @@ function onSubmit(values: any) {
       <DialogContent class="sm:max-w-[425px]">
         <DialogHeader>
           <slot name="header">
-            <DialogTitle>{{ title ? title : 'Title' }}</DialogTitle>
+            <DialogTitle>{{ title  }}</DialogTitle>
             <DialogDescription>
-              {{ description ? description : 'Description' }}
+              {{ description }}
             </DialogDescription>
           </slot>
         </DialogHeader>
 
-        <slot name="content">
-          <form id="dialogForm" @submit="handleSubmit($event, onSubmit)">
+        <slot  name="content" v-bind="{...slotProps}">
+          <form id="dialogForm" @submit="slotProps.handleSubmit($event, onSubmit)">
             <FormField v-slot="{ componentField }" name="username">
               <FormItem>
                 <FormLabel>Username</FormLabel>
@@ -79,7 +94,7 @@ function onSubmit(values: any) {
         </slot>
 
         <DialogFooter>
-          <slot name="footer">
+          <slot name="footer" >
             <Button type="submit" form="dialogForm">
               {{ submitText }}
             </Button>

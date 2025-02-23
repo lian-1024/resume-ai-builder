@@ -12,8 +12,8 @@ export const useResumeStore = defineStore('resume', () => {
    * 初始化简历数据
    * @param template 
    */
-  const initResumeData = (resumeData:ResumeData = Example) => {
-    resume.value =resumeData
+  const initResumeData = (resumeData: ResumeData = Example) => {
+    resume.value = resumeData
   }
 
   /**
@@ -22,15 +22,12 @@ export const useResumeStore = defineStore('resume', () => {
    * @param value 
    */
   const setResumeValue = (path: string, value: any) => {
+    _set(resume.value, path, value)
+    updateResumeData(IframeMessageTypeMap.UPDATE_RESUME, {
+      path,
+      value
+    })
 
-    
-
-_set(resume.value,path,value)
-updateResumeData(IframeMessageTypeMap.UPDATE_RESUME,{
-  path,
-  value
-})
-  
   }
 
 
@@ -39,7 +36,7 @@ updateResumeData(IframeMessageTypeMap.UPDATE_RESUME,{
    * 设置简历数据
    * @param resumeData 
    */
-  const setResume = (resumeData:ResumeData) => {
+  const setResume = (resumeData: ResumeData) => {
     resume.value = resumeData
   }
 
@@ -47,13 +44,13 @@ updateResumeData(IframeMessageTypeMap.UPDATE_RESUME,{
    * 获取简历数据
    * @returns 
    */
-  const getResume = (section?:SectionKey) => {
+  const getResume = (section?: SectionKey) => {
 
     return resume.value
   }
 
 
-  
+
   return {
     resume,
     initResumeData,

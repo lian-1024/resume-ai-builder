@@ -7,10 +7,11 @@ import Item from './components/item.vue'
 import { DatePicker } from '@lianqq/resume-ui'
 import { computed } from 'vue'
 import RichTextEditor from '@/components/feature/rich-text/index.vue'
+import { AddSectionButton } from '@/components/feature/add-section-modal'
 const resumeStore = useResumeStore()
 const { resume } = storeToRefs(resumeStore)
 const education = computed(() => resume.value.sections?.education || {})
-import AddEducationModal from '@/components/feature/add-section-modal/add-education.vue'
+
 // @ts-ignore
 const changeValueHandle = (path: string, value: any) => {
     console.log(path, value)
@@ -30,6 +31,27 @@ const PathMap = {
     summary: (index: number) => `sections.education.items[${index}].summary`,
 }
 
+const handleAddEducation = (values: any) => {
+    console.log(values);
+    const index = resume.value.sections?.education?.items?.length
+    resumeStore.setResumeValue(`sections.education.items[${index}]`, values)
+}
+
+const modalConfig = {
+    fields: [
+        {
+            name: "school",
+            label: "学校名称",
+            placeholder: "请输入学校名称",
+            type: "text",
+        }
+    ],
+    modal: {
+        title: "添加教育经历"
+    },
+    submitText: "添加",
+    onSubmit: handleAddEducation
+}
 </script>
 
 <template>
@@ -54,12 +76,12 @@ const PathMap = {
                     </div>
                     <div class="flex flex-col gap-2 flex-1 ">
                         <span class="text-sm dark:text-zinc-300 text-zinc-500">在校经历</span>
-                            <RichTextEditor  placeholder="请输入您的在校经历" :model-value="item.summary!"
-                                @update:model-value="(value) => changeValueHandle(PathMap.summary(index), value)" />
+                        <RichTextEditor placeholder="请输入您的在校经历" :model-value="item.summary!"
+                            @update:model-value="(value) => changeValueHandle(PathMap.summary(index), value)" />
                     </div>
                 </div>
             </div>
-            <AddEducationModal/>
+            <AddSectionButton v-bind="modalConfig" />
 
         </template>
     </EditorSectionWrapper>

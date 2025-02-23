@@ -18,6 +18,7 @@
     "@commitlint/cli": "^19.6.1",
     "@commitlint/config-conventional": "^19.6.0",
     "@lianqq/resume-config": "workspace:*",
+    "@types/vue": "^2.0.0",
     "cz-git": "^1.11.0",
     "czg": "^1.11.0",
     "husky": "^9.1.7",

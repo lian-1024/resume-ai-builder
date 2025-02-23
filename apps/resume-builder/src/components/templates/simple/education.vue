@@ -11,6 +11,7 @@ const {resumeData} = inject<ResumeProviderProps>(resumeKey) || {}
 
 const education = computed(() => resumeData?.value?.sections?.education)
 
+
 </script>
 
 <template>
