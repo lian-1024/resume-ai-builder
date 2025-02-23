@@ -9,7 +9,7 @@ export const Example: ResumeData = {
       url:  'https://github.com/lian-1024',
       customFields: [],
       picture: {
-        url: 'https://avatars.githubusercontent.com/u/93166482?s=48&v=4',
+        url: '',
         size: 100
       },
       intention: {

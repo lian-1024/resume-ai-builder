@@ -37,6 +37,7 @@
     "lucide-vue-next": "^0.471.0",
     "motion-v": "^0.7.0",
     "radix-vue": "^1.9.12",
+    "reka-ui": "^2.0.0",
     "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7",
     "vaul-vue": "^0.2.1",

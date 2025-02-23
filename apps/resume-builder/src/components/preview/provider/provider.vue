@@ -4,7 +4,9 @@ import { resumeKey } from './index'
 import {ref,provide,onMounted,onUnmounted} from 'vue'
 import _set from 'lodash-es/set'
 import { IframeMessageTypeMap } from '@/composables/use-iframe'
+import { printElementPdf } from '@/utils/print-pdf'
 const resumeData = ref<ResumeData>({})
+const resumeRef = ref<HTMLElement>()
 
 const setResumeValue = (path:string,value:any) => {
   _set(resumeData.value,path,value)
@@ -23,6 +25,11 @@ const messageHandler = (e:MessageEvent) => {
       if(path) {
         setResumeValue(path,value)
       }
+      break
+    case IframeMessageTypeMap.EXPORT_PDF:
+      // 处理导出pdf
+      if(!resumeRef.value) return 
+      printElementPdf(resumeRef.value)
       break
   }
 }
@@ -58,7 +65,7 @@ provide(resumeKey,{
 </script>
 
 <template>
-    <div>
+    <div ref="resumeRef">
         <slot />
     </div>
 </template>

@@ -21,7 +21,7 @@ const education = computed(() => resumeData?.value?.sections?.education)
                 <TypographySubTitle :title="item.school"/>
                 <TypographySubText :text="item.degree" />
                 <TypographySubText :text="item.major" />
-                <TypographySubText :text="`${item.startDate} - ${item.endDate}`" align="right" class="ml-auto"/>
+                <TypographySubText   :text="`${item.startDate || '1970-01-01'} - ${item.endDate || '至今'}`" align="right" class="ml-auto"/>
             </div>
             <TypographySubText :text="item.studyType" />
             <p class="my-2" v-html="item.summary"/>

@@ -3,7 +3,8 @@ import { ref } from 'vue'
 export const IframeMessageTypeMap = {
     UPDATE_RESUME: 'UPDATE_RESUME',
     INIT_RESUME: 'INIT_RESUME',
-    READY: 'READY'
+    READY: 'READY',
+    EXPORT_PDF: 'EXPORT_PDF'
 } as const
 
 const iframe = ref<HTMLIFrameElement | null>(null)
@@ -54,10 +55,21 @@ export const useIframeResume = () => {
         })
     }
 
+    const exportResumeToPdf = () => {
+        console.log("导出pdf");
+        
+        return new Promise((resolve, reject) => {
+            if (!iframe.value) return reject("iframe 不存在")
+            iframe.value.contentWindow?.postMessage({ type: IframeMessageTypeMap.EXPORT_PDF }, '*')
+            resolve(true)
+        })
+    }
+
 
     return {
         iframe,
         initIframe,
-        updateResumeData
+        updateResumeData,
+        exportResumeToPdf
     }
 }
