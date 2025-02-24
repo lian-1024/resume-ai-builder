@@ -37,7 +37,11 @@ export const useResumeStore = defineStore('resume', () => {
    * @param resumeData 
    */
   const setResume = (resumeData: ResumeData) => {
-    resume.value = resumeData
+    resume.value = {
+      ...resume.value,
+      ...resumeData
+    }
+    console.log("设置简历数据", resume.value);
   }
 
   /**

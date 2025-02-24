@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import { Button, Tooltip, TooltipTrigger, TooltipProvider, TooltipContent } from '@lianqq/resume-ui';
-import { printElementPdf } from '@/utils/print-pdf';
-import { ref } from 'vue';
+import { Button} from '@lianqq/resume-ui';
 import { useIframeResume, IframeMessageTypeMap } from '@/composables/use-iframe'
 import { Icon } from '@iconify/vue'
+import Tooltip from '@/components/ui/tooltip.vue';
+import { AIButton } from '@/components/feature/ai-button';
 defineOptions({
   name: 'BuilderHeader'
 })
@@ -19,21 +19,19 @@ const { exportResumeToPdf } = useIframeResume()
     <span>
       Resume Builder / My First Resume
     </span>
-    <div class="flex">
-      <TooltipProvider>
-        <Tooltip>
-          <TooltipTrigger>
-            <Button   @click="exportResumeToPdf" size="sm">
-              <Icon icon="lucide:download" />
-              <span>下载简历</span>
-            </Button>
-          </TooltipTrigger>
-          <TooltipContent>
-            下载简历
-          </TooltipContent>
-        </Tooltip>
-      </TooltipProvider>
-
+    <div class="flex gap-2 items-center">
+      <Tooltip>
+        <template #trigger>
+          <Button @click="exportResumeToPdf" size="sm">
+            <Icon icon="lucide:download" />
+            <span>下载简历</span>
+          </Button>
+        </template>
+        <template #content>
+          下载简历
+        </template>
+      </Tooltip>
+      <AIButton size="sm"/>
     </div>
   </header>
 </template>

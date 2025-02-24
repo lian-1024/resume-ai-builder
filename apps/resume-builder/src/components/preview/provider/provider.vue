@@ -12,6 +12,8 @@ const setResumeValue = (path:string,value:any) => {
   _set(resumeData.value,path,value)
 }
 
+
+
 // 根据消息类型获取消息处理器
 const messageHandler = (e:MessageEvent) => {
   switch(e.data.type){
@@ -30,6 +32,11 @@ const messageHandler = (e:MessageEvent) => {
       // 处理导出pdf
       if(!resumeRef.value) return 
       printElementPdf(resumeRef.value)
+      break
+    case IframeMessageTypeMap.SET_RESUME:
+      if(e.data.data) {
+        resumeData.value = e.data.data
+      }
       break
   }
 }

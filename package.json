@@ -26,5 +26,9 @@
     "typescript": "^5.7.3"
   },
   "packageManager": "pnpm@8.15.6",
-  "prettier": "@lianqq/resume-config/prettier"
+  "prettier": "@lianqq/resume-config/prettier",
+  "dependencies": {
+    "@langchain/community": "^0.3.32",
+    "@langchain/core": "^0.3.40"
+  }
 }

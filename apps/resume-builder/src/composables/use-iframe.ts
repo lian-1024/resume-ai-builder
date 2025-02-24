@@ -1,10 +1,12 @@
 import { ref } from 'vue'
+import type { ResumeData } from '@lianqq/resume-schema'
 
 export const IframeMessageTypeMap = {
     UPDATE_RESUME: 'UPDATE_RESUME',
     INIT_RESUME: 'INIT_RESUME',
     READY: 'READY',
-    EXPORT_PDF: 'EXPORT_PDF'
+    EXPORT_PDF: 'EXPORT_PDF',
+    SET_RESUME: 'SET_RESUME'
 } as const
 
 const iframe = ref<HTMLIFrameElement | null>(null)
@@ -46,7 +48,6 @@ export const useIframeResume = () => {
      */
     const updateResumeData = (type: IframeMessageType, data: any) => {
         return new Promise((resolve, reject) => {
-            
             if (!iframe.value) return reject("iframe 不存在")
             // 使用 JSON 序列化和反序列化来确保数据可以被克隆
             const cloneData = JSON.parse(JSON.stringify(data))
@@ -56,11 +57,17 @@ export const useIframeResume = () => {
     }
 
     const exportResumeToPdf = () => {
-        console.log("导出pdf");
-        
         return new Promise((resolve, reject) => {
             if (!iframe.value) return reject("iframe 不存在")
             iframe.value.contentWindow?.postMessage({ type: IframeMessageTypeMap.EXPORT_PDF }, '*')
+            resolve(true)
+        })
+    }
+
+    const setResume = (resume:ResumeData) => {
+        return new Promise((resolve, reject) => {
+            if (!iframe.value) return reject("iframe 不存在")
+            iframe.value.contentWindow?.postMessage({ type: IframeMessageTypeMap.SET_RESUME, data: resume }, '*')
             resolve(true)
         })
     }
@@ -70,6 +77,7 @@ export const useIframeResume = () => {
         iframe,
         initIframe,
         updateResumeData,
-        exportResumeToPdf
+        exportResumeToPdf,
+        setResume
     }
 }
