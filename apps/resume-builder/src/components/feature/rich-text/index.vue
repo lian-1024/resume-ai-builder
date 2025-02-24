@@ -3,9 +3,11 @@ import '@wangeditor/editor/dist/css/style.css' // 引入 css
 import { Editor, Toolbar } from '@wangeditor/editor-for-vue'
 import { ref, shallowRef, onMounted, onBeforeUnmount } from 'vue'
 import type { IDomEditor, IToolbarConfig } from '@wangeditor/editor'
-
+import { useResumeAI } from '@/composables/resume/use-resume-ai'
+import { Icon } from '@iconify/vue'
+import {Button,DropdownMenu,DropdownMenuContent,DropdownMenuItem, DropdownMenuTrigger} from '@lianqq/resume-ui'
 const props = defineProps<{
-  placeholder:string
+  placeholder: string
 }>()
 
 const value = defineModel<string>({
@@ -18,6 +20,8 @@ const emit = defineEmits<{
 
 // 编辑器实例，必须用 shallowRef
 const editorRef = shallowRef()
+
+const { optimizeContent } = useResumeAI()
 
 // 编辑器模式
 const mode = ref('default')
@@ -53,15 +57,36 @@ const handleCreated = (editor: HTMLElement) => {
 
 const handleChange = (editor: IDomEditor) => {
   // value.value = editor.getHtml()
-  console.log(editor.getHtml()) 
+  console.log(editor.getHtml())
   emit('update:modelValue', editor.getHtml())
+}
+const handleAI = async () => {
+  const content = await optimizeContent(value.value)
+  console.log(content)
 }
 </script>
 
 <template>
-  <div class="rich-text-editor border dark:border-zinc-800 border-zinc-200">
+  <div class="relative rich-text-editor border dark:border-zinc-800 border-zinc-200">
     <Toolbar style="border-bottom: 1px solid #ccc" :editor="editorRef" :defaultConfig="toolbarConfig" :mode="mode" />
-    <Editor class="max-h-96 min-h-52 dark:bg-zinc-950 bg-white" v-model="value" :defaultConfig="editorConfig" :mode="mode" @onCreated="handleCreated" @onChange="handleChange" />
+    <Editor class="max-h-96 min-h-52 dark:bg-zinc-950 bg-white" v-model="value" :defaultConfig="editorConfig"
+      :mode="mode" @onCreated="handleCreated" @onChange="handleChange" />
+    <div class="absolute bottom-2 right-2">
+      <DropdownMenu>
+        <DropdownMenuTrigger  as-child >
+          <Button variant="default" class="rounded-full" size="icon" @click="handleAI">
+            AI
+          </Button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent side="top" align="end" class="px-2 rounded-3xl">
+          <DropdownMenuItem as-child>
+            <Button variant="secondary"  class="rounded-full" size="icon" >
+              <Icon icon="lucide:pencil-line" />
+            </Button>
+          </DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
+    </div>
   </div>
 </template>
 

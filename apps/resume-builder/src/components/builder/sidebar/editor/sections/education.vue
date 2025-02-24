@@ -85,7 +85,6 @@ const modalConfig = {
                 </div>
             </div>
             <AddSectionButton v-bind="modalConfig" />
-
         </template>
     </EditorSectionWrapper>
 </template>
