@@ -14,3 +14,7 @@ html,body,#__nuxt{
 .w-e-bar-divider {
   @apply dark:bg-zinc-800 bg-zinc-300;
 }
+html body ul,
+html body ol {
+  padding-left: 1rem;
+}

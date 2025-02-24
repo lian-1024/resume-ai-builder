@@ -6,6 +6,7 @@ import { storeToRefs } from 'pinia'
 import RichTextEditor from '@/components/feature/rich-text/index.vue'
 import { computed } from 'vue'
 import { AddSectionButton } from '@/components/feature/add-section-modal'
+import { RichTextTypeMap } from '@/components/feature/rich-text'
 defineOptions({
   name: "EditorSectionSkill"
 })
@@ -60,7 +61,7 @@ const modalConfig = {
           @update:model-value="(value) => changeValueHandle(PathMap.name(index), value)" />
         <div class="flex flex-col gap-2 flex-1">
           <span class="text-sm dark:text-zinc-300 text-zinc-500">技能描述</span>
-          <RichTextEditor placeholder="请输入您的技能描述" :model-value="item.summary!"
+          <RichTextEditor :type="RichTextTypeMap.SKILL" placeholder="请输入您的技能描述" :model-value="item.summary!"
             @update:model-value="(value) => changeValueHandle(PathMap.summary(index), value)" />
         </div>
       </div>

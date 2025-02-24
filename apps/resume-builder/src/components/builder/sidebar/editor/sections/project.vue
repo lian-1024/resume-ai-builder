@@ -8,6 +8,7 @@ import {storeToRefs} from 'pinia'
 import RichTextEditor from '@/components/feature/rich-text/index.vue'
 import {computed} from 'vue'
 import { AddSectionButton } from '@/components/feature/add-section-modal'
+import { RichTextTypeMap } from '@/components/feature/rich-text'
 const resumeStore = useResumeStore()
 const { resume } = storeToRefs(resumeStore)
 
@@ -72,7 +73,7 @@ const modalConfig = {
                         <div class="flex flex-col gap-2 flex-1 ">
                             <span class="text-sm dark:text-zinc-300 text-zinc-500">项目详情</span>
                             
-                            <RichTextEditor placeholder="请输入您的项目详情" :model-value="item.summary"
+                            <RichTextEditor :type="RichTextTypeMap.PROJECT" placeholder="请输入您的项目详情" :model-value="item.summary"
                                 @update:model-value="(value) => changeValueHandle(PathMap.summary(index), value)" />
                         </div>
                 </div>

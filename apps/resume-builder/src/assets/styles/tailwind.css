@@ -20,5 +20,6 @@
   ol li {
     @apply list-decimal list-inside;
   }
+ 
 
 }

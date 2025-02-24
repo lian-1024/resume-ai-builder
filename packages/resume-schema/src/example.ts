@@ -27,7 +27,16 @@ export const Example: ResumeData = {
         visible: true,
         id: 'education',
         items: [
-          
+          {
+            school:"北京大学",
+            major:"计算机科学与技术",
+            degree:"本科",
+            startDate:"2020-01-01",
+            endDate:"2024-01-01",
+            summary:"计算机科学与技术专业",
+            studyType:"全日制",
+            id:"1"
+          }
         ]
       },
       projects: {
@@ -37,7 +46,15 @@ export const Example: ResumeData = {
         visible: true,
         id: 'projects',
         items: [
-       
+          {
+            name:"简历编辑器",
+            startDate:"2024-01-01",
+            endDate:"2024-01-01",
+            summary:"简历编辑器",
+            role:"前端开发工程师",
+            url:"https://github.com/lian-1024/resume-editor",
+            id:"1"
+          }
         ]
       },
   
