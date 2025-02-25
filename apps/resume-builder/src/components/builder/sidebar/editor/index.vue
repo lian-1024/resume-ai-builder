@@ -7,6 +7,8 @@
   } from '@lianqq/resume-ui' 
 
   import {EditorSectionBasics, EditorSectionSkill, EditorSectionProject, EditorSectionEducation} from './sections';
+
+  
 </script>
 
 <template>

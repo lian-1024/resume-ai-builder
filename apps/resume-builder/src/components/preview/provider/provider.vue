@@ -1,42 +1,56 @@
 <script lang="ts" setup>
 import type { ResumeData } from '@lianqq/resume-schema'
 import { resumeKey } from './index'
-import {ref,provide,onMounted,onUnmounted} from 'vue'
+import { ref, provide, onMounted, onUnmounted } from 'vue'
 import _set from 'lodash-es/set'
 import { IframeMessageTypeMap } from '@/composables/use-iframe'
 import { printElementPdf } from '@/utils/print-pdf'
+import { toast } from '@lianqq/resume-ui'
 const resumeData = ref<ResumeData>({})
 const resumeRef = ref<HTMLElement>()
 
-const setResumeValue = (path:string,value:any) => {
-  _set(resumeData.value,path,value)
+const setResumeValue = (path: string, value: any) => {
+  _set(resumeData.value, path, value)
 }
 
 
 
 // 根据消息类型获取消息处理器
-const messageHandler = (e:MessageEvent) => {
-  switch(e.data.type){
+const messageHandler = (e: MessageEvent) => {
+  switch (e.data.type) {
     case IframeMessageTypeMap.INIT_RESUME:
       // console.log("resume data",e.data)
       resumeData.value = e.data.data
       break
     case IframeMessageTypeMap.UPDATE_RESUME:
-      console.log("update resume data",e.data.data)
-      const {path,value} = e.data.data
-      if(path) {
-        setResumeValue(path,value)
+      console.log("update resume data", e.data.data)
+      const { path, value } = e.data.data
+      if (path) {
+        setResumeValue(path, value)
       }
       break
     case IframeMessageTypeMap.EXPORT_PDF:
       // 处理导出pdf
-      if(!resumeRef.value) return 
+      if (!resumeRef.value) return
       printElementPdf(resumeRef.value)
       break
     case IframeMessageTypeMap.SET_RESUME:
-      if(e.data.data) {
+      if (e.data.data) {
         resumeData.value = e.data.data
       }
+      break
+    case IframeMessageTypeMap.CHANGE_THEME:
+      // if(e.data.data) {
+      //   resumeData.value.theme = e.data.data
+      // }
+      console.log("change theme", e.data.data)
+      break
+    default:
+      toast({
+        title: "未知消息类型",
+        description: e.data.type,
+        type: "error"
+      })
       break
   }
 }
@@ -63,20 +77,18 @@ onUnmounted(() => {
 })
 
 // 提供简历数据
-provide(resumeKey,{
-    resumeData,
-    setResumeValue
+provide(resumeKey, {
+  resumeData,
+  setResumeValue
 })
 
 
 </script>
 
 <template>
-    <div ref="resumeRef">
-        <slot />
-    </div>
+  <div ref="resumeRef">
+    <slot />
+  </div>
 </template>
 
-<style lang="less" scoped>
-
-</style>
+<style lang="less" scoped></style>
