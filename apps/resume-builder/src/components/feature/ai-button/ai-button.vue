@@ -13,7 +13,8 @@ defineOptions({
 })
 
 defineProps<{
-    size?: ButtonVariants['size']
+    size?: ButtonVariants['size'],
+    text?: string
 }>()
 
 
@@ -24,11 +25,15 @@ const loading = ref(false)
 
 const handleOptimized = async () => {
     loading.value = true
+    // 一键优化当前简历
     const content = await optimizeContent(JSON.stringify(resumeStore.resume))
+    // 提取代码块
     const optimizedContent = extractCodeBlock(content)
+    // 解析代码块
     const optimizedData = JSON.parse(optimizedContent[0]) as ResumeData
-    console.log("优化后的简历",optimizedData);
+    // 设置简历
     resumeStore.setResume(optimizedData)
+    // 设置iframe的简历
     setResume(optimizedData)
     
     loading.value = false
@@ -42,9 +47,8 @@ onMounted(() => {
 <template>
     <Tooltip>
         <template #trigger>
-            <Button @click="handleOptimized" :size="size" >
-                <Icon v-show="loading" icon="lucide:loader-circle" class="w-4 h-4 mr-2 animate-spin" />
-                一键优化简历
+            <Button @click="handleOptimized" :size="size" class="rounded-full" >
+                <Icon :icon="loading ? 'lucide:loader-circle' : 'lucide:pencil-line'" :class="`w-4 h-4 ${loading ? 'animate-spin' : ''}`" />
             </Button>
         </template>
         <template #content>

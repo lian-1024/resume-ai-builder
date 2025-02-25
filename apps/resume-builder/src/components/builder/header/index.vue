@@ -8,7 +8,6 @@ defineOptions({
   name: 'BuilderHeader'
 })
 
-const { exportResumeToPdf } = useIframeResume()
 
 
 </script>
@@ -19,20 +18,7 @@ const { exportResumeToPdf } = useIframeResume()
     <span>
       Resume Builder / My First Resume
     </span>
-    <div class="flex gap-2 items-center">
-      <Tooltip>
-        <template #trigger>
-          <Button @click="exportResumeToPdf" size="sm">
-            <Icon icon="lucide:download" />
-            <span>下载简历</span>
-          </Button>
-        </template>
-        <template #content>
-          下载简历
-        </template>
-      </Tooltip>
-      <AIButton size="sm"/>
-    </div>
+    
   </header>
 </template>
 
