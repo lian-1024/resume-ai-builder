@@ -22,6 +22,7 @@ export const useResumeStore = defineStore('resume', () => {
    * @param value 
    */
   const setResumeValue = (path: string, value: any) => {
+    
     _set(resume.value, path, value)
     updateResumeData(IframeMessageTypeMap.UPDATE_RESUME, {
       path,

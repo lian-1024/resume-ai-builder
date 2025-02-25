@@ -10,6 +10,7 @@ const { exportResumeToPdf } = useIframeResume()
 defineOptions({
     name: 'ResumeActions'
 })
+
 </script>
 
 <template>
@@ -28,4 +29,3 @@ defineOptions({
     </div>
 </template>
 
-<style lang="less" scoped></style>

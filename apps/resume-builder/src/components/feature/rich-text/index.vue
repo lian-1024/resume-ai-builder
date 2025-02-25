@@ -119,7 +119,7 @@ const handleAI = async (optionType: OptionTypeKey) => {
 <template>
   <div class="relative rich-text-editor border dark:border-zinc-800 border-zinc-200">
     <Toolbar style="border-bottom: 1px solid #ccc" :editor="editorRef" :defaultConfig="toolbarConfig" :mode="mode" />
-    <Editor class="max-h-96 min-h-52 dark:bg-zinc-950 bg-white" v-model="value" :defaultConfig="editorConfig"
+    <Editor class="max-h-96  bg-white" v-model="value" :defaultConfig="editorConfig"
       :mode="mode" @onCreated="handleCreated" @onChange="handleChange" />
     <div class="absolute bottom-2 right-2">
       <DropdownMenu>

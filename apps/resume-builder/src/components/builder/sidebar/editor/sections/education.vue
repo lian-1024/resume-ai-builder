@@ -15,8 +15,7 @@ const education = computed(() => resume.value.sections?.education || {})
 
 // @ts-ignore
 const changeValueHandle = (path: string, value: any) => {
-    console.log(path, value)
-
+    
     resumeStore.setResumeValue(path, value)
 }
 defineOptions({
