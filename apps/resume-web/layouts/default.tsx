@@ -14,28 +14,26 @@ const menuList = [
   {
     label: 'Home',
     to: '/',
-    icon: 'lucide:home'
   },
   {
     label: 'Templates',
     to: '/resume/templates',
-    icon: 'lucide:layout-template'
   },
-  {
-    label: 'Workbench',
-    to: '/resume/workbench',
-    icon: 'lucide:pickaxe'
-  },
-  {
-    label: 'Builder',
-    to: '/resume/builder',
-    icon: 'lucide:square-mouse-pointer'
-  },
-  {
-    label: 'About',
-    to: '/about',
-    icon: 'lucide:smile-plus'
-  }
+  // {
+  //   label: 'Workbench',
+  //   to: '/resume/workbench',
+  //   icon: 'lucide:pickaxe'
+  // },
+  // {
+  //   label: 'Builder',
+  //   to: '/resume/builder',
+  //   icon: 'lucide:square-mouse-pointer'
+  // },
+  // {
+  //   label: 'About',
+  //   to: '/about',
+  //   icon: 'lucide:smile-plus'
+  // }
 ]
 
 const HeaderMenu = defineComponent({
@@ -44,17 +42,17 @@ const HeaderMenu = defineComponent({
     return () => (
       <NavigationMenu>
         <NavigationMenuList>
-          {menuList.map(({ label, to, icon }) => {
+          {menuList.map(({ label, to }) => {
             return (
               <NavigationMenuItem>
                 <NuxtLink to={to}>
                   <NavigationMenuLink
                     class={`text-sm font-extrabold px-4 cursor-pointer flex items-center gap-2 transition-all duration-300 text-zinc-500 hover:text-zinc-900 dark:hover:text-white`}
                   >
-                    <Icon
+                    {/* <Icon
                       name={icon}
                       class="w-4 h-4"
-                    />
+                    /> */}
                     {label}
                   </NavigationMenuLink>
                 </NuxtLink>

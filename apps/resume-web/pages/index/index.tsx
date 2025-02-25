@@ -1,3 +1,4 @@
+// 导入必要的组件和依赖
 import { Icon, NuxtLink } from '#components'
 import { Button } from '@lianqq/resume-ui'
 import { defineComponent, onMounted, ref } from 'vue'
@@ -5,13 +6,16 @@ import { ButtonHover } from '~/components/motions/button'
 import ButtonPress from '~/components/motions/button/button-press.vue'
 import { InView } from '~/components/motions/view'
 
+// 英雄区组件
 const HeroSection = defineComponent({
   setup() {
+    // 定义打字机效果的文本
     const text = ref('简历编辑器,AI 智能简历助手')
     const displayText = ref('')
 
     onMounted(() => {
       let index = 0
+      // 正向打字效果
       const forward = () => {
         if (index < text.value.length) {
           displayText.value += text.value.charAt(index)
@@ -22,6 +26,7 @@ const HeroSection = defineComponent({
         }
       }
 
+      // 反向删除效果
       const backward = () => {
         if (index > 0) {
           displayText.value = displayText.value.slice(0, -1)
@@ -36,11 +41,14 @@ const HeroSection = defineComponent({
     })
 
     return () => (
+      // 英雄区布局
       <section class="py-10 h-screen flex items-center px-10 ">
         <div class="max-w-2xl mx-auto">
+          {/* 主标题带打字机效果 */}
           <h1 class="min-h-[10rem] text-5xl lg:text-6xl font-black !leading-[5rem]">
             This <span class="typing">{displayText.value}</span>
           </h1>
+          {/* 副标题描述 */}
           <InView>
             <p class="leading-7 [&:not(:first-child)]:mt-6 text-gray-500 font-sans">
               Create professional resumes effortlessly with AI assistant. Our
@@ -48,8 +56,10 @@ const HeroSection = defineComponent({
               help you craft an outstanding resume.
             </p>
           </InView>
+          {/* 操作按钮组 */}
           <InView class="my-10">
             <div class="flex gap-6">
+              {/* Github按钮 */}
               <Button
                 variant="outline"
                 class="rounded-full p-6"
@@ -58,6 +68,7 @@ const HeroSection = defineComponent({
                 <Icon name="radix-icons:github-logo" />
                 <span>Github</span>
               </Button>
+              {/* 开始创建简历按钮 */}
               <ButtonPress
                 hover={{
                   scale: 1.1
@@ -73,6 +84,7 @@ const HeroSection = defineComponent({
                     <NuxtLink href={'/resume/templates'}>
                       <span class="font-extrabold ">开始创建简历</span>
                     </NuxtLink>
+                    {/* 鼠标指针动画效果 */}
                     <i class="absolute bottom-[-20px] right-[-20px] opacity-100 scale-100 transition-all duration-300 ease-in-out group-hover:opacity-0 group-hover:scale-0">
                       <Icon
                         name="lucide:mouse-pointer-2"
@@ -88,18 +100,22 @@ const HeroSection = defineComponent({
             </div>
           </InView>
         </div>
+        {/* 右侧占位区域 */}
         <div class="flex-1 flex items-center justify-center">Placeholder</div>
       </section>
     )
   }
 })
 
+// 特性展示区组件
 const FeaturesSection = () => {
   return (
     <section class="flex px-10 py-24 h-[100vh] min-h-[666px] gap-24">
+      {/* 左侧占位区域 */}
       <div class="border border-zinc-900 flex-1 flex items-center justify-center">
         Placeholder
       </div>
+      {/* 右侧特性描述 */}
       <div class={' max-w-xl flex flex-col justify-center p-16 items-start'}>
         <InView>
           <h1 class="scroll-m-20 font-sans font-black !leading-[5rem] text-5xl lg:text-6xl tracking-tight underline decoration-blue-500">
@@ -124,9 +140,11 @@ const FeaturesSection = () => {
   )
 }
 
+// 页脚区组件
 const FooterSection = () => {
   return (
     <div class="min-h-[666px] flex flex-col">
+      {/* 行动召唤区 */}
       <section class="flex justify-center flex-col items-center">
         <InView>
           <h1 class="scroll-m-20 font-sans font-black !leading-[5rem] text-5xl lg:text-6xl tracking-tight ">
@@ -147,6 +165,7 @@ const FooterSection = () => {
           </ButtonPress>
         </InView>
       </section>
+      {/* 页脚签名 */}
       <footer class="flex items-center justify-center flex-1">
         Hi! 你好,我是lianqq,很高兴认识你
       </footer>
@@ -154,6 +173,7 @@ const FooterSection = () => {
   )
 }
 
+// 主页面组件
 export default defineComponent({
   setup() {
     return () => (

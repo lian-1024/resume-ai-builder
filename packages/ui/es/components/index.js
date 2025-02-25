@@ -112,7 +112,7 @@ import { default as io } from "./drawer/DrawerFooter.vue.js";
 import { default as bo } from "./drawer/DrawerHeader.vue.js";
 import { default as So } from "./drawer/DrawerOverlay.vue.js";
 import { default as Do } from "./drawer/DrawerTitle.vue.js";
-import "../node_modules/.pnpm/vaul-vue@0.2.1_radix-vue@1.9.15_vue@3.5.13_typescript@5.6.3___vue@3.5.13_typescript@5.6.3_/node_modules/vaul-vue/dist/index.js";
+import "../node_modules/.pnpm/vaul-vue@0.2.1_radix-vue@1.9.16_vue@3.5.13_typescript@5.6.3___vue@3.5.13_typescript@5.6.3_/node_modules/vaul-vue/dist/index.js";
 import { default as co } from "./dialog/Dialog.vue.js";
 import { default as vo } from "./dialog/DialogClose.vue.js";
 import { default as Ro } from "./dialog/DialogContent.vue.js";

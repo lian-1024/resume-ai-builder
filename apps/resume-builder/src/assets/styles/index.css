@@ -32,17 +32,17 @@ html.dark {
   }
 
   /* 下拉菜单 */
-  .w-e-dropdown-menu {
+  .w-e-bar-item-menus-container {
     background-color: #262626 !important;
     border-color: #404040 !important;
     
-    .w-e-dropdown-item {
+    /* .w-e-dropdown-item {
       color: #e5e7eb !important;
       
       &:hover {
         background-color: #404040 !important;
       }
-    }
+    } */
   }
 
   /* 弹出框 */
@@ -65,7 +65,7 @@ html.dark {
     }
   }
 }
-html body ul,
+/* html body ul,
 html body ol {
   padding-left: 1rem;
-}
+} */

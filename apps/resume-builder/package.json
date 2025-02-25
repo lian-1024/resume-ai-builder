@@ -24,6 +24,7 @@
     "@vee-validate/zod": "^4.15.0",
     "@wangeditor/editor": "^5.1.23",
     "@wangeditor/editor-for-vue": "^5.1.12",
+    "dayjs": "^1.11.13",
     "html2canvas": "^1.4.1",
     "html2pdf.js": "^0.10.2",
     "jspdf": "^3.0.0",
