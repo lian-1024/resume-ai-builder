@@ -64,6 +64,11 @@ const modalConfig = {
 const changeDateHandle = (dateRange:DateRange,index:number) => {
     console.log("dateRange:",dateRange,index);
 }
+const dateValue = computed({
+    get() {},
+    set(){}
+})
+
 </script>
 
 <template>
@@ -79,7 +84,7 @@ const changeDateHandle = (dateRange:DateRange,index:number) => {
                         <InputItem title="学历" placeholder="请输入您的学历" :model-value="item.degree"
                             @update:model-value="(value) => changeValueHandle(PathMap.degree(index), value)" />
                         <Item title="在读时间" placeholder="请输入您的在读时间">
-                            <DatePicker @update:value="(date) => changeDateHandle(date,index)" class="w-full" />
+                            <!-- <DatePicker  class="w-full" /> -->
                         </Item>
                         <InputItem class="col-start-3 -col-end-1" title="学历类型" placeholder="请输入您的学历类型"
                             :model-value="item.studyType"

@@ -21,6 +21,7 @@
     "@langchain/openai": "^0.4.4",
     "@lianqq/resume-schema": "workspace:*",
     "@lianqq/resume-ui": "workspace:*",
+    "@lianqq/resume-utils": "workspace:*",
     "@vee-validate/zod": "^4.15.0",
     "@wangeditor/editor": "^5.1.23",
     "@wangeditor/editor-for-vue": "^5.1.12",

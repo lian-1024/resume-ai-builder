@@ -1,15 +1,15 @@
 <script lang="ts" setup>
 import EditorSectionWrapper from './components/wrapper.vue'
 import InputItem from './components/input-item.vue'
-import { DatePicker, Textarea, toast } from '@lianqq/resume-ui'
+import { DatePicker} from '@lianqq/resume-ui'
 import Item from './components/item.vue'
 import { useResumeStore } from '@/stores'
-import { type DateRange } from '@lianqq/resume-ui'
 import { storeToRefs } from 'pinia'
 import RichTextEditor from '@/components/feature/rich-text/index.vue'
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { AddSectionButton } from '@/components/feature/add-section-modal'
 import { RichTextTypeMap } from '@/components/feature/rich-text'
+import { stringToDate, changeDate } from '@/utils/calendar'
 
 const resumeStore = useResumeStore()
 const { resume } = storeToRefs(resumeStore)
@@ -27,7 +27,10 @@ const PathMap = {
     role: (index: number) => `sections.projects.items[${index}].role`,
     url: (index: number) => `sections.projects.items[${index}].url`,
     summary: (index: number) => `sections.projects.items[${index}].summary`,
+    startDate: (index: number) => `sections.projects.items[${index}].startDate`,
+    endDate: (index: number) => `sections.projects.items[${index}].endDate`,
 }
+
 
 /**
  * 添加education
@@ -38,6 +41,9 @@ const handleAddEducation = (values: any) => {
     resumeStore.setResumeValue(`sections.projects.items[${index}]`, values)
 }
 
+/**
+ * 模型配置
+ */
 const modalConfig = {
     fields: [
         {
@@ -53,19 +59,7 @@ const modalConfig = {
     submitText: "添加",
     onSubmit: handleAddEducation
 }
-const changeDateHandle = (dateRange: DateRange, index: number) => {
-    const { start, end } = dateRange
-    if (!start || !end) return toast({
-        title: "请选择完整的项目时间",
-    })
-    const startDate = start.toDate('Asia/Shanghai')
-    const endDate = end.toDate('Asia/Shanghai')
 
-    
-    
-    // resumeStore.setResumeValue(`sections.projects.items[${index}].startDate`, startDate)
-    // resumeStore.setResumeValue(`sections.projects.items[${index}].endDate`, endDate)
-}
 </script>
 
 <template>
@@ -76,8 +70,11 @@ const changeDateHandle = (dateRange: DateRange, index: number) => {
                     <div class="grid grid-cols-3 grid-rows-2 gap-4">
                         <InputItem title="项目名称" placeholder="请输入您的项目名称" :model-value="item.name"
                             @update:model-value="(value) => changeValueHandle(PathMap.name(index), value)" />
-                        <Item title="项目时间" placeholder="请输入您的项目时间" class="col-start-2 -col-end-1">
-                            <DatePicker class="w-full" @update:value="(date) => changeDateHandle(date, index)" />
+                        <Item title="项目时间" placeholder="请输入您的项目时间" class="col-start-2 -col-end-1 ">
+                            <div class="flex gap-2">
+                                <DatePicker :date="stringToDate(item.startDate)" @update:date="(value) => changeDate(PathMap.startDate(index), value, index)" class="flex-1" />
+                                <DatePicker :date="stringToDate(item.endDate)" @update:date="(value) => changeDate(PathMap.endDate(index), value, index)" class="flex-1" />
+                            </div>
                         </Item>
                         <InputItem title="担任角色" placeholder="请输入您的担任角色" :model-value="item.role"
                             @update:model-value="(value) => changeValueHandle(PathMap.role(index), value)" />
