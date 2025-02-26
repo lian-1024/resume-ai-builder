@@ -22,8 +22,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@langchain/openai": "^0.4.4",
     "@lianqq/resume-config": "workspace:*",
-    "dayjs": "^1.11.10"
+    "dayjs": "^1.11.10",
+    "langchain": "^0.3.19",
+    "@lianqq/resume-schema": "workspace:*"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.0",

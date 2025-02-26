@@ -2,39 +2,39 @@ import type { ResumeData } from './index'
 
 export const Example: ResumeData = {
     basics: {
-      name: 'lianqq',
-      headline: '创新的前端开发者',
-      email: 'zhangwei@example.com',
-      phone: '(010) 1234-5678',
-      url:  'https://github.com/lian-1024',
+      name: '昵称',
+      headline: '头衔',
+      email: '邮箱',
+      phone: '电话',
+      url:  '个人网站',
       customFields: [],
       picture: {
-        url: '',
+        url: '头像路径',
         size: 100
       },
       intention: {
-        currentStatus: '在职',
-        positionTitle: '前端开发工程师',
-        salary: '10000-20000元/月',
-        city: '北京'
+        currentStatus: '当前状态',
+        positionTitle: '职位',
+        salary: '薪资',
+        city: '城市'
       }
     },
     sections: {
       education: {
-        name: '教育背景',
+        name: '教育经历',
         columns: 1,
         separateLinks: true,
         visible: true,
         id: 'education',
         items: [
           {
-            school:"北京大学",
-            major:"计算机科学与技术",
-            degree:"本科",
-            startDate:"2020-01-01",
-            endDate:"2024-01-01",
-            summary:"计算机科学与技术专业",
-            studyType:"全日制",
+            school:"学校",
+            major:"专业",
+            degree:"学历",
+            startDate:"开始时间",
+            endDate:"结束时间",
+            summary:"学校简介",
+            studyType:"学习方式",
             id:"1"
           }
         ]
@@ -47,12 +47,12 @@ export const Example: ResumeData = {
         id: 'projects',
         items: [
           {
-            name:"简历编辑器",
-            startDate:"2024-01-01",
-            endDate:"2024-01-01",
-            summary:"简历编辑器",
-            role:"前端开发工程师",
-            url:"https://github.com/lian-1024/resume-editor",
+            name:"项目名称",
+            startDate:"开始时间",
+            endDate:"结束时间",
+            summary:"项目简介",
+            role:"角色",
+            url:"项目链接",
             id:"1"
           }
         ]

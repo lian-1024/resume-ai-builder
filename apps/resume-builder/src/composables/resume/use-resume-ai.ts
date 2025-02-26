@@ -1,5 +1,5 @@
 import { ref } from 'vue'
-import { ResumeAI } from '@/utils/ai-model/resume'
+import {ResumeAI} from '@lianqq/resume-utils'
 import type { AIConfigKey } from '@/utils/ai-model/config'
 import { AIConfig } from '@/utils/ai-model'
 import { toast } from '@lianqq/resume-ui'
@@ -81,12 +81,24 @@ export function useResumeAI() {
         return resumeAI.value.optimizeSkill(content)
     }
 
+    /**
+     * 生成简历
+     * @param content 
+     * @returns 
+     */
+    const generateResume = async (content:string) => {
+        if (!resumeAI.value) throw new Error('AI not initialized')
+        return resumeAI.value.generateResume(content)
+    }
+
+
     return {
         initAIModel,
         changeModel,
         optimizeContent,
         optimizeProjectExperience,
         optimizeEducationExperience,
-        optimizeSkill
+        optimizeSkill,
+        generateResume
     }
 } 
