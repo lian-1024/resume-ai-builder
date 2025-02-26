@@ -10,6 +10,7 @@ import RichTextEditor from '@/components/feature/rich-text/index.vue'
 import { AddSectionButton } from '@/components/feature/add-section-modal'
 import { RichTextTypeMap } from '@/components/feature/rich-text'
 import { type DateRange } from '@lianqq/resume-ui'
+import { stringToDate, changeDate } from '@/utils/calendar'
 const resumeStore = useResumeStore()
 const { resume } = storeToRefs(resumeStore)
 const education = computed(() => resume.value.sections?.education || {})
@@ -84,7 +85,12 @@ const dateValue = computed({
                         <InputItem title="学历" placeholder="请输入您的学历" :model-value="item.degree"
                             @update:model-value="(value) => changeValueHandle(PathMap.degree(index), value)" />
                         <Item title="在读时间" placeholder="请输入您的在读时间">
-                            <!-- <DatePicker  class="w-full" /> -->
+                            <div class="flex gap-2">
+                                <DatePicker :date="stringToDate(item.startDate)" @update:date="(value) => changeDate(PathMap.startDate(index), value, index)"
+                                  />
+                            <DatePicker :date="stringToDate(item.endDate)" @update:date="(value) => changeDate(PathMap.endDate(index), value, index)"
+                                  />
+                            </div>
                         </Item>
                         <InputItem class="col-start-3 -col-end-1" title="学历类型" placeholder="请输入您的学历类型"
                             :model-value="item.studyType"
