@@ -1,5 +1,8 @@
-import { Button, Card, CardContent, CardFooter } from '@lianqq/resume-ui'
+import { Button, Card, CardContent, CardFooter, Textarea,toast } from '@lianqq/resume-ui'
 import { ButtonHover, ButtonPress } from '~/components/motions/button'
+import { extractCodeBlock } from '@lianqq/resume-utils'
+
+import Dialog from '~/components/dialog/index.vue'
 
 const ResumeCard = () => {
   return (
@@ -27,6 +30,44 @@ const ResumeCard = () => {
   )
 }
 
+
+const AIResumeGenerator = () => {
+  const content = ref('')
+
+  const createResume = async () => {
+    if(content.value.length < 12) return toast({
+      title: '描述过短',
+    })
+
+    window.location.href = `http://localhost:5173/builder?type=generate&content=${content.value}`
+  }
+  
+  return (
+    <Dialog
+      title='AI简历生成'
+      description='请输入您的目标岗位、专业技能等内容'
+      confirmText='确认创建'
+    >
+      {{
+        trigger: () =>
+          <Button variant="outline">
+            简历AI一键生成
+          </Button>,
+        content: () => (
+          <Textarea v-model={content.value} />
+        ),
+        footer: () => (
+          <div onClick={createResume}>
+            <Button>
+              确认创建
+            </Button>
+          </div>
+        )
+      }}
+    </Dialog>
+  )
+}
+
 const EmptyResumeCard = () => {
   return (
     <Card class="flex flex-col justify-between">
@@ -36,9 +77,12 @@ const EmptyResumeCard = () => {
   )
 }
 
+
+
 export default defineComponent({
   name: 'Resume',
   setup() {
+
     return () => (
       <div class="h-[calc(100vh-6rem)] mt-[6rem]">
         <div class="flex flex-col items-center pt-6">
@@ -48,6 +92,7 @@ export default defineComponent({
           <p class="leading-7 [&:not(:first-child)]:mt-6 text-muted-foreground italic">
             简历不必复杂，简洁明了即可
           </p>
+          <AIResumeGenerator />
         </div>
         <main
           class="bg-zinc-950 p-6 rounded-lg  m-16 grid grid-flow-row-dense grid-cols-auto-fill gap-x-6 gap-y-10 mt-20 justify-between"

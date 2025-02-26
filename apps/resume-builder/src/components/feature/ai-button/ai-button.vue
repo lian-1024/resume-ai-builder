@@ -4,10 +4,11 @@ import { useResumeAI } from '@/composables/resume/use-resume-ai'
 import { onMounted, ref } from 'vue';
 import { useResumeStore } from '@/stores'
 import Tooltip from '@/components/ui/tooltip.vue';
-import { extractCodeBlock } from '@/utils/ai-model/utils'
+import { extractCodeBlock } from '@lianqq/resume-utils'
 import { Icon } from '@iconify/vue'
 import { useIframeResume } from '@/composables/use-iframe'
 import type { ResumeData } from '@lianqq/resume-schema'
+import { useRoute } from 'vue-router'
 defineOptions({
     name: "AIButton"
 })
@@ -18,7 +19,7 @@ defineProps<{
 }>()
 
 
-const { initAIModel, optimizeContent} = useResumeAI()
+const { initAIModel, optimizeContent } = useResumeAI()
 const { setResume } = useIframeResume()
 const resumeStore = useResumeStore()
 const loading = ref(false)
@@ -36,8 +37,13 @@ const handleOptimized = async () => {
     // 设置iframe的简历
     loading.value = false
 }
+
+
+
+
 onMounted(() => {
     initAIModel("zhipu")
+
 })
 
 </script>
@@ -45,8 +51,9 @@ onMounted(() => {
 <template>
     <Tooltip>
         <template #trigger>
-            <Button @click="handleOptimized" :size="size" class="rounded-full" >
-                <Icon :icon="loading ? 'lucide:loader-circle' : 'lucide:brush'" :class="`w-4 h-4 ${loading ? 'animate-spin' : ''}`" />
+            <Button @click="handleOptimized" :size="size" class="rounded-full">
+                <Icon :icon="loading ? 'lucide:loader-circle' : 'lucide:brush'"
+                    :class="`w-4 h-4 ${loading ? 'animate-spin' : ''}`" />
             </Button>
         </template>
         <template #content>

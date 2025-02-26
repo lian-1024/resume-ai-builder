@@ -4,11 +4,20 @@ import BuilderSidebar from '@/components/builder/sidebar/index.vue'
 import { useResumeStore } from '@/stores/modules/resume';
 import { useIframeResume, IframeMessageTypeMap } from '@/composables/use-iframe'
 import { ref, onMounted } from 'vue'
+import { useRoute } from 'vue-router'
 import { ResumeActions } from '@/components/feature/resume-actions'
+import { useResumeAI } from '@/composables/resume/use-resume-ai';
+import { extractCodeBlock } from '@lianqq/resume-utils';
+import type { ResumeData } from '@lianqq/resume-schema';
 const resumeStore = useResumeStore()
 const { initIframe, updateResumeData } = useIframeResume()
+const { generateResume } = useResumeAI()
+
 const iframeRef = ref<HTMLIFrameElement | null>(null)
 
+
+const route = useRoute()
+ 
 
 /**
  * 握手机制
@@ -31,8 +40,22 @@ const onIframeLoad = async () => {
   window.addEventListener('message', previewReadyHandler)
 }
 
+const handleGenerateResume = async (description?:string) => {
+  if(!description) return
+  const result = JSON.parse(extractCodeBlock(await generateResume(description))[0]) as ResumeData
+
+  resumeStore.setResumeValue('sections', result.sections)
+  resumeStore.setResumeValue('basics', result.basics)
+}
+
 onMounted(() => {
   resumeStore.initResumeData()
+  if(route.query.type === 'generate'){
+    console.log("route.query.content",route.query.content);
+    
+    const content = route.query.content?.toString()
+    handleGenerateResume(content)
+  }
   // iframe的onload以及message事件都不会触发
 })
 

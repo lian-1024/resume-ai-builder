@@ -9,7 +9,8 @@ const router = createRouter({
       children:[
         {
           path:"/builder",
-          component:()=>import('@/views/builder/index.vue')
+          component:()=>import('@/views/builder/index.vue'),
+         
         },
         {
           path:"/preview",

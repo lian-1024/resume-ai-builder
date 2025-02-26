@@ -1,14 +1,8 @@
 import { ChatOpenAI } from '@langchain/openai';
 import { StringOutputParser } from '@langchain/core/output_parsers';
 import { RunnableSequence } from '@langchain/core/runnables';
+import { AIModelConfig } from '../types';
 
-export interface AIModelConfig {
-    apiKey: string;
-    baseURL?: string;
-    temperature?: number;
-    maxTokens?: number;
-    modelName?: string;
-}
 /**
  * 基础AI模型
  */

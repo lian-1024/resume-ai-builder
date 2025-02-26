@@ -1,5 +1,8 @@
-import { BaseAIModel, type AIModelConfig } from '@/ai/modal'
+import { BaseAIModel } from '@/ai/modal'
+import type { AIModelConfig } from '@/ai/types'
 import { Example } from '@lianqq/resume-schema'
+
+
 
 export class ResumeAI extends BaseAIModel {
     constructor(config: AIModelConfig) {
@@ -20,6 +23,7 @@ export class ResumeAI extends BaseAIModel {
                - 提取并规范化个人基本信息
                - 确保联系方式格式统一
                - 添加适当的个人简介
+               - 头像 url 设置为 http://localhost:3002/images/placeholder.png
 
             2. 教育经历优化：
                - 突出学术成就和相关课程
@@ -49,13 +53,16 @@ export class ResumeAI extends BaseAIModel {
                - 表述清晰准确
                - 突出重点成就
 
-            请按照以下数据结构返回JSON：{ example }
+            请按照以下数据结构返回JSON：{example}
             
         `)
 
         return chain.invoke({
             content,
-            example: Example
+            example: {
+                basics: Example.basics,
+                sections: Example.sections,
+            }
         })
     }
 

@@ -1,4 +1,5 @@
-import { BaseAIModel, type AIModelConfig } from '@/ai/modal';
+import { BaseAIModel } from '@/ai/modal';
+import type { AIModelConfig } from '@/ai/types';
 export declare class ResumeAI extends BaseAIModel {
     constructor(config: AIModelConfig);
     /**
