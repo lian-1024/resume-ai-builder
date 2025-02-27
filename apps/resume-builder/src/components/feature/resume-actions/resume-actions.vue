@@ -3,7 +3,8 @@ import { useIframeResume } from '@/composables/use-iframe'
 import { Button } from '@lianqq/resume-ui'
 import Tooltip from '@/components/ui/tooltip.vue'
 import { Icon } from '@iconify/vue'
-import { AIButton } from '@/components/feature/ai-button'
+import { AIButton } from '@/components/feature/optimizer-button'
+import { OpenAIButton } from '@/components/feature/open-ai-button'
 const { exportResumeToPdf } = useIframeResume()
 
 
@@ -26,6 +27,6 @@ defineOptions({
             </template>
         </Tooltip>
         <AIButton size="icon" />
+        <OpenAIButton />
     </div>
 </template>
-

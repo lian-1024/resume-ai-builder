@@ -1,7 +1,7 @@
 import { defineComponent as u, computed as i, createBlock as m, openBlock as f, unref as e, mergeProps as b, withCtx as r, createElementVNode as h, renderSlot as _, createVNode as a } from "vue";
 import { cn as x } from "../../lib/utils.js";
 import { useForwardPropsEmits as g, MenubarCheckboxItem as k, MenubarItemIndicator as y } from "radix-vue";
-import w from "../../node_modules/.pnpm/@radix-icons_vue@1.0.0_vue@3.5.13_typescript@5.6.3_/node_modules/@radix-icons/vue/esm/CheckIcon.js";
+import w from "../../node_modules/.pnpm/@radix-icons_vue@1.0.0_vue@3.5.13/node_modules/@radix-icons/vue/esm/CheckIcon.js";
 const B = { class: "absolute left-2 flex h-3.5 w-3.5 items-center justify-center" }, V = /* @__PURE__ */ u({
   __name: "MenubarCheckboxItem",
   props: {

@@ -8,7 +8,6 @@ import {
   getLocalTimeZone,
 } from '@internationalized/date'
 import { CalendarIcon } from 'lucide-vue-next'
-import { ref } from 'vue'
 
 const df = new DateFormatter('en-US', {
   dateStyle: 'long',

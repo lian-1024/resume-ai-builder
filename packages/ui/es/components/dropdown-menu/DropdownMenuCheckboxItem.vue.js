@@ -1,7 +1,7 @@
 import { defineComponent as i, computed as u, createBlock as m, openBlock as f, unref as e, mergeProps as h, withCtx as n, createElementVNode as _, renderSlot as x, createVNode as r } from "vue";
 import { cn as w } from "../../lib/utils.js";
 import { useForwardPropsEmits as b, DropdownMenuCheckboxItem as g, DropdownMenuItemIndicator as k } from "radix-vue";
-import y from "../../node_modules/.pnpm/@radix-icons_vue@1.0.0_vue@3.5.13_typescript@5.6.3_/node_modules/@radix-icons/vue/esm/CheckIcon.js";
+import y from "../../node_modules/.pnpm/@radix-icons_vue@1.0.0_vue@3.5.13/node_modules/@radix-icons/vue/esm/CheckIcon.js";
 const B = { class: "absolute left-2 flex h-3.5 w-3.5 items-center justify-center" }, P = /* @__PURE__ */ i({
   __name: "DropdownMenuCheckboxItem",
   props: {

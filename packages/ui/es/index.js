@@ -12,7 +12,7 @@ import { default as B } from "./components/breadcrumb/BreadcrumbList.vue.js";
 import { default as F } from "./components/breadcrumb/BreadcrumbPage.vue.js";
 import { default as G } from "./components/breadcrumb/BreadcrumbSeparator.vue.js";
 import { default as P } from "./components/button/Button.vue.js";
-import { default as N } from "./components/card/Card.vue.js";
+import { default as L } from "./components/card/Card.vue.js";
 import { default as A } from "./components/card/CardContent.vue.js";
 import { default as k } from "./components/card/CardDescription.vue.js";
 import { default as y } from "./components/card/CardFooter.vue.js";
@@ -39,7 +39,7 @@ import { default as Be } from "./components/dropdown-menu/DropdownMenuTrigger.vu
 import { default as Fe } from "./components/flex/index.vue.js";
 import { default as Ge } from "./components/input/Input.vue.js";
 import { default as Pe } from "./components/menubar/Menubar.vue.js";
-import { default as Ne } from "./components/menubar/MenubarCheckboxItem.vue.js";
+import { default as Le } from "./components/menubar/MenubarCheckboxItem.vue.js";
 import { default as Ae } from "./components/menubar/MenubarContent.vue.js";
 import { default as ke } from "./components/menubar/MenubarGroup.vue.js";
 import { default as ye } from "./components/menubar/MenubarItem.vue.js";
@@ -66,7 +66,7 @@ import { default as Br } from "./components/sheet/SheetClose.vue.js";
 import { default as Fr } from "./components/sheet/SheetContent.vue.js";
 import { default as Gr } from "./components/sheet/SheetDescription.vue.js";
 import { default as Pr } from "./components/sheet/SheetFooter.vue.js";
-import { default as Nr } from "./components/sheet/SheetHeader.vue.js";
+import { default as Lr } from "./components/sheet/SheetHeader.vue.js";
 import { default as Ar } from "./components/sheet/SheetTitle.vue.js";
 import { default as kr } from "./components/sheet/SheetTrigger.vue.js";
 import { default as yr } from "./components/sidebar/Sidebar.vue.js";
@@ -93,7 +93,7 @@ import { default as Ba } from "./components/sidebar/SidebarSeparator.vue.js";
 import { default as Fa } from "./components/sidebar/SidebarTrigger.vue.js";
 import { default as Ga } from "./components/tooltip/Tooltip.vue.js";
 import { default as Pa } from "./components/tooltip/TooltipContent.vue.js";
-import { default as Na } from "./components/tooltip/TooltipProvider.vue.js";
+import { default as La } from "./components/tooltip/TooltipProvider.vue.js";
 import { default as Aa } from "./components/tooltip/TooltipTrigger.vue.js";
 import { default as ka } from "./components/select/Select.vue.js";
 import { default as ya } from "./components/select/SelectContent.vue.js";
@@ -120,7 +120,7 @@ import { default as Ro } from "./components/calendar/CalendarHeading.vue.js";
 import { default as Io } from "./components/calendar/CalendarNextButton.vue.js";
 import { default as ho } from "./components/calendar/CalendarPrevButton.vue.js";
 import { default as Ho } from "./components/range-calendar/RangeCalendar.vue.js";
-import { default as Lo } from "./components/range-calendar/RangeCalendarCell.vue.js";
+import { default as No } from "./components/range-calendar/RangeCalendarCell.vue.js";
 import { default as Vo } from "./components/range-calendar/RangeCalendarCellTrigger.vue.js";
 import { default as Oo } from "./components/range-calendar/RangeCalendarGrid.vue.js";
 import { default as Eo } from "./components/range-calendar/RangeCalendarGridBody.vue.js";
@@ -147,7 +147,7 @@ import { default as Rt } from "./components/drawer/DrawerFooter.vue.js";
 import { default as It } from "./components/drawer/DrawerHeader.vue.js";
 import { default as ht } from "./components/drawer/DrawerOverlay.vue.js";
 import { default as Ht } from "./components/drawer/DrawerTitle.vue.js";
-import { default as Lt } from "./components/dialog/Dialog.vue.js";
+import { default as Nt } from "./components/dialog/Dialog.vue.js";
 import { default as Vt } from "./components/dialog/DialogClose.vue.js";
 import { default as Ot } from "./components/dialog/DialogContent.vue.js";
 import { default as Et } from "./components/dialog/DialogDescription.vue.js";
@@ -164,21 +164,22 @@ import { default as df } from "./components/toast/Toaster.vue.js";
 import { default as uf } from "./components/toast/ToastProvider.vue.js";
 import { default as sf } from "./components/toast/ToastTitle.vue.js";
 import { default as xf } from "./components/toast/ToastViewport.vue.js";
-import { avatarVariant as gf } from "./components/avatar/index.js";
-import { badgeVariants as Cf } from "./components/badge/index.js";
-import { buttonVariants as Mf } from "./components/button/index.js";
-import { COLOR_MODE as cf } from "./components/color-mode-button/index.js";
-import { DialogClose as wf, DialogPortal as vf, DialogTrigger as Bf, DropdownMenuPortal as Rf, PopoverAnchor as Ff } from "radix-vue";
-import { navigationMenuTriggerStyle as Gf } from "./components/navigation-menu/index.js";
-import { sheetVariants as Pf } from "./components/sheet/index.js";
-import { default as Nf } from "./components/sidebar/SidebarMenuSubItem.vue.js";
-import { useSidebar as Af } from "./components/sidebar/utils.js";
-import { sidebarMenuButtonVariants as kf } from "./components/sidebar/index.js";
-import { CalendarDate as yf } from "./node_modules/.pnpm/@internationalized_date@3.7.0/node_modules/@internationalized/date/dist/CalendarDate.js";
-import { FORM_ITEM_INJECTION_KEY as _f } from "./components/form/injectionKeys.js";
-import { Form as Jf, Field as Kf, FieldArray as Uf } from "./node_modules/.pnpm/vee-validate@4.15.0_vue@3.5.13_typescript@5.6.3_/node_modules/vee-validate/dist/vee-validate.js";
-import { toast as $f, useToast as qf } from "./components/toast/use-toast.js";
-import { toastVariants as Qf } from "./components/toast/index.js";
+import { default as gf } from "./components/label/Label.vue.js";
+import { avatarVariant as Cf } from "./components/avatar/index.js";
+import { badgeVariants as Mf } from "./components/badge/index.js";
+import { buttonVariants as cf } from "./components/button/index.js";
+import { COLOR_MODE as wf } from "./components/color-mode-button/index.js";
+import { DialogClose as Bf, DialogPortal as Rf, DialogTrigger as Ff, DropdownMenuPortal as If, PopoverAnchor as Gf } from "radix-vue";
+import { navigationMenuTriggerStyle as Pf } from "./components/navigation-menu/index.js";
+import { sheetVariants as Lf } from "./components/sheet/index.js";
+import { default as Af } from "./components/sidebar/SidebarMenuSubItem.vue.js";
+import { useSidebar as kf } from "./components/sidebar/utils.js";
+import { sidebarMenuButtonVariants as yf } from "./components/sidebar/index.js";
+import { CalendarDate as _f } from "./node_modules/.pnpm/@internationalized_date@3.7.0/node_modules/@internationalized/date/dist/CalendarDate.js";
+import { FORM_ITEM_INJECTION_KEY as Jf } from "./components/form/injectionKeys.js";
+import { Form as Uf, Field as Yf, FieldArray as $f } from "./node_modules/.pnpm/vee-validate@4.15.0_vue@3.5.13/node_modules/vee-validate/dist/vee-validate.js";
+import { toast as zf, useToast as Qf } from "./components/toast/use-toast.js";
+import { toastVariants as Xf } from "./components/toast/index.js";
 const t = (e) => {
   Object.entries(o).forEach(([r, a]) => {
     e.component(r, a);
@@ -199,11 +200,11 @@ export {
   F as BreadcrumbPage,
   G as BreadcrumbSeparator,
   P as Button,
-  cf as COLOR_MODE,
+  wf as COLOR_MODE,
   uo as Calendar,
   so as CalendarCell,
   xo as CalendarCellTrigger,
-  yf as CalendarDate,
+  _f as CalendarDate,
   io as CalendarGrid,
   bo as CalendarGridBody,
   So as CalendarGridHead,
@@ -213,7 +214,7 @@ export {
   Ro as CalendarHeading,
   Io as CalendarNextButton,
   ho as CalendarPrevButton,
-  N as Card,
+  L as Card,
   A as CardContent,
   k as CardDescription,
   y as CardFooter,
@@ -224,7 +225,7 @@ export {
   z as CollapsibleTrigger,
   W as ColorModeButton,
   ut as DatePicker,
-  Lt as Dialog,
+  Nt as Dialog,
   Vt as DialogClose,
   Ot as DialogContent,
   Et as DialogDescription,
@@ -234,22 +235,22 @@ export {
   qt as DialogTitle,
   Qt as DialogTrigger,
   Dt as Drawer,
-  wf as DrawerClose,
+  Bf as DrawerClose,
   Tt as DrawerContent,
   vt as DrawerDescription,
   Rt as DrawerFooter,
   It as DrawerHeader,
   ht as DrawerOverlay,
-  vf as DrawerPortal,
+  Rf as DrawerPortal,
   Ht as DrawerTitle,
-  Bf as DrawerTrigger,
+  Ff as DrawerTrigger,
   Z as DropdownMenu,
   re as DropdownMenuCheckboxItem,
   oe as DropdownMenuContent,
   fe as DropdownMenuGroup,
   le as DropdownMenuItem,
   pe as DropdownMenuLabel,
-  Rf as DropdownMenuPortal,
+  If as DropdownMenuPortal,
   me as DropdownMenuRadioGroup,
   ne as DropdownMenuRadioItem,
   ge as DropdownMenuSeparator,
@@ -258,19 +259,20 @@ export {
   ce as DropdownMenuSubContent,
   we as DropdownMenuSubTrigger,
   Be as DropdownMenuTrigger,
-  _f as FORM_ITEM_INJECTION_KEY,
+  Jf as FORM_ITEM_INJECTION_KEY,
   Fe as Flex,
-  Jf as Form,
+  Uf as Form,
   st as FormControl,
   xt as FormDescription,
-  Kf as FormField,
-  Uf as FormFieldArray,
+  Yf as FormField,
+  $f as FormFieldArray,
   it as FormItem,
   bt as FormLabel,
   St as FormMessage,
   Ge as Input,
+  gf as Label,
   Pe as Menubar,
-  Ne as MenubarCheckboxItem,
+  Le as MenubarCheckboxItem,
   Ae as MenubarContent,
   ke as MenubarGroup,
   ye as MenubarItem,
@@ -292,11 +294,11 @@ export {
   Cr as NavigationMenuTrigger,
   Mr as NavigationMenuViewport,
   at as Popover,
-  Ff as PopoverAnchor,
+  Gf as PopoverAnchor,
   tt as PopoverContent,
   dt as PopoverTrigger,
   Ho as RangeCalendar,
-  Lo as RangeCalendarCell,
+  No as RangeCalendarCell,
   Vo as RangeCalendarCellTrigger,
   Oo as RangeCalendarGrid,
   Eo as RangeCalendarGridBody,
@@ -324,7 +326,7 @@ export {
   Fr as SheetContent,
   Gr as SheetDescription,
   Pr as SheetFooter,
-  Nr as SheetHeader,
+  Lr as SheetHeader,
   Ar as SheetTitle,
   kr as SheetTrigger,
   yr as Sidebar,
@@ -345,7 +347,7 @@ export {
   ga as SidebarMenuSkeleton,
   Ca as SidebarMenuSub,
   Ma as SidebarMenuSubButton,
-  Nf as SidebarMenuSubItem,
+  Af as SidebarMenuSubItem,
   ca as SidebarProvider,
   wa as SidebarRail,
   Ba as SidebarSeparator,
@@ -361,19 +363,19 @@ export {
   df as Toaster,
   Ga as Tooltip,
   Pa as TooltipContent,
-  Na as TooltipProvider,
+  La as TooltipProvider,
   Aa as TooltipTrigger,
-  gf as avatarVariant,
-  Cf as badgeVariants,
-  Mf as buttonVariants,
+  Cf as avatarVariant,
+  Mf as badgeVariants,
+  cf as buttonVariants,
   d as default,
   t as install,
-  Gf as navigationMenuTriggerStyle,
-  Pf as sheetVariants,
-  kf as sidebarMenuButtonVariants,
-  $f as toast,
-  Qf as toastVariants,
-  Af as useSidebar,
-  qf as useToast
+  Pf as navigationMenuTriggerStyle,
+  Lf as sheetVariants,
+  yf as sidebarMenuButtonVariants,
+  zf as toast,
+  Xf as toastVariants,
+  kf as useSidebar,
+  Qf as useToast
 };
 //# sourceMappingURL=index.js.map

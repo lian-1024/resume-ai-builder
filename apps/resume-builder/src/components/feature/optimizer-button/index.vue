@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { Button, type ButtonVariants } from '@lianqq/resume-ui'
-import { useResumeAI } from '@/composables/resume/use-resume-ai'
+import { useResumeOptimizer } from '@/composables/use-resume-optimizer'
 import { onMounted, ref } from 'vue';
 import { useResumeStore } from '@/stores'
 import Tooltip from '@/components/ui/tooltip.vue';
@@ -8,7 +8,6 @@ import { extractCodeBlock } from '@lianqq/resume-utils'
 import { Icon } from '@iconify/vue'
 import { useIframeResume } from '@/composables/use-iframe'
 import type { ResumeData } from '@lianqq/resume-schema'
-import { useRoute } from 'vue-router'
 defineOptions({
     name: "AIButton"
 })
@@ -19,8 +18,7 @@ defineProps<{
 }>()
 
 
-const { initAIModel, optimizeContent } = useResumeAI()
-const { setResume } = useIframeResume()
+const { initOptimizer, optimizeContent } = useResumeOptimizer()
 const resumeStore = useResumeStore()
 const loading = ref(false)
 
@@ -42,7 +40,18 @@ const handleOptimized = async () => {
 
 
 onMounted(() => {
-    initAIModel("zhipu")
+   // 初始化优化器
+    initOptimizer({
+        modelName: 'glm-4-flash',
+        apiKey: '',
+        temperature: 0.7,
+        configuration: {
+            baseURL: 'https://open.bigmodel.cn/api/paas/v4',
+            defaultHeaders: {
+                "Authorization": `Bearer 87180c6d421a4070bdcbd673ac11990f.9RQYH7fS4xmL9mWP`
+            }
+        }
+    })
 
 })
 
@@ -61,5 +70,3 @@ onMounted(() => {
         </template>
     </Tooltip>
 </template>
-
-<style lang="less" scoped></style>

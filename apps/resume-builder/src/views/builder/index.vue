@@ -6,12 +6,11 @@ import { useIframeResume, IframeMessageTypeMap } from '@/composables/use-iframe'
 import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { ResumeActions } from '@/components/feature/resume-actions'
-import { useResumeAI } from '@/composables/resume/use-resume-ai';
+import { useResumeOptimizer } from '@/composables/use-resume-optimizer';
 import { extractCodeBlock } from '@lianqq/resume-utils';
 import type { ResumeData } from '@lianqq/resume-schema';
 const resumeStore = useResumeStore()
 const { initIframe, updateResumeData } = useIframeResume()
-const { generateResume } = useResumeAI()
 
 const iframeRef = ref<HTMLIFrameElement | null>(null)
 
@@ -41,11 +40,11 @@ const onIframeLoad = async () => {
 }
 
 const handleGenerateResume = async (description?:string) => {
-  if(!description) return
-  const result = JSON.parse(extractCodeBlock(await generateResume(description))[0]) as ResumeData
+  // if(!description) return
+  // const result = JSON.parse(extractCodeBlock(await generateResume(description))[0]) as ResumeData
 
-  resumeStore.setResumeValue('sections', result.sections)
-  resumeStore.setResumeValue('basics', result.basics)
+  // resumeStore.setResumeValue('sections', result.sections)
+  // resumeStore.setResumeValue('basics', result.basics)
 }
 
 onMounted(() => {
@@ -73,8 +72,9 @@ onMounted(() => {
       <iframe @load="onIframeLoad" ref="iframeRef" src="http://localhost:5173/preview"
         class="bg-zinc-100 dark:bg-zinc-950 relative left-0 top-0 bottom-0 right-0 w-full flex-1" />
       <ResumeActions class="absolute top-1/2 right-4" />
+
     </div>
   </div>
 </template>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped></style>@/composables/use-resume-ai/use-resume-ai

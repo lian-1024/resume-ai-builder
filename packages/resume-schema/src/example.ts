@@ -31,8 +31,8 @@ export const Example: ResumeData = {
           school: "学校",
           major: "专业",
           degree: "学历",
-          startDate: "开始时间",
-          endDate: "结束时间",
+          startDate: "2021-01-01",
+          endDate: "2030-01-01",
           summary: "学校简介",
           studyType: "学习方式",
           id: "1"
@@ -48,8 +48,8 @@ export const Example: ResumeData = {
       items: [
         {
           name: "项目名称",
-          startDate: "开始时间",
-          endDate: "结束时间",
+          startDate: "2020-01-01",
+          endDate: "2020-01-01",
           summary: "项目简介",
           role: "角色",
           url: "项目链接",

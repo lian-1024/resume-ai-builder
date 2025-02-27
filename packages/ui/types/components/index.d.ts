@@ -25,3 +25,4 @@ export * from './drawer';
 export * from './dialog';
 export * from './toast';
 export * from './tooltip';
+export * from './label';
