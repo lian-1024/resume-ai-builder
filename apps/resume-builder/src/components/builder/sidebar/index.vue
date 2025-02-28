@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { SidebarProvider } from '@lianqq/resume-ui';
+import { SidebarProvider, toast } from '@lianqq/resume-ui';
 import Editor from './editor/index.vue';
 import Sections from './sections/index.vue';
 import { ref } from 'vue';
@@ -15,12 +15,17 @@ const editorRef = ref<InstanceType<typeof Editor>>()
  * @param id 元素id
  */
 const handleScrollTo = (id: EditorIdValueType) => {
-  editorRef.value?.scrollToElement(id)
+  
+  if (!editorRef.value) return toast({
+    title: '操作失败',
+    description: '请稍后再试'
+  })
+  editorRef.value.scrollToElement(id)
 }
 </script>
 <template>
   <SidebarProvider class="flex max-w-[666px] border-r border-zinc-200 dark:border-zinc-800" :defaultOpen="false">
     <Sections @scrollTo="handleScrollTo" />
-    <Editor />
+    <Editor ref="editorRef" />
   </SidebarProvider>
 </template>
