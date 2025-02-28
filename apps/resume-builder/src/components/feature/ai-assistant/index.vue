@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Tooltip from '@/components/ui/tooltip.vue';
 import { Icon } from '@iconify/vue'
-
+import MarkdownIt from 'markdown-it'
 import {
     Sheet,
     SheetContent,
@@ -10,7 +10,6 @@ import {
     SheetTitle,
     SheetTrigger,
     Button,
-    ScrollArea,
     Input,
     toast,
 } from '@lianqq/resume-ui'
@@ -22,6 +21,16 @@ import { copyTextToClipboard } from '@lianqq/resume-utils';
 import { AlertDialogUI } from '@/components/ui/alert-dialog'
 
 const { chatStream, initResumeAssistant, resumeAssistant } = useResumeAssistant(modelConfig)
+
+const md = new MarkdownIt({
+    html: true,
+    breaks: true,
+    linkify: true,
+    typographer: true,
+    highlight: (code, lang) => {
+        return `<pre><code class="language-${lang}">${code}</code></pre>`
+    }
+})
 
 /**
  * 输入值
@@ -79,6 +88,12 @@ const buildMessage = (message: string, role: MessageRoleType) => ({
  * @param message 
  */
 const sendMessage = async () => {
+    if (loading.value) return toast({
+        title: "请稍后再试"
+    })
+    if (!inputValue.value) return toast({
+        title: "请输入内容"
+    })
     loading.value = true
     // 将用户输入的消息添加到消息列表
     messageList.value.push(buildMessage(inputValue.value, MessageRole.HUMAN))
@@ -96,6 +111,7 @@ const sendMessage = async () => {
             streamMessage += chunk
             messageList.value[messageList.value.length - 1].message = streamMessage
         }
+
     } catch (error) {
         toast({
             title: "发送失败"
@@ -121,7 +137,8 @@ const copyMessage = async (message: string) => {
     } catch (error) {
         toast({
             title: "复制失败",
-            description: "Error"
+            description: "复制失败，发生错误",
+            variant: "destructive"
         })
     }
 }
@@ -132,7 +149,8 @@ const copyMessage = async (message: string) => {
 const startNewConversation = () => {
     if (!resumeAssistant.value) return toast({
         title: "错误",
-        message: "没有成功初始化"
+        message: "没有成功初始化",
+        variant: "destructive"
     })
 
     // 清空消息历史
@@ -140,13 +158,23 @@ const startNewConversation = () => {
     // 恢复消息列表
     messageList.value = defaultMessageList
 
+    return toast({
+        title: "提示",
+        description: "对话已清空，请重新开始"
+    })
+}
+
+
+
+/**渲染消息 */
+const renderMessage = (message: string) => {
+    return md.render(message)
 }
 
 onMounted(() => {
     // 初始化简历助手
     initResumeAssistant()
 })
-
 </script>
 
 <template>
@@ -172,7 +200,8 @@ onMounted(() => {
                     </span>
                     <Tooltip>
                         <template #trigger>
-                            <AlertDialogUI title="温馨提示" description="您确认要新建对话吗？对话历史将清空" cancel-text="取消" confirm-text="确定新建对话">
+                            <AlertDialogUI title="温馨提示" description="您确认要新建对话吗？对话历史将清空" cancel-text="取消"
+                                confirm-text="确定新建对话">
                                 <template #trigger>
                                     <Button @click="startNewConversation" size="icon" variant="secondary"
                                         class="rounded-full">
@@ -189,13 +218,11 @@ onMounted(() => {
             </SheetHeader>
 
             <!-- 聊天内容区域 -->
-            <ScrollArea class="flex-1 my-4">
+            <div v-auto-scroll:bottom class="flex-1 my-4 overflow-y-auto">
                 <div class="flex flex-col gap-4 self">
                     <div v-for="item in messageList" :key="item.message"
                         :class="`p-2 rounded-lg ${bubbleBoxStyles(item.role)}`">
-                        <p>
-                            {{ item.message }}
-                        </p>
+                        <div v-html="renderMessage(item.message)" />
                         <div class="flex gap-1 justify-end">
                             <Button v-if="item.role === MessageRole.ASSISTANT" @click="copyMessage(item.message)"
                                 variant="secondary" class="rounded-full h-10 w-10" size="icon">
@@ -205,16 +232,18 @@ onMounted(() => {
 
                     </div>
                 </div>
-            </ScrollArea>
+            </div>
 
             <!-- 输入区域 -->
             <div class="mt-auto border-t pt-4">
                 <div class="flex items-center gap-2">
-                    <Input placeholder="请输入您需要询问的问题" @keyup.enter="sendMessage" class="flex-1" v-model:model-value="inputValue" />
+                    <Input placeholder="请输入您需要询问的问题" @keyup.enter="sendMessage" class="flex-1"
+                        v-model:model-value="inputValue" />
                     <Tooltip>
                         <template #trigger>
-                            <Button class="rounded-full" size="icon" @click="sendMessage">
-                                <Icon icon="lucide:send" />
+                            <Button size="icon" @click="sendMessage" :disabled="loading">
+                                <Icon icon="lucide:send" v-if="!loading" />
+                                <Icon v-else icon="lucide:loader-2" class="animate-spin" />
                             </Button>
                         </template>
                         <template>

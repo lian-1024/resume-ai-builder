@@ -8,14 +8,17 @@ import '@lianqq/resume-ui/styles.css'
 
 import App from './App.vue'
 import router from './router'
-import { setupStore } from './stores'
-
+import setupStore from './stores'
+import setupDirective from './directive'
 const bootstrap = async () => {     
   const app = createApp(App)
-
+  // 设置store
   setupStore(app)
+  // 设置指令
+  setupDirective(app)
+  // 设置路由
   app.use(router)
-
+  // 挂载
   app.mount('#app')
 }
 
