@@ -18,9 +18,10 @@ import {
 import { Icon } from '@iconify/vue'
 import { useResumeAssistant } from '@/composables/use-resume-assistant';
 import { MessageRole, type MessageRoleType } from './constansts';
-import { computed, ref, shallowRef } from 'vue';
+import { computed, onMounted, ref, shallowRef } from 'vue';
+import { modelConfig } from '@/config/model.config';
 
-const { } = useResumeAssistant()
+const { chat, chatStream, initResumeAssistant } = useResumeAssistant(modelConfig)
 
 const inputValue = ref<string>('')
 
@@ -34,6 +35,7 @@ const messageList = ref([
         message: "你好"
     }
 ])
+
 
 /**
  * 气泡框样式
@@ -56,13 +58,32 @@ const buildMessage = (message: string, role: MessageRoleType) => ({
  * 发送消息
  * @param message 
  */
-const sendMessage = () => {
-    
+const sendMessage = async () => {
+    // 将用户输入的消息添加到消息列表
     messageList.value.push(buildMessage(inputValue.value, MessageRole.HUMAN))
+
+    // 获取 AI 的流式响应
+    const response = await chatStream(inputValue.value) || ''
+
     // 清除输入值
     inputValue.value = ''
+
+    // stream 消息
+    let streamMessage = ''
+    // 先添加一个空消息占位
+    messageList.value.push(buildMessage('', MessageRole.ASSISTANT))
+    // 逐步接收并显示 AI 的响应内容
+    for await (const chunk of response) {
+        streamMessage += chunk
+        messageList.value[messageList.value.length - 1].message = streamMessage
+    }
+
 }
 
+
+onMounted(() => {
+    initResumeAssistant()
+})
 
 </script>
 

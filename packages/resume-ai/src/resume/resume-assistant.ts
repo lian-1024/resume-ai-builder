@@ -113,12 +113,27 @@ class ResumeAssistant extends BaseModel {
      * @returns 生成器,用于流式返回AI回复的内容片段
      */
     async *chatStream(message: string): AsyncGenerator<string> {
-        // 创建流式输出
-        const stream = await this.model.pipe(new StringOutputParser()).stream(message)
-        
-        // 逐个返回内容片段
-        for await (const chunk of stream) {
-            yield chunk
+        try {
+            // 添加用户消息到历史记录
+            this.messageHistory.push(new HumanMessage(message));
+
+            // 创建流式输出
+            const stream = await this.model.pipe(new StringOutputParser()).stream(this.messageHistory);
+            
+            // 用于收集完整的AI回复
+            let fullResponse = '';
+
+            // 逐个返回内容片段
+            for await (const chunk of stream) {
+                fullResponse += chunk;
+                yield chunk;
+            }
+
+            // 将完整的AI回复添加到历史记录
+            this.messageHistory.push(new AIMessage(fullResponse));
+        } catch (error) {
+            console.error('ChatStream error:', error);
+            throw error;
         }
     }
 }

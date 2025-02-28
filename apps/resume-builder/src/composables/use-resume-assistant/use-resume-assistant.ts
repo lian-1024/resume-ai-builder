@@ -14,8 +14,8 @@ export const useResumeAssistant = (config?:AIConfig) => {
      * 初始化简历助手
      * @param config 
      */
-    const initResumeAssistant = (config:AIConfig) => {
-        resumeAssistant.value = new ResumeAssistant(config)
+    const initResumeAssistant = (initConfig?:AIConfig) => {
+        resumeAssistant.value = new ResumeAssistant(initConfig || config)
     }
 
     /**
