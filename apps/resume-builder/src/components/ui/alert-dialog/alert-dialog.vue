@@ -12,6 +12,11 @@ import {
     Button
 } from '@lianqq/resume-ui'
 
+
+const open  = defineModel<boolean>('open',{
+    default:false
+})
+
 defineProps<{
     buttonText?: string,
     title?: string
@@ -27,7 +32,7 @@ const emits = defineEmits<{
 </script>
 
 <template>
-    <AlertDialog>
+    <AlertDialog v-model:open="open">
         <AlertDialogTrigger as-child>
             <slot name="trigger">
                 <Button variant="outline">

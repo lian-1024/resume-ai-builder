@@ -24,6 +24,8 @@ export function useResumeOptimizer(config: AIConfig) {
         }
     }
 
+
+
     /**
      * 优化内容
      * @param content 
@@ -39,7 +41,6 @@ export function useResumeOptimizer(config: AIConfig) {
      */
     const optimizeProject = async (content: string) => {
         if (!resumeOptimizer.value) throw new Error("优化器成功未初始化")
-
         return resumeOptimizer.value.optimizeProject(content)
     }
 
@@ -49,7 +50,6 @@ export function useResumeOptimizer(config: AIConfig) {
      */
     const optimizeEducation = async (content: string) => {
         if (!resumeOptimizer.value) throw new Error("优化器成功未初始化")
-
         return resumeOptimizer.value.optimizeEducation(content)
     }
 
@@ -59,9 +59,10 @@ export function useResumeOptimizer(config: AIConfig) {
      */
     const optimizeSkill = async (content: string) => {
         if (!resumeOptimizer.value) throw new Error("优化器成功未初始化")
-
         return resumeOptimizer.value.optimizeSkill(content)
     }
+
+
 
     return {
         optimizeContent,

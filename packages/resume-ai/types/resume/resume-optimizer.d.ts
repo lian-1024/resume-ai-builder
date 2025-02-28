@@ -1,11 +1,13 @@
 import { default as BaseModel } from '../model/base';
 import { AIConfig } from '../types';
 import { ResumeData } from '@lianqq/resume-schema';
+import { ContentType } from './types';
 /**
  * 简历优化器类
  * 继承自BaseModel,提供简历内容的智能优化功能
  */
 declare class ResumeOptimizer extends BaseModel {
+    base: any;
     /**
      * 构造函数
      * @param config AI配置参数
@@ -17,12 +19,6 @@ declare class ResumeOptimizer extends BaseModel {
      * @returns 优化后的简历内容(JSON格式)
      */
     optimizeResume(resume: ResumeData | string): Promise<string>;
-    /**
-     * 优化基本信息部分
-     * @param content 原始基本信息内容
-     * @returns 优化后的基本信息(JSON格式)
-     */
-    optimizeBasicInfo(content: string): Promise<string>;
     /**
      * 优化教育经历部分
      * @param content 原始教育经历内容
@@ -42,10 +38,11 @@ declare class ResumeOptimizer extends BaseModel {
      */
     optimizeSkill(content: string): Promise<string>;
     /**
-     * 优化工作经验部分
-     * @param content 原始工作经验内容
-     * @returns 优化后的工作经验(JSON格式)
+     * 优化指定内容
+     * @param content 原始内容
+     * @param type 内容类型
+     * @returns 优化后的内容(JSON格式)
      */
-    optimizeExperience(content: string): Promise<string>;
+    optimizeActions(content: string, type: ContentType): Promise<string>;
 }
 export default ResumeOptimizer;

@@ -1,13 +1,15 @@
 <script lang="ts" setup>
 import '@wangeditor/editor/dist/css/style.css' // 引入 css
 import { Editor, Toolbar } from '@wangeditor/editor-for-vue'
-import { ref, shallowRef, onBeforeUnmount, h } from 'vue'
+import { ref, shallowRef, onBeforeUnmount, h, onMounted } from 'vue'
 import type { IDomEditor } from '@wangeditor/editor'
 import { Icon } from '@iconify/vue'
+import { useResumeOptimizer } from '@/composables/use-resume-optimizer'
 import { type RichTextType } from '.'
-import { deepClone } from '@/utils/deep-clone'
 import { Button, DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger, toast } from '@lianqq/resume-ui'
-import { extractCodeBlock } from '@lianqq/resume-utils'
+import { modelConfig } from '@/config/model.config'
+import AlertDialog from '@/components/ui/alert-dialog/alert-dialog.vue'
+import { extractCodeBlock } from '@lianqq/resume-ai'
 const props = defineProps<{
   placeholder: string
   type?: RichTextType
@@ -50,6 +52,7 @@ const editorConfig = { placeholder: props.placeholder }
 
 const loading = ref(false)
 
+const { optimizeEducation, optimizeProject, optimizeSkill, initOptimizer } = useResumeOptimizer(modelConfig)
 // 组件销毁时，也及时销毁编辑器
 onBeforeUnmount(() => {
   const editor = editorRef.value
@@ -78,69 +81,80 @@ const handleChange = (editor: IDomEditor) => {
  * 处理AI操作
  * @param optionType 
  */
-const handleAI = async (optionType:string) => {
-  // if (!optionType) return toast({
-  //   title: "未知操作",
-  //   variant: "destructive"
-  // })
+const handleOptimize = async () => {
+  if (!props.type) return toast({
+    title: "未知操作",
+    variant: "destructive"
+  })
 
-  // let content;
+  if (value.value.length <= 20) return toast({
+    title: "内容太短",
+    description: "请你提供更详细的内容，以便AI更好地优化",
+    variant: "destructive"
+  })
 
-  // try {
-  //   loading.value = true
+  loading.value = true
 
-  //   switch (optionType) {
-  //     case OptionTypeMap.OPTIMIZE_CONTENT:
-  //       content = await resumeAI.optimizeContent(value.value)
-  //       break
-  //     case OptionTypeMap.OPTIMIZE_PROJECT_EXPERIENCE:
-  //       content = await resumeAI.optimizeProjectExperience(value.value)
-  //       break
-  //     case OptionTypeMap.OPTIMIZE_EDUCATION_EXPERIENCE:
-  //       content = await resumeAI.optimizeEducationExperience(value.value)
-  //       break
-  //     case OptionTypeMap.OPTIMIZE_SKILL:
-  //       content = await resumeAI.optimizeSkill(value.value)
-  //       break
-  //   }
+  let content;
+  try {
+    // 根据类型执行响应的操作
+    switch (props.type) {
+      case 'education':
+        // 优化教育经历
+        content = await optimizeEducation(value.value)
+        break
+      case 'skill':
+        // 优化技能
+        content = await optimizeSkill(value.value)
+        break
+      case 'project':
+        // 优化项目经历
+        content = await optimizeProject(value.value)
+        break
+    }
 
-  // } catch (error) {
-  //   console.error(error)
-  // } finally {
-  //   loading.value = false
-  //   console.log("content:", content);
-  //   editorRef.value?.setHtml(content)
-  // }
+    // 如果优化失败，则提示
+    if (!content) return toast({
+      title: "优化失败",
+      variant: "destructive"
+    })
+
+    // 设置编辑器内容
+    editorRef.value.setHtml(extractCodeBlock(content)[0])
+  } catch (error) {
+    toast({
+      title: "优化失败",
+      description: "请检查网络连接或稍后再试",
+      variant: "destructive"
+    })
+  } finally {
+    loading.value = false
+    // 在校期间担任前后端协会会长，并参加多项比赛，荣获多个奖项
+    // 清空内容
+    content = ''
+  }
 }
+
+onMounted(() => {
+  //初始化优化器
+  initOptimizer(modelConfig)
+})
 </script>
 
 <template>
   <div class="relative rich-text-editor border dark:border-zinc-800 border-zinc-200">
     <Toolbar style="border-bottom: 1px solid #ccc" :editor="editorRef" :defaultConfig="toolbarConfig" :mode="mode" />
-    <Editor class="max-h-96  bg-white" v-model="value" :defaultConfig="editorConfig"
-      :mode="mode" @onCreated="handleCreated" @onChange="handleChange" />
+    <Editor class="max-h-96  bg-white" v-model="value" :defaultConfig="editorConfig" :mode="mode"
+      @onCreated="handleCreated" @onChange="handleChange" />
     <div class="absolute bottom-2 right-2">
-      <DropdownMenu>
-        <DropdownMenuTrigger as-child>
-          <Button variant="default" class="rounded-full" size="icon">
-            <template v-if="loading">
-              <Icon icon="lucide:loader-circle" class="animate-spin" />
-            </template>
-            <template v-else>
-              AI
-            </template>
-          </Button>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent side="top" align="end" class="px-2 rounded-3xl">
-          <DropdownMenuItem as-child>
-            <Button variant="secondary" class="rounded-full w-full" size="sm"
-              @click="handleAI(props.type || '')">
-              <Icon icon="lucide:pencil-line" />
-              优化内容
-            </Button>
-          </DropdownMenuItem>
-        </DropdownMenuContent>
-      </DropdownMenu>
+      <Button variant="default" class="rounded-full" size="icon" @click="handleOptimize">
+        <template v-if="loading">
+          <Icon icon="lucide:loader-circle" class="animate-spin" />
+        </template>
+        <template v-else>
+          AI
+        </template>
+      </Button>
     </div>
   </div>
 </template>

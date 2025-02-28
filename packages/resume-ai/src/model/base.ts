@@ -5,9 +5,21 @@ import { StringOutputParser } from "@langchain/core/output_parsers"
 class BaseModel {
     protected model: ChatOpenAI
     protected outputParser: StringOutputParser
+    protected config: AIConfig
 
     constructor(config:AIConfig) {
-        this.model = new ChatOpenAI(config)
+        this.config = config
+        this.outputParser = new StringOutputParser()
+        // 初始化模型
+        this.initModel()
+    }
+
+    protected async initModel() {
+        try{
+            this.model = new ChatOpenAI(this.config)
+        }catch(error){
+            console.error(error)
+        }
     }
 
     async invoke(message:string) {
