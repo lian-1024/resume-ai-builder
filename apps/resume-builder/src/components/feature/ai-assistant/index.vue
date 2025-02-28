@@ -1,40 +1,53 @@
 <script setup lang="ts">
 import Tooltip from '@/components/ui/tooltip.vue';
-
+import { Icon } from '@iconify/vue'
 import {
     Sheet,
-    SheetClose,
     SheetContent,
     SheetDescription,
-    SheetFooter,
     SheetHeader,
     SheetTitle,
     SheetTrigger,
     Button,
     ScrollArea,
-    Textarea,
-    Input
+    Input,
+    toast
 } from '@lianqq/resume-ui'
-import { Icon } from '@iconify/vue'
 import { useResumeAssistant } from '@/composables/use-resume-assistant';
 import { MessageRole, type MessageRoleType } from './constansts';
-import { computed, onMounted, ref, shallowRef } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 import { modelConfig } from '@/config/model.config';
+import { copyTextToClipboard } from '@lianqq/resume-utils';
 
-const { chat, chatStream, initResumeAssistant } = useResumeAssistant(modelConfig)
+const { chatStream, initResumeAssistant } = useResumeAssistant(modelConfig)
 
+/**
+ * 输入值
+ */
 const inputValue = ref<string>('')
+/**
+ * 加载状态 
+ */
+const loading = ref<boolean>(false)
 
-const messageList = ref([
+/**
+ * 消息类型
+ */
+interface MessageItemType {
+    role: MessageRoleType,
+    message: string
+}
+
+/**
+ * 消息列表
+ */
+const messageList = ref<MessageItemType[]>([
     {
         role: MessageRole.ASSISTANT,
-        message: "Hello，your sure help？"
-    },
-    {
-        role: MessageRole.HUMAN,
-        message: "你好"
+        message: "你好！我是你的简历助手，请问有什么可以帮你的吗？"
     }
 ])
+
 
 
 /**
@@ -59,29 +72,55 @@ const buildMessage = (message: string, role: MessageRoleType) => ({
  * @param message 
  */
 const sendMessage = async () => {
+    loading.value = true
     // 将用户输入的消息添加到消息列表
     messageList.value.push(buildMessage(inputValue.value, MessageRole.HUMAN))
-
-    // 获取 AI 的流式响应
-    const response = await chatStream(inputValue.value) || ''
-
-    // 清除输入值
-    inputValue.value = ''
-
-    // stream 消息
-    let streamMessage = ''
-    // 先添加一个空消息占位
-    messageList.value.push(buildMessage('', MessageRole.ASSISTANT))
-    // 逐步接收并显示 AI 的响应内容
-    for await (const chunk of response) {
-        streamMessage += chunk
-        messageList.value[messageList.value.length - 1].message = streamMessage
+    try {
+        // 获取 AI 的流式响应
+        const response = await chatStream(inputValue.value) || ''
+        // 清除输入值
+        inputValue.value = ''
+        // stream 消息
+        let streamMessage = ''
+        // 先添加一个空消息占位
+        messageList.value.push(buildMessage('', MessageRole.ASSISTANT))
+        // 逐步接收并显示 AI 的响应内容
+        for await (const chunk of response) {
+            streamMessage += chunk
+            messageList.value[messageList.value.length - 1].message = streamMessage
+        }
+    } catch (error) {
+        toast({
+            title: "发送失败"
+        })
+    } finally {
+        loading.value = false
     }
 
 }
 
+/**
+ * 负责消息
+ * @param message 
+ */
+const copyMessage = async (message: string) => {
+    try {
+        // 复制
+        await copyTextToClipboard(message)
+        toast({
+            title: "复制成功",
+            description: "复制成功，快粘贴到简历上吧！"
+        })
+    } catch (error) {
+        toast({
+            title: "复制失败",
+            description: "Error"
+        })
+    }
+}
 
 onMounted(() => {
+    // 初始化简历助手
     initResumeAssistant()
 })
 
@@ -96,16 +135,16 @@ onMounted(() => {
                         <Icon icon="lucide:message-circle-question" />
                     </template>
                     <template #content>
-                        AI 助手
+                        AI 简历助手
                     </template>
                 </Tooltip>
             </Button>
         </SheetTrigger>
-        <SheetContent class="w-[500px] sm:w-[600px] flex flex-col h-full">
+        <SheetContent class="w-[900px] flex flex-col h-full">
             <SheetHeader>
                 <SheetTitle>AI 助手</SheetTitle>
                 <SheetDescription>
-                    随时随地，轻松获取AI帮助
+                    写简历随时随地，轻松获取AI帮助
                 </SheetDescription>
             </SheetHeader>
 
@@ -114,7 +153,16 @@ onMounted(() => {
                 <div class="flex flex-col gap-4 self">
                     <div v-for="item in messageList" :key="item.message"
                         :class="`p-2 rounded-lg ${bubbleBoxStyles(item.role)}`">
-                        {{ item.message }}
+                        <p>
+                            {{ item.message }}
+                        </p>
+                        <div class="flex gap-1 justify-end">
+                            <Button v-if="item.role === MessageRole.ASSISTANT" @click="copyMessage(item.message)"
+                                variant="secondary" class="rounded-full h-10 w-10" size="icon">
+                                <Icon icon="lucide:copy" class="h-4 w-4" />
+                            </Button>
+                        </div>
+
                     </div>
                 </div>
             </ScrollArea>
@@ -123,9 +171,16 @@ onMounted(() => {
             <div class="mt-auto border-t pt-4">
                 <div class="flex items-center gap-2">
                     <Input placeholder="请输入您需要询问的问题" class="flex-1" v-model:model-value="inputValue" />
-                    <Button class="rounded-full" size="icon" @click="sendMessage">
-                        <Icon icon="lucide:send" />
-                    </Button>
+                    <Tooltip>
+                        <template #trigger>
+                            <Button class="rounded-full" size="icon" @click="sendMessage">
+                                <Icon icon="lucide:send" />
+                            </Button>
+                        </template>
+                        <template>
+                            发送
+                        </template>
+                    </Tooltip>
                 </div>
             </div>
         </SheetContent>

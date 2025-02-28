@@ -1,2 +1,2 @@
 export * from './date'
-export * from './ai'
+export * from './clipboard'

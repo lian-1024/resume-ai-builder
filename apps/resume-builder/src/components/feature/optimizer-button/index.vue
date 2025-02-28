@@ -4,7 +4,7 @@ import { useResumeOptimizer } from '@/composables/use-resume-optimizer'
 import { onMounted, ref } from 'vue';
 import { useResumeStore } from '@/stores'
 import Tooltip from '@/components/ui/tooltip.vue';
-import { extractCodeBlock } from '@lianqq/resume-utils'
+import { extractCodeBlock } from '@lianqq/resume-ai'
 import { Icon } from '@iconify/vue'
 import type { ResumeData } from '@lianqq/resume-schema'
 import { modelConfig } from '@/config/model.config';
