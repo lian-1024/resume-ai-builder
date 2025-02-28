@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Tooltip from '@/components/ui/tooltip.vue';
 import { Icon } from '@iconify/vue'
+
 import {
     Sheet,
     SheetContent,
@@ -11,15 +12,16 @@ import {
     Button,
     ScrollArea,
     Input,
-    toast
+    toast,
 } from '@lianqq/resume-ui'
 import { useResumeAssistant } from '@/composables/use-resume-assistant';
 import { MessageRole, type MessageRoleType } from './constansts';
 import { computed, onMounted, ref } from 'vue';
 import { modelConfig } from '@/config/model.config';
 import { copyTextToClipboard } from '@lianqq/resume-utils';
+import { AlertDialogUI } from '@/components/ui/alert-dialog'
 
-const { chatStream, initResumeAssistant } = useResumeAssistant(modelConfig)
+const { chatStream, initResumeAssistant, resumeAssistant } = useResumeAssistant(modelConfig)
 
 /**
  * 输入值
@@ -39,19 +41,24 @@ interface MessageItemType {
 }
 
 /**
- * 消息列表
+ * 默认消息列表
  */
-const messageList = ref<MessageItemType[]>([
+const defaultMessageList = [
     {
         role: MessageRole.ASSISTANT,
         message: "你好！我是你的简历助手，请问有什么可以帮你的吗？"
     }
-])
+]
+
+/**
+ * 消息列表
+ */
+const messageList = ref<MessageItemType[]>(defaultMessageList)
 
 
 
 /**
- * 气泡框样式
+ * 根据角色计算气泡框样式
  */
 const bubbleBoxStyles = computed(() => (role: MessageRoleType) => {
     return role === MessageRole.HUMAN ? 'self-end bg-blue-600' : "self-start bg-muted"
@@ -119,6 +126,22 @@ const copyMessage = async (message: string) => {
     }
 }
 
+/**
+ * 开启一个新的聊天
+ */
+const startNewConversation = () => {
+    if (!resumeAssistant.value) return toast({
+        title: "错误",
+        message: "没有成功初始化"
+    })
+
+    // 清空消息历史
+    resumeAssistant.value.clearHistory()
+    // 恢复消息列表
+    messageList.value = defaultMessageList
+
+}
+
 onMounted(() => {
     // 初始化简历助手
     initResumeAssistant()
@@ -132,7 +155,7 @@ onMounted(() => {
             <Button size="icon" class="rounded-full">
                 <Tooltip>
                     <template #trigger>
-                        <Icon icon="lucide:message-circle-question" />
+                        <Icon icon="lucide:bot-message-square" />
                     </template>
                     <template #content>
                         AI 简历助手
@@ -143,8 +166,25 @@ onMounted(() => {
         <SheetContent class="w-[900px] flex flex-col h-full">
             <SheetHeader>
                 <SheetTitle>AI 助手</SheetTitle>
-                <SheetDescription>
-                    写简历随时随地，轻松获取AI帮助
+                <SheetDescription class="flex gap items-center justify-between">
+                    <span>
+                        写简历随时随地，轻松获取AI帮助
+                    </span>
+                    <Tooltip>
+                        <template #trigger>
+                            <AlertDialogUI title="温馨提示" description="您确认要新建对话吗？对话历史将清空" cancel-text="取消" confirm-text="确定新建对话">
+                                <template #trigger>
+                                    <Button @click="startNewConversation" size="icon" variant="secondary"
+                                        class="rounded-full">
+                                        <Icon icon="lucide:message-square-diff" />
+                                    </Button>
+                                </template>
+                            </AlertDialogUI>
+                        </template>
+                        <template #content>
+                            新建对话
+                        </template>
+                    </Tooltip>
                 </SheetDescription>
             </SheetHeader>
 
@@ -170,7 +210,7 @@ onMounted(() => {
             <!-- 输入区域 -->
             <div class="mt-auto border-t pt-4">
                 <div class="flex items-center gap-2">
-                    <Input placeholder="请输入您需要询问的问题" class="flex-1" v-model:model-value="inputValue" />
+                    <Input placeholder="请输入您需要询问的问题" @keyup.enter="sendMessage" class="flex-1" v-model:model-value="inputValue" />
                     <Tooltip>
                         <template #trigger>
                             <Button class="rounded-full" size="icon" @click="sendMessage">
