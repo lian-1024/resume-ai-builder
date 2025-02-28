@@ -1,17 +1,27 @@
 import { ref } from 'vue'
 import { type AIConfig } from '@lianqq/resume-ai'
 import { ResumeOptimizer } from '@lianqq/resume-ai'
+import { toast } from "@lianqq/resume-ui"
 
 
+export function useResumeOptimizer(config: AIConfig) {
+    const resumeOptimizer = ref<ResumeOptimizer>()
 
 
-const resumeOptimizer = ref<ResumeOptimizer>()
-
-export function useResumeOptimizer() {
-   
     // 初始化优化器
-    const initOptimizer = (config:AIConfig) => {
-        resumeOptimizer.value = new ResumeOptimizer(config)
+    const initOptimizer = (initConfig?: AIConfig) => {
+        if (resumeOptimizer.value) return true
+
+        try {
+            resumeOptimizer.value = new ResumeOptimizer(initConfig || config)
+            return true
+        } catch (err) {
+            toast({
+                title: "初始化失败",
+                variant: "destructive"
+            })
+            return false
+        }
     }
 
     /**
@@ -19,17 +29,17 @@ export function useResumeOptimizer() {
      * @param content 
      */
     const optimizeContent = async (content: string) => {
-        if (!resumeOptimizer.value) throw new Error('AI not initialized')
-       
+        if (!resumeOptimizer.value) throw new Error("优化器成功未初始化")
         return resumeOptimizer.value.optimizeResume(content)
-    }   
+    }
 
     /**
      * 优化项目经历
      * @param content 
      */
     const optimizeProject = async (content: string) => {
-        if (!resumeOptimizer.value) throw new Error('AI not initialized')
+        if (!resumeOptimizer.value) throw new Error("优化器成功未初始化")
+
         return resumeOptimizer.value.optimizeProject(content)
     }
 
@@ -38,7 +48,8 @@ export function useResumeOptimizer() {
      * @param content 
      */
     const optimizeEducation = async (content: string) => {
-        if (!resumeOptimizer.value) throw new Error('AI not initialized')
+        if (!resumeOptimizer.value) throw new Error("优化器成功未初始化")
+
         return resumeOptimizer.value.optimizeEducation(content)
     }
 
@@ -47,12 +58,10 @@ export function useResumeOptimizer() {
      * @param content 
      */
     const optimizeSkill = async (content: string) => {
-        if (!resumeOptimizer.value) throw new Error('AI not initialized')
+        if (!resumeOptimizer.value) throw new Error("优化器成功未初始化")
+
         return resumeOptimizer.value.optimizeSkill(content)
     }
-
-   
-
 
     return {
         optimizeContent,
@@ -61,4 +70,4 @@ export function useResumeOptimizer() {
         optimizeEducation,
         initOptimizer
     }
-} 
+}

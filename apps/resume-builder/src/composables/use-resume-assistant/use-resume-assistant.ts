@@ -7,7 +7,7 @@ import { ref } from 'vue'
  * 简历助手
  * @returns 
  */
-export const useResumeAssistant = () => {
+export const useResumeAssistant = (config?:AIConfig) => {
     const resumeAssistant = ref<ResumeAssistant | null>(null)
     
     /**
@@ -24,8 +24,8 @@ export const useResumeAssistant = () => {
      * @returns 
      */
     const chat = async (message:string) => {
-        if (!resumeAssistant.value) throw new Error('AI not initialized')
-        return resumeAssistant.value.chat(message)
+        if (!resumeAssistant.value) initResumeAssistant(config)
+        return resumeAssistant.value?.chat(message)
     }
 
     /**
@@ -34,8 +34,8 @@ export const useResumeAssistant = () => {
      * @returns 
      */
     const chatStream = async (message:string) => {
-        if (!resumeAssistant.value) throw new Error('AI not initialized')
-        return resumeAssistant.value.chatStream(message)
+        if (!resumeAssistant.value) initResumeAssistant(config)
+        return resumeAssistant.value?.chatStream(message)
     }
 
     return {

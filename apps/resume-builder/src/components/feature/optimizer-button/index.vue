@@ -6,8 +6,8 @@ import { useResumeStore } from '@/stores'
 import Tooltip from '@/components/ui/tooltip.vue';
 import { extractCodeBlock } from '@lianqq/resume-utils'
 import { Icon } from '@iconify/vue'
-import { useIframeResume } from '@/composables/use-iframe'
 import type { ResumeData } from '@lianqq/resume-schema'
+import { modelConfig } from '@/config/model.config';
 defineOptions({
     name: "AIButton"
 })
@@ -18,7 +18,7 @@ defineProps<{
 }>()
 
 
-const { initOptimizer, optimizeContent } = useResumeOptimizer()
+const { initOptimizer, optimizeContent } = useResumeOptimizer(modelConfig)
 const resumeStore = useResumeStore()
 const loading = ref(false)
 
@@ -41,17 +41,7 @@ const handleOptimized = async () => {
 
 onMounted(() => {
    // 初始化优化器
-    initOptimizer({
-        modelName: 'glm-4-flash',
-        apiKey: '',
-        temperature: 0.7,
-        configuration: {
-            baseURL: 'https://open.bigmodel.cn/api/paas/v4',
-            defaultHeaders: {
-                "Authorization": `Bearer 87180c6d421a4070bdcbd673ac11990f.9RQYH7fS4xmL9mWP`
-            }
-        }
-    })
+    initOptimizer()
 
 })
 

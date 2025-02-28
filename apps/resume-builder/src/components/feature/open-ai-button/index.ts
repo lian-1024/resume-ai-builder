@@ -1,1 +1,0 @@
-export {default as OpenAIButton} from './button.vue'

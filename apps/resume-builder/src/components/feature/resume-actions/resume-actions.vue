@@ -4,7 +4,7 @@ import { Button } from '@lianqq/resume-ui'
 import Tooltip from '@/components/ui/tooltip.vue'
 import { Icon } from '@iconify/vue'
 import { AIButton } from '@/components/feature/optimizer-button'
-import { OpenAIButton } from '@/components/feature/open-ai-button'
+import { OpenAIButton } from '@/components/feature/ai-assistant'
 const { exportResumeToPdf } = useIframeResume()
 
 
