@@ -74,7 +74,6 @@ const handleCreated = (editor: HTMLElement) => {
  * @param editor 
  */
 const handleChange = (editor: IDomEditor) => {
-  console.log(editor.getHtml())
   emit('update:modelValue', editor.getHtml())
 }
 /**
@@ -87,11 +86,7 @@ const handleOptimize = async () => {
     variant: "destructive"
   })
 
-  if (value.value.length <= 20) return toast({
-    title: "内容太短",
-    description: "请你提供更详细的内容，以便AI更好地优化",
-    variant: "destructive"
-  })
+  const contentLength = value.value.length
 
   loading.value = true
 
@@ -100,14 +95,30 @@ const handleOptimize = async () => {
     // 根据类型执行响应的操作
     switch (props.type) {
       case 'education':
+        if (contentLength <= 20) return toast({
+          title: "教育经历内容过短",
+          description: "请你提供更详细的内容，至少描述一个在校经历（20字以上），以便AI更好地优化",
+          variant: "destructive"
+        })
+
         // 优化教育经历
         content = await optimizeEducation(value.value)
         break
       case 'skill':
+        if (contentLength <= 20) return toast({
+          title: "技能内容过短",
+          description: "请你提供多几个技能（20字以上），以便AI更好地优化",
+          variant: "destructive"
+        })
         // 优化技能
         content = await optimizeSkill(value.value)
         break
       case 'project':
+        if (contentLength <= 20) return toast({
+          title: "项目经历内容过短",
+          description: "请你提供更详细的内容，至少描述项目详情（20字以上），以便AI更好地优化",
+          variant: "destructive"
+        })
         // 优化项目经历
         content = await optimizeProject(value.value)
         break
