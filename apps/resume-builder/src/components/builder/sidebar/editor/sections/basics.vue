@@ -28,7 +28,7 @@ const changeValueHandle = (path: string, value?: string) => {
 </script>
 
 <template>
-  <EditorSectionWrapper title="基本信息" icon="lucide:user-round">
+  <EditorSectionWrapper  title="基本信息" icon="lucide:user-round">
     <template #content>
         <div class="grid grid-cols-3 gap-6">
           <div class="flex items-center gap-4 col-span-2">

@@ -1,20 +1,26 @@
 <script lang="ts" setup>
-  import { SidebarProvider } from '@lianqq/resume-ui';
+import { SidebarProvider } from '@lianqq/resume-ui';
 import Editor from './editor/index.vue';
 import Sections from './sections/index.vue';
+import { ref } from 'vue';
+import type { EditorIdValueType } from './constants';
+defineOptions({
+  name: 'BuilderSidebar'
+})
 
-  defineOptions({
-    name:'BuilderSidebar'
-  })
+const editorRef = ref<InstanceType<typeof Editor>>()
+
+/**
+ * 滚动到指定元素
+ * @param id 元素id
+ */
+const handleScrollTo = (id: EditorIdValueType) => {
+  editorRef.value?.scrollToElement(id)
+}
 </script>
 <template>
-  <SidebarProvider
-    class="flex max-w-[666px] border-r border-zinc-200 dark:border-zinc-800"
-    :defaultOpen="false"
-  >
-    <Sections />
+  <SidebarProvider class="flex max-w-[666px] border-r border-zinc-200 dark:border-zinc-800" :defaultOpen="false">
+    <Sections @scrollTo="handleScrollTo" />
     <Editor />
   </SidebarProvider>
 </template>
-
-<style lang="less" scoped></style>

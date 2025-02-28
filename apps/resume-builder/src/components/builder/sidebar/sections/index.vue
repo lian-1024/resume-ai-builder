@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { Avatar, AvatarFallback, AvatarImage } from '@lianqq/resume-ui';
 import { Icon } from '@iconify/vue';
+import type { EditorIdValueType } from '../constants';
 defineOptions({
   name: "SidebarSections"
 })
@@ -25,7 +26,7 @@ import {
   SidebarMenuItem,
   SidebarRail
 } from '@lianqq/resume-ui';
-
+import { EditorIdMap } from '../constants';
 // This is sample data.
 const data = {
   user: {
@@ -35,29 +36,37 @@ const data = {
   },
 }
 
+
 const sections = [
   {
     label: '基本信息',
     icon: 'lucide:user-round',
-    id: '#profile'
+    id: EditorIdMap.BASICS
   },
   {
     label: '专业技能',
     icon: 'lucide:wrench',
-    id: '#work'
+    id: EditorIdMap.SKILL
   },
   {
     label: '教育经历',
     icon: 'lucide:book-open',
-    id: '#education'
+    id: EditorIdMap.EDUCATION
   },
   {
     label: '项目经历',
     icon: 'lucide:folder-open-dot',
-    id: '#project'
+    id: EditorIdMap.PROJECT
   }
- 
 ]
+
+const emit = defineEmits<{
+  (e: 'scrollTo', id: EditorIdValueType): void
+}>()
+
+const handleScrollTo = (id: EditorIdValueType) => {
+  emit('scrollTo', id)
+}
 </script>
 
 <template>
@@ -71,7 +80,7 @@ const sections = [
                 class="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground">
                 <div
                   class="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
-                  <Icon  icon="lucide:house" class="size-4 shrink-0 dark:text-white text-black" />
+                  <Icon icon="lucide:house" class="size-4 shrink-0 dark:text-white text-black" />
                 </div>
                 <div class="grid flex-1 text-left text-sm leading-tight">
                   <span class="truncate">首页</span>
@@ -80,18 +89,18 @@ const sections = [
               </SidebarMenuButton>
             </DropdownMenuTrigger>
             <!-- 右侧下拉菜单内容 -->
-            <DropdownMenuContent class="w-[--radix-dropdown-menu-trigger-width] min-w-56 rounded-lg "
-              align="start" side="bottom" :side-offset="4">
+            <DropdownMenuContent class="w-[--radix-dropdown-menu-trigger-width] min-w-56 rounded-lg " align="start"
+              side="bottom" :side-offset="4">
               <DropdownMenuItem>
                 <div class="flex size-6 items-center justify-center rounded-sm border">
-                  <Icon  icon="lucide:briefcase-business" class="size-4 shrink-0" />
+                  <Icon icon="lucide:briefcase-business" class="size-4 shrink-0" />
                 </div>
                 工作台
                 <DropdownMenuShortcut>⌘1</DropdownMenuShortcut>
               </DropdownMenuItem>
               <DropdownMenuItem>
                 <div class="flex size-6 items-center justify-center rounded-sm border">
-                  <Icon  icon="lucide:house" class="size-4 shrink-0" />
+                  <Icon icon="lucide:house" class="size-4 shrink-0" />
                 </div>
                 首页
                 <DropdownMenuShortcut>⌘2</DropdownMenuShortcut>
@@ -107,9 +116,9 @@ const sections = [
         <SidebarGroupLabel>模块</SidebarGroupLabel>
         <SidebarMenu class="gap-4">
           <!-- every item -->
-          <SidebarMenuItem v-for="item in sections" :key="item.id">
+          <SidebarMenuItem v-for="item in sections" :key="item.id" @click="handleScrollTo(item.id)">
             <SidebarMenuButton :tooltip="item.label">
-              <Icon  :icon="item.icon" class="size-4 shrink-0" />
+              <Icon :icon="item.icon" class="size-4 shrink-0" />
               <span>{{ item.label }}</span>
             </SidebarMenuButton>
           </SidebarMenuItem>
@@ -130,7 +139,7 @@ const sections = [
                 <div class="grid flex-1 text-left text-sm leading-tight">
                   <span class="truncate font-semibold">{{
                     data.user.name
-                  }}</span>
+                    }}</span>
                   <span class="truncate text-xs">{{ data.user.email }}</span>
                 </div>
                 <Icon icon="lucide:chevron-down" class="ml-auto" />
@@ -147,7 +156,7 @@ const sections = [
                   <div class="grid flex-1 text-left text-sm leading-tight">
                     <span class="truncate font-semibold">{{
                       data.user.name
-                    }}</span>
+                      }}</span>
                     <span class="truncate text-xs">{{ data.user.email }}</span>
                   </div>
                 </div>
