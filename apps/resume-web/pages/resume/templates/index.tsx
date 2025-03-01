@@ -4,7 +4,12 @@ import { Icon } from '#components'
 import { AlertDialog } from '~/components/ui/alert-dialog'
 import { Dialog } from '~/components/ui/dialog'
 
-
+/**
+ * 创建简历
+ * @param template 模版名称
+ * @param content 简历描述内容
+ * @returns 
+ */
 const createResume = (template: string,  content?: string) => {
   if (content !== undefined && content.length < 20) return toast({
     title: '描述过短，请你提供更多信息，以便生成更准确的简历',
@@ -12,7 +17,12 @@ const createResume = (template: string,  content?: string) => {
   })
 
   try {
-    window.location.href = `http://localhost:5173/builder?template=${template}&content=${content}`
+
+    const url = new URL(`http://localhost:5173/builder`)
+    url.searchParams.set('template', template)
+    content && url.searchParams.set('content', content.trim())
+    
+    window.location.href = url.toString()
   } catch (error) {
     toast({
       title: '创建失败',

@@ -13,7 +13,6 @@ import { OPTIMIZER_PROMPTS } from "@/prompts/optimizer";
  * 继承自BaseModel,提供简历内容的智能优化功能
  */
 class ResumeOptimizer extends BaseModel {
-    base
 
     /**
      * 构造函数

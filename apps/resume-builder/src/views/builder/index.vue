@@ -7,8 +7,8 @@ import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { ResumeActions } from '@/components/feature/resume-actions'
 import { useResumeOptimizer } from '@/composables/use-resume-optimizer';
-import { extractCodeBlock } from '@lianqq/resume-utils';
 import type { ResumeData } from '@lianqq/resume-schema';
+import { extractCodeBlock } from '@lianqq/resume-ai';
 const resumeStore = useResumeStore()
 const { initIframe, updateResumeData } = useIframeResume()
 
@@ -40,7 +40,9 @@ const onIframeLoad = async () => {
 }
 
 const handleGenerateResume = async (description?:string) => {
-  // if(!description) return
+  console.log("description",description);
+  
+  if(!description) return
   // const result = JSON.parse(extractCodeBlock(await generateResume(description))[0]) as ResumeData
 
   // resumeStore.setResumeValue('sections', result.sections)
@@ -49,7 +51,7 @@ const handleGenerateResume = async (description?:string) => {
 
 onMounted(() => {
   resumeStore.initResumeData()
-  if(route.query.type === 'generate'){
+  if(route.query.content){
     console.log("route.query.content",route.query.content);
     
     const content = route.query.content?.toString()
