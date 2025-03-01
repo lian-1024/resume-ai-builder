@@ -65,10 +65,10 @@ export default defineNuxtConfig({
   },
 
   css: [
-    '~/assets/css/tailwind.css',
     '~/assets/css/index.css',
     '~/assets/css/animate.css',
-    "@lianqq/resume-ui/styles.css"
+    "@lianqq/resume-ui/styles.css",
+    '~/assets/css/tailwind.css', // 将tailwind.css放在最后，覆盖前面的样式
   ],
 
   // 应用配置

@@ -43,7 +43,7 @@ defineOptions({
                 </Button>
             </slot>
         </DialogTrigger>
-        <DialogContent class="sm:max-w-[425px]">
+        <DialogContent class="sm:max-w-[425px] dark:bg-zinc-950">
             <DialogHeader>
                 <DialogTitle>{{ title }}</DialogTitle>
                 <DialogDescription>

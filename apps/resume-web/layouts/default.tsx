@@ -2,22 +2,26 @@ import { Icon, NuxtLink } from '#components'
 import {
   Avatar,
   AvatarFallback,
-  AvatarImage, ColorModeButton, NavigationMenu,
+  AvatarImage, Button, ColorModeButton, NavigationMenu,
   NavigationMenuItem,
   NavigationMenuLink,
-  NavigationMenuList
+  NavigationMenuList,
+  navigationMenuTriggerStyle
 } from '@lianqq/resume-ui'
 import { defineComponent } from 'vue'
 import LoginButton from '~/components/features/auth/login-button'
+import { cn } from '~/lib/utils'
 
 const menuList = [
   {
-    label: 'Home',
+    label: '首页',
     to: '/',
+    icon:"lucide:house"
   },
   {
-    label: 'Templates',
+    label: '模板',
     to: '/resume/templates',
+    icon: 'lucide:layout-template'
   },
   // {
   //   label: 'Workbench',
@@ -41,19 +45,25 @@ const HeaderMenu = defineComponent({
 
     return () => (
       <NavigationMenu>
-        <NavigationMenuList>
-          {menuList.map(({ label, to }) => {
+        <NavigationMenuList class="flex items-center gap-4">
+          {menuList.map(({ label, to, icon }) => {
             return (
               <NavigationMenuItem>
                 <NuxtLink to={to}>
                   <NavigationMenuLink
-                    class={`text-sm font-extrabold px-4 cursor-pointer flex items-center gap-2 transition-all duration-300 text-zinc-500 hover:text-zinc-900 dark:hover:text-white`}
+                    class={cn(
+                      navigationMenuTriggerStyle(),
+                      'text-sm font-extrabold px-4 cursor-pointer flex items-center gap-2 transition-all duration-300'
+                    )}
                   >
                     {/* <Icon
                       name={icon}
                       class="w-4 h-4"
                     /> */}
+                    {/* <Button variant="link" class="dark:text-white"> */}
+                    <Icon name={icon} size={16} />
                     {label}
+                    {/* </Button> */}
                   </NavigationMenuLink>
                 </NuxtLink>
               </NavigationMenuItem>
@@ -112,8 +122,10 @@ const LayoutHeader = defineComponent({
       <header
         class={`h-24 flex items-start justify-between px-4  border-b border-zinc-100 bg-grid pt-4 fixed top-0 left-0 right-0 z-50`}
       >
-        <Logo />
-        <HeaderMenu />
+        <div class="flex items-center gap-4">
+          <Logo />
+          <HeaderMenu />
+        </div>
         <div class="flex items-center gap-6">
           {/* <SelectThemeDropdown /> */}
           <ColorModeButton />

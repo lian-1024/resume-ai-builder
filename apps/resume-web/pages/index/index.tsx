@@ -82,7 +82,7 @@ const HeroSection = defineComponent({
                 >
                   <div class="group">
                     <NuxtLink href={'/resume/templates'}>
-                      <span class="font-extrabold ">开始创建简历</span>
+                      <span class="font-extrabold" >开始创建简历</span>
                     </NuxtLink>
                     {/* 鼠标指针动画效果 */}
                     <i class="absolute bottom-[-20px] right-[-20px] opacity-100 scale-100 transition-all duration-300 ease-in-out group-hover:opacity-0 group-hover:scale-0">
@@ -154,13 +154,15 @@ const FooterSection = () => {
         <InView class="mt-20">
           <ButtonPress>
             <ButtonHover>
-              <Button
-                size="lg"
-                class="text-xl  py-6 px-20 font-bold rounded-full dark:text-white"
-              >
-                <span>点击创建简历</span>
-                <Icon name="lucide:mouse-pointer-click" />
-              </Button>
+              <NuxtLink to={'/resume/templates'}>
+                <Button
+                  size="lg"
+                  class="text-xl  py-6 px-20 font-bold rounded-full dark:text-white"
+                >
+                  <span>点击创建简历</span>
+                  <Icon name="lucide:mouse-pointer-click" />
+                </Button>
+              </NuxtLink>
             </ButtonHover>
           </ButtonPress>
         </InView>

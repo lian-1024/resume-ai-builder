@@ -1,8 +1,25 @@
-import { Button, Card, CardContent, CardFooter, Textarea,toast } from '@lianqq/resume-ui'
+import { Button, Card, CardContent, CardFooter, Textarea, toast } from '@lianqq/resume-ui'
 import { ButtonHover, ButtonPress } from '~/components/motions/button'
-import { extractCodeBlock } from '@lianqq/resume-utils'
+import { Icon } from '#components'
+import { AlertDialog } from '~/components/ui/alert-dialog'
+import { Dialog } from '~/components/ui/dialog'
 
-import Dialog from '~/components/dialog/index.vue'
+
+const createResume = (template: string,  content?: string) => {
+  if (content !== undefined && content.length < 20) return toast({
+    title: '描述过短，请你提供更多信息，以便生成更准确的简历',
+    description: '请输入您的基本信息，目标岗位、专业技能、项目经历、校园经历等'
+  })
+
+  try {
+    window.location.href = `http://localhost:5173/builder?template=${template}&content=${content}`
+  } catch (error) {
+    toast({
+      title: '创建失败',
+      description: '请稍后再试'
+    })
+  }
+}
 
 const ResumeCard = () => {
   return (
@@ -20,11 +37,17 @@ const ResumeCard = () => {
         </div>
       </div>
       <div class="absolute bottom-0 right-0 w-full h-full opacity-0 flex items-center transition-all duration-300 px-16 group-hover:opacity-100">
-        <ButtonPress class="w-full">
-          <Button class="w-full rounded-full  dark:text-white">
-            创建该模版
-          </Button>
-        </ButtonPress>
+        <AlertDialog title='创建该模版' description='请确认您是否要创建该模版' confirmText='确认创建' cancelText='取消' onConfirm={() => createResume('simple')}>
+          {{
+            trigger: () => (
+              <ButtonPress class="w-full">
+                <Button class="w-full rounded-full  dark:text-white">
+                  创建该模版
+                </Button>
+              </ButtonPress>
+            )
+          }}
+        </AlertDialog>
       </div>
     </div>
   )
@@ -34,31 +57,28 @@ const ResumeCard = () => {
 const AIResumeGenerator = () => {
   const content = ref('')
 
-  const createResume = async () => {
-    if(content.value.length < 12) return toast({
-      title: '描述过短',
-    })
 
-    window.location.href = `http://localhost:5173/builder?type=generate&content=${content.value}`
-  }
-  
+
   return (
     <Dialog
       title='AI简历生成'
-      description='请输入您的目标岗位、专业技能等内容'
+      description='请输入您的基本信息，目标岗位、专业技能、项目经历、校园经历等，长度在20字以上'
       confirmText='确认创建'
     >
       {{
         trigger: () =>
-          <Button variant="outline">
-            简历AI一键生成
+          <Button class="dark:text-white">
+            <Icon name="lucide:mouse-pointer-click" size={16} />
+            <span>
+              AI一键生成简历
+            </span>
           </Button>,
         content: () => (
           <Textarea v-model={content.value} />
         ),
         footer: () => (
-          <div onClick={createResume}>
-            <Button>
+          <div onClick={() => createResume('simple', content.value)}>
+            <Button class="dark:text-white">
               确认创建
             </Button>
           </div>
@@ -70,10 +90,15 @@ const AIResumeGenerator = () => {
 
 const EmptyResumeCard = () => {
   return (
-    <Card class="flex flex-col justify-between">
-      <CardContent>content</CardContent>
-      <CardFooter>footer</CardFooter>
-    </Card>
+    <div class="w-full h-full rounded-lg overflow-hidden relative group">
+      <div class="w-full h-full flex items-center justify-center gap-2">
+        <span>
+          暂时只有这些模版，更多模版敬请期待
+        </span>
+        <Icon name="lucide:info" size={16} />
+      </div>
+    </div>
+
   )
 }
 
@@ -92,19 +117,31 @@ export default defineComponent({
           <p class="leading-7 [&:not(:first-child)]:mt-6 text-muted-foreground italic">
             简历不必复杂，简洁明了即可
           </p>
-          <AIResumeGenerator />
         </div>
         <main
-          class="bg-zinc-950 p-6 rounded-lg  m-16 grid grid-flow-row-dense grid-cols-auto-fill gap-x-6 gap-y-10 mt-20 justify-between"
-          style={{
-            gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))',
-            gridAutoRows: '460px'
-          }}
+          class="dark:bg-zinc-950 p-6 rounded-lg  m-16 flex flex-col gap-6"
+
         >
-          {/* Insert grid items here */}
-          {Array.from({ length: 10 }).map((item, index) => {
-            return <ResumeCard />
-          })}
+          <div class="flex">
+            <ButtonHover>
+              <ButtonPress>
+                <AIResumeGenerator />
+              </ButtonPress>
+            </ButtonHover>
+          </div>
+          <div class="grid grid-flow-row-dense grid-cols-auto-fill gap-x-6 gap-y-10 justify-between"
+            style={{
+              gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))',
+              gridAutoRows: '460px'
+            }}
+          >
+
+            {Array.from({ length: 1 }).map((item, index) => {
+              return <ResumeCard />
+            })}
+            <EmptyResumeCard />
+          </div>
+
         </main>
       </div>
     )
