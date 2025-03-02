@@ -44,14 +44,14 @@ const sections = [
     id: EditorIdMap.BASICS
   },
   {
-    label: '专业技能',
-    icon: 'lucide:wrench',
-    id: EditorIdMap.SKILL
-  },
-  {
     label: '教育经历',
     icon: 'lucide:book-open',
     id: EditorIdMap.EDUCATION
+  },
+  {
+    label: '专业技能',
+    icon: 'lucide:wrench',
+    id: EditorIdMap.SKILL
   },
   {
     label: '项目经历',

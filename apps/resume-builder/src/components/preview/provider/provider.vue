@@ -4,7 +4,7 @@ import { resumeKey } from './index'
 import { ref, provide, onMounted, onUnmounted } from 'vue'
 import _set from 'lodash-es/set'
 import { IframeMessageTypeMap } from '@/composables/use-iframe'
-import { printElementPdf } from '@/utils/print-pdf'
+import { printResume } from '@/utils/print-pdf'
 import { toast } from '@lianqq/resume-ui'
 const resumeData = ref<ResumeData>({})
 const resumeRef = ref<HTMLElement>()
@@ -16,7 +16,7 @@ const setResumeValue = (path: string, value: any) => {
 
 
 // 根据消息类型获取消息处理器
-const messageHandler = (e: MessageEvent) => {
+const messageHandler = async (e: MessageEvent) => {
   switch (e.data.type) {
     case IframeMessageTypeMap.INIT_RESUME:
       // console.log("resume data",e.data)
@@ -32,7 +32,15 @@ const messageHandler = (e: MessageEvent) => {
     case IframeMessageTypeMap.EXPORT_PDF:
       // 处理导出pdf
       if (!resumeRef.value) return
-      printElementPdf(resumeRef.value)
+
+      toast({
+        title: "有 Bug 哦",
+        description: "导出功能暂时关闭",
+        variant: "destructive"
+      })
+      // const { url, filename } = await printResume(resumeRef.value)
+      // window.open(url, '_blank')
+      // console.log("filename", filename)
       break
     case IframeMessageTypeMap.SET_RESUME:
       if (e.data.data) {

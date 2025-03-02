@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import { computed, type CSSProperties } from 'vue';
-import { MM_TO_PX, pageSizeMap, type PageSize } from './page-size';
-
+import { pageSizeMap, type PageSize } from '@lianqq/resume-utils'
 
 defineOptions({
   name: 'PreviewPage'
@@ -16,13 +15,12 @@ const pageMeta = {
 }
 
 const style = computed<CSSProperties>(() => {
+  console.log("pageSizeMap[props.pageSize]", pageSizeMap[props.pageSize])
   return {
-    width: `${pageSizeMap[props.pageSize].width * MM_TO_PX}px`,
-    height: `${pageSizeMap[props.pageSize].height * MM_TO_PX}px`,
+    width: `${pageSizeMap[props.pageSize].width}mm`,
+    height: `${pageSizeMap[props.pageSize].height}mm`,
   }
 })
-
-
 
 </script>
 

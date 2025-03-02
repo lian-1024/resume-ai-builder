@@ -6,17 +6,18 @@ import { useIframeResume, IframeMessageTypeMap } from '@/composables/use-iframe'
 import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { ResumeActions } from '@/components/feature/resume-actions'
-import { useResumeOptimizer } from '@/composables/use-resume-optimizer';
-import type { ResumeData } from '@lianqq/resume-schema';
-import { extractCodeBlock } from '@lianqq/resume-ai';
+import { useResumeBuilder } from '@/composables/use-resume-builder'
+import { modelConfig } from '@/config/model.config';
+import { Example } from '@lianqq/resume-schema'
 const resumeStore = useResumeStore()
 const { initIframe, updateResumeData } = useIframeResume()
 
+// lianqq、前端开发，精通 Vue、React、开发简历编辑器、SaaS 人力资源管理平台
 const iframeRef = ref<HTMLIFrameElement | null>(null)
 
-
+const { initOptimizer, builderResume } = useResumeBuilder(modelConfig)
 const route = useRoute()
- 
+
 
 /**
  * 握手机制
@@ -39,21 +40,27 @@ const onIframeLoad = async () => {
   window.addEventListener('message', previewReadyHandler)
 }
 
-const handleGenerateResume = async (description?:string) => {
-  console.log("description",description);
-  
-  if(!description) return
+/**
+ * 生成简历
+ * @param description 描述
+ */
+const handleGenerateResume = async (description?: string) => {
+  console.log("description", description);
+
+  if (!description) return
+  const result = await builderResume(description, Example)
+  console.log("result", result);
+
   // const result = JSON.parse(extractCodeBlock(await generateResume(description))[0]) as ResumeData
 
   // resumeStore.setResumeValue('sections', result.sections)
   // resumeStore.setResumeValue('basics', result.basics)
 }
 
-onMounted(() => {
+onMounted(() => { 
   resumeStore.initResumeData()
-  if(route.query.content){
-    console.log("route.query.content",route.query.content);
-    
+  if (route.query.content) {
+    initOptimizer()
     const content = route.query.content?.toString()
     handleGenerateResume(content)
   }

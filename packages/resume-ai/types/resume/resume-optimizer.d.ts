@@ -7,7 +7,6 @@ import { ContentType } from './types';
  * 继承自BaseModel,提供简历内容的智能优化功能
  */
 declare class ResumeOptimizer extends BaseModel {
-    base: any;
     /**
      * 构造函数
      * @param config AI配置参数
