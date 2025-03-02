@@ -11,6 +11,11 @@
       "import": "./es/index.js",
       "require": "./lib/index.js",
       "types": "./dist/index.d.ts"
+    },
+    "./composables": {
+      "import": "./es/composables/index.js",
+      "require": "./lib/composables/index.js",
+      "types": "./dist/composables/index.d.ts"
     }
   },
   "files": [
@@ -26,7 +31,8 @@
     "@lianqq/resume-config": "workspace:*",
     "dayjs": "^1.11.10",
     "langchain": "^0.3.19",
-    "@lianqq/resume-schema": "workspace:*"
+    "@lianqq/resume-schema": "workspace:*",
+    "vue": "^3.4.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.0",

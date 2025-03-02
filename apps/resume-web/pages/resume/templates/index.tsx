@@ -10,7 +10,15 @@ import { Dialog } from '~/components/ui/dialog'
  * @param content 简历描述内容
  * @returns 
  */
-const createResume = (template: string,  content?: string) => {
+const createResume = (template: string, content?: string) => {
+  if (content) {
+    return toast({
+      title: '敬请期待！',
+      description: '正在开发中，敬请期待！',
+      variant: 'destructive'
+    })
+  }
+
   if (content !== undefined && content.length < 20) return toast({
     title: '描述过短，请你提供更多信息，以便生成更准确的简历',
     description: '请输入您的基本信息，目标岗位、专业技能、项目经历、校园经历等'
@@ -21,7 +29,7 @@ const createResume = (template: string,  content?: string) => {
     const url = new URL(`http://localhost:5173/builder`)
     url.searchParams.set('template', template)
     content && url.searchParams.set('content', content.trim())
-    
+
     window.location.href = url.toString()
   } catch (error) {
     toast({
@@ -36,7 +44,7 @@ const ResumeCard = () => {
     <div class="w-full h-full rounded-lg overflow-hidden relative group">
       <ButtonHover class="w-full h-full">
         <img
-          src="/images/placeholder.png"
+          src="/images/resume/simple.png"
           alt="placeholder"
           class="object-cover block h-full w-full"
         />
@@ -129,7 +137,7 @@ export default defineComponent({
           </p>
         </div>
         <main
-          class="dark:bg-zinc-950 p-6 rounded-lg  m-16 flex flex-col gap-6"
+          class="dark:bg-zinc-950 dark:border-zinc-800 bg-white border border-zinc-100 p-6 rounded-lg  m-16 flex flex-col gap-6"
 
         >
           <div class="flex">
@@ -149,8 +157,8 @@ export default defineComponent({
             {Array.from({ length: 1 }).map((item, index) => {
               return <ResumeCard />
             })}
-            <EmptyResumeCard />
           </div>
+          <EmptyResumeCard />
 
         </main>
       </div>

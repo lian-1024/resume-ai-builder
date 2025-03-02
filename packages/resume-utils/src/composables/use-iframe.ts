@@ -7,7 +7,7 @@ export const IframeMessageTypeMap = {
     READY: 'READY',
     EXPORT_PDF: 'EXPORT_PDF',
     SET_RESUME: 'SET_RESUME',
-    CHANGE_THEME: 'CHANGE_THEME'
+    CHANGE_THEME: 'CHANGE_THEME',
 } as const
 
 const iframe = ref<HTMLIFrameElement | null>(null)

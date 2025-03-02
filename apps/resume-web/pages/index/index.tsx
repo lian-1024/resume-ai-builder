@@ -5,15 +5,17 @@ import { defineComponent, onMounted, ref } from 'vue'
 import { ButtonHover } from '~/components/motions/button'
 import ButtonPress from '~/components/motions/button/button-press.vue'
 import { InView } from '~/components/motions/view'
+import { useIframeResume, IframeMessageTypeMap } from '@lianqq/resume-utils'
 
 // 英雄区组件
 const HeroSection = defineComponent({
   setup() {
     // 定义打字机效果的文本
-    const text = ref('简历编辑器,AI 智能简历助手')
+    const text = ref('智能简历构建助手')
     const displayText = ref('')
 
-    onMounted(() => {
+
+    const startPrint = () => {
       let index = 0
       // 正向打字效果
       const forward = () => {
@@ -38,6 +40,11 @@ const HeroSection = defineComponent({
       }
 
       forward()
+    }
+
+
+    onMounted(() => {
+      startPrint()
     })
 
     return () => (
@@ -51,9 +58,8 @@ const HeroSection = defineComponent({
           {/* 副标题描述 */}
           <InView>
             <p class="leading-7 [&:not(:first-child)]:mt-6 text-gray-500 font-sans">
-              Create professional resumes effortlessly with AI assistant. Our
-              editor provides smart suggestions and real-time optimization to
-              help you craft an outstanding resume.
+              用人工智能助手轻松创建专业简历。我们的智能编辑器提供实时建议和优化，
+              帮助你快速制作一份出色的简历。无需从零开始，让 AI 为你量身定制完美简历。
             </p>
           </InView>
           {/* 操作按钮组 */}
@@ -101,7 +107,9 @@ const HeroSection = defineComponent({
           </InView>
         </div>
         {/* 右侧占位区域 */}
-        <div class="flex-1 flex items-center justify-center">Placeholder</div>
+        <div class="flex-1 flex items-center justify-center h-full scale-[0.8]">
+          <iframe  ref="iframeRef"  src="http://localhost:5173/preview" class="w-full h-full " />
+        </div>
       </section>
     )
   }

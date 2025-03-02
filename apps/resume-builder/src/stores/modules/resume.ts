@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { type ResumeData, Example, type SectionKey } from '@lianqq/resume-schema'
 import _set from 'lodash-es/set'
-import { useIframeResume, IframeMessageTypeMap } from '@/composables/use-iframe'
+import { useIframeResume, IframeMessageTypeMap } from '@lianqq/resume-utils'
 import { ref } from 'vue'
 
 export const useResumeStore = defineStore('resume', () => {

@@ -1,10 +1,11 @@
 <script lang="ts" setup>
 import type { ResumeData } from '@lianqq/resume-schema'
+import { Example } from '@lianqq/resume-schema'
 import { resumeKey } from './index'
 import { ref, provide, onMounted, onUnmounted } from 'vue'
 import _set from 'lodash-es/set'
-import { IframeMessageTypeMap } from '@/composables/use-iframe'
-import { printResume } from '@/utils/print-pdf'
+import { IframeMessageTypeMap } from '@lianqq/resume-utils'
+
 import { toast } from '@lianqq/resume-ui'
 const resumeData = ref<ResumeData>({})
 const resumeRef = ref<HTMLElement>()
@@ -77,6 +78,7 @@ const registerMessageListener = () => {
 
 
 onMounted(() => {
+  resumeData.value = Example
   registerMessageListener()
 })
 

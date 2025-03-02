@@ -35,7 +35,7 @@ defineEmits<{
                 </Button>
             </slot>
         </AlertDialogTrigger>
-        <AlertDialogContent >
+        <AlertDialogContent class="dark:bg-black">
             <AlertDialogHeader>
                 <AlertDialogTitle>
                     {{ title }}

@@ -2,7 +2,8 @@
 import BuilderHeader from '@/components/builder/header/index.vue'
 import BuilderSidebar from '@/components/builder/sidebar/index.vue'
 import { useResumeStore } from '@/stores/modules/resume';
-import { useIframeResume, IframeMessageTypeMap } from '@/composables/use-iframe'
+import { IframeMessageTypeMap ,useIframeResume} from '@lianqq/resume-utils'
+
 import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { ResumeActions } from '@/components/feature/resume-actions'
@@ -46,7 +47,7 @@ const onIframeLoad = async () => {
  */
 const handleGenerateResume = async (description?: string) => {
   console.log("description", description);
-
+  console.log("Example", Example);
   if (!description) return
   const result = await builderResume(description, Example)
   console.log("result", result);

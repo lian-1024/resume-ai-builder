@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { Button} from '@lianqq/resume-ui';
-import { useIframeResume, IframeMessageTypeMap } from '@/composables/use-iframe'
+import { useIframeResume, IframeMessageTypeMap } from '../../../../../../packages/resume-utils/src/composables/use-iframe'
 import { Icon } from '@iconify/vue'
 import Tooltip from '@/components/ui/tooltip.vue';
 import { AIButton } from '@/components/feature/optimizer-button';
