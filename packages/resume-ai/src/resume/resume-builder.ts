@@ -14,8 +14,7 @@ class ResumeBuilder extends BaseModel {
      * @returns 简历
      */
     async builderResume(description: string, example: string | ResumeData) {
-        console.log("description", description)
-        console.log("example", example)
+        console.log("builderResume: example", JSON.stringify(example));
 
         const prompt = BUILDER_PROMPTS.general(description, example)
         return await this.invoke(prompt)

@@ -8,6 +8,7 @@ export const IframeMessageTypeMap = {
     EXPORT_PDF: 'EXPORT_PDF',
     SET_RESUME: 'SET_RESUME',
     CHANGE_THEME: 'CHANGE_THEME',
+    SET_STYLE: 'SET_STYLE',
 } as const
 
 const iframe = ref<HTMLIFrameElement | null>(null)
@@ -26,7 +27,7 @@ export const useIframeResume = () => {
             if (!iframeElement) {
                 reject("iframe 不存在")
             }
-        iframe.value = iframeElement            
+            iframe.value = iframeElement
             resolve(iframeElement)
         })
 
@@ -57,7 +58,9 @@ export const useIframeResume = () => {
         })
     }
 
+    // 导出简历到 pdf
     const exportResumeToPdf = () => {
+       
         return new Promise((resolve, reject) => {
             if (!iframe.value) return reject("iframe 不存在")
             iframe.value.contentWindow?.postMessage({ type: IframeMessageTypeMap.EXPORT_PDF }, '*')
@@ -65,7 +68,8 @@ export const useIframeResume = () => {
         })
     }
 
-    const setResume = (resume:ResumeData) => {
+    // 设置简历
+    const setResume = (resume: ResumeData) => {
         return new Promise((resolve, reject) => {
             if (!iframe.value) return reject("iframe 不存在")
             iframe.value.contentWindow?.postMessage({ type: IframeMessageTypeMap.SET_RESUME, data: resume }, '*')

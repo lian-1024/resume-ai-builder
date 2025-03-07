@@ -1,5 +1,5 @@
 // 导入必要的组件和依赖
-import { Icon, NuxtLink } from '#components'
+import { Icon, NuxtImg, NuxtLink } from '#components'
 import { Button } from '@lianqq/resume-ui'
 import { defineComponent, onMounted, ref } from 'vue'
 import { ButtonHover } from '~/components/motions/button'
@@ -13,7 +13,7 @@ const HeroSection = defineComponent({
     // 定义打字机效果的文本
     const text = ref('智能简历构建助手')
     const displayText = ref('')
-
+    const iframeRef = ref<HTMLIFrameElement | null>(null)
 
     const startPrint = () => {
       let index = 0
@@ -38,14 +38,17 @@ const HeroSection = defineComponent({
           setTimeout(forward, 1000)
         }
       }
-
       forward()
     }
 
-
     onMounted(() => {
+      // 开始打字效果
       startPrint()
     })
+
+    const iframeLoad = () => {
+      console.log("iframeLoad", iframeRef.value)
+    }
 
     return () => (
       // 英雄区布局
@@ -66,14 +69,15 @@ const HeroSection = defineComponent({
           <InView class="my-10">
             <div class="flex gap-6">
               {/* Github按钮 */}
-              <Button
-                variant="outline"
-                class="rounded-full p-6"
-                size="lg"
-              >
-                <Icon name="radix-icons:github-logo" />
-                <span>Github</span>
-              </Button>
+              <NuxtLink to={'https://github.com/lianqq/resume-ai-builder'}>
+                <Button
+                  variant="outline"
+                  class="rounded-full p-6"
+                  size="lg"
+                >
+                  <Icon name="radix-icons:github-logo" />
+                  <span>Github</span>
+                </Button></NuxtLink>
               {/* 开始创建简历按钮 */}
               <ButtonPress
                 hover={{
@@ -108,55 +112,75 @@ const HeroSection = defineComponent({
         </div>
         {/* 右侧占位区域 */}
         <div class="flex-1 flex items-center justify-center h-full scale-[0.8]">
-          <iframe  ref="iframeRef"  src="http://localhost:5173/preview" class="w-full h-full " />
+          <iframe ref={iframeRef} src="http://localhost:5173/preview" class="w-full h-full " />
         </div>
       </section>
     )
   }
 })
 
+
+const Features = [
+  {
+    title: '所见即所得',
+    description: '告别繁琐的编辑流程，实时预览让简历制作变得轻松自如。智能排版确保专业美观，一键导出让您随时分享成果。让简历制作不再是负担，而是展现个人魅力的愉悦过程。',
+    image: '/images/features/feature-1.png',
+    button: '开始体验'
+  },
+  {
+    title: "模板选择",
+    description: "支持多种模板，为了满足不同行业和职位的需求，后续会添加更多模板，总有一款适合你",
+    image: '/images/features/feature-2.png',
+    button: '开始体验'
+  },
+  {
+    title: "AI 辅助",
+    description: "使用 AI 辅助，让简历制作变得更加轻松。智能排版确保专业美观，一键导出让您随时分享成果。让简历制作不再是负担，而是展现个人魅力的愉悦过程。",
+    image: '/images/features/feature-3.png',
+    button: '开始体验'
+  }
+]
+
 // 特性展示区组件
 const FeaturesSection = () => {
   return (
-    <section class="flex px-10 py-24 h-[100vh] min-h-[666px] gap-24">
-      {/* 左侧占位区域 */}
-      <div class="border border-zinc-900 flex-1 flex items-center justify-center">
-        Placeholder
-      </div>
-      {/* 右侧特性描述 */}
-      <div class={' max-w-xl flex flex-col justify-center p-16 items-start'}>
-        <InView>
-          <h1 class="scroll-m-20 font-sans font-black !leading-[5rem] text-5xl lg:text-6xl tracking-tight underline decoration-blue-500">
-            Features
-          </h1>
-        </InView>
-        <InView>
-          <p class="mt-4">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam
-            quia amet tempore adipisci harum dolorum tempora hic, veniam minima
-            blanditiis! Vitae, minus tempora ipsam veritatis exercitationem
-            commodi cumque labore consectetur!
-          </p>
-        </InView>
-        <InView>
-          <Button class="mt-6 rounded-full dark:text-white px-8 font-bold">
-            立即开始
-          </Button>
-        </InView>
-      </div>
-    </section>
+    <div>
+      {Features.map((feature, index) => <section class={`flex px-10 py-24 h-[100vh] min-h-[666px] gap-24 ${index % 2 === 0 ? 'flex-row-reverse' : ''}`}>
+        {/* 左侧占位区域 */}
+        <div class="flex-1 flex items-center justify-center">
+          <NuxtImg src={feature.image} class="w-full object-cover" />
+        </div>
+        {/* 右侧特性描述 */}
+        <div class={' max-w-xl flex flex-col justify-center p-16 items-start'}>
+          <InView>
+            <h1 class="scroll-m-20 font-sans font-black !leading-[5rem] text-5xl lg:text-6xl tracking-tight underline decoration-blue-500">
+              {feature.title}
+            </h1>
+          </InView>
+          <InView>
+            <p class="mt-4">
+              {feature.description}
+            </p>
+          </InView>
+          <InView>
+            <Button class="mt-6 rounded-full dark:text-white px-8 font-bold">
+              {feature.button}
+            </Button>
+          </InView>
+        </div>
+      </section>)}
+    </div>
   )
 }
 
 // 页脚区组件
 const FooterSection = () => {
   return (
-    <div class="min-h-[666px] flex flex-col">
-      {/* 行动召唤区 */}
-      <section class="flex justify-center flex-col items-center">
+    <div class="min-h-[666px] flex flex-col overflow-y-auto">
+      <section class="flex justify-center flex-col items-center" >
         <InView>
           <h1 class="scroll-m-20 font-sans font-black !leading-[5rem] text-5xl lg:text-6xl tracking-tight ">
-            准备好开始了吗?
+            准备好开始创建简历了吗?
           </h1>
         </InView>
         <InView class="mt-20">
@@ -175,9 +199,8 @@ const FooterSection = () => {
           </ButtonPress>
         </InView>
       </section>
-      {/* 页脚签名 */}
       <footer class="flex items-center justify-center flex-1">
-        Hi! 你好,我是lianqq,很高兴认识你
+        Hi! 你好,我是 Qing-Qian Lian,很高兴认识你
       </footer>
     </div>
   )

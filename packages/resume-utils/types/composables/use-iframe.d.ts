@@ -7,6 +7,7 @@ export declare const IframeMessageTypeMap: {
     readonly EXPORT_PDF: "EXPORT_PDF";
     readonly SET_RESUME: "SET_RESUME";
     readonly CHANGE_THEME: "CHANGE_THEME";
+    readonly SET_STYLE: "SET_STYLE";
 };
 export type IframeMessageType = (typeof IframeMessageTypeMap)[keyof typeof IframeMessageTypeMap];
 export declare const useIframeResume: () => {

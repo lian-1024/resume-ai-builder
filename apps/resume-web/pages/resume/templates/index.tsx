@@ -11,13 +11,7 @@ import { Dialog } from '~/components/ui/dialog'
  * @returns 
  */
 const createResume = (template: string, content?: string) => {
-  if (content) {
-    return toast({
-      title: '敬请期待！',
-      description: '正在开发中，敬请期待！',
-      variant: 'destructive'
-    })
-  }
+ 
 
   if (content !== undefined && content.length < 20) return toast({
     title: '描述过短，请你提供更多信息，以便生成更准确的简历',
@@ -74,8 +68,6 @@ const ResumeCard = () => {
 
 const AIResumeGenerator = () => {
   const content = ref('')
-
-
 
   return (
     <Dialog

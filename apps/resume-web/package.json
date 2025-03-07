@@ -35,7 +35,8 @@
     "vue": "^3.4.5",
     "vue-router": "^4.2.5",
     "zod": "^3.24.1",
-    "@lianqq/resume-utils": "workspace:*"
+    "@lianqq/resume-utils": "workspace:*",
+    "@lianqq/resume-ai": "workspace:*"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.6.1",

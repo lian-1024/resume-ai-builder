@@ -5,17 +5,17 @@
   "type": "module",
   "main": "lib/index.js",
   "module": "es/index.js",
-  "types": "./dist/index.d.ts",
+  "types": "./types/index.d.ts",
   "exports": {
     ".": {
       "import": "./es/index.js",
       "require": "./lib/index.js",
-      "types": "./dist/index.d.ts"
+      "types": "./types/index.d.ts"
     },
     "./composables": {
       "import": "./es/composables/index.js",
       "require": "./lib/composables/index.js",
-      "types": "./dist/composables/index.d.ts"
+      "types": "./types/composables/index.d.ts"
     }
   },
   "files": [
@@ -29,9 +29,12 @@
   "dependencies": {
     "@langchain/openai": "^0.4.4",
     "@lianqq/resume-config": "workspace:*",
-    "dayjs": "^1.11.10",
-    "langchain": "^0.3.19",
     "@lianqq/resume-schema": "workspace:*",
+    "dayjs": "^1.11.10",
+    "html2canvas": "^1.4.1",
+    "html2pdf.js": "^0.10.2",
+    "jspdf": "^3.0.0",
+    "langchain": "^0.3.19",
     "vue": "^3.4.0"
   },
   "devDependencies": {

@@ -21,7 +21,9 @@ export const useResumeBuilder = (config: AIConfig) => {
 
     const builderResume = async (description: string, example: string | ResumeData) => {
         if (!resumeBuilder.value) return false
-        return await resumeBuilder.value.builderResume(description, example.toString())
+        console.log("builderResume: example", JSON.stringify(example));
+        
+        return await resumeBuilder.value.builderResume(description, example)
     }
 
     return {

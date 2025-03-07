@@ -188,7 +188,7 @@ import { useSidebar as fl } from "./components/sidebar/utils.js";
 import { sidebarMenuButtonVariants as dl } from "./components/sidebar/index.js";
 import { CalendarDate as pl } from "./node_modules/.pnpm/@internationalized_date@3.7.0/node_modules/@internationalized/date/dist/CalendarDate.js";
 import { FORM_ITEM_INJECTION_KEY as ml } from "./components/form/injectionKeys.js";
-import { Form as nl, Field as il, FieldArray as gl } from "./node_modules/.pnpm/vee-validate@4.15.0_vue@3.5.13/node_modules/vee-validate/dist/vee-validate.js";
+import { Form as nl, Field as il, FieldArray as gl } from "./node_modules/.pnpm/vee-validate@4.15.0_vue@3.5.13_typescript@5.6.3_/node_modules/vee-validate/dist/vee-validate.js";
 import { toast as Cl, useToast as Sl } from "./components/toast/use-toast.js";
 import { toastVariants as Ml } from "./components/toast/index.js";
 const t = (e) => {

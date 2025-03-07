@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useIframeResume } from '../../../../../../packages/resume-utils/src/composables/use-iframe'
+import { useIframeResume } from '@lianqq/resume-utils'
 import { Button } from '@lianqq/resume-ui'
 import Tooltip from '@/components/ui/tooltip.vue'
 import { Icon } from '@iconify/vue'

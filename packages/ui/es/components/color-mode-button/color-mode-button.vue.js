@@ -7,7 +7,7 @@ import "radix-vue";
 import _ from "../dropdown-menu/DropdownMenuContent.vue.js";
 import a from "../dropdown-menu/DropdownMenuItem.vue.js";
 import k from "../dropdown-menu/DropdownMenuTrigger.vue.js";
-import { Icon as l } from "../../node_modules/.pnpm/@iconify_vue@4.3.0_vue@3.5.13/node_modules/@iconify/vue/dist/iconify.js";
+import { Icon as l } from "../../node_modules/.pnpm/@iconify_vue@4.3.0_vue@3.5.13_typescript@5.6.3_/node_modules/@iconify/vue/dist/iconify.js";
 import { useColorMode as C } from "../../node_modules/.pnpm/@vueuse_core@12.7.0_typescript@5.6.3/node_modules/@vueuse/core/index.js";
 import { COLOR_MODE as m } from "./index.js";
 import $ from "../button/Button.vue.js";

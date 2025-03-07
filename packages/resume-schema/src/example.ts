@@ -9,8 +9,9 @@ export const Example: ResumeData = {
     url: 'https://github.com/lian-1024',
     customFields: [],
     picture: {
-      url: 'https://avatars.githubusercontent.com/u/93166482',
-      size: 100
+      // url: 'https://avatars.githubusercontent.com/u/93166482',
+      url: 'http://localhost:5173/placeholder.png',
+     size: 100
     },
     intention: {
       currentStatus: '在校',
@@ -29,7 +30,7 @@ export const Example: ResumeData = {
       items: [
         {
           school: "某双一流大学",
-          major: "计算机科学与技术", 
+          major: "计算机科学与技术",
           degree: "本科",
           startDate: "2025-09-01",
           endDate: "2029-06-01",

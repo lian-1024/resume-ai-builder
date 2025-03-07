@@ -10,9 +10,6 @@ const props = defineProps<{
   pageSize: PageSize
 }>()
 
-const pageMeta = {
-  scale: 0.5
-}
 
 const style = computed<CSSProperties>(() => {
   console.log("pageSizeMap[props.pageSize]", pageSizeMap[props.pageSize])

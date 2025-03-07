@@ -2,10 +2,10 @@
 import BuilderHeader from '@/components/builder/header/index.vue'
 import BuilderSidebar from '@/components/builder/sidebar/index.vue'
 import { useResumeStore } from '@/stores/modules/resume';
-import { IframeMessageTypeMap ,useIframeResume} from '@lianqq/resume-utils'
-
+import { useIframeResume, IframeMessageTypeMap } from '@lianqq/resume-utils'
 import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
+
 import { ResumeActions } from '@/components/feature/resume-actions'
 import { useResumeBuilder } from '@/composables/use-resume-builder'
 import { modelConfig } from '@/config/model.config';
@@ -41,16 +41,15 @@ const onIframeLoad = async () => {
   window.addEventListener('message', previewReadyHandler)
 }
 
+
 /**
  * 生成简历
  * @param description 描述
  */
 const handleGenerateResume = async (description?: string) => {
-  console.log("description", description);
-  console.log("Example", Example);
+  
   if (!description) return
   const result = await builderResume(description, Example)
-  console.log("result", result);
 
   // const result = JSON.parse(extractCodeBlock(await generateResume(description))[0]) as ResumeData
 
@@ -58,9 +57,11 @@ const handleGenerateResume = async (description?: string) => {
   // resumeStore.setResumeValue('basics', result.basics)
 }
 
-onMounted(() => { 
+onMounted(() => {
   resumeStore.initResumeData()
   if (route.query.content) {
+    console.log("route.query.content", route.query.content);
+
     initOptimizer()
     const content = route.query.content?.toString()
     handleGenerateResume(content)
@@ -86,5 +87,3 @@ onMounted(() => {
     </div>
   </div>
 </template>
-
-<style lang="less" scoped></style>@/composables/use-resume-ai/use-resume-ai

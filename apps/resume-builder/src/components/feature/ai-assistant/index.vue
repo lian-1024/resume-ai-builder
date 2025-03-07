@@ -27,7 +27,6 @@ const md = new MarkdownIt({
     breaks: true,
     linkify: true,
     typographer: true,
-   
 })
 
 /**
@@ -218,9 +217,9 @@ onMounted(() => {
             <!-- 聊天内容区域 -->
             <div v-auto-scroll:bottom class="flex-1 my-4 overflow-y-auto">
                 <div class="flex flex-col gap-4 self w-full">
-                    <div v-for="item in messageList" class="w-full" :key="item.message"
+                    <div v-for="item in messageList" :key="item.message"
                         :class="`p-2 rounded-lg ${bubbleBoxStyles(item.role)}`">
-                        <div  v-html="renderMessage(item.message)" />
+                        <div v-html="renderMessage(item.message)" />
                         <div class="flex gap-1 justify-end">
                             <Button v-if="item.role === MessageRole.ASSISTANT" @click="copyMessage(item.message)"
                                 variant="secondary" class="rounded-full h-10 w-10" size="icon">
