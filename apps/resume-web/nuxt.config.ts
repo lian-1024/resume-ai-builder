@@ -1,4 +1,3 @@
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   // 配置 SSR
@@ -10,23 +9,25 @@ export default defineNuxtConfig({
   },
 
   // 配置模块
-  modules: [
-    // UI
-    '@nuxtjs/tailwindcss', // 状态管理
-    'shadcn-nuxt',
-    '@pinia/nuxt', // 动画
-    'pinia-plugin-persistedstate/nuxt', // 工具
-    'motion-v/nuxt',
-    '@nuxt/eslint', // 主题
-    '@nuxt/icon', // 字体
+  modules: [// UI
+    // 状态管理
+    '@nuxtjs/tailwindcss', 'shadcn-nuxt', // 动画
+    '@pinia/nuxt', // 工具
+    'pinia-plugin-persistedstate/nuxt', 'motion-v/nuxt', // 主题
+    '@nuxt/eslint', // 字体
+    '@nuxt/icon',
     '@nuxtjs/color-mode',
     '@nuxtjs/google-fonts',
     '@nuxt/image',
-    '@vueuse/nuxt'
-  ],
-  alias: {
-
+    '@vueuse/nuxt',
+    'nuxt-security'],
+  security: {
+    corsHandler: {
+      // 允许跨域
+      origin: "http://localhost:5173",
+    }
   },
+
   // Google Fonts 配置
   googleFonts: {
     families: {
@@ -39,6 +40,7 @@ export default defineNuxtConfig({
     download: true,
     base64: false
   },
+
 
   // shadcn 组件库配置
   shadcn: {

@@ -15,6 +15,17 @@ const setResumeValue = (path: string, value: any) => {
   _set(resumeData.value, path, value)
 }
 
+const exportToPDF = async () => {
+  const response = await fetch('http://localhost:3002/api/export-pdf')
+  const blob = await response.blob()
+  const url = URL.createObjectURL(blob)
+  const link = document.createElement('a')
+  link.href = url
+  link.download = 'resume.pdf'
+  link.click()
+  window.URL.revokeObjectURL(url)
+}
+
 
 
 // 根据消息类型获取消息处理器
@@ -42,7 +53,7 @@ const messageHandler = async (e: MessageEvent) => {
       // })
 
       try {
-        const isExport = exportElementToPDF(resumeRef.value)
+        const isExport = await exportToPDF()
         console.log("isExport", isExport);
         toast({
           title: "导出成功",
@@ -53,7 +64,7 @@ const messageHandler = async (e: MessageEvent) => {
         console.error("导出失败", error)
       }
       console.log("导出简历可能存在问题");
-      
+
       break
     case IframeMessageTypeMap.SET_RESUME:
       if (e.data.data) {

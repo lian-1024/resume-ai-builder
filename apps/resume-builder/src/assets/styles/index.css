@@ -5,6 +5,16 @@ body,
   width: 100%;
 }
 
+@media print {
+  body {
+    visibility: hidden;
+  }
+
+  #resume-page {
+    visibility: visible;
+  }
+}
+
 /* 暗黑模式下的样式覆盖 */
 html.dark {
 
