@@ -1,6 +1,6 @@
 import { defineComponent as c, ref as m, computed as v, createBlock as _, openBlock as b, unref as a, withCtx as E, createElementVNode as O, mergeProps as B, renderSlot as I } from "vue";
 import { cn as S } from "../../lib/utils.js";
-import { useMediaQuery as h, useVModel as y, useEventListener as A } from "../../node_modules/.pnpm/@vueuse_core@12.7.0_typescript@5.6.3/node_modules/@vueuse/core/index.js";
+import { useMediaQuery as h, useVModel as y, useEventListener as A } from "../../node_modules/.pnpm/@vueuse_core@12.8.2_typescript@5.6.3/node_modules/@vueuse/core/index.js";
 import { TooltipProvider as D } from "radix-vue";
 import { provideSidebarContext as x, SIDEBAR_WIDTH_ICON as g, SIDEBAR_WIDTH as w, SIDEBAR_COOKIE_NAME as C, SIDEBAR_COOKIE_MAX_AGE as M, SIDEBAR_KEYBOARD_SHORTCUT as R } from "./utils.js";
 const P = /* @__PURE__ */ c({

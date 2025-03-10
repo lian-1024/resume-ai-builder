@@ -3,15 +3,16 @@ import "../button/index.js";
 import c from "../dropdown-menu/DropdownMenu.vue.js";
 import "clsx";
 import "tailwind-merge";
+import "@radix-icons/vue";
 import "radix-vue";
 import _ from "../dropdown-menu/DropdownMenuContent.vue.js";
-import a from "../dropdown-menu/DropdownMenuItem.vue.js";
+import m from "../dropdown-menu/DropdownMenuItem.vue.js";
 import k from "../dropdown-menu/DropdownMenuTrigger.vue.js";
-import { Icon as l } from "../../node_modules/.pnpm/@iconify_vue@4.3.0_vue@3.5.13_typescript@5.6.3_/node_modules/@iconify/vue/dist/iconify.js";
-import { useColorMode as C } from "../../node_modules/.pnpm/@vueuse_core@12.7.0_typescript@5.6.3/node_modules/@vueuse/core/index.js";
-import { COLOR_MODE as m } from "./index.js";
+import { Icon as l } from "@iconify/vue";
+import { useColorMode as C } from "../../node_modules/.pnpm/@vueuse_core@12.8.2_typescript@5.6.3/node_modules/@vueuse/core/index.js";
+import { COLOR_MODE as a } from "./index.js";
 import $ from "../button/Button.vue.js";
-const A = /* @__PURE__ */ u({
+const I = /* @__PURE__ */ u({
   name: "ColorModeButton",
   __name: "color-mode-button",
   setup(v) {
@@ -42,8 +43,8 @@ const A = /* @__PURE__ */ u({
         }),
         e(o(_), { align: "end" }, {
           default: r(() => [
-            e(o(a), {
-              onClick: t[0] || (t[0] = (s) => n.value = o(m).Light)
+            e(o(m), {
+              onClick: t[0] || (t[0] = (s) => n.value = o(a).Light)
             }, {
               default: r(() => [
                 e(o(l), {
@@ -54,8 +55,8 @@ const A = /* @__PURE__ */ u({
               ]),
               _: 1
             }),
-            e(o(a), {
-              onClick: t[1] || (t[1] = (s) => n.value = o(m).Dark)
+            e(o(m), {
+              onClick: t[1] || (t[1] = (s) => n.value = o(a).Dark)
             }, {
               default: r(() => [
                 e(o(l), {
@@ -66,8 +67,8 @@ const A = /* @__PURE__ */ u({
               ]),
               _: 1
             }),
-            e(o(a), {
-              onClick: t[2] || (t[2] = (s) => n.value = o(m).Auto)
+            e(o(m), {
+              onClick: t[2] || (t[2] = (s) => n.value = o(a).Auto)
             }, {
               default: r(() => [
                 e(o(l), {
@@ -87,6 +88,6 @@ const A = /* @__PURE__ */ u({
   }
 });
 export {
-  A as default
+  I as default
 };
 //# sourceMappingURL=color-mode-button.vue.js.map

@@ -1,22 +1,22 @@
-import { defineComponent as o, createElementBlock as a, openBlock as l, normalizeClass as c, unref as r, renderSlot as p, createElementVNode as m, createVNode as i } from "vue";
-import { cn as d } from "../../lib/utils.js";
-import f from "../../node_modules/.pnpm/@radix-icons_vue@1.0.0_vue@3.5.13_typescript@5.6.3_/node_modules/@radix-icons/vue/esm/DotsHorizontalIcon.js";
-const _ = /* @__PURE__ */ o({
+import { defineComponent as n, createElementBlock as a, openBlock as l, normalizeClass as c, unref as r, renderSlot as p, createElementVNode as i, createVNode as m } from "vue";
+import { cn as f } from "../../lib/utils.js";
+import { DotsHorizontalIcon as d } from "@radix-icons/vue";
+const _ = /* @__PURE__ */ n({
   __name: "BreadcrumbEllipsis",
   props: {
     class: {}
   },
   setup(s) {
-    const t = s;
-    return (n, e) => (l(), a("span", {
+    const o = s;
+    return (t, e) => (l(), a("span", {
       role: "presentation",
       "aria-hidden": "true",
-      class: c(r(d)("flex h-9 w-9 items-center justify-center", t.class))
+      class: c(r(f)("flex h-9 w-9 items-center justify-center", o.class))
     }, [
-      p(n.$slots, "default", {}, () => [
-        i(r(f), { class: "h-4 w-4" })
+      p(t.$slots, "default", {}, () => [
+        m(r(d), { class: "h-4 w-4" })
       ]),
-      e[0] || (e[0] = m("span", { class: "sr-only" }, "More", -1))
+      e[0] || (e[0] = i("span", { class: "sr-only" }, "More", -1))
     ], 2));
   }
 });

@@ -1,8 +1,8 @@
-import { defineComponent as p, computed as u, createBlock as m, openBlock as f, unref as e, mergeProps as _, withCtx as r, createElementVNode as w, renderSlot as x, createVNode as n } from "vue";
+import { defineComponent as p, computed as u, createBlock as m, openBlock as f, unref as e, mergeProps as _, withCtx as n, createElementVNode as w, renderSlot as x, createVNode as r } from "vue";
 import { cn as h } from "../../lib/utils.js";
-import { useForwardPropsEmits as b, DropdownMenuRadioItem as g, DropdownMenuItemIndicator as y } from "radix-vue";
-import B from "../../node_modules/.pnpm/@radix-icons_vue@1.0.0_vue@3.5.13_typescript@5.6.3_/node_modules/@radix-icons/vue/esm/DotFilledIcon.js";
-const I = { class: "absolute left-2 flex h-3.5 w-3.5 items-center justify-center" }, P = /* @__PURE__ */ p({
+import { DotFilledIcon as b } from "@radix-icons/vue";
+import { useForwardPropsEmits as g, DropdownMenuRadioItem as y, DropdownMenuItemIndicator as I } from "radix-vue";
+const B = { class: "absolute left-2 flex h-3.5 w-3.5 items-center justify-center" }, P = /* @__PURE__ */ p({
   __name: "DropdownMenuRadioItem",
   props: {
     value: {},
@@ -17,18 +17,18 @@ const I = { class: "absolute left-2 flex h-3.5 w-3.5 items-center justify-center
     const t = a, c = l, d = u(() => {
       const { class: o, ...s } = t;
       return s;
-    }), i = b(d, c);
-    return (o, s) => (f(), m(e(g), _(e(i), {
+    }), i = g(d, c);
+    return (o, s) => (f(), m(e(y), _(e(i), {
       class: e(h)(
         "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
         t.class
       )
     }), {
-      default: r(() => [
-        w("span", I, [
-          n(e(y), null, {
-            default: r(() => [
-              n(e(B), { class: "h-4 w-4 fill-current" })
+      default: n(() => [
+        w("span", B, [
+          r(e(I), null, {
+            default: n(() => [
+              r(e(b), { class: "h-4 w-4 fill-current" })
             ]),
             _: 1
           })

@@ -45,7 +45,13 @@ export default defineConfig({
         'tailwind-merge',
         'radix-vue',
         "lucide-vue-next",
-        "motion-v"
+        "motion-v",
+        "vee-validate",
+        "@radix-icons/vue",
+        "@internationalized/date",
+        "@iconify/vue",
+        "vaul-vue",
+        "reka-ui"
       ],
       output: [
         {
