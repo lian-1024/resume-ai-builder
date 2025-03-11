@@ -89,6 +89,12 @@ export default defineConfig({
             'radix-vue': 'radixVue',
             "@radix-icons/vue": "RadixIconsVue",
             "lucide-vue-next": "lucideVueNext",
+            '@iconify/vue': 'IconifyVue',
+            '@vueuse/core': 'VueUse',
+            '@internationalized/date': 'InternationalizedDate',
+            'vee-validate': 'VeeValidate',
+            'vaul-vue': 'VaulVue',
+            'reka-ui': 'RekaUI'
           }
         }
       ]
