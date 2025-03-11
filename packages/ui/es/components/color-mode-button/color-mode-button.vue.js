@@ -9,7 +9,7 @@ import _ from "../dropdown-menu/DropdownMenuContent.vue.js";
 import m from "../dropdown-menu/DropdownMenuItem.vue.js";
 import k from "../dropdown-menu/DropdownMenuTrigger.vue.js";
 import { Icon as l } from "@iconify/vue";
-import { useColorMode as C } from "../../node_modules/.pnpm/@vueuse_core@12.8.2_typescript@5.6.3/node_modules/@vueuse/core/index.js";
+import { useColorMode as C } from "@vueuse/core";
 import { COLOR_MODE as a } from "./index.js";
 import $ from "../button/Button.vue.js";
 const I = /* @__PURE__ */ u({

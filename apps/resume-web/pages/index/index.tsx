@@ -1,7 +1,7 @@
 // 导入必要的组件和依赖
-import { Icon, NuxtImg, NuxtLink } from '#components'
-import { Button } from '@lianqq/resume-ui'
+import {  NuxtImg, NuxtLink ,Icon} from '#components'
 import { defineComponent, onMounted, ref } from 'vue'
+import { Button } from '@lianqq/resume-ui'
 import { ButtonHover } from '~/components/motions/button'
 import ButtonPress from '~/components/motions/button/button-press.vue'
 import { InView } from '~/components/motions/view'
@@ -60,10 +60,12 @@ const HeroSection = defineComponent({
           </h1>
           {/* 副标题描述 */}
           <InView>
-            <p class="leading-7 [&:not(:first-child)]:mt-6 text-gray-500 font-sans">
-              用人工智能助手轻松创建专业简历。我们的智能编辑器提供实时建议和优化，
-              帮助你快速制作一份出色的简历。无需从零开始，让 AI 为你量身定制完美简历。
-            </p>
+            {() => (
+              <p class="leading-7 [&:not(:first-child)]:mt-6 text-gray-500 font-sans">
+                用人工智能助手轻松创建专业简历。我们的智能编辑器提供实时建议和优化，
+                帮助你快速制作一份出色的简历。无需从零开始，让 AI 为你量身定制完美简历。
+              </p>
+            )}
           </InView>
           {/* 操作按钮组 */}
           <InView class="my-10">

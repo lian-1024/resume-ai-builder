@@ -1,6 +1,6 @@
 import { defineComponent as i, withDirectives as a, createElementBlock as u, openBlock as d, normalizeClass as m, unref as o, isRef as p, vModelText as f } from "vue";
 import { cn as c } from "../../lib/utils.js";
-import { useVModel as b } from "../../node_modules/.pnpm/@vueuse_core@12.8.2_typescript@5.6.3/node_modules/@vueuse/core/index.js";
+import { useVModel as b } from "@vueuse/core";
 const _ = /* @__PURE__ */ i({
   __name: "Input",
   props: {

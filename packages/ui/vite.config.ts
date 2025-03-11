@@ -51,7 +51,8 @@ export default defineConfig({
         "@internationalized/date",
         "@iconify/vue",
         "vaul-vue",
-        "reka-ui"
+        "reka-ui",
+        "@vueuse/core",
       ],
       output: [
         {

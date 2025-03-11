@@ -5,12 +5,13 @@ import "clsx";
 import "tailwind-merge";
 import "@radix-icons/vue";
 import "@iconify/vue";
-const O = {
+import "@vueuse/core";
+const g = {
   Dark: "dark",
   Light: "light",
   Auto: "auto"
 };
 export {
-  O as COLOR_MODE
+  g as COLOR_MODE
 };
 //# sourceMappingURL=index.js.map
