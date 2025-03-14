@@ -10,6 +10,8 @@ import { ResumeActions } from '@/components/feature/resume-actions'
 import { useResumeBuilder } from '@/composables/use-resume-builder'
 import { modelConfig } from '@/config/model.config';
 import { Example } from '@lianqq/resume-schema'
+import { usePanZoom } from '@/composables/use-pan-zoom'
+import PanZoomButton from '@/components/feature/pan-zoom-button/pan-zoom-button.vue'
 const resumeStore = useResumeStore()
 const { initIframe, updateResumeData } = useIframeResume()
 
@@ -57,10 +59,10 @@ const handleGenerateResume = async (description?: string) => {
   // resumeStore.setResumeValue('basics', result.basics)
 }
 
+
 onMounted(() => {
   resumeStore.initResumeData()
   if (route.query.content) {
-    console.log("route.query.content", route.query.content);
 
     initOptimizer()
     const content = route.query.content?.toString()

@@ -29,7 +29,7 @@ const pageStyle = computed<CSSProperties>(() => {
 
 const pageRef = ref<HTMLDivElement | null>(null)
 
-const { instance, initialPanzoom, zoomIn, zoomOut, reset, pan } = usePanZoom()
+const { initialPanzoom, zoomIn, zoomOut, reset } = usePanZoom()
 
 onMounted(() => {
   isFullScreen.value = Boolean(route.query.fullScreen)
@@ -42,15 +42,10 @@ onMounted(() => {
 
 <template>
 
-  <div ref="pageRef">
-    <!-- <VueZoomable v-bind="ZoomableProps" :pan-y="0"> -->
+  <div ref="pageRef" class="flex justify-center w-screen h-screen">
     <div id="resume-page" :style="pageStyle" :class="`bg-white ${!isFullScreen && 'shadow-lg'}`">
       <slot />
     </div>
-    <!-- </VueZoomable> -->
   </div>
-  <!-- <PreviewActions class="absolute top-1/2 -translate-y-1/2 right-6" /> -->
-  <PanZoomButton @zoom-in="zoomIn" @zoom-out="zoomOut" @reset="reset"
-    class="absolute bottom-10 left-1/2 -translate-x-1/2" />
-
+  <PanZoomButton vertical @zoom-in="zoomIn" @zoom-out="zoomOut" @reset="reset" class="absolute top-10 right-6" />
 </template>

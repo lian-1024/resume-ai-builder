@@ -10,11 +10,15 @@ const emit = defineEmits<{
     (e: 'zoomOut'): void
 }>()
 
+defineProps<{
+    vertical?: boolean
+}>()
+
 
 </script>
 
 <template>
-    <div class="flex items-center gap-2">
+    <div class="flex items-center gap-2" :class="vertical ? 'flex-col' : 'flex-row'">
         <Tooltip>
             <template #trigger>
                 <Button size="icon" class="rounded-full" @click="emit('reset')">
