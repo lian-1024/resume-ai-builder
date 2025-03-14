@@ -1,10 +1,11 @@
 <script lang="ts" setup>
 import { getTemplate } from '@/components/templates';
 import type { SectionKey } from '@lianqq/resume-schema';
-import { Suspense } from 'vue';
+import { onMounted, Suspense } from 'vue';
 import { defineAsyncComponent, ref } from 'vue';
 import { ResumeProvider } from '@/components/preview/provider';
 import PreviewPage from '@/components/preview/page.vue';
+import { useRoute } from 'vue-router';
 // 页面大小
 const pageSize = 'a4'
 
@@ -15,6 +16,8 @@ const ResumeTemplate = defineAsyncComponent(async () => {
   const template = await getTemplate('simple')
   return template
 })
+
+
 
 
 </script>
@@ -30,8 +33,7 @@ const ResumeTemplate = defineAsyncComponent(async () => {
           </template>
         </Suspense>
       </div>
+
     </ResumeProvider>
   </PreviewPage>
 </template>
-
-<style lang="less" scoped></style>

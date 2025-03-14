@@ -188,7 +188,7 @@ onMounted(() => {
                 </Tooltip>
             </Button>
         </SheetTrigger>
-        <SheetContent class="flex flex-col h-full">
+        <SheetContent class="flex flex-col h-full w-[600px] ">
             <SheetHeader>
                 <SheetTitle>AI 助手</SheetTitle>
                 <SheetDescription class="flex gap items-center justify-between">

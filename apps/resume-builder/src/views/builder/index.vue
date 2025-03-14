@@ -81,7 +81,7 @@ onMounted(() => {
         <BuilderHeader />
       </div>
       <iframe @load="onIframeLoad" ref="iframeRef" src="http://localhost:5173/preview"
-        class="bg-zinc-100 dark:bg-zinc-950 relative left-0 top-0 bottom-0 right-0 w-full flex-1" />
+        class=" bg-zinc-100 dark:bg-zinc-950 absolute h-full left-0 top-0 bottom-0 right-0 w-full flex-1" />
       <ResumeActions class="absolute top-1/2 right-4" />
 
     </div>

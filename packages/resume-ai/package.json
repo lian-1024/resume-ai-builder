@@ -22,7 +22,8 @@
     "@langchain/openai": "^0.4.4",
     "@lianqq/resume-schema": "workspace:*",
     "langchain": "^0.3.19",
-    "vite-plugin-dts": "^4.5.0"
+    "vite-plugin-dts": "^4.5.0",
+    "vue-panzoom": "^1.1.6"
   },
   "devDependencies": {
     "@tsconfig/node22": "^22.0.0",

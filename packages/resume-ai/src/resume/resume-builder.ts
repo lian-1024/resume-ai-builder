@@ -20,6 +20,8 @@ class ResumeBuilder extends BaseModel {
         return await this.invoke(prompt)
     }
 
+
+    
 }
 
 

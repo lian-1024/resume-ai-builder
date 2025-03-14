@@ -1,5 +1,5 @@
 export { default as ColorModeButton } from './color-mode-button.vue'
-
+export { useColorMode } from '@vueuse/core'
 
 export const COLOR_MODE = {
   Dark: 'dark',
