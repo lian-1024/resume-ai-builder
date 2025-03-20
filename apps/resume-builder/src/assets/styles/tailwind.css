@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer utilities {
+  .a4-size {
+    width: 210mm; /* A4 宽度 */
+    height: 297mm; /* A4 高度 */
+  }
+  .a5-size {
+    width: 148mm; /* A5 宽度 */
+    height: 210mm; /* A5 高度 */
+  }
+
+  ul li {
+    @apply list-disc list-inside;
+  }
+ 
+
+}

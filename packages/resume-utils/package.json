@@ -1,0 +1,47 @@
+{
+  "name": "@lianqq/resume-utils",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "types": "./types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./es/index.js",
+      "require": "./lib/index.js",
+      "types": "./types/index.d.ts"
+    },
+    "./composables": {
+      "import": "./es/composables/index.js",
+      "require": "./lib/composables/index.js",
+      "types": "./types/composables/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && tsc --emitDeclarationOnly",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@langchain/openai": "^0.4.4",
+    "@lianqq/resume-config": "workspace:*",
+    "@lianqq/resume-schema": "workspace:*",
+    "dayjs": "^1.11.10",
+    "html2canvas": "^1.4.1",
+    "html2pdf.js": "^0.10.2",
+    "jspdf": "^3.0.0",
+    "langchain": "^0.3.19",
+    "vue": "^3.4.0",
+    "vue-panzoom": "^1.1.6"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.0",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.8",
+    "vite-plugin-dts": "^3.0.0"
+  }
+}

@@ -1,0 +1,87 @@
+html,
+body,
+#__nuxt {
+  height: 100%;
+  width: 100%;
+}
+
+@media print {
+  body {
+    visibility: hidden;
+  }
+
+  #resume-page {
+    visibility: visible;
+  }
+}
+
+/* 暗黑模式下的样式覆盖 */
+html.dark {
+
+  /* 编辑器容器 */
+  .w-e-text-container {
+    background-color: #1a1a1a !important;
+    color: #e5e7eb !important;
+  }
+
+  /* 工具栏 */
+  .w-e-toolbar {
+    background-color: #262626 !important;
+    border-color: #404040 !important;
+  }
+
+  /* 工具栏按钮 */
+  .w-e-bar-item button {
+    color: #e5e7eb !important;
+
+    &:hover {
+      background-color: #404040 !important;
+    }
+  }
+
+  /* 编辑区域 */
+  .w-e-text-container [data-slate-editor] {
+    color: #e5e7eb !important;
+    min-height: 260px !important;
+  }
+
+  /* 下拉菜单 */
+  .w-e-bar-item-menus-container {
+    background-color: #262626 !important;
+    border-color: #404040 !important;
+
+    /* .w-e-dropdown-item {
+      color: #e5e7eb !important;
+      
+      &:hover {
+        background-color: #404040 !important;
+      }
+    } */
+  }
+
+  /* 弹出框 */
+  .w-e-modal {
+    background-color: #262626 !important;
+    border-color: #404040 !important;
+
+    .w-e-modal-header {
+      border-bottom-color: #404040 !important;
+    }
+
+    .w-e-modal-close {
+      color: #e5e7eb !important;
+    }
+
+    input,
+    textarea {
+      background-color: #1a1a1a !important;
+      border-color: #404040 !important;
+      color: #e5e7eb !important;
+    }
+  }
+}
+
+/* html body ul,
+html body ol {
+  padding-left: 1rem;
+} */

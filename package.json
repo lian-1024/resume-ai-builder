@@ -1,0 +1,34 @@
+{
+  "name": "resume-ai-builder",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "commit": "git add . && pnpm czg",
+    "prepare": "husky"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
+    "@lianqq/resume-config": "workspace:*",
+    "@types/vue": "^2.0.0",
+    "cz-git": "^1.11.0",
+    "czg": "^1.11.0",
+    "husky": "^9.1.7",
+    "turbo": "^2.3.3",
+    "typescript": "^5.7.3"
+  },
+  "packageManager": "pnpm@8.15.6",
+  "prettier": "@lianqq/resume-config/prettier",
+  "dependencies": {
+    "@langchain/community": "^0.3.32",
+    "@langchain/core": "^0.3.42"
+  }
+}
