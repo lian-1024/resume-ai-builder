@@ -19,13 +19,18 @@ defineEmits<{
 </script>
 
 <template>
-    <div class="flex gap-2 justify-end">
+    <div class="flex gap-4 justify-end">
         <Button class="text-muted-foreground" size="sm" variant="ghost" v-show="status === 'preview'"
             @click="$emit('edit')">
             <Icon icon="lucide:edit" />
             编辑
         </Button>
-        <Button class="text-muted-foreground" size="sm" variant="ghost" v-show="status === 'edit'"
+        <Button  size="sm" variant="destructive" v-show="status === 'edit'"
+            @click="$emit('cancel')">
+            <Icon icon="lucide:trash" />
+            删除
+        </Button>
+        <Button class="text-muted-foreground" size="sm" variant="secondary" v-show="status === 'edit'"
             @click="$emit('cancel')">
             <Icon icon="lucide:x" />
             取消

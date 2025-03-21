@@ -24,11 +24,11 @@ export const useResumeStore = defineStore('resume', () => {
     }
 
     const saveDraftData = () => {
-        console.log('saveDraftData', draftData.value)
         resume.value = cloneDeep(draftData.value)
     }
 
     const setDraftData = (path: string, value: any) => {
+        console.log('setDraftData')
         set(draftData.value, path, value)
         console.log('setDraftData', draftData.value)
         console.log('resume', resume.value)
