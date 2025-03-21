@@ -28,7 +28,7 @@ defineOptions({
         <Tooltip>
             <template #trigger>
                 <Button @click="handlePreview" size="icon" class="w-8 h-8 rounded-full">
-                    <Icon icon="lucide:download" />
+                    <Icon icon="lucide:eye" />
                 </Button>
             </template>
             <template #content>

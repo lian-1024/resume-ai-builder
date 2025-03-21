@@ -78,7 +78,7 @@ const messageHandler = async (e: MessageEvent) => {
       toast({
         title: "未知消息类型",
         description: e.data.type,
-        type: "error"
+        variant: "destructive"
       })
       break
   }
