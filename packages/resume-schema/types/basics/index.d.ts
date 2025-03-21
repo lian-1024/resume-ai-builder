@@ -5,32 +5,7 @@ export declare const basicsSchema: z.ZodObject<{
     email: z.ZodUnion<[z.ZodLiteral<"">, z.ZodString]>;
     phone: z.ZodString;
     url: z.ZodUnion<[z.ZodLiteral<"">, z.ZodString]>;
-    customFields: z.ZodArray<z.ZodObject<{
-        id: z.ZodString;
-        icon: z.ZodString;
-        name: z.ZodString;
-        value: z.ZodString;
-    }, "strip", z.ZodTypeAny, {
-        id?: string;
-        icon?: string;
-        name?: string;
-        value?: string;
-    }, {
-        id?: string;
-        icon?: string;
-        name?: string;
-        value?: string;
-    }>, "many">;
-    picture: z.ZodObject<{
-        url: z.ZodString;
-        size: z.ZodDefault<z.ZodNumber>;
-    }, "strip", z.ZodTypeAny, {
-        url?: string;
-        size?: number;
-    }, {
-        url?: string;
-        size?: number;
-    }>;
+    avatar: z.ZodString;
     intention: z.ZodObject<{
         currentStatus: z.ZodString;
         positionTitle: z.ZodString;
@@ -53,16 +28,7 @@ export declare const basicsSchema: z.ZodObject<{
     email?: string;
     phone?: string;
     url?: string;
-    customFields?: {
-        id?: string;
-        icon?: string;
-        name?: string;
-        value?: string;
-    }[];
-    picture?: {
-        url?: string;
-        size?: number;
-    };
+    avatar?: string;
     intention?: {
         currentStatus?: string;
         positionTitle?: string;
@@ -75,16 +41,7 @@ export declare const basicsSchema: z.ZodObject<{
     email?: string;
     phone?: string;
     url?: string;
-    customFields?: {
-        id?: string;
-        icon?: string;
-        name?: string;
-        value?: string;
-    }[];
-    picture?: {
-        url?: string;
-        size?: number;
-    };
+    avatar?: string;
     intention?: {
         currentStatus?: string;
         positionTitle?: string;

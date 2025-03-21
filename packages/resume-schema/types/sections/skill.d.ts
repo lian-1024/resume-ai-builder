@@ -7,14 +7,14 @@ export declare const skillSchema: z.ZodObject<z.objectUtil.extendShape<{
     summary: z.ZodString;
     level: z.ZodUnion<[z.ZodDefault<z.ZodNumber>, z.ZodString]>;
 }>, "strip", z.ZodTypeAny, {
-    id?: string;
     name?: string;
+    id?: string;
     visible?: boolean;
     summary?: string;
     level?: string | number;
 }, {
-    id?: string;
     name?: string;
+    id?: string;
     visible?: boolean;
     summary?: string;
     level?: string | number;

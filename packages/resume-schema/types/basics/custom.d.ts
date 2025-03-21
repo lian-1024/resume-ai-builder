@@ -5,14 +5,14 @@ export declare const customFieldSchema: z.ZodObject<{
     name: z.ZodString;
     value: z.ZodString;
 }, "strip", z.ZodTypeAny, {
-    id?: string;
-    icon?: string;
     name?: string;
     value?: string;
+    id?: string;
+    icon?: string;
 }, {
-    id?: string;
-    icon?: string;
     name?: string;
     value?: string;
+    id?: string;
+    icon?: string;
 }>;
 export type CustomField = z.infer<typeof customFieldSchema>;

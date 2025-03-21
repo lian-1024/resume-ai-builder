@@ -1,27 +1,39 @@
 <script lang="ts" setup>
-import { defineProps } from 'vue';
-import { Button } from '@lianqq/resume-ui';
-import { Icon } from '@iconify/vue';
-import { ACTION_MAP, type ActionType } from '@/constants/actions';
+import { Button } from '@lianqq/resume-ui'
+import { Icon } from '@iconify/vue'
 
-const props = defineProps<{
-    id: string
+defineOptions({
+    name: 'ResumeActions'
+})
+
+defineProps<{
+    status: 'edit' | 'preview' | 'cancel'
 }>()
 
+
 defineEmits<{
-    (e: 'handle', actionType: ActionType, id: string): void
+    (e: 'edit'): void,
+    (e: 'save'): void,
+    (e: 'cancel'): void
 }>()
 </script>
 
 <template>
-    <div class="w-full ">
-        <slot />
-        <div class="flex justify-end">
-            <Button variant="ghost" @click="$emit('handle', ACTION_MAP.EDIT, id)">
-                <Icon icon="lucide:file-pen-line" />
-                编辑
-            </Button>
-        </div>
+    <div class="flex gap-2 justify-end">
+        <Button class="text-muted-foreground" size="sm" variant="ghost" v-show="status === 'preview'"
+            @click="$emit('edit')">
+            <Icon icon="lucide:edit" />
+            编辑
+        </Button>
+        <Button class="text-muted-foreground" size="sm" variant="ghost" v-show="status === 'edit'"
+            @click="$emit('cancel')">
+            <Icon icon="lucide:x" />
+            取消
+        </Button>
+        <Button variant="default" size="sm" @click="$emit('save')" v-show="status === 'edit'">
+            <Icon icon="lucide:save" />
+            保存
+        </Button>
     </div>
 </template>
 

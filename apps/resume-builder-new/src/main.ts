@@ -6,10 +6,14 @@ import { createPinia } from 'pinia'
 
 import App from './App.vue'
 import router from './router'
+import setupStore from './stores'
 
-const app = createApp(App)
 
-app.use(createPinia())
-app.use(router)
+const bootstrap = () => {
+    const app = createApp(App)
+    setupStore(app)
+    app.use(router)
+    app.mount('#app')
+}
 
-app.mount('#app')
+bootstrap()

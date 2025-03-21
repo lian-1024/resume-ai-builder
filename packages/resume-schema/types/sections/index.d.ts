@@ -56,8 +56,8 @@ export declare const sectionsSchema: z.ZodObject<{
             summary?: string;
         }>, "many">;
     }>, "strip", z.ZodTypeAny, {
-        id?: "education";
         name?: string;
+        id?: "education";
         visible?: boolean;
         columns?: number;
         separateLinks?: boolean;
@@ -73,8 +73,8 @@ export declare const sectionsSchema: z.ZodObject<{
             summary?: string;
         }[];
     }, {
-        id?: "education";
         name?: string;
+        id?: "education";
         visible?: boolean;
         columns?: number;
         separateLinks?: boolean;
@@ -109,20 +109,20 @@ export declare const sectionsSchema: z.ZodObject<{
             summary: z.ZodString;
             url: z.ZodUnion<[z.ZodLiteral<"">, z.ZodString]>;
         }>, "strip", z.ZodTypeAny, {
-            id?: string;
             name?: string;
             url?: string;
             city?: string;
+            id?: string;
             visible?: boolean;
             startDate?: string;
             endDate?: string;
             summary?: string;
             role?: string;
         }, {
-            id?: string;
             name?: string;
             url?: string;
             city?: string;
+            id?: string;
             visible?: boolean;
             startDate?: string;
             endDate?: string;
@@ -130,16 +130,16 @@ export declare const sectionsSchema: z.ZodObject<{
             role?: string;
         }>, "many">;
     }>, "strip", z.ZodTypeAny, {
-        id?: "projects";
         name?: string;
+        id?: "projects";
         visible?: boolean;
         columns?: number;
         separateLinks?: boolean;
         items?: {
-            id?: string;
             name?: string;
             url?: string;
             city?: string;
+            id?: string;
             visible?: boolean;
             startDate?: string;
             endDate?: string;
@@ -147,16 +147,16 @@ export declare const sectionsSchema: z.ZodObject<{
             role?: string;
         }[];
     }, {
-        id?: "projects";
         name?: string;
+        id?: "projects";
         visible?: boolean;
         columns?: number;
         separateLinks?: boolean;
         items?: {
-            id?: string;
             name?: string;
             url?: string;
             city?: string;
+            id?: string;
             visible?: boolean;
             startDate?: string;
             endDate?: string;
@@ -179,40 +179,40 @@ export declare const sectionsSchema: z.ZodObject<{
             summary: z.ZodString;
             level: z.ZodUnion<[z.ZodDefault<z.ZodNumber>, z.ZodString]>;
         }>, "strip", z.ZodTypeAny, {
-            id?: string;
             name?: string;
+            id?: string;
             visible?: boolean;
             summary?: string;
             level?: string | number;
         }, {
-            id?: string;
             name?: string;
+            id?: string;
             visible?: boolean;
             summary?: string;
             level?: string | number;
         }>, "many">;
     }>, "strip", z.ZodTypeAny, {
-        id?: "skills";
         name?: string;
+        id?: "skills";
         visible?: boolean;
         columns?: number;
         separateLinks?: boolean;
         items?: {
-            id?: string;
             name?: string;
+            id?: string;
             visible?: boolean;
             summary?: string;
             level?: string | number;
         }[];
     }, {
-        id?: "skills";
         name?: string;
+        id?: "skills";
         visible?: boolean;
         columns?: number;
         separateLinks?: boolean;
         items?: {
-            id?: string;
             name?: string;
+            id?: string;
             visible?: boolean;
             summary?: string;
             level?: string | number;
@@ -220,8 +220,8 @@ export declare const sectionsSchema: z.ZodObject<{
     }>;
 }, "strip", z.ZodTypeAny, {
     education?: {
-        id?: "education";
         name?: string;
+        id?: "education";
         visible?: boolean;
         columns?: number;
         separateLinks?: boolean;
@@ -238,16 +238,16 @@ export declare const sectionsSchema: z.ZodObject<{
         }[];
     };
     projects?: {
-        id?: "projects";
         name?: string;
+        id?: "projects";
         visible?: boolean;
         columns?: number;
         separateLinks?: boolean;
         items?: {
-            id?: string;
             name?: string;
             url?: string;
             city?: string;
+            id?: string;
             visible?: boolean;
             startDate?: string;
             endDate?: string;
@@ -256,14 +256,14 @@ export declare const sectionsSchema: z.ZodObject<{
         }[];
     };
     skills?: {
-        id?: "skills";
         name?: string;
+        id?: "skills";
         visible?: boolean;
         columns?: number;
         separateLinks?: boolean;
         items?: {
-            id?: string;
             name?: string;
+            id?: string;
             visible?: boolean;
             summary?: string;
             level?: string | number;
@@ -271,8 +271,8 @@ export declare const sectionsSchema: z.ZodObject<{
     };
 }, {
     education?: {
-        id?: "education";
         name?: string;
+        id?: "education";
         visible?: boolean;
         columns?: number;
         separateLinks?: boolean;
@@ -289,16 +289,16 @@ export declare const sectionsSchema: z.ZodObject<{
         }[];
     };
     projects?: {
-        id?: "projects";
         name?: string;
+        id?: "projects";
         visible?: boolean;
         columns?: number;
         separateLinks?: boolean;
         items?: {
-            id?: string;
             name?: string;
             url?: string;
             city?: string;
+            id?: string;
             visible?: boolean;
             startDate?: string;
             endDate?: string;
@@ -307,14 +307,14 @@ export declare const sectionsSchema: z.ZodObject<{
         }[];
     };
     skills?: {
-        id?: "skills";
         name?: string;
+        id?: "skills";
         visible?: boolean;
         columns?: number;
         separateLinks?: boolean;
         items?: {
-            id?: string;
             name?: string;
+            id?: string;
             visible?: boolean;
             summary?: string;
             level?: string | number;
