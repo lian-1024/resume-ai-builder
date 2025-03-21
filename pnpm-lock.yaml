@@ -17,7 +17,7 @@ importers:
     devDependencies:
       '@commitlint/cli':
         specifier: ^19.6.1
-        version: 19.8.0(@types/node@22.13.9)(typescript@5.7.3)
+        version: 19.8.0(@types/node@20.17.23)(typescript@5.7.3)
       '@commitlint/config-conventional':
         specifier: ^19.6.0
         version: 19.8.0
@@ -214,18 +214,30 @@ importers:
 
   apps/resume-builder-new:
     dependencies:
+      '@lianqq/resume-schema':
+        specifier: workspace:*
+        version: link:../../packages/resume-schema
       '@lianqq/resume-ui':
         specifier: workspace:*
         version: link:../../packages/ui
+      '@vee-validate/zod':
+        specifier: ^4.15.0
+        version: 4.15.0(vue@3.5.13(typescript@5.8.2))(zod@3.24.2)
       pinia:
         specifier: ^3.0.1
         version: 3.0.1(typescript@5.8.2)(vue@3.5.13(typescript@5.8.2))
+      vee-validate:
+        specifier: ^4.15.0
+        version: 4.15.0(vue@3.5.13(typescript@5.8.2))
       vue:
         specifier: ^3.5.13
         version: 3.5.13(typescript@5.8.2)
       vue-router:
         specifier: ^4.5.0
         version: 4.5.0(vue@3.5.13(typescript@5.8.2))
+      zod:
+        specifier: ^3.24.1
+        version: 3.24.2
     devDependencies:
       '@iconify/vue':
         specifier: ^4.3.0
@@ -8837,19 +8849,6 @@ snapshots:
       - '@types/node'
       - typescript
 
-  '@commitlint/cli@19.8.0(@types/node@22.13.9)(typescript@5.7.3)':
-    dependencies:
-      '@commitlint/format': 19.8.0
-      '@commitlint/lint': 19.8.0
-      '@commitlint/load': 19.8.0(@types/node@22.13.9)(typescript@5.7.3)
-      '@commitlint/read': 19.8.0
-      '@commitlint/types': 19.8.0
-      tinyexec: 0.3.2
-      yargs: 17.7.2
-    transitivePeerDependencies:
-      - '@types/node'
-      - typescript
-
   '@commitlint/config-conventional@19.8.0':
     dependencies:
       '@commitlint/types': 19.8.0
@@ -8897,22 +8896,6 @@ snapshots:
       chalk: 5.4.1
       cosmiconfig: 9.0.0(typescript@5.7.3)
       cosmiconfig-typescript-loader: 6.1.0(@types/node@20.17.23)(cosmiconfig@9.0.0(typescript@5.7.3))(typescript@5.7.3)
-      lodash.isplainobject: 4.0.6
-      lodash.merge: 4.6.2
-      lodash.uniq: 4.5.0
-    transitivePeerDependencies:
-      - '@types/node'
-      - typescript
-
-  '@commitlint/load@19.8.0(@types/node@22.13.9)(typescript@5.7.3)':
-    dependencies:
-      '@commitlint/config-validator': 19.8.0
-      '@commitlint/execute-rule': 19.8.0
-      '@commitlint/resolve-extends': 19.8.0
-      '@commitlint/types': 19.8.0
-      chalk: 5.4.1
-      cosmiconfig: 9.0.0(typescript@5.7.3)
-      cosmiconfig-typescript-loader: 6.1.0(@types/node@22.13.9)(cosmiconfig@9.0.0(typescript@5.7.3))(typescript@5.7.3)
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
@@ -10965,6 +10948,14 @@ snapshots:
     transitivePeerDependencies:
       - vue
 
+  '@vee-validate/zod@4.15.0(vue@3.5.13(typescript@5.8.2))(zod@3.24.2)':
+    dependencies:
+      type-fest: 4.37.0
+      vee-validate: 4.15.0(vue@3.5.13(typescript@5.8.2))
+      zod: 3.24.2
+    transitivePeerDependencies:
+      - vue
+
   '@vercel/nft@0.29.2(rollup@4.34.9)':
     dependencies:
       '@mapbox/node-pre-gyp': 2.0.0
@@ -12262,13 +12253,6 @@ snapshots:
   cosmiconfig-typescript-loader@6.1.0(@types/node@20.17.23)(cosmiconfig@9.0.0(typescript@5.7.3))(typescript@5.7.3):
     dependencies:
       '@types/node': 20.17.23
-      cosmiconfig: 9.0.0(typescript@5.7.3)
-      jiti: 2.4.2
-      typescript: 5.7.3
-
-  cosmiconfig-typescript-loader@6.1.0(@types/node@22.13.9)(cosmiconfig@9.0.0(typescript@5.7.3))(typescript@5.7.3):
-    dependencies:
-      '@types/node': 22.13.9
       cosmiconfig: 9.0.0(typescript@5.7.3)
       jiti: 2.4.2
       typescript: 5.7.3
@@ -13654,7 +13638,7 @@ snapshots:
       isstream: 0.1.2
       jsonwebtoken: 9.0.2
       mime-types: 2.1.35
-      retry-axios: 2.6.0(axios@1.7.9(debug@4.4.0))
+      retry-axios: 2.6.0(axios@1.7.9)
       tough-cookie: 4.1.4
     transitivePeerDependencies:
       - supports-color
@@ -16005,7 +15989,7 @@ snapshots:
 
   restructure@3.0.2: {}
 
-  retry-axios@2.6.0(axios@1.7.9(debug@4.4.0)):
+  retry-axios@2.6.0(axios@1.7.9):
     dependencies:
       axios: 1.7.9(debug@4.4.0)
 
@@ -16989,6 +16973,12 @@ snapshots:
       '@vue/devtools-api': 7.7.2
       type-fest: 4.37.0
       vue: 3.5.13(typescript@5.7.3)
+
+  vee-validate@4.15.0(vue@3.5.13(typescript@5.8.2)):
+    dependencies:
+      '@vue/devtools-api': 7.7.2
+      type-fest: 4.37.0
+      vue: 3.5.13(typescript@5.8.2)
 
   vite-dev-rpc@1.0.7(vite@6.2.1(@types/node@20.17.23)(jiti@2.4.2)(terser@5.39.0)(yaml@2.7.0)):
     dependencies:

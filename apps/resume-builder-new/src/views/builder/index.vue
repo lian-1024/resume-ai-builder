@@ -10,7 +10,7 @@ defineOptions({
 </script>
 
 <template>
-    <div class="flex justify-center items-center h-screen flex-row gap-8">
+    <div class="flex justify-center items-start h-screen flex-row gap-8 pt-6">
         <BuilderSidebar class="bg-white" />
         <BuilderWorkspace class="bg-white" />
         <!-- <BuilderPreview class="w-56 bg-gray-100" /> -->

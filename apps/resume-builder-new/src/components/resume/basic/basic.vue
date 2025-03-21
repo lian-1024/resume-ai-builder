@@ -8,11 +8,13 @@ const props = defineProps<{
 defineOptions({
     name: 'ResumeBasic'
 })
+
+
 </script>
 
 <template>
     <div>
-        <BasicEditor v-if="props.status === 'edit'" />
+        <BasicEditor  v-if="props.status === 'edit'" />
         <BasicUI v-else />
     </div>
 </template>
