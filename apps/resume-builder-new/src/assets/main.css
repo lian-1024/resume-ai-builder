@@ -2,14 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body,
 #app {
     @apply bg-gray-100;
 }
 
 ol {
-    list-style-type: decimal!important;
+    list-style-type: decimal !important;
 }
 
 ul {
-    list-style-type: disc!important;
+    list-style-type: disc !important;
+}
+
+@media print {
+   
+
+    html,
+    body,
+    #app {
+        visibility: hidden;
+    }
+
+    /* 显示简历页面 */
+    #resume-page {
+        margin: 0;
+        visibility: visible;
+    }
+
+    /* 隐藏虚线 */
+    #dashed-lines {
+        visibility: hidden;
+    }
 }

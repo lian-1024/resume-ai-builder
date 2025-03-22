@@ -14,9 +14,6 @@ const skills = computed(() => {
 <template>
     <div>
         <div v-for="skill in skills?.items" :key="skill.id">
-            <div class="text-lg font-semibold">
-                {{ skill.name }}
-            </div>
             <Editor :model-value="skill.summary" :is-read-only="true" />
         </div>
     </div>

@@ -23,11 +23,8 @@ const updateSkillSummary = (index: number, summary: string) => {
 </script>
 
 <template>
-    <template v-for="(skill,index) in skills?.items" :key="skill.id">
+    <template v-for="(skill, index) in skills?.items" :key="skill.id">
         <div class="flex flex-col gap-2">
-            <div class="text-lg font-semibold">
-                {{ skill.name }}
-            </div>
             <Editor :model-value="skill.summary" @update:model-value="(value) => updateSkillSummary(index, value)" />
         </div>
     </template>

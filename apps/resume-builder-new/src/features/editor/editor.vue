@@ -1,11 +1,6 @@
 <script lang="ts" setup>
 import StarterKit from '@tiptap/starter-kit'
-import { Editor, EditorContent, useEditor } from '@tiptap/vue-3'
-import BulletList from '@tiptap/extension-bullet-list'
-import Document from '@tiptap/extension-document'
-import ListItem from '@tiptap/extension-list-item'
-import Paragraph from '@tiptap/extension-paragraph'
-import Text from '@tiptap/extension-text'
+import { EditorContent, useEditor } from '@tiptap/vue-3'
 
 const modelValue = defineModel<string>({ default: '' })
 const props = withDefaults(defineProps<{
@@ -17,33 +12,22 @@ const emit = defineEmits<{
     (e: 'update:modelValue', value: string): void
 }>()
 
-
-
-
+// 只使用 StarterKit，它已经包含了基本扩展
 const editor = useEditor({
     extensions: [
         StarterKit,
-        Document,
-        Paragraph,
-        Text,
-        BulletList,
-        ListItem,
     ],
     editorProps: {
         attributes: {
             class: 'prose prose-sm sm:prose-base lg:prose-lg xl:prose-2xl m-5 focus:outline-none',
         },
     },
-    content: modelValue.value, // 初始内容
-
+    content: modelValue.value,
     onUpdate: ({ editor }) => {
-        // 监听编辑器内容变化
         emit('update:modelValue', editor.getHTML())
     },
-    editable: !props.isReadOnly  // 是否可编辑
+    editable: !props.isReadOnly
 })
-
-
 
 const getHTMLContent = () => {
     if (!editor.value) return ''
@@ -53,7 +37,6 @@ const getHTMLContent = () => {
 defineExpose({
     getHTMLContent
 })
-
 </script>
 
 <template>

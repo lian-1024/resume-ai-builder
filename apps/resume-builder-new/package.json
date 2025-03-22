@@ -25,6 +25,7 @@
     "@tiptap/starter-kit": "^2.11.5",
     "@tiptap/vue-3": "^2.11.5",
     "@vee-validate/zod": "^4.15.0",
+    "html2pdf.js": "^0.10.2",
     "lodash-es": "^4.17.21",
     "pinia": "^3.0.1",
     "pinia-plugin-persistedstate": "^4.2.0",
