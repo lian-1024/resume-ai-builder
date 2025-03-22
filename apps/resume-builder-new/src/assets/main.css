@@ -5,3 +5,11 @@
 #app {
     @apply bg-gray-100;
 }
+
+ol {
+    list-style-type: decimal!important;
+}
+
+ul {
+    list-style-type: disc!important;
+}

@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { provide, reactive, ref, type Component } from 'vue';
-import ResumeWrapper from '@/components/resume/components/wrapper.vue'
 import { useResumeStore } from '@/stores'
 import { Basics } from '@/components/resume/basic';
 import { SectionWrapper } from '@/components/resume/wrapper';

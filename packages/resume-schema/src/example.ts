@@ -7,12 +7,7 @@ export const Example: ResumeData = {
     email: 'lianqq@qq.com',
     phone: '12345678901',
     url: 'https://github.com/lian-1024',
-    customFields: [],
-    picture: {
-      // url: 'https://avatars.githubusercontent.com/u/93166482',
-      url: 'http://localhost:5173/placeholder.png',
-     size: 100
-    },
+    avatar: '',
     intention: {
       currentStatus: '在校',
       positionTitle: '前端开发工程师',
@@ -86,6 +81,8 @@ export const Example: ResumeData = {
       id: 'skills',
       items: [
         {
+          id: '1',
+          name: '前端',
           summary: `
         <ul>
           <li>热衷于技术分享，定期编写和发布技术文章，在全网获得1000+关注，具有一定的社区影响力</li>

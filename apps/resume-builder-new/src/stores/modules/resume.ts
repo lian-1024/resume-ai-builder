@@ -1,11 +1,11 @@
-import { defaultResumeData, type Education, type ResumeData } from "@lianqq/resume-schema";
+import { defaultResumeData, Example, type Education, type ResumeData } from "@lianqq/resume-schema";
 import { defineStore } from "pinia";
 import { ref } from "vue";
-import { set,cloneDeep } from 'lodash-es'
+import { set, cloneDeep } from 'lodash-es'
 import type { Basics } from "@lianqq/resume-schema";
 
 export const useResumeStore = defineStore('resume', () => {
-    const resume = ref<ResumeData>(defaultResumeData)
+    const resume = ref<ResumeData>(Example)
     const draftData = ref<ResumeData>({})
 
     const setResume = (data: ResumeData) => {
