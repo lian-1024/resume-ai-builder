@@ -4,9 +4,15 @@ const templates = ['simple'] as const
 
 export type TemplateKey = (typeof templates)[number]
 
-// 定义主题相关配资
+const defaultLayout = [
+  'basics',
+  'education',
+  'projects',
+  'skills',
+]
 
-export const resumeConfigSchema = z.object({
+// 定义主题相关配资
+export const resumeMetadataSchema = z.object({
   template: z.enum(templates).default('simple'), // 简历模版昵称
   page: z.object({
     // 页面设置
@@ -18,14 +24,15 @@ export const resumeConfigSchema = z.object({
     background: z.string().default('#ffffff'), // 背景颜色
     text: z.string().default('#000000'), // 文本颜色
     primary: z.string().default('#3b82f6') // 主题颜色
-  })
+  }),
+  sections: z.array(z.string()).default(defaultLayout) // 简历各部分的排序
 })
 
 // 从模式中推断出的类型
-export type ResumeConfig = z.infer<typeof resumeConfigSchema>
+export type ResumeMetadata = z.infer<typeof resumeMetadataSchema>
 
 // 默认值
-export const defaultResumeConfig: ResumeConfig = {
+export const defaultResumeMetadata: ResumeMetadata = {
   page: {
     format: 'a4',
     margin: 18
@@ -35,5 +42,6 @@ export const defaultResumeConfig: ResumeConfig = {
     primary: '#3b82f6',
     background: '#ffffff'
   },
-  template: 'simple'
+  template: 'simple',
+  sections: ['basics', 'education', 'projects', 'skills']
 }

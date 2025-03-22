@@ -356,7 +356,7 @@ export declare const resumeDataSchema: z.ZodObject<{
             }[];
         };
     }>;
-    config: z.ZodObject<{
+    metadata: z.ZodObject<{
         template: z.ZodDefault<z.ZodEnum<["simple"]>>;
         page: z.ZodObject<{
             margin: z.ZodDefault<z.ZodNumber>;
@@ -381,6 +381,7 @@ export declare const resumeDataSchema: z.ZodObject<{
             text?: string;
             primary?: string;
         }>;
+        sections: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
     }, "strip", z.ZodTypeAny, {
         template?: "simple";
         page?: {
@@ -392,6 +393,7 @@ export declare const resumeDataSchema: z.ZodObject<{
             text?: string;
             primary?: string;
         };
+        sections?: string[];
     }, {
         template?: "simple";
         page?: {
@@ -403,6 +405,7 @@ export declare const resumeDataSchema: z.ZodObject<{
             text?: string;
             primary?: string;
         };
+        sections?: string[];
     }>;
 }, "strip", z.ZodTypeAny, {
     basics?: {
@@ -471,7 +474,7 @@ export declare const resumeDataSchema: z.ZodObject<{
             }[];
         };
     };
-    config?: {
+    metadata?: {
         template?: "simple";
         page?: {
             margin?: number;
@@ -482,6 +485,7 @@ export declare const resumeDataSchema: z.ZodObject<{
             text?: string;
             primary?: string;
         };
+        sections?: string[];
     };
 }, {
     basics?: {
@@ -550,7 +554,7 @@ export declare const resumeDataSchema: z.ZodObject<{
             }[];
         };
     };
-    config?: {
+    metadata?: {
         template?: "simple";
         page?: {
             margin?: number;
@@ -561,12 +565,13 @@ export declare const resumeDataSchema: z.ZodObject<{
             text?: string;
             primary?: string;
         };
+        sections?: string[];
     };
 }>;
 export type ResumeData = z.infer<typeof resumeDataSchema>;
 export declare const defaultResumeData: ResumeData;
 export * from './basics';
-export * from './config';
+export * from './metadata';
 export * from './example';
 export * from './sections';
 export * from './shared';

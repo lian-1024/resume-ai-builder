@@ -45,7 +45,7 @@ defineExpose({
 <style lang="less">
 /* Basic editor styles */
 .tiptap {
-    font-size: 16px;
+    font-size: 14px;
     margin: 0;
 
     :first-child {

@@ -2,6 +2,10 @@
 import { computed, onMounted, ref } from 'vue';
 import { Button } from '@lianqq/resume-ui';
 import { Icon } from '@iconify/vue';
+import Section from '@/views/preview/components/section.vue';
+import Editor from '@/features/editor/editor.vue';
+import { useResumeStore } from '@/stores';
+const resumeStore = useResumeStore();
 const pageRef = ref<HTMLDivElement | null>(null);
 const canvasRef = ref<HTMLCanvasElement | null>(null);
 
@@ -66,14 +70,75 @@ onMounted(() => {
 <template>
     <div class="absolute left-1/2 -translate-x-1/2">
         <div class="p-4 bg-white absolute left-[-100px] top-6 rounded-lg self-start">
-            <Button size="icon" class="rounded-lg">
+            <Button size="icon" class="rounded-lg" @click="$router.back()">
                 <Icon icon="lucide:chevron-left" />
             </Button>
         </div>
-        <div class=" bg-white mt-6 p-4 relative" :style="styles" ref="pageRef" id="resume-page">
+        <div class=" bg-white mt-6 p-8 relative " :style="styles" ref="pageRef" id="resume-page">
             <canvas id="dashed-lines" ref="canvasRef" class="absolute top-0 left-0 w-full h-full" />
-            <h1 v-for="i in 6" :key="i" class="text-2xl font-bold h-96">简历</h1>
+            <!-- 基本信息 -->
+            <div class="flex gap-2 relative justify-end">
+                <div class="absolute left-1/2 -translate-x-1/2 flex flex-col items-center  flex-1">
+                    <h4 class="scroll-m-20 text-xl tracking-tight">
+                        lianqq
+                    </h4>
+                    <div class="flex gap-4 text-muted-foreground">
+                        <span class="text-nowrap text-sm">手机：18888888888</span>
+                        <span class="text-nowrap text-sm">邮箱：18888888888@qq.com</span>
+                        <span class="text-nowrap text-sm">微信：18888888888</span>
+                    </div>
+                    <span class="text-sm">18 岁</span>
+                    <span class="text-sm">求职意向： 前端开发工程师</span>
+                </div>
+                <div class="w-24 h-32 rounded-lg bg-gray-100">
+                    <img src="" />
+                </div>
+            </div>
+            <Section title="求职意向">
+                <div class="flex gap-10">
+                    <span class="text-sm">求职状态：一周内到岗</span>
+                    <span class="text-sm">期望职位：前端开发工程师</span>
+                    <span class="text-sm">期望地点：深圳</span>
+                </div>
+            </Section>
+            <Section title="技术栈">
+                <Editor class="text-sm!" is-read-only
+                    :model-value="resumeStore.resume.sections?.skills?.items[0]?.summary" />
+            </Section>
+            <Section title="项目经历">
+                <div class="flex items-center">
+                    <span class="font-semibold">
+                        AI 智能简历构建器
+                    </span>
+                    <span class="text-sm text-muted-foreground flex-1 pl-8">
+                        全栈开发
+                    </span>
 
+                    <span class="text-sm text-muted-foreground">
+                        2024.01 - 2024.02
+                    </span>
+                </div>
+                <Editor class="text-sm!" is-read-only
+                    :model-value="resumeStore.resume.sections?.projects?.items[0]?.summary" />
+            </Section>
+
+            <Section title="教育经历">
+                <div class="flex flex-col">
+                    <div class="flex justify-between">
+                        <span class="font-semibold">
+                            深圳大学
+                        </span>
+                        <span class="text-sm text-muted-foreground">
+                            2024.01 - 2024.02
+                        </span>
+                    </div>
+                    <span class="text-sm text-muted-foreground">
+                        计算机科学与技术 | 本科 
+                    </span>
+
+                </div>
+
+            </Section>
         </div>
         <div class="p-4 absolute top-6 right-[-10rem] bg-white rounded-lg self-start min-w-32">
             <Button type="primary" class="w-full" @click="exportPDF">

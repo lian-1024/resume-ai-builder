@@ -1,14 +1,14 @@
 import { z } from 'zod'
 
 import { basicsSchema, defaultBasics } from './basics'
-import { defaultResumeConfig, resumeConfigSchema } from './config'
+import { defaultResumeMetadata, resumeMetadataSchema } from './metadata'
 import { defaultSections, sectionsSchema } from './sections'
 
 // 定义整个简历数据
 export const resumeDataSchema = z.object({
   basics: basicsSchema,
   sections: sectionsSchema,
-  config: resumeConfigSchema
+  metadata: resumeMetadataSchema
 })
 
 export type ResumeData = z.infer<typeof resumeDataSchema>
@@ -17,11 +17,11 @@ export type ResumeData = z.infer<typeof resumeDataSchema>
 export const defaultResumeData: ResumeData = {
   basics: defaultBasics,
   sections: defaultSections,
-  config: defaultResumeConfig
+  metadata: defaultResumeMetadata
 }
 
 export * from './basics'
-export * from './config'
+export * from './metadata'
 export * from './example'
 export * from './sections'
 export * from './shared'
