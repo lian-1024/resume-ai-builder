@@ -64,8 +64,8 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="flex justify-center gap-6">
-        <div class="p-4 bg-white absolute top-6 rounded-lg self-start">
+    <div class="absolute left-1/2 -translate-x-1/2">
+        <div class="p-4 bg-white absolute left-[-100px] top-6 rounded-lg self-start">
             <Button size="icon" class="rounded-lg">
                 <Icon icon="lucide:chevron-left" />
             </Button>
@@ -75,7 +75,7 @@ onMounted(() => {
             <h1 v-for="i in 6" :key="i" class="text-2xl font-bold h-96">简历</h1>
 
         </div>
-        <div class="p-4 absolute top-6 bg-white rounded-lg self-start min-w-32">
+        <div class="p-4 absolute top-6 right-[-10rem] bg-white rounded-lg self-start min-w-32">
             <Button type="primary" class="w-full" @click="exportPDF">
                 <Icon icon="lucide:printer" />
                 导出
