@@ -6,7 +6,7 @@ defineProps<{
 
 <template>
     <div>
-        <h4 class="scroll-m-20 text-lg font-semibold tracking-tight border-b-2 border-gray-600">
+        <h4 class="scroll-m-20 text-lg font-semibold tracking-tight border-b border-gray-600">
             {{ title }}
         </h4>
         <div class="my-2">

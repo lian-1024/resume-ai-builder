@@ -8,8 +8,6 @@ import { Icon } from '@iconify/vue/dist/iconify.js';
 const resumeStore = useResumeStore()
 
 const basics = computed(() => {
-    console.log('basics', resumeStore.resume.basics)
-
     return resumeStore.resume.basics || defaultBasics
 })
 

@@ -14,8 +14,8 @@ export declare const projectSchema: z.ZodObject<z.objectUtil.extendShape<{
     name?: string;
     url?: string;
     city?: string;
-    id?: string;
     visible?: boolean;
+    id?: string;
     startDate?: string;
     endDate?: string;
     summary?: string;
@@ -24,8 +24,8 @@ export declare const projectSchema: z.ZodObject<z.objectUtil.extendShape<{
     name?: string;
     url?: string;
     city?: string;
-    id?: string;
     visible?: boolean;
+    id?: string;
     startDate?: string;
     endDate?: string;
     summary?: string;

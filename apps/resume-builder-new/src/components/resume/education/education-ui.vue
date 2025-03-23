@@ -5,8 +5,6 @@ import { Editor } from '@/features/editor';
 const resumeStore = useResumeStore()
 
 const educations = computed(() => {
-    console.log('basics', resumeStore.resume.basics)
-
     return resumeStore.resume.sections?.education
 })
 

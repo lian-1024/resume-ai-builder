@@ -59,17 +59,17 @@ const styles = computed(() => ({
     width: '210mm',
 }));
 const handleExportPDF = async () => {
-  const res = await exportPDF()
-  if (res) {
-    toast({
-      title: '下载成功',
-    });
-  } else {
-    toast({
-      title: '下载失败',
-      variant: 'destructive',
-    });
-  }
+    const res = await exportPDF()
+    if (res) {
+        toast({
+            title: '下载成功',
+        });
+    } else {
+        toast({
+            title: '下载失败',
+            variant: 'destructive',
+        });
+    }
 }
 
 
@@ -80,18 +80,13 @@ onMounted(() => {
 
 <template>
     <div class="flex justify-center">
-        <div class="p-4 bg-white fixed max-w-min z-50 left-6 top-6 rounded-lg self-start">
+        <div class="p-4 bg-white  max-w-min rounded-lg mt-6 self-start">
             <Button size="icon" class="rounded-lg" @click="$router.back()">
                 <Icon icon="lucide:chevron-left" />
             </Button>
         </div>
-        <div class="p-4 fixed top-6 z-50 max-w-min bg-white right-6 rounded-lg self-start min-w-32">
-            <Button type="primary" class="w-full" @click="handleExportPDF">
-                <Icon icon="lucide:download" />
-                下载
-            </Button>
-        </div>
-        <div class=" bg-white mt-6 p-8 relative " :style="styles" ref="pageRef" id="resume-page">
+
+        <div class=" bg-white mt-6 p-8 relative mx-6 rounded-lg overflow-y-scroll resume-container" :style="styles" ref="pageRef" id="resume-page">
             <canvas id="dashed-lines" ref="canvasRef" class="absolute top-0 left-0 w-full h-full" />
             <!-- 基本信息 -->
             <div class="flex gap-2 relative justify-end">
@@ -148,19 +143,30 @@ onMounted(() => {
                         <span class="font-semibold">
                             深圳大学
                         </span>
-                        <span class="text-sm text-muted-foreground">
+                        <span class="text-sm text-gray-700">
                             2024.01 - 2024.02
                         </span>
                     </div>
-                    <span class="text-sm text-muted-foreground">
+                    <span class="text-sm text-gray-700">
                         计算机科学与技术 | 本科
                     </span>
                 </div>
 
             </Section>
         </div>
+        <div class="p-4  max-w-min bg-white right-6 rounded-lg mt-6 self-start min-w-32">
+            <Button type="primary" class="w-full" @click="handleExportPDF">
+                <Icon icon="lucide:download" />
+                下载
+            </Button>
+        </div>
 
     </div>
 </template>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+.resume-container {
+    height: calc(100vh - 3rem);
+    max-height: calc(100vh - 3rem);
+}
+</style>

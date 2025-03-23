@@ -102,7 +102,7 @@ export const Example: ResumeData = {
   },
   // 简历主题数据
   metadata: {
-    sections: ['basics', 'education', 'projects', 'skills'],
+    sectionsOrder: ['basics', 'education', 'projects', 'skills'],
     template: 'simple',
     page: {
       margin: 14,

@@ -11,8 +11,8 @@ export declare const educationSchema: z.ZodObject<z.objectUtil.extendShape<{
     studyType: z.ZodString;
     summary: z.ZodString;
 }>, "strip", z.ZodTypeAny, {
-    id?: string;
     visible?: boolean;
+    id?: string;
     school?: string;
     major?: string;
     degree?: string;
@@ -21,8 +21,8 @@ export declare const educationSchema: z.ZodObject<z.objectUtil.extendShape<{
     studyType?: string;
     summary?: string;
 }, {
-    id?: string;
     visible?: boolean;
+    id?: string;
     school?: string;
     major?: string;
     degree?: string;

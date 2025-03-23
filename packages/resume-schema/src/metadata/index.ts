@@ -4,12 +4,7 @@ const templates = ['simple'] as const
 
 export type TemplateKey = (typeof templates)[number]
 
-const defaultLayout = [
-  'basics',
-  'education',
-  'projects',
-  'skills',
-]
+export const defaultSectionsOrder = ['basics', 'skills', 'projects', 'education']
 
 // 定义主题相关配资
 export const resumeMetadataSchema = z.object({
@@ -25,7 +20,7 @@ export const resumeMetadataSchema = z.object({
     text: z.string().default('#000000'), // 文本颜色
     primary: z.string().default('#3b82f6') // 主题颜色
   }),
-  sections: z.array(z.string()).default(defaultLayout) // 简历各部分的排序
+  sectionsOrder: z.array(z.string()).default([...defaultSectionsOrder]) // 简历各部分的排序
 })
 
 // 从模式中推断出的类型
@@ -43,5 +38,5 @@ export const defaultResumeMetadata: ResumeMetadata = {
     background: '#ffffff'
   },
   template: 'simple',
-  sections: ['basics', 'education', 'projects', 'skills']
+  sectionsOrder: [...defaultSectionsOrder]
 }

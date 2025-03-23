@@ -1,6 +1,7 @@
 import { z } from 'zod';
 declare const templates: readonly ["simple"];
 export type TemplateKey = (typeof templates)[number];
+export declare const defaultSectionsOrder: string[];
 export declare const resumeMetadataSchema: z.ZodObject<{
     template: z.ZodDefault<z.ZodEnum<["simple"]>>;
     page: z.ZodObject<{
@@ -26,7 +27,7 @@ export declare const resumeMetadataSchema: z.ZodObject<{
         text?: string;
         primary?: string;
     }>;
-    sections: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
+    sectionsOrder: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
 }, "strip", z.ZodTypeAny, {
     template?: "simple";
     page?: {
@@ -38,7 +39,7 @@ export declare const resumeMetadataSchema: z.ZodObject<{
         text?: string;
         primary?: string;
     };
-    sections?: string[];
+    sectionsOrder?: string[];
 }, {
     template?: "simple";
     page?: {
@@ -50,7 +51,7 @@ export declare const resumeMetadataSchema: z.ZodObject<{
         text?: string;
         primary?: string;
     };
-    sections?: string[];
+    sectionsOrder?: string[];
 }>;
 export type ResumeMetadata = z.infer<typeof resumeMetadataSchema>;
 export declare const defaultResumeMetadata: ResumeMetadata;
