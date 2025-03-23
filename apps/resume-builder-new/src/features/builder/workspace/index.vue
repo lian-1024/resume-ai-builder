@@ -5,6 +5,7 @@ import { Basics } from '@/components/resume/basic';
 import { SectionWrapper } from '@/components/resume/wrapper';
 import { Skills } from '@/components/resume/skills';
 import { Projects } from '@/components/resume/projects';
+import { Education } from '@/components/resume/education';
 defineOptions({
   name: 'BuilderWorkspace'
 })
@@ -25,6 +26,9 @@ defineOptions({
       </SectionWrapper>
       <SectionWrapper title="项目经历">
         <Projects />
+      </SectionWrapper>
+      <SectionWrapper title="教育经历">
+        <Education />
       </SectionWrapper>
     </div>
   </main>

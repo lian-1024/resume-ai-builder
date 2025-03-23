@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import ProjectsUI from './education-ui.vue';
-import ProjectsEditor from './education-editor.vue';
+import EducationUI from './education-ui.vue';
+import EducationEditor from './education-editor.vue';
 import { ref } from 'vue';
 import { useResumeStore } from '@/stores';
 import { Actions } from '@/components/resume/actions/index'
@@ -28,8 +28,8 @@ const handleCancel = () => {
 
 <template>
     <div class="flex flex-col gap-4">
-        <ProjectsUI v-if="status === 'preview'" />
-        <ProjectsEditor v-else />
+        <EducationUI v-if="status === 'preview'" />
+        <EducationEditor v-else />
         <Actions :status="status" @cancel="handleCancel" @edit="handleEdit" @save="handleSave" />
     </div>
 </template>
