@@ -3,8 +3,9 @@ import { computed, onMounted, ref } from 'vue';
 import { Button } from '@lianqq/resume-ui';
 import { Icon } from '@iconify/vue';
 import Section from '@/views/preview/components/section.vue';
-import Editor from '@/features/editor/editor.vue';
 import { useResumeStore } from '@/stores';
+import { exportPDF } from '@/utils/export-pdf';
+import { toast } from '@lianqq/resume-ui';
 const resumeStore = useResumeStore();
 const pageRef = ref<HTMLDivElement | null>(null);
 const canvasRef = ref<HTMLCanvasElement | null>(null);
@@ -57,43 +58,20 @@ const createDashedLines = () => {
 const styles = computed(() => ({
     width: '210mm',
 }));
+const handleExportPDF = async () => {
+  const res = await exportPDF()
+  if (res) {
+    toast({
+      title: '下载成功',
+    });
+  } else {
+    toast({
+      title: '下载失败',
+      variant: 'destructive',
+    });
+  }
+}
 
-const exportPDF = async () => {
-    console.log(resumeStore.resume);
-    
-    try {
-        const res = await fetch("http://localhost:3002/api/export-pdf", {
-            method: "POST",
-            body: JSON.stringify(resumeStore.resume)
-        });
-        
-        if (!res.ok) {
-            throw new Error(`导出失败: ${res.status} ${res.statusText}`);
-        }
-        
-        // 创建blob对象
-        const blob = new Blob([await res.arrayBuffer()], { type: 'application/pdf' });
-        
-        // 创建下载链接
-        const url = URL.createObjectURL(blob);
-        
-        // 创建一个临时<a>元素来触发下载
-        const link = document.createElement('a');
-        link.href = url;
-        link.download = `resume_${new Date().toISOString().split('T')[0]}.pdf`; // 文件名带日期
-        document.body.appendChild(link);
-        link.click();
-        
-        // 清理
-        setTimeout(() => {
-            document.body.removeChild(link);
-            URL.revokeObjectURL(url);
-        }, 100);
-    } catch (error) {
-        console.error('PDF导出失败:', error);
-        // 这里可以添加错误提示UI
-    }
-};
 
 onMounted(() => {
     addDashedLines();
@@ -108,9 +86,9 @@ onMounted(() => {
             </Button>
         </div>
         <div class="p-4 fixed top-6 z-50 max-w-min bg-white right-6 rounded-lg self-start min-w-32">
-            <Button type="primary" class="w-full" @click="exportPDF">
-                <Icon icon="lucide:printer" />
-                导出
+            <Button type="primary" class="w-full" @click="handleExportPDF">
+                <Icon icon="lucide:download" />
+                下载
             </Button>
         </div>
         <div class=" bg-white mt-6 p-8 relative " :style="styles" ref="pageRef" id="resume-page">
