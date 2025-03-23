@@ -37,10 +37,12 @@ const getHTMLContent = () => {
 defineExpose({
     getHTMLContent
 })
+
+
 </script>
 
 <template>
-    <EditorContent :editor="editor" />
+    <EditorContent :editor="editor" class="rounded-lg border-2 border-transparent" :class="`${!isReadOnly && '!border-gray-200 p-4'}`" />
 </template>
 <style lang="less">
 /* Basic editor styles */

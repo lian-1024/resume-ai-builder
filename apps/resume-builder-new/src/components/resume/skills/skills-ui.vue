@@ -3,6 +3,7 @@ import { computed } from 'vue';
 import { useResumeStore } from '@/stores';
 import { defaultSkill } from '@lianqq/resume-schema';
 import { Editor } from '@/features/editor/index';
+import Preview from '@/features/editor/preview.vue';
 const resumeStore = useResumeStore()
 
 const skills = computed(() => {
@@ -14,7 +15,7 @@ const skills = computed(() => {
 <template>
     <div>
         <div v-for="skill in skills?.items" :key="skill.id">
-            <Editor :model-value="skill.summary" :is-read-only="true" />
+            <Preview :value="skill.summary" />
         </div>
     </div>
 </template>

@@ -68,10 +68,16 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="absolute left-1/2 -translate-x-1/2">
-        <div class="p-4 bg-white absolute left-[-100px] top-6 rounded-lg self-start">
+    <div class="flex justify-center">
+        <div class="p-4 bg-white fixed max-w-min z-50 left-6 top-6 rounded-lg self-start">
             <Button size="icon" class="rounded-lg" @click="$router.back()">
                 <Icon icon="lucide:chevron-left" />
+            </Button>
+        </div>
+        <div class="p-4 fixed top-6 z-50 max-w-min bg-white right-6 rounded-lg self-start min-w-32">
+            <Button type="primary" class="w-full" @click="exportPDF">
+                <Icon icon="lucide:printer" />
+                导出
             </Button>
         </div>
         <div class=" bg-white mt-6 p-8 relative " :style="styles" ref="pageRef" id="resume-page">
@@ -133,19 +139,14 @@ onMounted(() => {
                         </span>
                     </div>
                     <span class="text-sm text-muted-foreground">
-                        计算机科学与技术 | 本科 
+                        计算机科学与技术 | 本科
                     </span>
 
                 </div>
 
             </Section>
         </div>
-        <div class="p-4 absolute top-6 right-[-10rem] bg-white rounded-lg self-start min-w-32">
-            <Button type="primary" class="w-full" @click="exportPDF">
-                <Icon icon="lucide:printer" />
-                导出
-            </Button>
-        </div>
+
     </div>
 </template>
 
