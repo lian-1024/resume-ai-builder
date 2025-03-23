@@ -6,6 +6,7 @@ import Section from '@/views/preview/components/section.vue';
 import { useResumeStore } from '@/stores';
 import { exportPDF } from '@/utils/export-pdf';
 import { toast } from '@lianqq/resume-ui';
+import { TransformComponent } from 'vue3-zoom-pan-pinch'
 const resumeStore = useResumeStore();
 const pageRef = ref<HTMLDivElement | null>(null);
 const canvasRef = ref<HTMLCanvasElement | null>(null);
@@ -72,6 +73,10 @@ const handleExportPDF = async () => {
     }
 }
 
+const transformOptions = {
+    maxScale: 1.8
+}
+
 
 onMounted(() => {
     addDashedLines();
@@ -80,81 +85,88 @@ onMounted(() => {
 
 <template>
     <div class="flex justify-center">
-        <div class="p-4 bg-white  max-w-min rounded-lg mt-6 self-start">
+        <!-- <div class="p-4 bg-white  max-w-min rounded-lg mt-6 self-start">
             <Button size="icon" class="rounded-lg" @click="$router.back()">
                 <Icon icon="lucide:chevron-left" />
             </Button>
-        </div>
+        </div> -->
 
-        <div class=" bg-white mt-6 p-8 relative mx-6 rounded-lg overflow-y-scroll resume-container" :style="styles" ref="pageRef" id="resume-page">
-            <canvas id="dashed-lines" ref="canvasRef" class="absolute top-0 left-0 w-full h-full" />
-            <!-- 基本信息 -->
-            <div class="flex gap-2 relative justify-end">
-                <div class="absolute left-1/2 -translate-x-1/2 flex flex-col items-center  flex-1">
-                    <h4 class="scroll-m-20 text-xl tracking-tight">
-                        lianqq
-                    </h4>
-                    <div class="flex gap-4 text-gray-700">
-                        <span class="text-nowrap text-sm">手机：18888888888</span>
-                        <span class="text-nowrap text-sm">邮箱：18888888888@qq.com</span>
-                        <span class="text-nowrap text-sm">微信：18888888888</span>
+        <TransformComponent :options="transformOptions" :wheel="{
+            step: 1,
+        }">
+            <div class="w-screen h-screen justify-center flex">
+                <div class="bg-white mt-6 p-8 relative mx-6 rounded-lg overflow-y-scroll resume-container"
+                    :style="styles" ref="pageRef" id="resume-page">
+                    <canvas id="dashed-lines" ref="canvasRef" class="absolute top-0 left-0 w-full h-full" />
+                    <!-- 基本信息 -->
+                    <div class="flex gap-2 relative justify-end">
+                        <div class="absolute left-1/2 -translate-x-1/2 flex flex-col items-center  flex-1">
+                            <h4 class="scroll-m-20 text-xl tracking-tight">
+                                lianqq
+                            </h4>
+                            <div class="flex gap-4 text-gray-700">
+                                <span class="text-nowrap text-sm">手机：18888888888</span>
+                                <span class="text-nowrap text-sm">邮箱：18888888888@qq.com</span>
+                                <span class="text-nowrap text-sm">微信：18888888888</span>
+                            </div>
+                            <span class="text-sm">18 岁</span>
+                            <span class="text-sm">求职意向： 前端开发工程师</span>
+                        </div>
+                        <div class="w-24 h-32 rounded-lg bg-gray-100">
+                            <img src="" />
+                        </div>
                     </div>
-                    <span class="text-sm">18 岁</span>
-                    <span class="text-sm">求职意向： 前端开发工程师</span>
-                </div>
-                <div class="w-24 h-32 rounded-lg bg-gray-100">
-                    <img src="" />
+                    <Section title="求职意向">
+                        <div class="flex gap-10">
+                            <span class="text-sm">求职状态：一周内到岗</span>
+                            <span class="text-sm">期望职位：前端开发工程师</span>
+                            <span class="text-sm">期望地点：深圳</span>
+                        </div>
+                    </Section>
+                    <Section title="技术栈">
+                        <template v-for="skill in resumeStore.resume.sections?.skills?.items" :key="skill.id">
+                            <div v-html="skill.summary" class="text-sm text-gray-700" />
+
+                        </template>
+                    </Section>
+                    <Section title="项目经历">
+                        <div class="flex items-center">
+                            <span class="font-semibold">
+                                AI 智能简历构建器
+                            </span>
+                            <span class="text-sm text-muted-foreground flex-1 pl-8">
+                                全栈开发
+                            </span>
+
+                            <span class="text-sm text-muted-foreground">
+                                2024.01 - 2024.02
+                            </span>
+                        </div>
+                        <template v-for="project in resumeStore.resume.sections?.projects?.items" :key="project.id">
+                            <div v-html="project.summary" class="text-sm text-gray-700" />
+                        </template>
+                    </Section>
+
+                    <Section title="教育经历">
+                        <div class="flex flex-col">
+                            <div class="flex justify-between">
+                                <span class="font-semibold">
+                                    深圳大学
+                                </span>
+                                <span class="text-sm text-gray-700">
+                                    2024.01 - 2024.02
+                                </span>
+                            </div>
+                            <span class="text-sm text-gray-700">
+                                计算机科学与技术 | 本科
+                            </span>
+                        </div>
+
+                    </Section>
                 </div>
             </div>
-            <Section title="求职意向">
-                <div class="flex gap-10">
-                    <span class="text-sm">求职状态：一周内到岗</span>
-                    <span class="text-sm">期望职位：前端开发工程师</span>
-                    <span class="text-sm">期望地点：深圳</span>
-                </div>
-            </Section>
-            <Section title="技术栈">
-                <template v-for="skill in resumeStore.resume.sections?.skills?.items" :key="skill.id">
-                    <div v-html="skill.summary" class="text-sm text-gray-700" />
-
-                </template>
-            </Section>
-            <Section title="项目经历">
-                <div class="flex items-center">
-                    <span class="font-semibold">
-                        AI 智能简历构建器
-                    </span>
-                    <span class="text-sm text-muted-foreground flex-1 pl-8">
-                        全栈开发
-                    </span>
-
-                    <span class="text-sm text-muted-foreground">
-                        2024.01 - 2024.02
-                    </span>
-                </div>
-                <template v-for="project in resumeStore.resume.sections?.projects?.items" :key="project.id">
-                    <div v-html="project.summary" class="text-sm text-gray-700" />
-                </template>
-            </Section>
-
-            <Section title="教育经历">
-                <div class="flex flex-col">
-                    <div class="flex justify-between">
-                        <span class="font-semibold">
-                            深圳大学
-                        </span>
-                        <span class="text-sm text-gray-700">
-                            2024.01 - 2024.02
-                        </span>
-                    </div>
-                    <span class="text-sm text-gray-700">
-                        计算机科学与技术 | 本科
-                    </span>
-                </div>
-
-            </Section>
-        </div>
-        <div class="p-4  max-w-min bg-white right-6 rounded-lg mt-6 self-start min-w-32">
+        </TransformComponent>
+        <div class="p-4 fixed top-6 right-6 max-w-min bg-white rounded-lg mt-6 self-start min-w-32">
             <Button type="primary" class="w-full" @click="handleExportPDF">
                 <Icon icon="lucide:download" />
                 下载

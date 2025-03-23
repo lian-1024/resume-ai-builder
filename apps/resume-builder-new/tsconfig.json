@@ -10,5 +10,9 @@
     {
       "path": "./tsconfig.vitest.json"
     }
-  ]
+  ],
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "skipLibCheck": true
+  }
 }
