@@ -58,8 +58,41 @@ const styles = computed(() => ({
     width: '210mm',
 }));
 
-const exportPDF = () => {
-    window.print();
+const exportPDF = async () => {
+    console.log(resumeStore.resume);
+    
+    try {
+        const res = await fetch("http://localhost:3002/api/export-pdf", {
+            method: "POST",
+            body: JSON.stringify(resumeStore.resume)
+        });
+        
+        if (!res.ok) {
+            throw new Error(`导出失败: ${res.status} ${res.statusText}`);
+        }
+        
+        // 创建blob对象
+        const blob = new Blob([await res.arrayBuffer()], { type: 'application/pdf' });
+        
+        // 创建下载链接
+        const url = URL.createObjectURL(blob);
+        
+        // 创建一个临时<a>元素来触发下载
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = `resume_${new Date().toISOString().split('T')[0]}.pdf`; // 文件名带日期
+        document.body.appendChild(link);
+        link.click();
+        
+        // 清理
+        setTimeout(() => {
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+        }, 100);
+    } catch (error) {
+        console.error('PDF导出失败:', error);
+        // 这里可以添加错误提示UI
+    }
 };
 
 onMounted(() => {
@@ -88,7 +121,7 @@ onMounted(() => {
                     <h4 class="scroll-m-20 text-xl tracking-tight">
                         lianqq
                     </h4>
-                    <div class="flex gap-4 text-muted-foreground">
+                    <div class="flex gap-4 text-gray-700">
                         <span class="text-nowrap text-sm">手机：18888888888</span>
                         <span class="text-nowrap text-sm">邮箱：18888888888@qq.com</span>
                         <span class="text-nowrap text-sm">微信：18888888888</span>
@@ -108,8 +141,10 @@ onMounted(() => {
                 </div>
             </Section>
             <Section title="技术栈">
-                <Editor class="text-sm!" is-read-only
-                    :model-value="resumeStore.resume.sections?.skills?.items[0]?.summary" />
+                <template v-for="skill in resumeStore.resume.sections?.skills?.items" :key="skill.id">
+                    <div v-html="skill.summary" class="text-sm text-gray-700" />
+
+                </template>
             </Section>
             <Section title="项目经历">
                 <div class="flex items-center">
@@ -124,8 +159,9 @@ onMounted(() => {
                         2024.01 - 2024.02
                     </span>
                 </div>
-                <Editor class="text-sm!" is-read-only
-                    :model-value="resumeStore.resume.sections?.projects?.items[0]?.summary" />
+                <template v-for="project in resumeStore.resume.sections?.projects?.items" :key="project.id">
+                    <div v-html="project.summary" class="text-sm text-gray-700" />
+                </template>
             </Section>
 
             <Section title="教育经历">
@@ -141,7 +177,6 @@ onMounted(() => {
                     <span class="text-sm text-muted-foreground">
                         计算机科学与技术 | 本科
                     </span>
-
                 </div>
 
             </Section>
