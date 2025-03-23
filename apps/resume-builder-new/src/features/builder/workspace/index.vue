@@ -13,7 +13,7 @@ defineOptions({
 </script>
 
 <template>
-  <main class="w-[768px] p-6 rounded-lg ">
+  <main class="w-[768px] p-6 rounded-lg">
     <div class="flex flex-col gap-4 ">
       <SectionWrapper title="基本信息">
         <Basics />
