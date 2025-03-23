@@ -1,4 +1,5 @@
 import './assets/main.css'
+import './assets/resume.css'
 import '@lianqq/resume-ui/styles.css'
 
 import { createApp } from 'vue'

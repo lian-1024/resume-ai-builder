@@ -54,8 +54,8 @@ export const Example: ResumeData = {
           startDate: "2025-01-01",
           endDate: "2025-03-01",
           summary: `
-          <b>技术栈：</b>Vue3、Nuxt3、TypeScript、Vite、Tailwind CSS、Shadcn Vue、LangChain.js、Pnpm、Turborepo、Monorepo；<br/>
-          <b>项目地址：</b>https://github.com/lian-1024/resume-ai-builder；<br/>  
+          <b>技术栈：</b>Vue3、Nuxt3、TypeScript、Vite、Tailwind CSS、Shadcn Vue、LangChain.js、Pnpm、Turborepo、Monorepo；
+          <b>项目地址：</b>https://github.com/lian-1024/resume-ai-builder；
           <b>项目介绍：</b>「智能简历构建器」是一款基于 AI 的现代化 Web 应用，旨在帮助用户快速生成高质量、专业化的简历。项目采用 Vue 3 和 Nuxt 3 构建，结合 TypeScript 确保类型安全，借助 Vite 实现高效开发与构建流程，并通过 Tailwind CSS 和 Shadcn Vue 打造优雅且一致的 UI 风格。核心功能依托 LangChain.js 集成 AI 大模型，支持一键生成简历、内容智能优化及辅助撰写等特性，大幅提升用户体验与效率；
           <ul>
             <li><b>Monorepo 架构：</b>利用 Turborepo 和 Pnpm 搭建 Monorepo 架构，统一管理多子应用与共享组件库，提升代码复用性与维护效率；</li>

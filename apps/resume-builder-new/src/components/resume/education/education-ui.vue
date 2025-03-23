@@ -11,6 +11,15 @@ const educations = computed(() => {
 })
 
 
+const formatMajorAndDegree = (major: string | undefined, degree: string | undefined) => {
+
+    if (major && degree) {
+        return `${major} | ${degree}`
+    }
+
+    return major || degree
+}
+
 </script>
 
 <template>
@@ -21,16 +30,16 @@ const educations = computed(() => {
                     <span class="font-semibold">
                         {{ education.school }}
                     </span>
-                    <span class="text-sm text-muted-foreground ">
-                        {{ education.degree }}
+                    <span class="text-sm text-gray-700 ">
+                        {{ formatMajorAndDegree(education.major, education.degree) }}
                     </span>
                 </div>
 
-                <span class="text-sm text-muted-foreground">
+                <span class="text-sm text-gray-700">
                     {{ education.startDate }} - {{ education.endDate }}
                 </span>
             </div>
-            <Editor :model-value="education.summary" is-read-only />
+            <div v-html="education.summary" class="text-sm text-gray-700"></div>
         </div>
     </div>
 </template>

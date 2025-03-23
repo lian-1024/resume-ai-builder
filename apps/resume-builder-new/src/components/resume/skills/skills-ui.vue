@@ -15,7 +15,7 @@ const skills = computed(() => {
 <template>
     <div>
         <div v-for="skill in skills?.items" :key="skill.id">
-            <Preview :value="skill.summary" />
+            <div v-html="skill.summary" class="text-sm text-gray-700"></div>
         </div>
     </div>
 </template>

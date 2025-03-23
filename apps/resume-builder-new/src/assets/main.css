@@ -1,23 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 html,
 body,
 #app {
     @apply bg-gray-100;
 }
 
-ol {
-    list-style-type: decimal !important;
-}
 
-ul {
-    list-style-type: disc !important;
-}
 
 @media print {
-   
+
 
     html,
     body,
@@ -36,3 +29,4 @@ ul {
         visibility: hidden;
     }
 }
+

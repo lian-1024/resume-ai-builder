@@ -1,160 +1,27 @@
 <script lang="ts" setup>
-import StarterKit from '@tiptap/starter-kit'
-import { EditorContent, useEditor } from '@tiptap/vue-3'
+import { QuillEditor } from '@vueup/vue-quill'
+import { Button } from '@lianqq/resume-ui'
+import '@vueup/vue-quill/dist/vue-quill.snow.css';
+// import '@vueup/vue-quill/dist/vue-quill.bubble.css'
+import { onMounted, ref, computed } from 'vue'
+import { removeWhitespace } from '@lianqq/resume-utils'
+const quillEditor = ref<InstanceType<typeof QuillEditor>>()
 
-const modelValue = defineModel<string>({ default: '' })
-const props = withDefaults(defineProps<{
-    isReadOnly?: boolean
-}>(), {
-    isReadOnly: false
-})
-const emit = defineEmits<{
-    (e: 'update:modelValue', value: string): void
-}>()
+const modelValue = defineModel<string>({ default: '测试' })
+console.log("modelValue", modelValue.value);
 
-// 只使用 StarterKit，它已经包含了基本扩展
-const editor = useEditor({
-    extensions: [
-        StarterKit,
-    ],
-    editorProps: {
-        attributes: {
-            class: 'prose prose-sm sm:prose-base lg:prose-lg xl:prose-2xl m-5 focus:outline-none',
-        },
-    },
-    content: modelValue.value,
-    onUpdate: ({ editor }) => {
-        emit('update:modelValue', editor.getHTML())
-    },
-    editable: !props.isReadOnly
+const value = computed(() => {
+    return removeWhitespace(modelValue.value)
 })
 
-const getHTMLContent = () => {
-    if (!editor.value) return ''
-    return editor.value.getHTML()
-}
-
-defineExpose({
-    getHTMLContent
-})
-
-
+console.log("value", value.value);
 </script>
 
 <template>
-    <EditorContent :editor="editor" class="rounded-lg border-2 border-transparent" :class="`${!isReadOnly && '!border-gray-200 p-4'}`" />
+    <div>
+        <QuillEditor theme="snow" toolbar="minimal" ref="quillEditor" :content="value"
+            @update:content="$emit('update:modelValue', $event)" content-type="html" />
+    </div>
 </template>
-<style lang="less">
-/* Basic editor styles */
-.tiptap {
-    font-size: 14px;
-    margin: 0;
-
-    :first-child {
-        margin-top: 0;
-    }
-
-
-    /* List styles */
-
-    ul {
-        list-style-type: disc;
-    }
-
-    ol {
-        list-style-type: decimal;
-    }
-
-    ul,
-    ol {
-        padding: 0 1rem;
-        margin: 1.25rem 1rem 1.25rem 0.4rem;
-
-        li p {
-            margin-top: 0.25em;
-            margin-bottom: 0.25em;
-        }
-    }
-
-    /* Heading styles */
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        line-height: 1.1;
-        margin-top: 2.5rem;
-        text-wrap: pretty;
-    }
-
-    h1,
-    h2 {
-        margin-top: 3.5rem;
-        margin-bottom: 1.5rem;
-    }
-
-    h1 {
-        font-size: 1.4rem;
-    }
-
-    h2 {
-        font-size: 1.2rem;
-    }
-
-    h3 {
-        font-size: 1.1rem;
-    }
-
-    h4,
-    h5,
-    h6 {
-        font-size: 1rem;
-    }
-
-    /* Code and preformatted text styles */
-    code {
-        background-color: var(--purple-light);
-        border-radius: 0.4rem;
-        color: var(--black);
-        font-size: 0.85rem;
-        padding: 0.25em 0.3em;
-    }
-
-    pre {
-        background: var(--black);
-        border-radius: 0.5rem;
-        color: var(--white);
-        font-family: 'JetBrainsMono', monospace;
-        margin: 1.5rem 0;
-        padding: 0.75rem 1rem;
-
-        code {
-            background: none;
-            color: inherit;
-            font-size: 0.8rem;
-            padding: 0;
-        }
-    }
-
-    mark {
-        background-color: #FAF594;
-        border-radius: 0.4rem;
-        box-decoration-break: clone;
-        padding: 0.1rem 0.3rem;
-    }
-
-    blockquote {
-        border-left: 3px solid var(--gray-3);
-        margin: 1.5rem 0;
-        padding-left: 1rem;
-    }
-
-    hr {
-        border: none;
-        border-top: 1px solid var(--gray-2);
-        margin: 2rem 0;
-    }
-
-}
-</style>
+Í
+<style lang="less" scoped></style>

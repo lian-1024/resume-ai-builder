@@ -20,16 +20,16 @@ const projects = computed(() => {
                 <span class="font-semibold">
                     {{ project.name }}
                 </span>
-                <span class="text-sm text-muted-foreground flex-1 ml-4 ">
+                <span class="text-sm text-gray-700 flex-1 ml-4 ">
                     {{ project.role }} 
                 </span>
 
-                <span class="text-sm text-muted-foreground">
+                <span class="text-sm text-gray-700">
                     {{ project.startDate }} - {{ project.endDate }}
                 </span>
 
             </div>
-            <Editor :model-value="project.summary" is-read-only />
+            <div v-html="project.summary" class="text-sm text-gray-700"/>
         </div>
     </div>
 </template>

@@ -2,7 +2,6 @@
 import { Editor } from '@/features/editor'
 import { onMounted, computed } from 'vue';
 import { useResumeStore } from '@/stores';
-import { defaultSkill } from '@lianqq/resume-schema';
 const resumeStore = useResumeStore()
 
 onMounted(() => {
@@ -14,7 +13,7 @@ const skills = computed(() => {
 })
 
 const updateSkillSummary = (index: number, summary: string) => {
-
+    console.log('summary', index, summary)
     if (index == null) return
 
     console.log('summary', index, summary)
