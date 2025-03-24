@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 html,
 body,
 #app {
@@ -22,6 +23,8 @@ body,
     #resume-page {
         margin: 0;
         visibility: visible;
+        padding-left: 0;
+        padding-right: 0;
     }
 
     /* 隐藏虚线 */
@@ -29,4 +32,3 @@ body,
         visibility: hidden;
     }
 }
-

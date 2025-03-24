@@ -8,6 +8,7 @@ export const basicsSchema = z.object({
   phone: z.string(), // 电话字段，字符串类型
   url: z.literal('').or(z.string().url()),
   avatar: z.string(),
+  wechat: z.string(),
   intention: z.object({ // 意向字段
     currentStatus: z.string(), // 当前状态
     positionTitle: z.string(), // 职位标题
@@ -27,6 +28,7 @@ export const defaultBasics: Basics = {
   phone: '', // 默认电话为空字符串
   url: '', // 默认网址使用共享的默认 URL
   avatar: '', // 默认图片 URL 为空字符串
+  wechat: '', // 默认微信为空字符串
   intention: {
     currentStatus: '',
     positionTitle: '',

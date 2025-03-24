@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 import { useResumeStore } from '@/stores';
-import { Input } from '@lianqq/resume-ui'
+import { Input, Button } from '@lianqq/resume-ui'
+import { Icon } from '@iconify/vue'
 import { computed } from 'vue';
 import { defaultBasics } from '@lianqq/resume-schema'
-import { Icon } from '@iconify/vue/dist/iconify.js';
 
 const resumeStore = useResumeStore()
 
@@ -15,7 +15,7 @@ const basics = computed(() => {
 </script>
 
 <template>
-    <div class="flex gap-4">
+    <div class="flex gap-4" >
         <div class="w-36 h-44 rounded-lg bg-gray-100">
             <img :src="basics.avatar" />
         </div>
@@ -51,6 +51,8 @@ const basics = computed(() => {
                 </p>
             </div>
         </div>
+
+        
     </div>
 </template>
 

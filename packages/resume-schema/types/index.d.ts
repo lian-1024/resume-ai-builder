@@ -7,6 +7,7 @@ export declare const resumeDataSchema: z.ZodObject<{
         phone: z.ZodString;
         url: z.ZodUnion<[z.ZodLiteral<"">, z.ZodString]>;
         avatar: z.ZodString;
+        wechat: z.ZodString;
         intention: z.ZodObject<{
             currentStatus: z.ZodString;
             positionTitle: z.ZodString;
@@ -30,6 +31,7 @@ export declare const resumeDataSchema: z.ZodObject<{
         phone?: string;
         url?: string;
         avatar?: string;
+        wechat?: string;
         intention?: {
             currentStatus?: string;
             positionTitle?: string;
@@ -43,6 +45,7 @@ export declare const resumeDataSchema: z.ZodObject<{
         phone?: string;
         url?: string;
         avatar?: string;
+        wechat?: string;
         intention?: {
             currentStatus?: string;
             positionTitle?: string;
@@ -70,8 +73,8 @@ export declare const resumeDataSchema: z.ZodObject<{
                 studyType: z.ZodString;
                 summary: z.ZodString;
             }>, "strip", z.ZodTypeAny, {
-                visible?: boolean;
                 id?: string;
+                visible?: boolean;
                 school?: string;
                 major?: string;
                 degree?: string;
@@ -80,8 +83,8 @@ export declare const resumeDataSchema: z.ZodObject<{
                 studyType?: string;
                 summary?: string;
             }, {
-                visible?: boolean;
                 id?: string;
+                visible?: boolean;
                 school?: string;
                 major?: string;
                 degree?: string;
@@ -91,14 +94,14 @@ export declare const resumeDataSchema: z.ZodObject<{
                 summary?: string;
             }>, "many">;
         }>, "strip", z.ZodTypeAny, {
+            id?: "education";
+            visible?: boolean;
             name?: string;
             columns?: number;
             separateLinks?: boolean;
-            visible?: boolean;
-            id?: "education";
             items?: {
-                visible?: boolean;
                 id?: string;
+                visible?: boolean;
                 school?: string;
                 major?: string;
                 degree?: string;
@@ -108,14 +111,14 @@ export declare const resumeDataSchema: z.ZodObject<{
                 summary?: string;
             }[];
         }, {
+            id?: "education";
+            visible?: boolean;
             name?: string;
             columns?: number;
             separateLinks?: boolean;
-            visible?: boolean;
-            id?: "education";
             items?: {
-                visible?: boolean;
                 id?: string;
+                visible?: boolean;
                 school?: string;
                 major?: string;
                 degree?: string;
@@ -144,58 +147,58 @@ export declare const resumeDataSchema: z.ZodObject<{
                 summary: z.ZodString;
                 url: z.ZodUnion<[z.ZodLiteral<"">, z.ZodString]>;
             }>, "strip", z.ZodTypeAny, {
-                name?: string;
-                url?: string;
-                city?: string;
-                visible?: boolean;
                 id?: string;
+                visible?: boolean;
                 startDate?: string;
                 endDate?: string;
                 summary?: string;
+                name?: string;
+                url?: string;
+                city?: string;
                 role?: string;
             }, {
-                name?: string;
-                url?: string;
-                city?: string;
-                visible?: boolean;
                 id?: string;
+                visible?: boolean;
                 startDate?: string;
                 endDate?: string;
                 summary?: string;
+                name?: string;
+                url?: string;
+                city?: string;
                 role?: string;
             }>, "many">;
         }>, "strip", z.ZodTypeAny, {
+            id?: "projects";
+            visible?: boolean;
             name?: string;
             columns?: number;
             separateLinks?: boolean;
-            visible?: boolean;
-            id?: "projects";
             items?: {
-                name?: string;
-                url?: string;
-                city?: string;
-                visible?: boolean;
                 id?: string;
+                visible?: boolean;
                 startDate?: string;
                 endDate?: string;
                 summary?: string;
+                name?: string;
+                url?: string;
+                city?: string;
                 role?: string;
             }[];
         }, {
+            id?: "projects";
+            visible?: boolean;
             name?: string;
             columns?: number;
             separateLinks?: boolean;
-            visible?: boolean;
-            id?: "projects";
             items?: {
-                name?: string;
-                url?: string;
-                city?: string;
-                visible?: boolean;
                 id?: string;
+                visible?: boolean;
                 startDate?: string;
                 endDate?: string;
                 summary?: string;
+                name?: string;
+                url?: string;
+                city?: string;
                 role?: string;
             }[];
         }>;
@@ -214,55 +217,87 @@ export declare const resumeDataSchema: z.ZodObject<{
                 summary: z.ZodString;
                 level: z.ZodUnion<[z.ZodDefault<z.ZodNumber>, z.ZodString]>;
             }>, "strip", z.ZodTypeAny, {
-                name?: string;
-                visible?: boolean;
                 id?: string;
+                visible?: boolean;
                 summary?: string;
+                name?: string;
                 level?: string | number;
             }, {
-                name?: string;
-                visible?: boolean;
                 id?: string;
+                visible?: boolean;
                 summary?: string;
+                name?: string;
                 level?: string | number;
             }>, "many">;
         }>, "strip", z.ZodTypeAny, {
+            id?: "skills";
+            visible?: boolean;
             name?: string;
             columns?: number;
             separateLinks?: boolean;
-            visible?: boolean;
-            id?: "skills";
             items?: {
-                name?: string;
-                visible?: boolean;
                 id?: string;
+                visible?: boolean;
                 summary?: string;
+                name?: string;
                 level?: string | number;
             }[];
         }, {
+            id?: "skills";
+            visible?: boolean;
             name?: string;
             columns?: number;
             separateLinks?: boolean;
-            visible?: boolean;
-            id?: "skills";
             items?: {
-                name?: string;
-                visible?: boolean;
                 id?: string;
+                visible?: boolean;
                 summary?: string;
+                name?: string;
                 level?: string | number;
             }[];
         }>;
     }, "strip", z.ZodTypeAny, {
-        education?: {
+        skills?: {
+            id?: "skills";
+            visible?: boolean;
             name?: string;
             columns?: number;
             separateLinks?: boolean;
-            visible?: boolean;
-            id?: "education";
             items?: {
-                visible?: boolean;
                 id?: string;
+                visible?: boolean;
+                summary?: string;
+                name?: string;
+                level?: string | number;
+            }[];
+        };
+        projects?: {
+            id?: "projects";
+            visible?: boolean;
+            name?: string;
+            columns?: number;
+            separateLinks?: boolean;
+            items?: {
+                id?: string;
+                visible?: boolean;
+                startDate?: string;
+                endDate?: string;
+                summary?: string;
+                name?: string;
+                url?: string;
+                city?: string;
+                role?: string;
+            }[];
+        };
+        education?: {
+            id?: "education";
+            visible?: boolean;
+            name?: string;
+            columns?: number;
+            separateLinks?: boolean;
+            items?: {
+                id?: string;
+                visible?: boolean;
                 school?: string;
                 major?: string;
                 degree?: string;
@@ -270,50 +305,50 @@ export declare const resumeDataSchema: z.ZodObject<{
                 endDate?: string;
                 studyType?: string;
                 summary?: string;
-            }[];
-        };
-        projects?: {
-            name?: string;
-            columns?: number;
-            separateLinks?: boolean;
-            visible?: boolean;
-            id?: "projects";
-            items?: {
-                name?: string;
-                url?: string;
-                city?: string;
-                visible?: boolean;
-                id?: string;
-                startDate?: string;
-                endDate?: string;
-                summary?: string;
-                role?: string;
-            }[];
-        };
-        skills?: {
-            name?: string;
-            columns?: number;
-            separateLinks?: boolean;
-            visible?: boolean;
-            id?: "skills";
-            items?: {
-                name?: string;
-                visible?: boolean;
-                id?: string;
-                summary?: string;
-                level?: string | number;
             }[];
         };
     }, {
-        education?: {
+        skills?: {
+            id?: "skills";
+            visible?: boolean;
             name?: string;
             columns?: number;
             separateLinks?: boolean;
-            visible?: boolean;
-            id?: "education";
             items?: {
-                visible?: boolean;
                 id?: string;
+                visible?: boolean;
+                summary?: string;
+                name?: string;
+                level?: string | number;
+            }[];
+        };
+        projects?: {
+            id?: "projects";
+            visible?: boolean;
+            name?: string;
+            columns?: number;
+            separateLinks?: boolean;
+            items?: {
+                id?: string;
+                visible?: boolean;
+                startDate?: string;
+                endDate?: string;
+                summary?: string;
+                name?: string;
+                url?: string;
+                city?: string;
+                role?: string;
+            }[];
+        };
+        education?: {
+            id?: "education";
+            visible?: boolean;
+            name?: string;
+            columns?: number;
+            separateLinks?: boolean;
+            items?: {
+                id?: string;
+                visible?: boolean;
                 school?: string;
                 major?: string;
                 degree?: string;
@@ -321,38 +356,6 @@ export declare const resumeDataSchema: z.ZodObject<{
                 endDate?: string;
                 studyType?: string;
                 summary?: string;
-            }[];
-        };
-        projects?: {
-            name?: string;
-            columns?: number;
-            separateLinks?: boolean;
-            visible?: boolean;
-            id?: "projects";
-            items?: {
-                name?: string;
-                url?: string;
-                city?: string;
-                visible?: boolean;
-                id?: string;
-                startDate?: string;
-                endDate?: string;
-                summary?: string;
-                role?: string;
-            }[];
-        };
-        skills?: {
-            name?: string;
-            columns?: number;
-            separateLinks?: boolean;
-            visible?: boolean;
-            id?: "skills";
-            items?: {
-                name?: string;
-                visible?: boolean;
-                id?: string;
-                summary?: string;
-                level?: string | number;
             }[];
         };
     }>;
@@ -415,6 +418,7 @@ export declare const resumeDataSchema: z.ZodObject<{
         phone?: string;
         url?: string;
         avatar?: string;
+        wechat?: string;
         intention?: {
             currentStatus?: string;
             positionTitle?: string;
@@ -423,15 +427,47 @@ export declare const resumeDataSchema: z.ZodObject<{
         };
     };
     sections?: {
-        education?: {
+        skills?: {
+            id?: "skills";
+            visible?: boolean;
             name?: string;
             columns?: number;
             separateLinks?: boolean;
-            visible?: boolean;
-            id?: "education";
             items?: {
-                visible?: boolean;
                 id?: string;
+                visible?: boolean;
+                summary?: string;
+                name?: string;
+                level?: string | number;
+            }[];
+        };
+        projects?: {
+            id?: "projects";
+            visible?: boolean;
+            name?: string;
+            columns?: number;
+            separateLinks?: boolean;
+            items?: {
+                id?: string;
+                visible?: boolean;
+                startDate?: string;
+                endDate?: string;
+                summary?: string;
+                name?: string;
+                url?: string;
+                city?: string;
+                role?: string;
+            }[];
+        };
+        education?: {
+            id?: "education";
+            visible?: boolean;
+            name?: string;
+            columns?: number;
+            separateLinks?: boolean;
+            items?: {
+                id?: string;
+                visible?: boolean;
                 school?: string;
                 major?: string;
                 degree?: string;
@@ -439,38 +475,6 @@ export declare const resumeDataSchema: z.ZodObject<{
                 endDate?: string;
                 studyType?: string;
                 summary?: string;
-            }[];
-        };
-        projects?: {
-            name?: string;
-            columns?: number;
-            separateLinks?: boolean;
-            visible?: boolean;
-            id?: "projects";
-            items?: {
-                name?: string;
-                url?: string;
-                city?: string;
-                visible?: boolean;
-                id?: string;
-                startDate?: string;
-                endDate?: string;
-                summary?: string;
-                role?: string;
-            }[];
-        };
-        skills?: {
-            name?: string;
-            columns?: number;
-            separateLinks?: boolean;
-            visible?: boolean;
-            id?: "skills";
-            items?: {
-                name?: string;
-                visible?: boolean;
-                id?: string;
-                summary?: string;
-                level?: string | number;
             }[];
         };
     };
@@ -495,6 +499,7 @@ export declare const resumeDataSchema: z.ZodObject<{
         phone?: string;
         url?: string;
         avatar?: string;
+        wechat?: string;
         intention?: {
             currentStatus?: string;
             positionTitle?: string;
@@ -503,15 +508,47 @@ export declare const resumeDataSchema: z.ZodObject<{
         };
     };
     sections?: {
-        education?: {
+        skills?: {
+            id?: "skills";
+            visible?: boolean;
             name?: string;
             columns?: number;
             separateLinks?: boolean;
-            visible?: boolean;
-            id?: "education";
             items?: {
-                visible?: boolean;
                 id?: string;
+                visible?: boolean;
+                summary?: string;
+                name?: string;
+                level?: string | number;
+            }[];
+        };
+        projects?: {
+            id?: "projects";
+            visible?: boolean;
+            name?: string;
+            columns?: number;
+            separateLinks?: boolean;
+            items?: {
+                id?: string;
+                visible?: boolean;
+                startDate?: string;
+                endDate?: string;
+                summary?: string;
+                name?: string;
+                url?: string;
+                city?: string;
+                role?: string;
+            }[];
+        };
+        education?: {
+            id?: "education";
+            visible?: boolean;
+            name?: string;
+            columns?: number;
+            separateLinks?: boolean;
+            items?: {
+                id?: string;
+                visible?: boolean;
                 school?: string;
                 major?: string;
                 degree?: string;
@@ -519,38 +556,6 @@ export declare const resumeDataSchema: z.ZodObject<{
                 endDate?: string;
                 studyType?: string;
                 summary?: string;
-            }[];
-        };
-        projects?: {
-            name?: string;
-            columns?: number;
-            separateLinks?: boolean;
-            visible?: boolean;
-            id?: "projects";
-            items?: {
-                name?: string;
-                url?: string;
-                city?: string;
-                visible?: boolean;
-                id?: string;
-                startDate?: string;
-                endDate?: string;
-                summary?: string;
-                role?: string;
-            }[];
-        };
-        skills?: {
-            name?: string;
-            columns?: number;
-            separateLinks?: boolean;
-            visible?: boolean;
-            id?: "skills";
-            items?: {
-                name?: string;
-                visible?: boolean;
-                id?: string;
-                summary?: string;
-                level?: string | number;
             }[];
         };
     };

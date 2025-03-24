@@ -7,16 +7,16 @@ export declare const skillSchema: z.ZodObject<z.objectUtil.extendShape<{
     summary: z.ZodString;
     level: z.ZodUnion<[z.ZodDefault<z.ZodNumber>, z.ZodString]>;
 }>, "strip", z.ZodTypeAny, {
-    name?: string;
-    visible?: boolean;
     id?: string;
+    visible?: boolean;
     summary?: string;
+    name?: string;
     level?: string | number;
 }, {
-    name?: string;
-    visible?: boolean;
     id?: string;
+    visible?: boolean;
     summary?: string;
+    name?: string;
     level?: string | number;
 }>;
 export type Skill = z.infer<typeof skillSchema>;

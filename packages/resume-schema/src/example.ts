@@ -8,6 +8,7 @@ export const Example: ResumeData = {
     phone: '12345678901',
     url: 'https://github.com/lian-1024',
     avatar: '',
+    wechat: '18512345678',
     intention: {
       currentStatus: '在校',
       positionTitle: '前端开发工程师',

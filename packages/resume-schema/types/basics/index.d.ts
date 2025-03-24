@@ -6,6 +6,7 @@ export declare const basicsSchema: z.ZodObject<{
     phone: z.ZodString;
     url: z.ZodUnion<[z.ZodLiteral<"">, z.ZodString]>;
     avatar: z.ZodString;
+    wechat: z.ZodString;
     intention: z.ZodObject<{
         currentStatus: z.ZodString;
         positionTitle: z.ZodString;
@@ -29,6 +30,7 @@ export declare const basicsSchema: z.ZodObject<{
     phone?: string;
     url?: string;
     avatar?: string;
+    wechat?: string;
     intention?: {
         currentStatus?: string;
         positionTitle?: string;
@@ -42,6 +44,7 @@ export declare const basicsSchema: z.ZodObject<{
     phone?: string;
     url?: string;
     avatar?: string;
+    wechat?: string;
     intention?: {
         currentStatus?: string;
         positionTitle?: string;

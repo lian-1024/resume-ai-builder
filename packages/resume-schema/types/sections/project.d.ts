@@ -11,24 +11,24 @@ export declare const projectSchema: z.ZodObject<z.objectUtil.extendShape<{
     summary: z.ZodString;
     url: z.ZodUnion<[z.ZodLiteral<"">, z.ZodString]>;
 }>, "strip", z.ZodTypeAny, {
-    name?: string;
-    url?: string;
-    city?: string;
-    visible?: boolean;
     id?: string;
+    visible?: boolean;
     startDate?: string;
     endDate?: string;
     summary?: string;
+    name?: string;
+    url?: string;
+    city?: string;
     role?: string;
 }, {
-    name?: string;
-    url?: string;
-    city?: string;
-    visible?: boolean;
     id?: string;
+    visible?: boolean;
     startDate?: string;
     endDate?: string;
     summary?: string;
+    name?: string;
+    url?: string;
+    city?: string;
     role?: string;
 }>;
 export type Project = z.infer<typeof projectSchema>;

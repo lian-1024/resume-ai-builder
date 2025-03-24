@@ -14,7 +14,6 @@ export const educationSchema = itemSchema.extend({
   endDate: z.string(), // 结束时间
   studyType: z.string(), // 学历类型
   summary: z.string(), // 在校经历
-
 })
 
 // Type

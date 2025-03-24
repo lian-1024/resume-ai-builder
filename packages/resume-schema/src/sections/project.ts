@@ -13,7 +13,7 @@ export const projectSchema = itemSchema.extend({
   city:z.string(), // 所在城市
   summary: z.string(), // 项目详情
   // 项目相关链接（如 GitHub 仓库、在线演示地址等）
-  url: z.literal('').or(z.string().url())
+  url: z.literal('').or(z.string().url()),
 })
 
 // 从 Schema 中推导出 TypeScript 类型定义

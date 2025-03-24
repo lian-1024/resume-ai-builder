@@ -1,16 +1,15 @@
-
 li {
     margin-left: 20px;
     line-height: 2em;
- }
- 
- ol {
-     list-style-type: decimal !important;
- }
- 
- ul {
-     list-style-type: disc !important;
- }
+}
+
+ol {
+    list-style-type: decimal !important;
+}
+
+ul {
+    list-style-type: disc !important;
+}
 
 p {
     line-height: 2em;

@@ -19,12 +19,12 @@ export default defineEventHandler(async event => {
   const pdfBuffer = await page.pdf({
     format: "A4",
     printBackground: true,  // 打印背景样式
-    // margin: {
-    //   top: '10mm',
-    //   right: '10mm',
-    //   bottom: '10mm',
-    //   left: '10mm'
-    // }
+    margin: {
+      right: '10mm',
+      left: '10mm',
+      bottom: '5mm',
+      top: '5mm'
+    }
   })
 
   await browser.close()
