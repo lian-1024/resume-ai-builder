@@ -1,11 +1,10 @@
 import { z } from 'zod'
 
 import { educationSchema } from './education'
-
 import { projectSchema } from './project'
 
-import { skillSchema } from './skill' 
-
+import { skillSchema } from './skill'
+import { intentionSchema } from './intention'
 // 定义基础部分的模式
 export const sectionSchema = z.object({
   name: z.string(),
@@ -34,7 +33,9 @@ export const sectionsSchema = z.object({
     id: z.literal('skills'),
     items: z.array(skillSchema)
   }),
-  // custom: z.record(z.string(), customSchema)
+  intention: sectionSchema.merge(intentionSchema.extend({
+    id: z.literal('intention'),
+  }))
 })
 
 // 类型定义，用于部分和部分集合
@@ -64,11 +65,10 @@ export const defaultSections: Sections = {
     name: 'Education',
     items: []
   },
-  projects: { ...defaultSection, id: 'projects', name: 'Projects', items: [] },
-  skills: { ...defaultSection, id: 'skills', name: 'Skills', items: [] },
- 
+  intention: { ...defaultSection, id: 'intention', name: '意向' },
+  projects: { ...defaultSection, id: 'projects', name: '项目经历', items: [] },
+  skills: { ...defaultSection, id: 'skills', name: '技能', items: [] },
 
-  // custom: {}
 }
 
 // 重新导出所有部分模式以供外部使用

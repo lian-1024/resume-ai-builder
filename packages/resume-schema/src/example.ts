@@ -9,14 +9,17 @@ export const Example: ResumeData = {
     url: 'https://github.com/lian-1024',
     avatar: '',
     wechat: '18512345678',
-    intention: {
-      currentStatus: '在校',
-      positionTitle: '前端开发工程师',
-      salary: '10000-20000',
-      city: '广州'
-    }
+    birthday: '2020-01-01',
   },
+ 
   sections: {
+    intention: {
+      name: '求职意向',
+      status: '在校',
+      position: '前端开发工程师',
+      salary: '10000-20000',
+      location: '广州',
+    },
     education: {
       name: '教育经历',
       columns: 1,
@@ -44,7 +47,7 @@ export const Example: ResumeData = {
       ]
     },
     projects: {
-      name: '项目',
+      name: '项目经历',
       columns: 1,
       separateLinks: true,
       visible: true,

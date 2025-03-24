@@ -10,8 +10,6 @@ import { defaultBasics, defaultProject, defaultEducation } from '@lianqq/resume-
 
 const resumeStore = useResumeStore();
 const pageRef = ref<HTMLDivElement | null>(null);
-const previewContainerRef = ref<HTMLDivElement | null>(null);
-const pagedRendered = ref(false);
 
 const styles = computed(() => ({
     width: '210mm',
@@ -30,9 +28,10 @@ const basics = computed(() => resumeStore.resume.basics || defaultBasics)
 const projects = computed(() => resumeStore.resume.sections?.projects)
 const educations = computed(() => resumeStore.resume.sections?.education)
 const skills = computed(() => resumeStore.resume.sections?.skills)
+const intention = computed(() => resumeStore.resume.sections?.intention)
 
 onMounted(() => {
-  
+
 })
 
 </script>
@@ -49,7 +48,8 @@ onMounted(() => {
         <!-- 分页预览容器 -->
         <div class="w-screen justify-center flex">
             <!-- 内容容器 - 将被Paged.js处理并转换为分页视图 -->
-            <div class="bg-white mt-6 px-[10mm] py-[5mm] relative mx-6 rounded-lg" :style="styles" ref="pageRef" id="resume-page">
+            <div class="bg-white mt-6 px-[10mm] py-[5mm] relative mx-6 rounded-lg" :style="styles" ref="pageRef"
+                id="resume-page">
                 <!-- 基本信息 - 防止分页断开 -->
                 <div class="flex gap-2 relative justify-end ">
                     <div class="absolute left-1/2 -translate-x-1/2 flex flex-col items-center flex-1">
@@ -61,9 +61,11 @@ onMounted(() => {
                             <span class="text-nowrap text-sm">邮箱：{{ basics.email }}</span>
                             <span class="text-nowrap text-sm">微信：{{ basics.wechat }}</span>
                         </div>
-                        <span class="text-sm">18 岁</span>
-                        <span class="text-sm" v-if="basics.intention?.positionTitle">
-                            求职意向：{{ basics.intention.positionTitle }}
+                        <span class="text-sm" v-if="basics.birthday">
+                            {{ new Date().getFullYear() - new Date(basics.birthday).getFullYear() }} 岁
+                        </span>
+                        <span class="text-sm" v-if="intention?.position">
+                            求职意向：{{ intention.position }}
                         </span>
                     </div>
                     <div class="w-24 h-32 rounded-lg bg-gray-100">
@@ -72,29 +74,32 @@ onMounted(() => {
                 </div>
 
                 <!-- 求职意向部分 -->
-                <Section title="求职意向" class="section-title ">
+                <Section :title="intention?.name" class="section-title ">
                     <div class="flex gap-10">
-                        <span class="text-sm" v-if="basics.intention?.currentStatus">
-                            求职状态：{{ basics.intention?.currentStatus }}
+                        <span class="text-sm" v-if="intention?.status">
+                            求职状态：{{ intention.status }}
                         </span>
-                        <span class="text-sm" v-if="basics.intention?.positionTitle">
-                            期望职位：{{ basics.intention?.positionTitle }}
+                        <span class="text-sm" v-if="intention?.position">
+                            期望职位：{{ intention.position }}
                         </span>
-                        <span class="text-sm" v-if="basics.intention?.city">
-                            期望地点：{{ basics.intention?.city }}
+                        <span class="text-sm" v-if="intention?.location">
+                            期望地点：{{ intention.location }}
+                        </span>
+                        <span class="text-sm" v-if="intention?.salary">
+                            期望薪资：{{ intention.salary }}
                         </span>
                     </div>
                 </Section>
 
                 <!-- 技术栈部分 - 强制新页 -->
-                <Section title="技术栈" class="section-title ">
+                <Section :title="skills?.name" class="section-title ">
                     <template v-for="skill in skills?.items" :key="skill.id">
                         <div v-html="skill.summary" class="text-sm text-gray-700" />
                     </template>
                 </Section>
 
                 <!-- 项目经历部分 - 强制新页 -->
-                <Section v-for="item in 3" :key="item" title="项目经历" class="section-title ">
+                <Section v-for="item in 3" :key="item" :title="projects?.name" class="section-title ">
                     <div v-for="project in projects?.items" :key="project.id" class="no-break project-item my-4">
                         <div class="flex items-center">
                             <span class="font-semibold">
@@ -113,7 +118,7 @@ onMounted(() => {
                 </Section>
 
                 <!-- 教育经历部分 - 强制新页 -->
-                <Section title="教育经历" class="section-title">
+                <Section :title="educations?.name" class="section-title">
                     <div v-for="education in educations?.items" :key="education.id" class="flex flex-col no-break my-4">
                         <div class="flex justify-between">
                             <span class="font-semibold">

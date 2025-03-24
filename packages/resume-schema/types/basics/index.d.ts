@@ -7,50 +7,25 @@ export declare const basicsSchema: z.ZodObject<{
     url: z.ZodUnion<[z.ZodLiteral<"">, z.ZodString]>;
     avatar: z.ZodString;
     wechat: z.ZodString;
-    intention: z.ZodObject<{
-        currentStatus: z.ZodString;
-        positionTitle: z.ZodString;
-        salary: z.ZodString;
-        city: z.ZodString;
-    }, "strip", z.ZodTypeAny, {
-        currentStatus?: string;
-        positionTitle?: string;
-        salary?: string;
-        city?: string;
-    }, {
-        currentStatus?: string;
-        positionTitle?: string;
-        salary?: string;
-        city?: string;
-    }>;
+    birthday: z.ZodString;
 }, "strip", z.ZodTypeAny, {
     name?: string;
+    url?: string;
     headline?: string;
     email?: string;
     phone?: string;
-    url?: string;
     avatar?: string;
     wechat?: string;
-    intention?: {
-        currentStatus?: string;
-        positionTitle?: string;
-        salary?: string;
-        city?: string;
-    };
+    birthday?: string;
 }, {
     name?: string;
+    url?: string;
     headline?: string;
     email?: string;
     phone?: string;
-    url?: string;
     avatar?: string;
     wechat?: string;
-    intention?: {
-        currentStatus?: string;
-        positionTitle?: string;
-        salary?: string;
-        city?: string;
-    };
+    birthday?: string;
 }>;
 export type Basics = z.infer<typeof basicsSchema>;
 export declare const defaultBasics: Basics;

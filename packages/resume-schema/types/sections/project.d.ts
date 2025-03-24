@@ -17,9 +17,9 @@ export declare const projectSchema: z.ZodObject<z.objectUtil.extendShape<{
     endDate?: string;
     summary?: string;
     name?: string;
-    url?: string;
-    city?: string;
     role?: string;
+    city?: string;
+    url?: string;
 }, {
     id?: string;
     visible?: boolean;
@@ -27,9 +27,9 @@ export declare const projectSchema: z.ZodObject<z.objectUtil.extendShape<{
     endDate?: string;
     summary?: string;
     name?: string;
-    url?: string;
-    city?: string;
     role?: string;
+    city?: string;
+    url?: string;
 }>;
 export type Project = z.infer<typeof projectSchema>;
 export declare const defaultProject: Project;

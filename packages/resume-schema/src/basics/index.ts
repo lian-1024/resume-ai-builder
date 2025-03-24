@@ -1,3 +1,5 @@
+import { sectionsSchema } from '@/sections';
+import { intentionSchema } from '@/sections/intention';
 import { z } from 'zod'; // 引入 zod 库
 
 // 定义基本信息的模式
@@ -9,12 +11,7 @@ export const basicsSchema = z.object({
   url: z.literal('').or(z.string().url()),
   avatar: z.string(),
   wechat: z.string(),
-  intention: z.object({ // 意向字段
-    currentStatus: z.string(), // 当前状态
-    positionTitle: z.string(), // 职位标题
-    salary: z.string(), // 薪资
-    city: z.string(), // 城市
-  })
+  birthday: z.string(),
 })
 
 // 从模式中推断出的类型
@@ -29,11 +26,6 @@ export const defaultBasics: Basics = {
   url: '', // 默认网址使用共享的默认 URL
   avatar: '', // 默认图片 URL 为空字符串
   wechat: '', // 默认微信为空字符串
-  intention: {
-    currentStatus: '',
-    positionTitle: '',
-    salary: '',
-    city: ''
-  }
+  birthday: '', // 默认生日为空字符串
 }
 
