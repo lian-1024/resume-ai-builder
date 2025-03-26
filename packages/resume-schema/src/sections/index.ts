@@ -62,10 +62,10 @@ export const defaultSections: Sections = {
   education: {
     ...defaultSection,
     id: 'education',
-    name: 'Education',
+    name: '教育经历',
     items: []
   },
-  intention: { ...defaultSection, id: 'intention', name: '意向' },
+  intention: { ...defaultSection, id: 'intention', name: '求职意向' },
   projects: { ...defaultSection, id: 'projects', name: '项目经历', items: [] },
   skills: { ...defaultSection, id: 'skills', name: '技能', items: [] },
 

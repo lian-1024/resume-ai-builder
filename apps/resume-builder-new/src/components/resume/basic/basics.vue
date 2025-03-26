@@ -6,11 +6,12 @@ defineProps<{
 }>()
 
 
+
 </script>
 
 <template>
     <div class="flex flex-col gap-4">
-        <BasicUI v-if="status === 'preview'" />
+        <BasicUI v-if="status === 'preview' " />
         <BasicEditor v-else />
     </div>
 </template>

@@ -1,7 +1,7 @@
 import { z } from 'zod';
 declare const templates: readonly ["simple"];
 export type TemplateKey = (typeof templates)[number];
-export declare const defaultSectionsOrder: string[];
+export declare const defaultSectionsOrder: readonly ["intention", "skills", "projects", "education"];
 export declare const resumeMetadataSchema: z.ZodObject<{
     template: z.ZodDefault<z.ZodEnum<["simple"]>>;
     page: z.ZodObject<{
@@ -27,7 +27,7 @@ export declare const resumeMetadataSchema: z.ZodObject<{
         text?: string;
         primary?: string;
     }>;
-    sectionsOrder: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
+    sectionsOrder: z.ZodDefault<z.ZodArray<z.ZodEnum<["intention", "skills", "projects", "education"]>, "many">>;
 }, "strip", z.ZodTypeAny, {
     template?: "simple";
     page?: {
@@ -39,7 +39,7 @@ export declare const resumeMetadataSchema: z.ZodObject<{
         text?: string;
         primary?: string;
     };
-    sectionsOrder?: string[];
+    sectionsOrder?: ("education" | "projects" | "skills" | "intention")[];
 }, {
     template?: "simple";
     page?: {
@@ -51,7 +51,7 @@ export declare const resumeMetadataSchema: z.ZodObject<{
         text?: string;
         primary?: string;
     };
-    sectionsOrder?: string[];
+    sectionsOrder?: ("education" | "projects" | "skills" | "intention")[];
 }>;
 export type ResumeMetadata = z.infer<typeof resumeMetadataSchema>;
 export declare const defaultResumeMetadata: ResumeMetadata;

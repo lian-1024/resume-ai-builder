@@ -12,11 +12,12 @@ defineProps<{
 }>()
 
 
-defineEmits<{
+
+ defineEmits<{
     (e: 'edit'): void,
     (e: 'save'): void,
     (e: 'cancel'): void,
-    (e: 'changeVisible', visible: boolean): void
+    (e: 'changeVisible'): void
 }>()
 </script>
 
@@ -40,7 +41,10 @@ defineEmits<{
             <Icon icon="lucide:save" />
             保存
         </Button>
-        <Button variant="default" size="sm" @click="$emit('changeVisible', !visible)" v-show="status === 'preview'">
+        <Button variant="ghost" size="sm" v-show="status === 'edit'" @click="() => {
+            console.log('changeVisible button clicked');
+            $emit('changeVisible');
+        }">
             <template v-if="!visible">
                 <Icon icon="lucide:eye" />
                 显示

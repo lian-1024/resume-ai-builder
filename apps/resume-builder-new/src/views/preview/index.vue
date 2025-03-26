@@ -34,6 +34,11 @@ onMounted(() => {
 
 })
 
+// 计算年龄
+const computedAge = (birthday: string) => {
+    if (!birthday) return 0
+    return new Date().getFullYear() - new Date(birthday).getFullYear()
+}
 </script>
 
 <template>
@@ -62,7 +67,7 @@ onMounted(() => {
                             <span class="text-nowrap text-sm">微信：{{ basics.wechat }}</span>
                         </div>
                         <span class="text-sm" v-if="basics.birthday">
-                            {{ new Date().getFullYear() - new Date(basics.birthday).getFullYear() }} 岁
+                            {{ computedAge(basics.birthday) }} 岁
                         </span>
                         <span class="text-sm" v-if="intention?.position">
                             求职意向：{{ intention.position }}

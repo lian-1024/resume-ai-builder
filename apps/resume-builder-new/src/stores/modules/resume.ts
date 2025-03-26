@@ -21,6 +21,7 @@ export const useResumeStore = defineStore('resume', () => {
 
     const loadDraftData = () => {
         draftData.value = cloneDeep(resume.value)
+
     }
 
     const saveDraftData = () => {

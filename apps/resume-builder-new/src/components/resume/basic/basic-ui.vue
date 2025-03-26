@@ -11,11 +11,15 @@ const basics = computed(() => {
     return resumeStore.resume.basics || defaultBasics
 })
 
+const intention = computed(() => {
+    return resumeStore.resume.sections?.intention
+})
+
 
 </script>
 
 <template>
-    <div class="flex gap-4" >
+    <div class="flex gap-4">
         <div class="w-36 h-44 rounded-lg bg-gray-100">
             <img :src="basics.avatar" />
         </div>
@@ -26,33 +30,35 @@ const basics = computed(() => {
             <div class="grid grid-cols-[repeat(3,minmax(100px,auto))] gap-4 justify-start">
                 <div class="flex items-center gap-2 text-muted-foreground">
                     <Icon icon="lucide:phone" />
-                    <p class="text-sm text-muted-foreground">
+                    <p class="text-sm text-black">
                         {{ basics.phone }}
                     </p>
                 </div>
                 <div class="flex items-center gap-2 text-muted-foreground">
                     <Icon icon="lucide:mail" />
-                    <p class="text-sm text-muted-foreground">
+                    <p class="text-sm text-black">
                         {{ basics.email }}
                     </p>
                 </div>
 
             </div>
             <div class="flex flex-wrap gap-4 mt-4">
-
                 <p class="text-sm text-muted-foreground">
-                    意向城市：{{ basics.intention?.city }}
+                    <span>意向城市：</span><span class="text-black">{{ intention?.location }}</span>
                 </p>
                 <p class="text-sm text-muted-foreground">
-                    期望薪资：{{ basics.intention?.salary }}
+                    <span>期望薪资：</span><span class="text-black">{{ intention?.salary }}</span>
                 </p>
                 <p class="text-sm text-muted-foreground">
-                    求职状态：{{ basics.intention?.currentStatus }}
+                    <span>求职状态：</span><span class="text-black">{{ intention?.status }}</span>
+                </p>
+                <p class="text-sm text-muted-foreground">
+                    <span>期望职位：</span><span class="text-black">{{ intention?.position }}</span>
                 </p>
             </div>
         </div>
 
-        
+
     </div>
 </template>
 

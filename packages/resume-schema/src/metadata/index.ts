@@ -1,10 +1,11 @@
+import { SectionKey } from '@/sections'
 import { z } from 'zod'
 
 const templates = ['simple'] as const
 
 export type TemplateKey = (typeof templates)[number]
 
-export const defaultSectionsOrder = ['basics', 'skills', 'projects', 'education']
+export const defaultSectionsOrder = ['intention', 'skills', 'projects', 'education'] as const
 
 // 定义主题相关配资
 export const resumeMetadataSchema = z.object({
@@ -20,7 +21,7 @@ export const resumeMetadataSchema = z.object({
     text: z.string().default('#000000'), // 文本颜色
     primary: z.string().default('#3b82f6') // 主题颜色
   }),
-  sectionsOrder: z.array(z.string()).default([...defaultSectionsOrder]) // 简历各部分的排序
+  sectionsOrder: z.array(z.enum(defaultSectionsOrder)).default([...defaultSectionsOrder]) // 简历各部分的排序
 })
 
 // 从模式中推断出的类型

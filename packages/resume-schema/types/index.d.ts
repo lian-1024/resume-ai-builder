@@ -430,7 +430,7 @@ export declare const resumeDataSchema: z.ZodObject<{
             text?: string;
             primary?: string;
         }>;
-        sectionsOrder: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
+        sectionsOrder: z.ZodDefault<z.ZodArray<z.ZodEnum<["intention", "skills", "projects", "education"]>, "many">>;
     }, "strip", z.ZodTypeAny, {
         template?: "simple";
         page?: {
@@ -442,7 +442,7 @@ export declare const resumeDataSchema: z.ZodObject<{
             text?: string;
             primary?: string;
         };
-        sectionsOrder?: string[];
+        sectionsOrder?: ("education" | "projects" | "skills" | "intention")[];
     }, {
         template?: "simple";
         page?: {
@@ -454,7 +454,7 @@ export declare const resumeDataSchema: z.ZodObject<{
             text?: string;
             primary?: string;
         };
-        sectionsOrder?: string[];
+        sectionsOrder?: ("education" | "projects" | "skills" | "intention")[];
     }>;
 }, "strip", z.ZodTypeAny, {
     intention?: {
@@ -547,7 +547,7 @@ export declare const resumeDataSchema: z.ZodObject<{
             text?: string;
             primary?: string;
         };
-        sectionsOrder?: string[];
+        sectionsOrder?: ("education" | "projects" | "skills" | "intention")[];
     };
 }, {
     intention?: {
@@ -640,7 +640,7 @@ export declare const resumeDataSchema: z.ZodObject<{
             text?: string;
             primary?: string;
         };
-        sectionsOrder?: string[];
+        sectionsOrder?: ("education" | "projects" | "skills" | "intention")[];
     };
 }>;
 export type ResumeData = z.infer<typeof resumeDataSchema>;

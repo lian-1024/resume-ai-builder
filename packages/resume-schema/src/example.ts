@@ -11,7 +11,7 @@ export const Example: ResumeData = {
     wechat: '18512345678',
     birthday: '2020-01-01',
   },
- 
+
   sections: {
     intention: {
       name: '求职意向',
@@ -106,7 +106,7 @@ export const Example: ResumeData = {
   },
   // 简历主题数据
   metadata: {
-    sectionsOrder: ['basics', 'education', 'projects', 'skills'],
+    sectionsOrder: ['intention', 'education', 'projects', 'skills'],
     template: 'simple',
     page: {
       margin: 14,

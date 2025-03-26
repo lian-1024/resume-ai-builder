@@ -5,6 +5,7 @@ li {
 
 ol {
     list-style-type: decimal !important;
+
 }
 
 ul {
@@ -14,3 +15,5 @@ ul {
 p {
     line-height: 2em;
 }
+
+

@@ -21,7 +21,7 @@ const formatMajorAndDegree = (major: string | undefined, degree: string | undefi
 </script>
 
 <template>
-    <div class="flex flex-col gap-4">
+    <div class="flex flex-col gap-4" v-if="educations?.visible">
         <div v-for="education in educations?.items" :key="education.id" class="flex flex-col gap-2">
             <div class="flex justify-between">
                 <div class="flex flex-col">

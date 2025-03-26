@@ -16,7 +16,12 @@ const sections = ref<Record<string, any>>({
     icon: "lucide:user",
     href: "#basic"
   },
-
+  intention: {
+    title: "求职意向",
+    name: "intention",
+    icon: "lucide:briefcase",
+    href: "#intention"
+  },
   skills: {
     title: "技能",
     name: "skills",

@@ -1,9 +1,11 @@
 <script lang="ts" setup>
 import EducationUI from './education-ui.vue';
 import EducationEditor from './education-editor.vue';
+import { Actions } from '@/components/resume/actions';
 defineProps<{
     status: 'edit' | 'preview'
 }>()
+
 </script>
 
 <template>
